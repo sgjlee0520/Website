@@ -149,8 +149,8 @@ This is a personal portfolio project. If you find bugs or have suggestions for i
 
 ---
 
-**Contact**: songgun.lee@ucsb.edu  
-**LinkedIn**: [linkedin.com/in/songgun-lee](https://linkedin.com/in/songgun-lee)  
+**Contact**: songgunlee@ucsb.edu  
+**LinkedIn**: [linkedin.com/in/songgun-lee-562991227/](https://www.linkedin.com/in/songgun-lee-562991227/)  
 **GitHub**: [github.com/songgun-lee](https://github.com/songgun-lee)
 
 
