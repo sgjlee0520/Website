@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Songgun Lee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link active">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="writing-interests.html" class="nav-link">Writing & Interests</a>
+                </li>
+                <li class="nav-item">
+                    <a href="resume.html" class="nav-link">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Page Content -->
+    <main class="projects-page">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Projects</h1>
+                <p class="page-subtitle">Exploring the intersection of physics, computation, and quantitative finance through hands-on projects.</p>
+            </div>
+        </section>
+
+        <!-- Filter System -->
+        <section class="project-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+                    <button class="filter-btn" onclick="filterProjects('quantitative-finance')">Quantitative Finance</button>
+                    <button class="filter-btn" onclick="filterProjects('computational-physics')">Computational Physics</button>
+                    <button class="filter-btn" onclick="filterProjects('machine-learning')">Machine Learning</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="projects-showcase">
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- Quantitative Finance Projects -->
+                    <div class="project-item" data-category="quantitative-finance">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Portfolio+Optimization" alt="Portfolio Optimization Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Portfolio Optimization with Machine Learning</h3>
+                            <p class="project-description">Developed a machine learning model to optimize portfolio allocation using historical market data and risk metrics.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">NumPy</span>
+                            </div>
+                            <a href="projects/portfolio-optimization.html" class="project-link">View Case Study</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="quantitative-finance">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/2A7221/FFFFFF?text=Risk+Analysis+Model" alt="Risk Analysis Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Monte Carlo Risk Analysis</h3>
+                            <p class="project-description">Implemented Monte Carlo simulations to assess portfolio risk and calculate Value at Risk (VaR) metrics.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Monte Carlo</span>
+                                <span class="tech-tag">Statistical Analysis</span>
+                            </div>
+                            <a href="projects/risk-analysis.html" class="project-link">View Case Study</a>
+                        </div>
+                    </div>
+
+                    <!-- Computational Physics Projects -->
+                    <div class="project-item" data-category="computational-physics">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/333333/FFFFFF?text=Quantum+Simulation" alt="Quantum Simulation Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Monte Carlo Simulation for Quantum Systems</h3>
+                            <p class="project-description">Implemented Monte Carlo methods to simulate quantum particle behavior in complex potential fields.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">Monte Carlo</span>
+                                <span class="tech-tag">Quantum Mechanics</span>
+                            </div>
+                            <a href="projects/monte-carlo-simulation.html" class="project-link">View Case Study</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="computational-physics">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Particle+Dynamics" alt="Particle Dynamics Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Particle Dynamics Simulation</h3>
+                            <p class="project-description">Developed a simulation system for studying particle interactions and dynamics in various force fields.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">Matplotlib</span>
+                                <span class="tech-tag">Physics</span>
+                            </div>
+                            <a href="projects/particle-dynamics.html" class="project-link">View Case Study</a>
+                        </div>
+                    </div>
+
+                    <!-- Machine Learning Projects -->
+                    <div class="project-item" data-category="machine-learning">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/2A7221/FFFFFF?text=Object+Detection" alt="Object Detection Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Real-time Object Detection System</h3>
+                            <p class="project-description">Built a computer vision system using OpenCV and deep learning for real-time object recognition and tracking.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Computer Vision</span>
+                            </div>
+                            <a href="projects/object-detection.html" class="project-link">View Case Study</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="machine-learning">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/333333/FFFFFF?text=Neural+Network" alt="Neural Network Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Neural Network from Scratch</h3>
+                            <p class="project-description">Implemented a neural network from scratch using only NumPy to understand the fundamentals of deep learning.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Neural Networks</span>
+                            </div>
+                            <a href="projects/neural-network.html" class="project-link">View Case Study</a>
+                        </div>
+                    </div>
+
+                    <!-- Raspberry Pi Project -->
+                    <div class="project-item" data-category="machine-learning">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Raspberry+Pi+IoT" alt="Raspberry Pi Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">IoT Data Collection System</h3>
+                            <p class="project-description">Built an IoT system using Raspberry Pi for environmental data collection and real-time monitoring.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Raspberry Pi</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">IoT</span>
+                                <span class="tech-tag">Linux</span>
+                            </div>
+                            <a href="projects/iot-system.html" class="project-link">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://linkedin.com/in/songgun-lee" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
