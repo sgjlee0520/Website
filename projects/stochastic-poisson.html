@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stochastic Process Modeling - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Stochastic Process Modeling</h1>
+                <p class="page-subtitle">Modeling rare-event probabilities and performing hypothesis testing using
+                    Binomial, Poisson, and Gaussian distributions.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">SciPy</span>
+                    <span class="tech-tag">Hypothesis Testing</span>
+                    <span class="tech-tag">Risk Analysis</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>In quantitative risk management, correctly modeling the probability of rare events (tail risk) is
+                        crucial. This project investigates the transition from Binomial distributions to Poisson and
+                        Gaussian limits, effectively modeling scenarios like default events or insurance claims.</p>
+                    <p>The project also applies rigorous statistical hypothesis testing to determine if subpopulations
+                        deviate significantly from expected probability distributions, similar to detecting anomalies in
+                        market activity.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Implemented</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Poisson Limit Theorem</h3>
+                            <p>Modeled low-probability events in large populations, demonstrating how Binomial variances
+                                converge to Poisson intensity rates.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Gaussian Approximation</h3>
+                            <p>Applied the Central Limit Theorem to approximate discrete distributions, enabling rapid
+                                analytically tractable risk bounds (VaR).</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Statistical Hypothesis Testing</h3>
+                            <p>Calculated Z-scores and p-values to reject null hypotheses, a fundamental skill for
+                                backtesting trading strategies against random market noise.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Visual Analysis</h2>
+                    <div class="visual-showcase">
+                        <img src="../Finance & Quantitative Analysis/images/hypothesis_testing.png"
+                            alt="Gaussian Approximation Graph">
+                        <p class="visual-caption">Comparison of probability densities for different population
+                            subgroups, illustrating significant statistical deviations (anomalies) detected via Gaussian
+                            approximation.</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Technical Implementation</h2>
+                    <p>The implementation uses SciPy's statistical functions to compute exact probabilities and compare
+                        them with Gaussian approximations.</p>
+                    <div class="code-snippet">
+                        <pre><code># Gaussian Approximation vs Exact Binomial Probability
+# Calculate Z-score for observed event k_cut
+mu_sub = N_sub * p
+sigma_sub = np.sqrt(N_sub * p * (1 - p))
+z = (k_cut - mu_sub) / sigma_sub
+
+# Calculate Tail Probability (p-value)
+prob_gauss = 0.5 * special.erfc(z / np.sqrt(2))
+
+# Compare with Exact Computation
+prob_exact = np.sum(stats.binom.pmf(np.arange(k_cut, N_sub + 1), N_sub, p))
+
+print(f"Gaussian Prob: {prob_gauss:.4e}")
+print(f"Exact Prob: {prob_exact:.4e}")</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

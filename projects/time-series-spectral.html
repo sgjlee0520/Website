@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Series & Spectral Analysis - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Time-Series & Spectral Analysis</h1>
+                <p class="page-subtitle">Extracting frequency components from noisy data using Fast Fourier Transforms
+                    (FFT) and modeling transient decay signals.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FFT</span>
+                    <span class="tech-tag">Signal Processing</span>
+                    <span class="tech-tag">Time-Series Analysis</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>Financial markets are essentially noisy time-series data. This project applies signal processing
+                        techniques to extract meaningful patterns from noise. By using Fourier Transforms, we can
+                        decompose complex signals into constituent frequencies, identifying cyclical trends hidden in
+                        the time domain.</p>
+                    <p>The project analyzes transient decay signals, similar to volatility clustering in markets, and
+                        uses spectral analysis to filter and reconstruct underlying trends.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Implemented</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Fast Fourier Transform (FFT)</h3>
+                            <p>Transformed time-domain data into the frequency domain to identify dominant periodicities
+                                and noise floor levels.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Noise Filtering</h3>
+                            <p>Applied spectral filters to remove high-frequency noise while preserving the integrity of
+                                the underlying signal structure.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Transient Modeling</h3>
+                            <p>Modeled exponential decay in signals, analogous to modeling the decay of market shocks or
+                                impulse responses in economic systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Detailed Analysis (PDF)</h2>
+                    <p>The full technical report, including mathematical derivations and detailed plots, is available
+                        below.</p>
+                    <div class="pdf-container">
+                        <iframe
+                            src="../Finance & Quantitative Analysis/Time-Series & Spectral Analysis/20bloolw78sl.pdf"
+                            width="100%" height="800px" frameborder="0">
+                            <p>Your browser does not support PDFs. <a
+                                    href="../Finance & Quantitative Analysis/Time-Series & Spectral Analysis/20bloolw78sl.pdf">Download
+                                    the PDF</a> instead.</p>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

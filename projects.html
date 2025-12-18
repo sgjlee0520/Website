@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation Header -->
     <nav class="navbar">
@@ -50,7 +52,8 @@
         <section class="page-hero">
             <div class="container">
                 <h1 class="page-title">Projects</h1>
-                <p class="page-subtitle">Exploring the intersection of physics, computation, and quantitative finance through hands-on projects.</p>
+                <p class="page-subtitle">Exploring the intersection of physics, computation, and quantitative finance
+                    through hands-on projects.</p>
             </div>
         </section>
 
@@ -59,8 +62,10 @@
             <div class="container">
                 <div class="filter-buttons">
                     <button class="filter-btn active" onclick="filterProjects('all')">All</button>
-                    <button class="filter-btn" onclick="filterProjects('quantitative-finance')">Quantitative Finance</button>
-                    <button class="filter-btn" onclick="filterProjects('computational-physics')">Computational Physics</button>
+                    <button class="filter-btn" onclick="filterProjects('quantitative-finance')">Finance & Quantitative
+                        Analysis</button>
+                    <button class="filter-btn" onclick="filterProjects('computational-physics')">Computational
+                        Physics</button>
                     <button class="filter-btn" onclick="filterProjects('machine-learning')">Machine Learning</button>
                 </div>
             </div>
@@ -73,45 +78,106 @@
                     <!-- Quantitative Finance Projects -->
                     <div class="project-item" data-category="quantitative-finance">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Portfolio+Optimization" alt="Portfolio Optimization Project">
+                            <img src="Finance & Quantitative Analysis/images/monte_carlo_pi.png"
+                                alt="Monte Carlo Simulation">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Portfolio Optimization with Machine Learning</h3>
-                            <p class="project-description">Developed a machine learning model to optimize portfolio allocation using historical market data and risk metrics.</p>
+                            <h3 class="project-title">Monte Carlo Methods & Stochastic Calculus</h3>
+                            <p class="project-description">Implemented Monte Carlo simulations to solve deterministic
+                                problems, analyzing convergence rates ($1/\sqrt{N}$) against theoretical predictions.
+                            </p>
                             <div class="project-tech">
                                 <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Pandas</span>
-                                <span class="tech-tag">Scikit-learn</span>
                                 <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">Stochastic Calculus</span>
                             </div>
-                            <a href="projects/portfolio-optimization.html" class="project-link">View Case Study</a>
+                            <a href="projects/monte-carlo-stochastic.html" class="project-link">View Project</a>
                         </div>
                     </div>
 
                     <div class="project-item" data-category="quantitative-finance">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/400x250/2A7221/FFFFFF?text=Risk+Analysis+Model" alt="Risk Analysis Project">
+                            <img src="Finance & Quantitative Analysis/images/hypothesis_testing.png"
+                                alt="Stochastic Modeling">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Monte Carlo Risk Analysis</h3>
-                            <p class="project-description">Implemented Monte Carlo simulations to assess portfolio risk and calculate Value at Risk (VaR) metrics.</p>
+                            <h3 class="project-title">Stochastic Process Modeling</h3>
+                            <p class="project-description">Modeled rare-event probabilities using Binomial and Poisson
+                                distributions; performed statistical hypothesis testing using Gaussian approximations.
+                            </p>
                             <div class="project-tech">
                                 <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Monte Carlo</span>
-                                <span class="tech-tag">Statistical Analysis</span>
+                                <span class="tech-tag">SciPy</span>
+                                <span class="tech-tag">Risk Modeling</span>
                             </div>
-                            <a href="projects/risk-analysis.html" class="project-link">View Case Study</a>
+                            <a href="projects/stochastic-poisson.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="quantitative-finance">
+                        <div class="project-image">
+                            <img src="Finance & Quantitative Analysis/images/pde_config_1.png" alt="PDE Solver">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Numerical PDE Solver</h3>
+                            <p class="project-description">Developed a numerical solver for Partial Differential
+                                Equations (PDEs) using the Relaxation Method on a 2D grid, applicable to option pricing
+                                models.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Finite Difference</span>
+                                <span class="tech-tag">Numerical Analysis</span>
+                            </div>
+                            <a href="projects/numerical-pde-solver.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="quantitative-finance">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Spectral+Analysis"
+                                alt="Time Series Analysis">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Time-Series & Spectral Analysis</h3>
+                            <p class="project-description">Applied Fast Fourier Transform (FFT) to extract frequency
+                                components from noisy time-series data and modeled transient decay signals.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FFT</span>
+                                <span class="tech-tag">Signal Processing</span>
+                            </div>
+                            <a href="projects/time-series-spectral.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="quantitative-finance">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/2A7221/FFFFFF?text=Business+Intelligence"
+                                alt="Business Intelligence">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Business Intelligence & Analytics</h3>
+                            <p class="project-description">Built an automated analytics module to parse transaction logs
+                                and visualize sales velocity for inventory optimization.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Analytics</span>
+                                <span class="tech-tag">Automation</span>
+                            </div>
+                            <a href="projects/business-intelligence.html" class="project-link">View Project</a>
                         </div>
                     </div>
 
                     <!-- Computational Physics Projects -->
                     <div class="project-item" data-category="computational-physics">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/400x250/333333/FFFFFF?text=Quantum+Simulation" alt="Quantum Simulation Project">
+                            <img src="https://via.placeholder.com/400x250/333333/FFFFFF?text=Quantum+Simulation"
+                                alt="Quantum Simulation Project">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Monte Carlo Simulation for Quantum Systems</h3>
-                            <p class="project-description">Implemented Monte Carlo methods to simulate quantum particle behavior in complex potential fields.</p>
+                            <p class="project-description">Implemented Monte Carlo methods to simulate quantum particle
+                                behavior in complex potential fields.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">C++</span>
                                 <span class="tech-tag">Monte Carlo</span>
@@ -123,11 +189,13 @@
 
                     <div class="project-item" data-category="computational-physics">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Particle+Dynamics" alt="Particle Dynamics Project">
+                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Particle+Dynamics"
+                                alt="Particle Dynamics Project">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Particle Dynamics Simulation</h3>
-                            <p class="project-description">Developed a simulation system for studying particle interactions and dynamics in various force fields.</p>
+                            <p class="project-description">Developed a simulation system for studying particle
+                                interactions and dynamics in various force fields.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">NumPy</span>
@@ -141,11 +209,13 @@
                     <!-- Machine Learning Projects -->
                     <div class="project-item" data-category="machine-learning">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/400x250/2A7221/FFFFFF?text=Object+Detection" alt="Object Detection Project">
+                            <img src="https://via.placeholder.com/400x250/2A7221/FFFFFF?text=Object+Detection"
+                                alt="Object Detection Project">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Real-time Object Detection System</h3>
-                            <p class="project-description">Built a computer vision system using OpenCV and deep learning for real-time object recognition and tracking.</p>
+                            <p class="project-description">Built a computer vision system using OpenCV and deep learning
+                                for real-time object recognition and tracking.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">OpenCV</span>
@@ -158,11 +228,13 @@
 
                     <div class="project-item" data-category="machine-learning">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/400x250/333333/FFFFFF?text=Neural+Network" alt="Neural Network Project">
+                            <img src="https://via.placeholder.com/400x250/333333/FFFFFF?text=Neural+Network"
+                                alt="Neural Network Project">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Neural Network from Scratch</h3>
-                            <p class="project-description">Implemented a neural network from scratch using only NumPy to understand the fundamentals of deep learning.</p>
+                            <p class="project-description">Implemented a neural network from scratch using only NumPy to
+                                understand the fundamentals of deep learning.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">NumPy</span>
@@ -176,11 +248,13 @@
                     <!-- Raspberry Pi Project -->
                     <div class="project-item" data-category="machine-learning">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Raspberry+Pi+IoT" alt="Raspberry Pi Project">
+                            <img src="https://via.placeholder.com/400x250/004A99/FFFFFF?text=Raspberry+Pi+IoT"
+                                alt="Raspberry Pi Project">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">IoT Data Collection System</h3>
-                            <p class="project-description">Built an IoT system using Raspberry Pi for environmental data collection and real-time monitoring.</p>
+                            <p class="project-description">Built an IoT system using Raspberry Pi for environmental data
+                                collection and real-time monitoring.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">Raspberry Pi</span>
                                 <span class="tech-tag">Python</span>
@@ -201,7 +275,8 @@
             <div class="footer-content">
                 <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
@@ -210,7 +285,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
-
-
-

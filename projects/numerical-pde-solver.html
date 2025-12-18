@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerical PDE Solver - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Numerical PDE Solver (Finite Difference)</h1>
+                <p class="page-subtitle">Solving Partial Differential Equations using the Relaxation Method on a
+                    discretised 2D grid, applicable to Heat Equations and Black-Scholes models.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Finite Difference Method</span>
+                    <span class="tech-tag">Numerical Analysis</span>
+                    <span class="tech-tag">PDEs</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>Partial Differential Equations (PDEs) govern heat diffusion, fluid dynamics, and option pricing
+                        in finance (Black-Scholes). This project implements a numerical solver from scratch using the
+                        Finite Difference Method to solve Laplace's equation ($\nabla^2 V = 0$) and other boundary value
+                        problems.</p>
+                    <p>The implementation uses the "Relaxation Method," an iterative process that converges to the
+                        steady-state solution, demonstrating core concepts used in industry-grade PDE solvers for
+                        derivative pricing.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Implemented</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Finite Difference Method</h3>
+                            <p>Discretized continuous derivatives into difference equations on a grid, converting
+                                calculus problems into matrix algebra manageable by computers.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Relaxation Algorithm</h3>
+                            <p>Implemented an iterative averaging algorithm where each grid point is updated based on
+                                its neighbors, simulating the physical process of diffusion.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Boundary Conditions</h3>
+                            <p>Handled Dirichlet boundary conditions (fixed values at edges) which equate to boundary
+                                options or fixed-rate constraints in financial models.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Visual Analysis</h2>
+                    <div class="visual-showcase">
+                        <img src="../Finance & Quantitative Analysis/images/pde_config_1.png"
+                            alt="Potential Field Heatmap">
+                        <p class="visual-caption">Heatmap visualization of the electric potential field relaxing to a
+                            steady state between two capacitor plates. The color gradient represents the potential
+                            magnitude.</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Technical Implementation</h2>
+                    <p>The code uses a stored grid state and updates it iteratively. Performance is optimized using
+                        NumPy's array shifting `roll` operations to compute neighbor averages without slow loops.</p>
+                    <div class="code-snippet">
+                        <pre><code># Vectorized Relaxation Step (Jacobi Method)
+# Calculate average of 4 nearest neighbors
+newdata = 0.25 * (np.roll(olddata, 1, axis=0) + 
+                  np.roll(olddata, -1, axis=0) + 
+                  np.roll(olddata, 1, axis=1) + 
+                  np.roll(olddata, -1, axis=1))
+
+# Re-apply boundary conditions to fix edge values
+load_boundary(newdata, GRIDSIZE)
+
+# Check convergence
+diff = np.abs(newdata - olddata).sum()
+print(f'Difference Metric: {diff:.6f}')</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

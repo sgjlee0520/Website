@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Carlo Methods & Stochastic Calculus - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Monte Carlo Methods & Stochastic Calculus</h1>
+                <p class="page-subtitle">Solving deterministic problems through random sampling, with applications in
+                    options pricing and risk assessment.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Stochastic Calculus</span>
+                    <span class="tech-tag">Financial Modeling</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>This project explores the power of Monte Carlo simulations to solve complex deterministic
+                        problems where analytical solutions are difficult or impossible. By leveraging the Law of Large
+                        Numbers, the simulation converges to the true value with an error rate scaling as $1/\sqrt{N}$.
+                    </p>
+                    <p>In quantitative finance, these methods are the standard for pricing complex derivatives (like
+                        Asian or Lookback options) where the path-dependency makes standard Black-Scholes formulas
+                        inapplicable.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Implemented</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Convergence Analysis</h3>
+                            <p>Verified the $O(N^{-1/2})$ convergence rate of Monte Carlo integration. This theoretical
+                                foundation is critical for estimating computation costs in high-frequency trading
+                                simulations.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Stochastic Integration</h3>
+                            <p>Implemented numerical integration techniques utilizing random sampling to approximate
+                                high-dimensional integrals, a common problem in risk model calibration.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Variance Reduction</h3>
+                            <p>Analyzed error metrics to understand stability and precision of the estimates, precursors
+                                to implementing variance reduction techniques like Antithetic Variates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Visual Analysis</h2>
+                    <div class="visual-showcase">
+                        <img src="../Finance & Quantitative Analysis/images/monte_carlo_pi.png"
+                            alt="Monte Carlo Convergence Graph">
+                        <p class="visual-caption">Log-log plot showing the fractional error in estimating $\pi$
+                            decreasing as the number of samples increases, confirming the $1/\sqrt{N}$ convergence rate.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Technical Implementation</h2>
+                    <p>The core algorithm utilizes NumPy's vectorized operations for high-performance random number
+                        generation and processing.</p>
+                    <div class="code-snippet">
+                        <pre><code># Vectorized Monte Carlo Estimation of Pi
+for N in N_values:
+    # Generate random points in a 2x2 square centered at (1,1)
+    points = np.random.uniform(0, 2, (N, 2))
+    
+    # Calculate squared distance from center
+    dist_sq = np.sum((points - 1)**2, axis=1)
+    
+    # Estimate Area/Pi: Ratio of points inside circle
+    pi_est = 4 * np.mean(dist_sq <= 1)
+    
+    # Calculate fractional error
+    error = np.abs(pi_est - np.pi) / np.pi
+    fractional_errors.append(error)</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+Explanation
+
+I started by researching many different ways to draw this shape, finding algorithms like "boundary fill",
+ "Bresenham's Line Algorithm," and the "line scan algorithm." I wanted to try the "line scan algorithm," 
+but it was very complicated and challenging. I decided to go with a simpler method based on the three 
+points from the EPS file. My plan was to color 20 pixels above the base, 20 pixels to the left of the 
+height, and 20 pixels below the hypotenuse. The most important part was the hypotenuse, as its thickness 
+had to be 20 pixels measured perpendicularly. To do this, I had to calculate the cosine of the angle. Since
+ the slope is 3/4 (for every 4 units I move right, I move 3 units up), the cosine is 4/5, or 0.8. This meant
+ the vertical thickness I needed to check for was actually 20 / 0.8 = 25 pixels.
+
+To implement this, I created an all-white 512x409 canvas and used nested for loops to check every single 
+pixel (x, y). I colored blue only if it passed a two-part test. First, it had to be part of one of those 
+three thick edge bands (0<=y<=20 for the base, 380<=x<=400 for the right edge, or 
+y_hyp -25<=y<=y_hyp for the hypotenuse). Second, it also had to be inside the triangle's boundaries, which
+ I checked with y >= 0, x <= 400, and y <= slope * x. I'm aware this method is highly inefficient because 
+it checks all 209,408 pixels, but it correctly implemented the geometric logic. I couldn't find a better way.

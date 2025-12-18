@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Intelligence & Analytics - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Business Intelligence & Analytics</h1>
+                <p class="page-subtitle">Automated analytics module for parsing transaction logs, visualizing sales
+                    velocity, and optimizing inventory levels.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Data Visualization</span>
+                    <span class="tech-tag">Business Analytics</span>
+                    <span class="tech-tag">Automation</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>In modern finance and commerce, decision-making is driven by data. This project demonstrates the
+                        ability to build an end-to-end analytics pipeline: from parsing raw transaction logs to
+                        generating actionable business intelligence reports.</p>
+                    <p>The module automates the calculation of sales velocity, identifies top-performing products, and
+                        triggers inventory reorder alerts based on statistical thresholds.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Implemented</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Data Aggregation</h3>
+                            <p>Processed raw time-stamped transaction logs to aggregate sales data by product and time
+                                period, handling gaps and anomalies in data.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Sales Velocity & Reporting</h3>
+                            <p>Defined and calculated KPIs like "Sales Velocity" to measure product performance and
+                                generated automated visual reports for stakeholders.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Inventory Optimization</h3>
+                            <p>Implemented logic to categorize inventory needs (High/Medium/Low priority) based on
+                                historical sales trends and current stock levels.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Technical Implementation</h2>
+                    <p>The implementation uses Matplotlib for visualization and standard libraries for efficient data
+                        parsing, prioritizing clean, modular code structure.</p>
+                    <div class="code-snippet">
+                        <pre><code># Automated Reorder Logic
+def generate_reorder_report():
+    print(f"\n {'='*60} \n 📊 REORDER REPORT (Last 30 Days) \n {'='*60}")
+    print(f"{'Product':<40} {'Sold':>10} {'Priority':>10}")
+
+    # Sort items by sales volume (Winner Items)
+    for item, qty in sorted(summary.items(), key=lambda x: x[1], reverse=True):
+        # Determine Priority Level based on sales velocity thresholds
+        if qty > 100: priority="HIGH"
+        elif qty > 50: priority="MEDIUM"
+        else: priority ="LOW"
+        
+        print(f"{item:<40} {qty:>10} {priority:>10}")</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
