@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed of Sound Measurement - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- MathJax for rendering LaTeX equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Speed of Sound Measurement</h1>
+                <p class="page-subtitle">Determination of the speed of sound in air using acoustic resonance in a
+                    variable-length column.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Acoustics</span>
+                    <span class="tech-tag">Resonance</span>
+                    <span class="tech-tag">Wave Harmonics</span>
+                    <span class="tech-tag">Experimental Physics</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>This experiment utilizes the phenomenon of acoustic resonance to measure the speed of sound $v$
+                        in air. By adjusting the length of an air column driven by a tuning fork of known frequency $f$,
+                        standing waves are generated at specific harmonic lengths.</p>
+                    <p>The relationship $v = f\lambda$ allows for the calculation of wave speed by identifying the nodes
+                        and antinodes of the standing wave pressure distribution.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Investigated</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Standing Wave Resonance</h3>
+                            <p>Identified the fundamental frequency and higher harmonics in an open-closed pipe system,
+                                satisfying the boundary condition $L = \frac{n\lambda}{4}$ (for odd $n$).</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>End Correction</h3>
+                            <p>Accounted for the "end correction" factor—the fact that the pressure antinode forms
+                                slightly outside the open end of the tube—to improve measurement accuracy.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Temperature Dependence</h3>
+                            <p>Compared experimental results with the theoretical speed of sound, which varies with
+                                temperature as $v \approx 331 + 0.6T$ m/s.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Full Documentation</h2>
+                    <p>The report includes data on harmonic lengths, resonance calculations, and temperature
+                        adjustments.</p>
+                    <div class="pdf-container">
+                        <iframe src="../Physics & Experimental Modeling/Outoflab_speed_of_sound.pdf" width="100%"
+                            height="800px" frameborder="0">
+                            <p>Your browser does not support PDFs. <a
+                                    href="../Physics & Experimental Modeling/Outoflab_speed_of_sound.pdf">Download
+                                    the PDF</a> instead.</p>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

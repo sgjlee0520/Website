@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radioactive Decay Analysis - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- MathJax for rendering LaTeX equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Radioactive Decay Analysis</h1>
+                <p class="page-subtitle">Statistical modeling of random nuclear events using Geiger-Muller counters to
+                    determine half-lives and verify Poisson distributions.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Nuclear Physics</span>
+                    <span class="tech-tag">Statistical Analysis</span>
+                    <span class="tech-tag">Distributions</span>
+                    <span class="tech-tag">Error Analysis</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>Radioactive decay is an inherently stochastic process, impossible to predict for a single atom
+                        but statistically deterministic for large populations. This project investigates the exponential
+                        decay law $N(t) = N_0 e^{-\lambda t}$ using a Geiger-Muller counter.</p>
+                    <p>I focused on verifying that the random arrival times of decay products followed a <strong>Poisson
+                            Distribution</strong> ($\sigma \approx \sqrt{N}$), distinguishing true signal from
+                        background radiation noise. The experiment also determined the half-life $t_{1/2} =
+                        \ln(2)/\lambda$ of a short-lived isotope.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Investigated</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Poisson Statistics</h3>
+                            <p>Proved that nuclear decay events are independent and random by fitting experimental
+                                histograms to Poisson and Gaussian curves, validating the $\sqrt{N}$ error
+                                approximation.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Half-Life Determination</h3>
+                            <p>Used linear regression on semi-log plots ($\ln(Activity)$ vs. Time) to extract the decay
+                                constant $\lambda$ and calculate the precise half-life of the sample.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Background Subtraction</h3>
+                            <p>Implemented rigorous background radiation subtraction techniques to isolate the sample's
+                                activity, a critical step for low-activity signal processing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Full Documentation</h2>
+                    <p>This report details the statistical methods used to validate the stochastic nature of quantum
+                        decay events.</p>
+                    <div class="pdf-container">
+                        <iframe src="../Physics & Experimental Modeling/20CL_RA.pdf" width="100%" height="800px"
+                            frameborder="0">
+                            <p>Your browser does not support PDFs. <a
+                                    href="../Physics & Experimental Modeling/20CL_RA.pdf">Download
+                                    the PDF</a> instead.</p>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franck-Hertz Experiment - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- MathJax for rendering LaTeX equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Franck-Hertz Experiment</h1>
+                <p class="page-subtitle">Experimental verification of the Bohr model and quantum energy states through
+                    inelastic electron collisions.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Quantum Physics</span>
+                    <span class="tech-tag">Experimental Modeling</span>
+                    <span class="tech-tag">Data Analysis</span>
+                    <span class="tech-tag">Bohr Model</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>The Franck-Hertz experiment is a cornerstone of quantum mechanics, providing the first direct
+                        experimental proof of the Bohr model of the atom. In this project, I measured the quantized
+                        energy loss of electrons colliding with Mercury (Hg) and Neon (Ne) atoms.</p>
+                    <p>By analyzing the current-voltage ($I-V$) characteristics, I observed distinct periodic drops in
+                        current, corresponding to the electrons transferring exactly enough kinetic energy to excite the
+                        atoms to their next energy state. This verified the discrete nature of atomic energy levels,
+                        governed by the relation $E = h\nu$.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Investigated</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Quantum Quantization</h3>
+                            <p>Observed that energy transfer is not continuous but discrete. Electrons only lose energy
+                                when their kinetic energy measured experimentally ($K = eV$) matches the excitation
+                                energy of the atom.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Inelastic Collisions</h3>
+                            <p>Analyzed the mechanics of electron-atom scattering. Below the critical threshold,
+                                collisions are elastic; at the threshold, they become inelastic, causing the electron to
+                                lose almost all momentum.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Mean Free Path</h3>
+                            <p>Investigated how factors like temperature and gas pressure affect the mean free path of
+                                electrons, influencing the sharpness and spacing of the interference peaks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Full Documentation</h2>
+                    <p>This report contains detailed data tables, error analysis, and theoretical derivations linking
+                        the observed voltage drops to the fundamental Planck constant.</p>
+                    <div class="pdf-container">
+                        <iframe src="../Physics & Experimental Modeling/20CL_FH-1.pdf" width="100%" height="800px"
+                            frameborder="0">
+                            <p>Your browser does not support PDFs. <a
+                                    href="../Physics & Experimental Modeling/20CL_FH-1.pdf">Download
+                                    the PDF</a> instead.</p>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
