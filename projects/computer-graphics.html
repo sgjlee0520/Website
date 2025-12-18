@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Graphics & Algorithms - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Computer Graphics & Algorithms</h1>
+                <p class="page-subtitle">Visualizing complex systems through mathematical computing: from rasterizing
+                    primitives to generating recursive fractals.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Python (NumPy)</span>
+                    <span class="tech-tag">Fractal Geometry</span>
+                    <span class="tech-tag">Rasterization</span>
+                    <span class="tech-tag">Linear Algebra</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>Computer graphics bridges the gap between abstract mathematics and visual perception. This
+                        project explores fundamental algorithms for rendering images from code.</p>
+                    <p>It includes a low-level implementation of <strong>Rasterization</strong> (converting vector
+                        shapes into pixels) and a high-performance visualizer for the <strong>Mandelbrot Set</strong>,
+                        optimizing complex number calculations using NumPy vectorization.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Implemented</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Vectorization</h3>
+                            <p>Optimized the Mandelbrot generation by operating on entire 2D grids of complex numbers
+                                simultaneously, replacing slow Python loops with C-optimized NumPy arrays.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Rasterization</h3>
+                            <p>Implemented a scan-line algorithm logic to determine whether pixels lie within a
+                                mathematically defined triangle, manually handling anti-aliasing and edge cases.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Fractal Recursion</h3>
+                            <p>Visualized chaotic behavior where simple iterative rules ($z = z^2 + c$) give rise to
+                                infinitely complex boundary structures.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Source Code</h2>
+
+                    <h3>1. Mandelbrot Fractal (`p5_hw5.py`)</h3>
+                    <p>Generates high-resolution visualizations of the Mandelbrot set.</p>
+                    <div class="code-snippet">
+                        <pre><code>#!/usr/bin/env python3
+#before I begin, I want to say that first I will plot the mandelbrot via pyplot and then make a ps file with the exact scaling (image) of the part that I zoomed in the pyplot.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+#function of mandelbrot
+
+def mandelbrot(c, max_iter):
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z +c
+    return max_iter
+
+def mandelbrotset(xmin, xmax, ymin,ymax, width, height, max_iter):
+    x = np.linspace(xmin,xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    mset = np.zeros((height,width))
+    
+    for i in range(height):
+        for j in range(width):
+            c = complex(x[j],y[i])
+            mset[i,j] = mandelbrot(c, max_iter)
+    return mset
+
+width, height = 512, 384
+max_iter = 250
+xmin, xmax, ymin, ymax = -0.74625,-0.73875,0.10125,0.11375
+
+print("Generating Mandelbrot: ")
+print(f"Re axis: [{xmin},{xmax}] (range: {xmax - xmin})")
+print(f"Im axis: [{ymin},{ymax}] (range: {ymax - ymin})")
+print(f"Grid: {width}x{height}, Max iterations: {max_iter}\n")
+
+mandelbrot_image = mandelbrotset(xmin,xmax,ymin,ymax,width,height,max_iter)
+plt.imshow(mandelbrot_image, extent=[xmin,xmax,ymin,ymax], cmap = 'hot')
+plt.colorbar()
+plt.title('mandelbrot visualization')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.savefig("p5_hw5.ps")
+plt.show()</code></pre>
+                    </div>
+
+                    <h3>2. Triangle Rasterization (`p4_hw5.py`)</h3>
+                    <p>Low-level implementation of drawing a triangle pixel-by-pixel.</p>
+                    <div class="code-snippet">
+                        <pre><code>#!/usr/bin/env python3
+
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+
+X, Y = 512, 409
+lw = 20
+base_x1, base_y1 = 0, 0
+base_x2, base_y2 = 400, 0
+top_x, top_y = 400, 300
+slope = 3 / 4
+color = (0, 0, 255)        
+bg_color = (255, 255, 255) 
+offset = 48
+half_lw = lw//2
+total_offset = offset+half_lw
+save_name = "p4_hw5_rt345_raster.tif"
+
+hyp_thickness = int(lw/0.8) #cos of angle is 0.8)
+
+#Setting white canvas
+pvals = np.full((X, Y, 3), bg_color, dtype='uint8')
+
+# Draw
+for x in range(X):
+    for y in range(Y):
+        rel_x = x-total_offset
+        rel_y = y-total_offset
+        y_hyp = slope * rel_x
+        if (0 <= rel_y <= lw) or (y_hyp - hyp_thickness <= rel_y <= y_hyp) or (top_x - lw <= rel_x <= top_x):
+            if rel_y <= slope * rel_x and rel_x <= top_x and rel_y >= 0:
+                pvals[x, y, :] = color
+
+plotarr = np.flipud(pvals.transpose(1, 0, 2))
+f1, ax1 = plt.subplots()
+ax1.imshow(plotarr, interpolation='none')
+ax1.axis('off')
+plt.show()
+
+# Save image
+im = Image.fromarray(plotarr, 'RGB')
+im.save(save_name)
+print(f'Image saved to {save_name}')
+input("\nPress Enter to exit...\n")</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

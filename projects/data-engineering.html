@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Engineering & Web Scraping - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Data Engineering & Web Scraping</h1>
+                <p class="page-subtitle">A comparative implementation of the entire data acquisition stack: from Bash
+                    scripting to Raw Sockets and High-Level APIs.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Bash Scripting</span>
+                    <span class="tech-tag">TCP Sockets</span>
+                    <span class="tech-tag">Python Requests</span>
+                    <span class="tech-tag">HTML Parsing</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>In data engineering, understanding the layers of abstraction is crucial for optimization and
+                        debugging. This project demonstrates the full stack of data acquisition by implementing the
+                        exact same web scraper in three distinct layers.</p>
+                    <p>By extracting a specific data point ("Latest Update Date") from a university endpoint, I
+                        benchmarked the complexity and control offered by <strong>Shell Scripting</strong> (fastest
+                        prototyping), <strong>Raw TCP Sockets</strong> (maximum control), and <strong>High-Level
+                            APIs</strong> (production standard).</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Implemented</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>Shell Scripting (Layer 1)</h3>
+                            <p>Used `wget`, `grep`, and `sed` to pipe HTTP streams directly into text processors,
+                                demonstrating Unix philosophy for rapid data extraction.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Raw Sockets (Layer 2)</h3>
+                            <p>Manually constructed HTTP GET requests and parsed raw byte streams over TCP, handling
+                                connection handshakes and buffering without external libraries.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>High-Level APIs (Layer 3)</h3>
+                            <p>Utilized the `requests` library to abstract connection pooling and encoding handling,
+                                representing the industry standard for maintainable scrapers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Source Code Comparison</h2>
+
+                    <h3>1. Shell Script (`p4_hw6.sh`)</h3>
+                    <p>concise, effectively using regex for extraction.</p>
+                    <div class="code-snippet">
+                        <pre><code>#!/bin/bash
+
+URL="https://web.physics.ucsb.edu/~phys129/lipman/"
+
+echo "URL: $URL"
+
+wget -q -O - "$URL" | grep -i "Latest update" | sed -e 's/.*">//' -e 's/<.*//' -e 's/&nbsp;/ /g'</code></pre>
+                    </div>
+
+                    <h3>2. Raw TCP Sockets (`p5_hw6.py`)</h3>
+                    <p>Manual HTTP implementation showing full control over the byte stream.</p>
+                    <div class="code-snippet">
+                        <pre><code>#!/usr/bin/env python3
+#I am using a lot of codes from the client.py file
+import sys
+import os
+import socket
+
+def open_connection(ipn, prt):
+   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   connect_error = s.connect_ex((ipn, prt))
+   if connect_error:
+      if connect_error == 111:
+         print('Connection refused.  Check address and try again.', file=sys.stderr)
+         sys.exit(1)
+      else:
+         print('Error %d connecting to %s:%d' % (connect_error,ipn,prt), file=sys.stderr)
+         sys.exit(1)
+   return(s)
+
+def receive_data(thesock, nbytes):
+   dstring = b''
+   rcount = 0 
+   thesock.settimeout(5)
+   while rcount < nbytes:
+      try:
+         somebytes = thesock.recv(min(nbytes - rcount, 8192))
+      except socket.timeout:
+         print('Connection timed out.', file = sys.stderr)
+         break
+      if somebytes == b'':
+         print('Connection closed', file = sys.stderr)
+         break
+      rcount = rcount + len(somebytes)
+      dstring = dstring + somebytes
+      
+   print('\n %d bytes received. \n' % rcount)
+   return(dstring)
+
+def find_announcement_date(html_text):
+   """Search for announcement update in HTML.
+   """
+   lines = html_text.split('\n')
+   for i, line in enumerate(lines):
+      if 'latest update' in line.lower():
+         if 'Latest update:' in line:
+            start = line.find('Latest update:')
+            end = line.find('</span>', start)
+            if end == -1:
+               end = line.find('</p>', start)
+            if end != -1:
+               line = line[start:end]
+            else:
+               line = line[start:]
+         
+         cleanline = line.strip()
+         while '<' in cleanline and '>' in cleanline:
+            start_tag = cleanline.find('<')
+            end_tag = cleanline.find('>', start_tag)
+            if end_tag != -1:
+               cleanline = cleanline[:start_tag] + cleanline[end_tag+1:]
+            else:
+               break
+         
+         cleanline = cleanline.replace('&nbsp;', ' ')
+         print(cleanline.strip())
+         return
+
+
+if __name__ == '__main__':
+   ipnum = 'web.physics.ucsb.edu'
+   port = 80
+   thesocket = open_connection(ipnum, port)
+   http_request = b'GET /~phys129/lipman/ HTTP/1.0\r\n\r\n'
+   thesocket.sendall(http_request)
+   indata = receive_data(thesocket, 8192)
+   thesocket.shutdown(socket.SHUT_RDWR)
+   thesocket.close()
+   datastring = indata.decode('utf-8', errors='ignore')
+   find_announcement_date(datastring)</code></pre>
+                    </div>
+
+                    <h3>3. Requests Library (`p6_hw6.py`)</h3>
+                    <p>Production-grade implementation using high-level abstractions.</p>
+                    <div class="code-snippet">
+                        <pre><code>#!/usr/bin/env python3
+
+import requests
+
+response = requests.get('http://web.physics.ucsb.edu/~phys129/lipman/')
+
+for line in response.text.split('\n'):
+    if 'Latest update:' in line:
+        start = line.find('Latest update:')
+        end = line.find('</span>', start)
+        if end != -1:
+            line = line[start:end]
+        while '<' in line:
+            line = line[:line.find('<')] + line[line.find('>')+1:]
+        print(line.replace('&nbsp;', ' ').strip())
+        break</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

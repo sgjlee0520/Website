@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- MathJax for rendering LaTeX equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -90,24 +94,99 @@
                 </div>
 
                 <div class="content-block">
-                    <h2>Technical Implementation</h2>
-                    <p>The core algorithm utilizes NumPy's vectorized operations for high-performance random number
-                        generation and processing.</p>
+                    <h2>Source Code</h2>
+
+                    <h3>1. Monte Carlo Integration vs Riemann Sum (`p4_hw9.py`)</h3>
                     <div class="code-snippet">
-                        <pre><code># Vectorized Monte Carlo Estimation of Pi
+                        <pre><code>#!/usr/bin/env python3
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+KNOWN_VALUE = np.sqrt(np.pi)
+LIMIT = 10.0  
+
+def riemann_sum(N):
+    dx = (2 * LIMIT) / N
+    x_rect = np.linspace(-LIMIT, LIMIT - dx, N)
+    y_rect = np.exp(-x_rect**2)
+    return dx * np.sum(y_rect)
+
+def monte_carlo_simulation(N):
+    x_mc = np.random.uniform(-LIMIT, LIMIT, N)
+    return (2 * LIMIT) * np.mean(np.exp(-x_mc**2))
+
+def main():
+    N_values = np.logspace(1, 6, 20, dtype=int)
+    rect_errors = []
+    mc_errors = []
+    for N in N_values:
+        #part a
+        rect_val = riemann_sum(N)
+        r_err = (rect_val - KNOWN_VALUE) / KNOWN_VALUE
+        rect_errors.append(abs(r_err))
+
+        #part b
+        mc_val = monte_carlo_simulation(N)
+        m_err = (mc_val - KNOWN_VALUE) / KNOWN_VALUE
+        mc_errors.append(abs(m_err))
+
+    #part a
+    plt.loglog(N_values, rect_errors, 
+               color='blue', linestyle='none', marker='o', 
+               label='Rectangle Method (Left Sum)')
+    
+    plt.xlabel('Number of Rectangles (N)')
+    plt.ylabel('Fractional Error (Absolute)')
+    plt.title(r'Riemann Sum Error for $\int e^{-x^2} dx$')
+    plt.legend()
+    plt.savefig('p4_hw9_integration.eps')
+    plt.close()
+
+    #part b
+    plt.loglog(N_values, mc_errors, 
+               color='red', linestyle='none', marker='s', 
+               label='Monte Carlo Simulation')
+
+    plt.xlabel('Number of Random Points (N)')
+    plt.ylabel('Fractional Error (Absolute)')
+    plt.title(r'Monte Carlo Error for $\int e^{-x^2} dx$')
+    plt.legend()
+    plt.savefig('p4_hw9_monte_carlo.eps')
+    plt.close()
+
+if __name__ == "__main__":
+    main()</code></pre>
+                    </div>
+
+                    <h3>2. Pi Estimation Convergence (`Monte_Carlo_Convergence_of_pi.py`)</h3>
+                    <div class="code-snippet">
+                        <pre><code>#!/usr/bin/env python3
+import numpy as np
+import matplotlib.pyplot as plt
+
+N_min=100
+N_max=100000
+
+N_values = np.geomspace(N_min, N_max, num=50, dtype=int) #I can also use np.logspace but found out that np.geomspace is better
+fractional_errors = []
+
 for N in N_values:
-    # Generate random points in a 2x2 square centered at (1,1)
     points = np.random.uniform(0, 2, (N, 2))
-    
-    # Calculate squared distance from center
-    dist_sq = np.sum((points - 1)**2, axis=1)
-    
-    # Estimate Area/Pi: Ratio of points inside circle
+    dist_sq = np.sum((points- 1)**2, axis=1)
     pi_est = 4 * np.mean(dist_sq <= 1)
-    
-    # Calculate fractional error
-    error = np.abs(pi_est - np.pi) / np.pi
-    fractional_errors.append(error)</code></pre>
+    error = np.abs(pi_est-np.pi) /np.pi
+    fractional_errors.append(error)
+
+plt.figure(figsize=(8, 6))
+plt.plot(N_values, fractional_errors, 'o-')
+plt.xscale('log') 
+plt.yscale('log')
+plt.xlabel('Number of Points $N$')
+plt.ylabel('Fractional Error in $\pi$')
+plt.title('Monte Carlo Convergence of $\pi$')
+plt.savefig('Monte_Carlo_Convergence_of_pi.eps', format='eps')
+plt.show()</code></pre>
                     </div>
                 </div>
 

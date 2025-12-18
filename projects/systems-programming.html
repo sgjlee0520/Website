@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systems Programming & Concurrency - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active">Projects</a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link">Writing & Interests</a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Systems Programming & Concurrency</h1>
+                <p class="page-subtitle">Exploration of low-level OS concepts including socket lifecycle management,
+                    process forking, and multi-threaded UI applications.</p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Python (Sockets)</span>
+                    <span class="tech-tag">Multithreading</span>
+                    <span class="tech-tag">Unix Process Forking</span>
+                    <span class="tech-tag">Networking Protocols</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2>Project Overview</h2>
+                    <p>This collection of scripts demonstrates fundamental systems programming concepts. By interacting
+                        directly with OS-level APIs, I built robust networking tools and concurrent applications that
+                        manage shared resources and process states.</p>
+                    <p>The project covers the implementing of a raw TCP server, managing the "Zombie Process" lifecycle
+                        through forking, and building a thread-safe real-time plotting application where the UI loop is
+                        decoupled from Input I/O.</p>
+                </div>
+
+                <div class="content-block">
+                    <h2>Key Concepts Implemented</h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3>TCP Socket Lifecycle</h3>
+                            <p>Handled low-level socket operations (`bind`, `listen`, `accept`, `shutdown`) to create a
+                                robust Time Server that adheres to TCP protocols.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Process Forking</h3>
+                            <p>Demonstrated Unix process management by using `os.fork()` to spawn child processes,
+                                executing system commands (`ls -l`) concurrently with the parent.</p>
+                        </div>
+                        <div class="concept-card">
+                            <h3>Thread-Safe UI</h3>
+                            <p>Implemented a multi-threaded architecture where a daemon thread handles blocking user
+                                input while the main thread renders real-time animations, preventing UI freezes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>Source Code</h2>
+
+                    <h3>1. TCP Time Server (`p7_hw6.py`)</h3>
+                    <p>A server that binds to a port and serves the current time to connected clients.</p>
+                    <div class="code-snippet">
+                        <pre><code>#!/usr/bin/env python3
+#I am using code from server.py
+import socket
+import time
+
+def bind_port(prt):
+   """Create socket and bind to port prt.
+   """
+   host = ''  
+   s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+   s.bind((host, prt))
+   s.listen(1)
+   return(s)
+    
+if __name__ == '__main__':
+   port = 55555
+   print('Time Server starting on port %d...' % port)
+   print('Press Ctrl+C to stop the server.')
+   thesocket = bind_port(port)
+   while True:
+      connection, peer = thesocket.accept()
+      current_time = time.ctime()
+      message = '\n\nCurrent time: %s\n\n' % current_time
+      outdata = message.encode('utf-8')
+      print('Sending time to %s...' % repr(peer), end='')
+      connection.sendall(outdata) 
+      print('Done.')
+      connection.shutdown(socket.SHUT_RDWR)
+      connection.close()</code></pre>
+                    </div>
+
+                    <h3>2. Process Forking (`p4_b_hw8.py`)</h3>
+                    <p>Spawns a child process every 10 iterations to execute a system command.</p>
+                    <div class="code-snippet">
+                        <pre><code>#!/usr/bin/env python3
+import os
+import time
+
+i = 1
+while True:
+    print(i)    
+    if i % 10 == 0:
+        print("About to fork...")
+        retval = os.fork()        
+        if retval == 0:  
+            print("Child process: About to execute ls -l")
+            os.execv('/bin/ls', ['ls', '-l'])
+    time.sleep(0.5)
+    i += 1</code></pre>
+                    </div>
+
+                    <h3>3. Threaded Real-Time Plotter (`p5_hw8.py`)</h3>
+                    <p>Updates a live graph based on user input without blocking the animation loop.</p>
+                    <div class="code-snippet">
+                        <pre><code>#!/usr/bin/env python3
+# using logic from thread_example
+
+import numpy as np
+from matplotlib.lines import Line2D
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import time
+import threading
+import sys
+
+current_val = 0.0
+
+def get_input():
+    """Continuously prompts user for input to update global variable."""
+    global current_val
+    print("Plot running. Enter numbers to update. The range of y-values visible in this graph is from -10 to 10 so keep that in mind.")
+    while True:
+        try:
+            current_val = float(input("New value: "))
+        except ValueError:
+            print("Input must be a number.", file=sys.stderr)
+
+class Scope():
+    def __init__(self, ax, maxt=10, dt=0.02):
+        self.ax = ax
+        self.dt = dt
+        self.maxt = maxt
+        self.tdata = np.array([])
+        self.ydata = np.array([])
+        self.t0 = time.perf_counter()
+        self.line = Line2D(self.tdata, self.ydata)
+        self.ax.add_line(self.line)
+        self.ax.set_ylim(-10, 10) 
+        self.ax.set_xlim(0, self.maxt)
+
+    def update(self, data):
+        t, y = data
+        self.tdata = np.append(self.tdata, t)
+        self.ydata = np.append(self.ydata, y)
+        self.ydata = self.ydata[self.tdata > (t - self.maxt)]
+        self.tdata = self.tdata[self.tdata > (t - self.maxt)]
+        self.line.set_data(self.tdata, self.ydata)
+        if len(self.tdata) > 0:
+            self.ax.set_xlim(self.tdata[0], self.tdata[0] + self.maxt) 
+        self.ax.figure.canvas.draw()
+        return self.line,
+
+    def emitter(self):
+        while True:
+            t = time.perf_counter() - self.t0
+            yield t, current_val
+
+if __name__ == '__main__':
+    input_thr = threading.Thread(target=get_input)
+    input_thr.daemon = True 
+    input_thr.start()
+    dt = 0.01
+    fig, ax = plt.subplots()
+    scope = Scope(ax, maxt=10, dt=dt)
+    ani = animation.FuncAnimation(fig, scope.update, scope.emitter, interval=dt*1000., blit=True)
+    plt.show()</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/songgun-lee" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

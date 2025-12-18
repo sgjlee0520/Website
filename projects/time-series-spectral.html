@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- MathJax for rendering LaTeX equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -69,6 +72,68 @@
                                 mean-reverting stochastic processes used in financial volatility modeling.</p>
                         </div>
                         <div class="concept-card">
+                            <h3>Source Code: Solar Cell FFT Analysis (`p5_hw7.py`)</h3>
+                            <div class="code-snippet">
+                                <pre><code>#!/usr/bin/env python3
+#
+# Using FFT method
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+#part (a)
+FS = 920
+input_filename = 'solarcell_data.txt'
+print('Reading data from %s...' % input_filename)
+data = np.loadtxt(input_filename)
+print('Successfully read %d data points.' % len(data))
+print()
+
+#part (b)
+npts = len(data)
+data = data-np.mean(data) #removing DC components (average voltage)
+ft = np.fft.fft(data, n=16*npts)
+ftnorm = np.abs(ft)
+ps = ftnorm**2
+freqs = np.fft.fftfreq(len(ps), 1.0/FS)
+time = np.arange(npts) /FS 
+f1, ax1 = plt.subplots()
+ax1.plot(time, data)
+ax1.set_xlabel('Time (s)')
+ax1.set_ylabel('Voltage (V)')
+ax1.set_title('Solar Cell Voltage vs Time')
+f1.show()
+
+f2, ax2 = plt.subplots()
+ax2.plot(freqs, ps)
+ax2.set_xlim(0, 200)
+ax2.set_xlabel('Frequency (Hz)')
+ax2.set_ylabel('Power')
+ax2.set_title('Power Spectrum of Solar Cell Signal')
+f2.show()
+
+# part (c)
+eps_filename = 'power_spectrum_fft.eps'
+print('Saving power spectrum to %s...' % eps_filename)
+f2.savefig(eps_filename, format='eps')
+print('Plot saved successfully.')
+print()
+
+real_freq = freqs > 0.5  # Exclude DC and very low frequencies
+real_freqs = freqs[real_freq]
+real_ps = ps[real_freq]
+
+# Find the peak
+max_idx = np.argmax(real_ps)
+fundamental_freq = real_freqs[max_idx]
+max_power = real_ps[max_idx]
+
+print('Fundamental frequency: %.2f Hz' % fundamental_freq)
+print('Power at fundamental frequency: %.2e' % max_power)
+print()
+
+input("Press <Enter> to exit...\n")</code></pre>
+                            </div>
                             <h3>Part 2: Frequency-Domain Analysis (Solar FFT)</h3>
                             <p><strong>Objective:</strong> Identified dominant frequency components in high-speed
                                 voltage sensor data.</p>
