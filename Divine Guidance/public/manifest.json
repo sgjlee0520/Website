@@ -1,0 +1,24 @@
+{
+    "name": "Divine Guidance",
+    "short_name": "Divine Guidance",
+    "description": "Seek comfort and wisdom through divine guidance. Get Bible verses and homilies for your worries.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#FFDB58",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
