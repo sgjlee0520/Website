@@ -12,12 +12,17 @@
 </head>
 
 <body>
-    <!-- Navigation Header -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Songgun Lee</a>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Physics Student &<br>Aspiring Quantitative Analyst</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link active">Home</a>
@@ -38,101 +43,128 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
             </div>
+            <p class="copyright">&copy; 2024 Songgun Lee.</p>
         </div>
-    </nav>
+    </aside>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Songgun Lee</h1>
-                <p class="hero-tagline">Physics Student & Aspiring Quantitative Analyst</p>
-                <p class="hero-summary">Junior at UC Santa Barbara applying computational modeling and machine learning
-                    to solve complex problems in finance.</p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn btn-primary">View My Projects</a>
-                    <a href="resume.html" class="btn btn-secondary">Read My Resume</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
-    <!-- Featured Projects Section -->
-    <section class="featured-projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Software Engineering & Data Science/images/warehouse_system.png"
-                            alt="Automated Warehouse Inventory System">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Automated Warehouse Inventory System (Capstone)</h3>
-                        <p class="project-description">Architected a full-stack inventory management system using
-                            Python/Tkinter. Features event-driven GUI and USB hardware integration.</p>
-                        <a href="projects/warehouse-inventory.html" class="project-link">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Finance & Quantitative Analysis/images/pde_config_1.png" alt="Numerical PDE Solver">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Numerical PDE Solver</h3>
-                        <p class="project-description">Developed a numerical solver for Partial Differential Equations
-                            (PDEs) using the Relaxation Method, applicable to option pricing models.</p>
-                        <a href="projects/numerical-pde-solver.html" class="project-link">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Finance & Quantitative Analysis/images/hypothesis_testing.png"
-                            alt="Stochastic Process Modeling">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Stochastic Process Modeling</h3>
-                        <p class="project-description">Modeled rare-event probabilities using Binomial and Poisson
-                            distributions; performed statistical hypothesis testing.</p>
-                        <a href="projects/stochastic-poisson.html" class="project-link">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Finance & Quantitative Analysis/images/monte_carlo_pi.png" alt="Monte Carlo Methods">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Monte Carlo Methods & Stochastic Calculus</h3>
-                        <p class="project-description">Implemented Monte Carlo simulations to solve deterministic
-                            problems and analyzed convergence rates against theoretical predictions.</p>
-                        <a href="projects/monte-carlo-stochastic.html" class="project-link">Learn More</a>
+    <!-- Main Content Wrapper -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Songgun Lee</h1>
+                    <p class="hero-tagline">Physics Student & Aspiring Quantitative Analyst</p>
+                    <p class="hero-summary">Junior at UC Santa Barbara applying computational modeling and machine
+                        learning
+                        to solve complex problems in finance.</p>
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn btn-primary">View My Projects</a>
+                        <a href="resume.html" class="btn btn-secondary">Read My Resume</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/sgjlee0520-562991227/" target="_blank"
-                        rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <!-- Featured Projects Section -->
+        <section class="featured-projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="Software Engineering & Data Science/images/warehouse_system.png"
+                                alt="Automated Warehouse Inventory System">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Automated Warehouse Inventory System (Capstone)</h3>
+                            <p class="project-description">Architected a full-stack inventory management system using
+                                Python/Tkinter. Features event-driven GUI and USB hardware integration.</p>
+                            <a href="projects/warehouse-inventory.html" class="project-link">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="Finance & Quantitative Analysis/images/pde_config_1.png"
+                                alt="Numerical PDE Solver">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Numerical PDE Solver</h3>
+                            <p class="project-description">Developed a numerical solver for Partial Differential
+                                Equations
+                                (PDEs) using the Relaxation Method, applicable to option pricing models.</p>
+                            <a href="projects/numerical-pde-solver.html" class="project-link">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="Finance & Quantitative Analysis/images/hypothesis_testing.png"
+                                alt="Stochastic Process Modeling">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Stochastic Process Modeling</h3>
+                            <p class="project-description">Modeled rare-event probabilities using Binomial and Poisson
+                                distributions; performed statistical hypothesis testing.</p>
+                            <a href="projects/stochastic-poisson.html" class="project-link">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="Finance & Quantitative Analysis/images/monte_carlo_pi.png"
+                                alt="Monte Carlo Methods">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Monte Carlo Methods & Stochastic Calculus</h3>
+                            <p class="project-description">Implemented Monte Carlo simulations to solve deterministic
+                                problems and analyzed convergence rates against theoretical predictions.</p>
+                            <a href="projects/monte-carlo-stochastic.html" class="project-link">Learn More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Footer (Simplified for main content area) -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>

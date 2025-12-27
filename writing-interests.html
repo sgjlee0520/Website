@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Navigation Header -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Songgun Lee</a>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Physics Student &<br>Aspiring Quantitative Analyst</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
@@ -36,21 +43,47 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
             </div>
+            <p class="copyright">&copy; 2024 Songgun Lee.</p>
         </div>
-    </nav>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
     <!-- Writing & Interests Page Content -->
-    <main class="writing-interests-page">
+    <main class="main-content writing-interests-page">
         <!-- Hero Section -->
         <section class="page-hero">
             <div class="container">
                 <h1 class="page-title">Writing & Interests</h1>
-                <p class="page-subtitle">Exploring ideas at the intersection of technology, finance, and personal growth.</p>
+                <p class="page-subtitle">Exploring ideas at the intersection of technology, finance, and personal
+                    growth.</p>
             </div>
         </section>
 
@@ -61,42 +94,46 @@
                 <div class="articles-grid">
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="article-date">October 2024</span>
-                            <span class="article-category">Technical Analysis</span>
+                            <span class="article-date">May 4, 2025</span>
+                            <span class="article-category">Philosophy</span>
                         </div>
-                        <h3 class="article-title">Understanding Monte Carlo Methods in Financial Risk Assessment</h3>
-                        <p class="article-excerpt">A deep dive into how Monte Carlo simulations can be applied to portfolio risk analysis, exploring the mathematical foundations and practical implementation challenges.</p>
-                        <a href="#" class="article-link">Read More</a>
+                        <h3 class="article-title">Why Altruism is a Mental Illness</h3>
+                        <p class="article-excerpt">Exploring the difference between wise selfishness and foolish
+                            selfishness, and why blind altruism can be more dangerous than honest self-interest.</p>
+                        <a href="writings/altruism.html" class="article-link">Read More</a>
                     </article>
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="article-date">September 2024</span>
-                            <span class="article-category">Project Reflection</span>
+                            <span class="article-date">March 30, 2025</span>
+                            <span class="article-category">Photography</span>
                         </div>
-                        <h3 class="article-title">Building My First IoT System: Lessons from Raspberry Pi</h3>
-                        <p class="article-excerpt">Reflecting on the challenges and insights gained while building an environmental monitoring system using Raspberry Pi, from hardware setup to data visualization.</p>
-                        <a href="#" class="article-link">Read More</a>
+                        <h3 class="article-title">My Philosophy in Photography</h3>
+                        <p class="article-excerpt">Why I press the shutter—capturing the fleeting present, the world as
+                            I experience it, without editing. You are a spectator inside my eyeball.</p>
+                        <a href="writings/photography.html" class="article-link">Read More</a>
                     </article>
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="article-date">August 2024</span>
-                            <span class="article-category">Book Review</span>
+                            <span class="article-date">December 25, 2024</span>
+                            <span class="article-category">Life Philosophy</span>
                         </div>
-                        <h3 class="article-title">"The Intelligent Investor" - A Physics Student's Perspective</h3>
-                        <p class="article-excerpt">How Benjamin Graham's principles of value investing align with systematic thinking and quantitative analysis, viewed through the lens of a physics background.</p>
-                        <a href="#" class="article-link">Read More</a>
+                        <h3 class="article-title">How to Throw Your Life Away</h3>
+                        <p class="article-excerpt">On the dangers of living without self-discovery, the importance of
+                            failure in your 20s, and finding your "genius zone."</p>
+                        <a href="writings/throw-life-away.html" class="article-link">Read More</a>
                     </article>
 
                     <article class="article-card">
                         <div class="article-meta">
-                            <span class="article-date">July 2024</span>
-                            <span class="article-category">Technical Analysis</span>
+                            <span class="article-date">December 14, 2024</span>
+                            <span class="article-category">Buddhism & Stoicism</span>
                         </div>
-                        <h3 class="article-title">From Quantum Mechanics to Quantitative Finance</h3>
-                        <p class="article-excerpt">Exploring the surprising parallels between quantum uncertainty and market volatility, and how physics principles can inform financial modeling approaches.</p>
-                        <a href="#" class="article-link">Read More</a>
+                        <h3 class="article-title">Et tu Brute: How Could You Stab Me in the Back?</h3>
+                        <p class="article-excerpt">On the difference between pain and suffering, forgiving the
+                            unforgivable, and why the greatest pain often comes from our own minds.</p>
+                        <a href="writings/et-tu-brute.html" class="article-link">Read More</a>
                     </article>
                 </div>
             </div>
@@ -127,7 +164,7 @@
             <div class="container">
                 <h2 class="section-title">Beverage Reviews</h2>
                 <p class="section-intro">Documenting coffee, tea, wine, and whiskey experiences.</p>
-                
+
                 <!-- Coffee Reviews -->
                 <div class="beverage-category">
                     <h3 class="beverage-category-title">☕ Coffee</h3>
@@ -205,67 +242,79 @@
                 <div class="books-grid">
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="https://via.placeholder.com/200x300/004A99/FFFFFF?text=The+Intelligent+Investor" alt="The Intelligent Investor">
+                            <img src="https://via.placeholder.com/200x300/004A99/FFFFFF?text=The+Intelligent+Investor"
+                                alt="The Intelligent Investor">
                         </div>
                         <div class="book-info">
                             <h3 class="book-title">The Intelligent Investor</h3>
                             <p class="book-author">Benjamin Graham</p>
-                            <p class="book-summary">A comprehensive guide to value investing principles and systematic approaches to market analysis.</p>
+                            <p class="book-summary">A comprehensive guide to value investing principles and systematic
+                                approaches to market analysis.</p>
                         </div>
                     </div>
 
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="https://via.placeholder.com/200x300/2A7221/FFFFFF?text=Options+Futures+and+Other+Derivatives" alt="Options, Futures, and Other Derivatives">
+                            <img src="https://via.placeholder.com/200x300/2A7221/FFFFFF?text=Options+Futures+and+Other+Derivatives"
+                                alt="Options, Futures, and Other Derivatives">
                         </div>
                         <div class="book-info">
                             <h3 class="book-title">Options, Futures, and Other Derivatives</h3>
                             <p class="book-author">John C. Hull</p>
-                            <p class="book-summary">Mathematical foundations of derivative pricing and risk management strategies.</p>
+                            <p class="book-summary">Mathematical foundations of derivative pricing and risk management
+                                strategies.</p>
                         </div>
                     </div>
 
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="https://via.placeholder.com/200x300/333333/FFFFFF?text=The+Physics+of+Wall+Street" alt="The Physics of Wall Street">
+                            <img src="https://via.placeholder.com/200x300/333333/FFFFFF?text=The+Physics+of+Wall+Street"
+                                alt="The Physics of Wall Street">
                         </div>
                         <div class="book-info">
                             <h3 class="book-title">The Physics of Wall Street</h3>
                             <p class="book-author">James Owen Weatherall</p>
-                            <p class="book-summary">How physics concepts and mathematical models revolutionized financial markets.</p>
+                            <p class="book-summary">How physics concepts and mathematical models revolutionized
+                                financial markets.</p>
                         </div>
                     </div>
 
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="https://via.placeholder.com/200x300/004A99/FFFFFF?text=Machine+Learning+Yearning" alt="Machine Learning Yearning">
+                            <img src="https://via.placeholder.com/200x300/004A99/FFFFFF?text=Machine+Learning+Yearning"
+                                alt="Machine Learning Yearning">
                         </div>
                         <div class="book-info">
                             <h3 class="book-title">Machine Learning Yearning</h3>
                             <p class="book-author">Andrew Ng</p>
-                            <p class="book-summary">Practical insights for applying machine learning techniques to real-world problems.</p>
+                            <p class="book-summary">Practical insights for applying machine learning techniques to
+                                real-world problems.</p>
                         </div>
                     </div>
 
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="https://via.placeholder.com/200x300/2A7221/FFFFFF?text=Atomic+Habits" alt="Atomic Habits">
+                            <img src="https://via.placeholder.com/200x300/2A7221/FFFFFF?text=Atomic+Habits"
+                                alt="Atomic Habits">
                         </div>
                         <div class="book-info">
                             <h3 class="book-title">Atomic Habits</h3>
                             <p class="book-author">James Clear</p>
-                            <p class="book-summary">Building systematic approaches to personal development and continuous improvement.</p>
+                            <p class="book-summary">Building systematic approaches to personal development and
+                                continuous improvement.</p>
                         </div>
                     </div>
 
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="https://via.placeholder.com/200x300/333333/FFFFFF?text=Thinking+Fast+and+Slow" alt="Thinking, Fast and Slow">
+                            <img src="https://via.placeholder.com/200x300/333333/FFFFFF?text=Thinking+Fast+and+Slow"
+                                alt="Thinking, Fast and Slow">
                         </div>
                         <div class="book-info">
                             <h3 class="book-title">Thinking, Fast and Slow</h3>
                             <p class="book-author">Daniel Kahneman</p>
-                            <p class="book-summary">Understanding cognitive biases and decision-making processes in uncertain environments.</p>
+                            <p class="book-summary">Understanding cognitive biases and decision-making processes in
+                                uncertain environments.</p>
                         </div>
                     </div>
                 </div>
@@ -276,54 +325,62 @@
         <section class="photography-section">
             <div class="container">
                 <h2 class="section-title">Photography</h2>
-                <p class="photography-intro">Capturing moments through an analog lens, exploring the intersection of technology and timeless aesthetics.</p>
-                
+                <p class="photography-intro">Capturing moments through an analog lens, exploring the intersection of
+                    technology and timeless aesthetics.</p>
+
                 <div class="photography-gallery">
                     <div class="photo-item">
-                        <img src="https://via.placeholder.com/300x200/666666/FFFFFF?text=Analog+Photography" alt="Analog Photography">
+                        <img src="https://via.placeholder.com/300x200/666666/FFFFFF?text=Analog+Photography"
+                            alt="Analog Photography">
                         <div class="photo-overlay">
                             <p class="photo-caption">Urban Landscapes</p>
                         </div>
                     </div>
-                    
+
                     <div class="photo-item">
-                        <img src="https://via.placeholder.com/300x200/888888/FFFFFF?text=Street+Photography" alt="Street Photography">
+                        <img src="https://via.placeholder.com/300x200/888888/FFFFFF?text=Street+Photography"
+                            alt="Street Photography">
                         <div class="photo-overlay">
                             <p class="photo-caption">Street Moments</p>
                         </div>
                     </div>
-                    
+
                     <div class="photo-item">
-                        <img src="https://via.placeholder.com/300x200/AAAAAA/333333?text=Nature+Shots" alt="Nature Photography">
+                        <img src="https://via.placeholder.com/300x200/AAAAAA/333333?text=Nature+Shots"
+                            alt="Nature Photography">
                         <div class="photo-overlay">
                             <p class="photo-caption">Natural Forms</p>
                         </div>
                     </div>
-                    
+
                     <div class="photo-item">
-                        <img src="https://via.placeholder.com/300x200/CCCCCC/333333?text=Architecture" alt="Architecture Photography">
+                        <img src="https://via.placeholder.com/300x200/CCCCCC/333333?text=Architecture"
+                            alt="Architecture Photography">
                         <div class="photo-overlay">
                             <p class="photo-caption">Architectural Details</p>
                         </div>
                     </div>
-                    
+
                     <div class="photo-item">
-                        <img src="https://via.placeholder.com/300x200/DDDDDD/333333?text=Portrait" alt="Portrait Photography">
+                        <img src="https://via.placeholder.com/300x200/DDDDDD/333333?text=Portrait"
+                            alt="Portrait Photography">
                         <div class="photo-overlay">
                             <p class="photo-caption">Human Stories</p>
                         </div>
                     </div>
-                    
+
                     <div class="photo-item">
-                        <img src="https://via.placeholder.com/300x200/EEEEEE/333333?text=Abstract" alt="Abstract Photography">
+                        <img src="https://via.placeholder.com/300x200/EEEEEE/333333?text=Abstract"
+                            alt="Abstract Photography">
                         <div class="photo-overlay">
                             <p class="photo-caption">Abstract Forms</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="photography-link">
-                    <a href="https://songgun-photography.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Full Photography Portfolio</a>
+                    <a href="https://songgun-photography.com" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary">View Full Photography Portfolio</a>
                 </div>
             </div>
         </section>
@@ -335,7 +392,8 @@
             <div class="footer-content">
                 <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/sgjlee0520-562991227/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
@@ -344,4 +402,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
