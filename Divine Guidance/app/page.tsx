@@ -1,6 +1,14 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+
+interface JournalEntry {
+  id: string;
+  date: string;
+  worry: string;
+  type: 'verse' | 'homily';
+  content: string;
+}
 
 // Simple markdown parser for bold text
 function parseMarkdown(text: string) {
@@ -15,11 +23,72 @@ function parseMarkdown(text: string) {
 
 export default function Home() {
   const [worry, setWorry] = useState('');
-  const [stage, setStage] = useState<'input' | 'options' | 'loading' | 'result'>('input');
+  const [stage, setStage] = useState<'input' | 'options' | 'loading' | 'result' | 'journal'>('input');
   const [result, setResult] = useState('');
   const [loadingMessage, setLoadingMessage] = useState('');
   const [lastType, setLastType] = useState<'verse' | 'homily' | null>(null);
+  const [savedItems, setSavedItems] = useState<JournalEntry[]>([]);
+  const [copyFeedback, setCopyFeedback] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Load journal from local storage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('divine-journal');
+    if (saved) {
+      try {
+        setSavedItems(JSON.parse(saved));
+      } catch (e) {
+        console.error('Failed to parse journal', e);
+      }
+    }
+  }, []);
+
+  const saveEntry = () => {
+    const newEntry: JournalEntry = {
+      id: Date.now().toString(),
+      date: new Date().toLocaleDateString(),
+      worry,
+      type: lastType || 'verse',
+      content: result,
+    };
+
+    const updated = [newEntry, ...savedItems];
+    setSavedItems(updated);
+    localStorage.setItem('divine-journal', JSON.stringify(updated));
+    setCopyFeedback('Saved to Journal!');
+    setTimeout(() => setCopyFeedback(''), 2000);
+  };
+
+  const deleteEntry = (id: string) => {
+    const updated = savedItems.filter(item => item.id !== id);
+    setSavedItems(updated);
+    localStorage.setItem('divine-journal', JSON.stringify(updated));
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Divine Guidance',
+      text: `My Worry: "${worry}"\n\nGuidance:\n${result}\n\nSeek wisdom at: https://divine-guidance.vercel.app`,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.log('Error sharing', err);
+      }
+    } else {
+      handleCopy();
+    }
+  };
+
+  const handleCopy = () => {
+    const text = `My Worry: "${worry}"\n\nGuidance:\n${result}`;
+    navigator.clipboard.writeText(text).then(() => {
+      setCopyFeedback('Copied to Clipboard!');
+      setTimeout(() => setCopyFeedback(''), 2000);
+    });
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && worry.trim() !== '') {
@@ -80,10 +149,19 @@ export default function Home() {
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: '720px' }}>
 
         {stage === 'input' && (
-          <div className="animate-fade-in" style={{ textAlign: 'center' }}>
+          <div className="animate-fade-in" style={{ textAlign: 'center', width: '100%' }}>
             <h1 className="heading-divine" style={{ fontSize: '40px', marginBottom: '8px' }}>
               Share your burden
             </h1>
+            {savedItems.length > 0 && (
+              <button
+                onClick={() => setStage('journal')}
+                className="button-secondary"
+                style={{ margin: '16px auto 0' }}
+              >
+                📖 My Journal ({savedItems.length})
+              </button>
+            )}
           </div>
         )}
 
@@ -132,6 +210,69 @@ export default function Home() {
                 </p>
               ))}
             </div>
+
+            {/* Action Bar: Copy, Share, Save */}
+            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '16px', flexWrap: 'wrap' }}>
+              <button onClick={handleCopy} className="button-secondary">
+                📄 Copy
+              </button>
+              <button onClick={handleShare} className="button-secondary">
+                📤 Share
+              </button>
+              <button onClick={saveEntry} className="button-secondary">
+                💾 Save to Journal
+              </button>
+            </div>
+            {copyFeedback && (
+              <p style={{ color: 'var(--accent-gold)', fontSize: '14px', marginTop: '8px', fontWeight: '500' }}>
+                {copyFeedback}
+              </p>
+            )}
+          </div>
+        )}
+
+        {stage === 'journal' && (
+          <div className="animate-fade-in" style={{ width: '100%' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
+              <h2 className="heading-divine" style={{ fontSize: '28px', textAlign: 'left' }}>My Journal</h2>
+              <button onClick={() => setStage('input')} className="button-secondary">Close</button>
+            </div>
+
+            {savedItems.length === 0 ? (
+              <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>No entries yet.</p>
+            ) : (
+              <div style={{ maxHeight: '60vh', overflowY: 'auto', paddingRight: '8px' }}>
+                {savedItems.map((item) => (
+                  <div key={item.id} className="journal-entry">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                      <div>
+                        <p className="journal-date">{item.date} • {item.type === 'verse' ? 'Verse' : 'Homily'}</p>
+                        <p className="journal-worry">"{item.worry}"</p>
+                      </div>
+                      <button
+                        onClick={() => deleteEntry(item.id)}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '16px', opacity: 0.5 }}
+                        title="Delete Entry"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                    <p className="journal-preview">{item.content}</p>
+                    <button
+                      onClick={() => {
+                        setWorry(item.worry);
+                        setResult(item.content);
+                        setStage('result');
+                        setLastType(item.type);
+                      }}
+                      style={{ background: 'none', border: 'none', color: 'var(--accent-gold)', fontSize: '13px', marginTop: '8px', cursor: 'pointer', padding: 0 }}
+                    >
+                      View Full Entry →
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>

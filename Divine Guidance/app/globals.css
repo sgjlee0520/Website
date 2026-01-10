@@ -134,3 +134,62 @@ a {
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out forwards;
 }
+
+/* Secondary Button (Save, Copy, Share) */
+.button-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.button-secondary:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+/* Journal Styles */
+.journal-entry {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: all var(--transition-speed);
+}
+
+.journal-entry:hover {
+  box-shadow: var(--shadow-subtle);
+  border-color: var(--accent-gold);
+}
+
+.journal-date {
+  font-size: 12px;
+  color: var(--text-placeholder);
+  margin-bottom: 4px;
+}
+
+.journal-worry {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.journal-preview {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
