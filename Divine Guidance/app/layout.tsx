@@ -10,10 +10,6 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Divine Guidance",
   },
-  icons: {
-    icon: "/icon-192.png",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 export const viewport: Viewport = {
