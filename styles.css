@@ -1853,3 +1853,268 @@ body.has-sidebar .hero {
         font-size: 0.85rem;
     }
 }
+/* ===================================
+   PORTFOLIO PAGE STYLES
+   =================================== */
+
+/* Portfolio Stats Grid */
+.portfolio-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio-stat-card {
+    background: linear-gradient(135deg, #004A99 0%, #0066CC 100%);
+    color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 74, 153, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Chart Grid */
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.chart-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chart-title {
+    text-align: center;
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.chart-container {
+    position: relative;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+/* Holdings Table */
+.holdings-category {
+    margin-bottom: 3rem;
+}
+
+.holdings-category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #eee;
+}
+
+.category-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.holdings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.holding-card {
+    background: #f8f9fa;
+    padding: 1.25rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.holding-card:hover {
+    background: white;
+    border-color: #004A99;
+    box-shadow: 0 4px 15px rgba(0, 74, 153, 0.1);
+}
+
+.holding-symbol {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #004A99;
+}
+
+.holding-name {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.holding-return {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+}
+
+.holding-return.positive {
+    color: #28a745;
+}
+
+.holding-return.negative {
+    color: #dc3545;
+}
+
+/* Performance Chart */
+.performance-chart-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    height: 450px;
+}
+
+.section-subtitle {
+    margin-bottom: 2rem;
+}
+
+/* Philosophy Cards */
+.philosophy-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.philosophy-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+    background: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.philosophy-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.philosophy-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Homepage Portfolio Preview */
+.portfolio-preview {
+    text-align: center;
+}
+
+.portfolio-preview-chart {
+    max-width: 300px;
+    margin: 0 auto 2rem;
+}
+
+.portfolio-preview-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.preview-stat {
+    text-align: center;
+}
+
+.preview-stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #004A99;
+}
+
+.preview-stat-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Portfolio Styles */
+@media (max-width: 900px) {
+    .portfolio-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .philosophy-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    
+    .portfolio-stat-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .holdings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .performance-chart-container {
+        height: 350px;
+        padding: 1rem;
+    }
+    
+    .portfolio-preview-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
