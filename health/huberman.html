@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -28,14 +29,17 @@
         <section class="hero">
             <div class="shell">
                 <div class="hero-block">
-                    <div class="eyebrow">Long-form synthesis</div>
-                    <h1>Chronobiological optimization protocol (Huberman-inspired).</h1>
+                    <div class="eyebrow">Chronobiology dashboard</div>
+                    <h1>This should be your daily schedule if focus is the mission.</h1>
                     <p>
-                        This page summarizes your long-form report into an executable routine. The full text and PDF are linked below.
+                        Rich protocol view built from your long-form Huberman synthesis. Tune wake time, caffeine delay,
+                        and training type, then read the exact day structure.
                     </p>
                     <div class="actions">
-                        <a class="btn btn-primary" href="Huberman's%20Optimal%20Daily%20Schedule.pdf" target="_blank" rel="noopener noreferrer">Read PDF</a>
-                        <a class="btn btn-secondary" href="Huberman's%20Optimal%20Daily%20Schedule.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        <a class="btn btn-primary" href="Huberman's%20Optimal%20Daily%20Schedule.pdf" target="_blank"
+                            rel="noopener noreferrer">Open Full PDF</a>
+                        <a class="btn btn-secondary" href="Huberman's%20Optimal%20Daily%20Schedule.md" target="_blank"
+                            rel="noopener noreferrer">Open Full Markdown</a>
                     </div>
                 </div>
             </div>
@@ -43,43 +47,105 @@
 
         <section class="section">
             <div class="shell">
-                <h2>Core operating principles</h2>
-                <div class="grid">
-                    <article class="card">
-                        <div class="card-meta">Circadian anchor</div>
-                        <h3>Morning sunlight + stable wake time</h3>
-                        <p>Use outdoor light shortly after waking to lock circadian timing and improve evening sleep pressure.</p>
+                <h2>Protocol scoreboard</h2>
+                <div class="kpi-grid">
+                    <article class="kpi-card">
+                        <div class="kpi-label">Morning Anchor</div>
+                        <div class="kpi-value">10-20m</div>
+                        <p class="kpi-note">Outdoor sunlight within 60 minutes of waking.</p>
                     </article>
-                    <article class="card">
-                        <div class="card-meta">Focus architecture</div>
-                        <h3>90-minute deep work cycles</h3>
-                        <p>Run intense cognitive blocks in ultradian windows with deliberate defocus breaks in between.</p>
+                    <article class="kpi-card">
+                        <div class="kpi-label">Deep Work Capacity</div>
+                        <div class="kpi-value">3 Blocks</div>
+                        <p class="kpi-note">Two mandatory 90-minute blocks, one optional.</p>
                     </article>
-                    <article class="card">
-                        <div class="card-meta">Neuroplasticity</div>
-                        <h3>Active recall + difficulty</h3>
-                        <p>Prioritize retrieval and error-driven learning over passive reading for stronger memory retention.</p>
+                    <article class="kpi-card">
+                        <div class="kpi-label">Caffeine Timing</div>
+                        <div class="kpi-value">90-120m</div>
+                        <p class="kpi-note">Delay after waking to reduce crash risk.</p>
                     </article>
-                    <article class="card">
-                        <div class="card-meta">Recovery as output</div>
-                        <h3>NSDR + sleep protection</h3>
-                        <p>Consolidation happens during rest. Treat recovery as part of the protocol, not optional overhead.</p>
+                    <article class="kpi-card">
+                        <div class="kpi-label">Sleep Window</div>
+                        <div class="kpi-value">7-9h</div>
+                        <p class="kpi-note">Consistent wake time is non-negotiable.</p>
                     </article>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <div class="shell">
-                <h2>One-day blueprint</h2>
-                <p class="section-note">Compact timeline derived from the report for practical execution.</p>
-                <div class="grid">
-                    <article class="card"><div class="card-meta">06:30-08:30</div><h3>Wake protocol</h3><p>Sunlight, hydration, movement, then delay caffeine.</p></article>
-                    <article class="card"><div class="card-meta">09:00-12:15</div><h3>Deep work I-II</h3><p>Two 90-minute blocks with short visual-defocus break.</p></article>
-                    <article class="card"><div class="card-meta">13:30</div><h3>NSDR reset</h3><p>10-20 minutes to restore alertness and support memory consolidation.</p></article>
-                    <article class="card"><div class="card-meta">14:00-15:30</div><h3>Deep work III / light block</h3><p>Use a final focused block or switch to low-load tasks if fatigued.</p></article>
-                    <article class="card"><div class="card-meta">16:00-17:00</div><h3>Physical training</h3><p>Resistance or zone-2 cardio based on weekly periodization.</p></article>
-                    <article class="card"><div class="card-meta">Evening</div><h3>Downshift and sleep</h3><p>Lower light exposure, taper stimulation, sleep on a consistent clock.</p></article>
+            <div class="shell two-col">
+                <div class="panel">
+                    <h3>Schedule controls</h3>
+                    <p class="section-note">Adjust variables and regenerate the timeline.</p>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="wakeTime">Wake Time</label>
+                            <input id="wakeTime" type="time" value="06:30">
+                        </div>
+                        <div class="field">
+                            <label for="caffeineDelay">Caffeine Delay</label>
+                            <select id="caffeineDelay">
+                                <option value="60">60 minutes</option>
+                                <option value="90" selected>90 minutes</option>
+                                <option value="120">120 minutes</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="trainingMode">Training Focus</label>
+                            <select id="trainingMode">
+                                <option value="hybrid" selected>Hybrid (Strength + Cardio)</option>
+                                <option value="strength">Strength Priority</option>
+                                <option value="endurance">Endurance Priority</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button id="buildSchedule" class="btn btn-primary" type="button">Generate Daily Schedule</button>
+                    </div>
+                    <p class="small-note">The schedule below is the primary execution target.</p>
+                </div>
+
+                <div class="panel">
+                    <h3 id="scheduleHeader">Your daily schedule</h3>
+                    <div id="scheduleTimeline" class="timeline"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="shell two-col">
+                <div class="chart-panel">
+                    <h3>24-hour focus readiness map</h3>
+                    <p class="section-note">Visual estimate of cognitive readiness over the day based on your wake anchor.</p>
+                    <div class="chart-wrap">
+                        <canvas id="circadianChart" aria-label="Circadian focus chart"></canvas>
+                    </div>
+                </div>
+                <div class="panel">
+                    <h3>Why this works</h3>
+                    <div class="context-list">
+                        <details class="context-item" open>
+                            <summary>Cortisol pulse alignment</summary>
+                            <p>Morning light sets circadian timing and supports alertness without artificial stimulation.
+                                This is the anchor for the entire schedule quality.</p>
+                        </details>
+                        <details class="context-item" open>
+                            <summary>Ultradian deep work cycles</summary>
+                            <p>90-minute focused cycles map better to real neurobiology than all-day grind sessions. It
+                                protects output quality and reduces burnout probability.</p>
+                        </details>
+                        <details class="context-item">
+                            <summary>NSDR and recovery windows</summary>
+                            <p>Memory consolidation is recovery-dependent. Midday NSDR and evening downshift are part of
+                                performance, not separate from it.</p>
+                        </details>
+                        <details class="context-item">
+                            <summary>Exercise timing and cognition</summary>
+                            <p>Placing training after major deep-work blocks helps preserve cognitive sharpness while
+                                still extracting physiological benefits.</p>
+                        </details>
+                    </div>
                 </div>
             </div>
         </section>
@@ -87,9 +153,137 @@
 
     <footer class="footer">
         <div class="shell">
-            <p>Condensed from your full report. For detail and references, open the source PDF/Markdown.</p>
+            <p>This dashboard is derived from your full report and built to be practical, visual, and editable.</p>
         </div>
     </footer>
+
+    <script>
+        const wakeInput = document.getElementById('wakeTime');
+        const caffeineInput = document.getElementById('caffeineDelay');
+        const trainingInput = document.getElementById('trainingMode');
+        const buildBtn = document.getElementById('buildSchedule');
+        const scheduleTimeline = document.getElementById('scheduleTimeline');
+        const scheduleHeader = document.getElementById('scheduleHeader');
+
+        let circadianChart = null;
+
+        function toMinutes(timeString) {
+            const [h, m] = timeString.split(':').map(Number);
+            return (h * 60) + m;
+        }
+
+        function formatTime(minutes) {
+            const m = ((minutes % 1440) + 1440) % 1440;
+            const hours = Math.floor(m / 60);
+            const mins = m % 60;
+            return `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}`;
+        }
+
+        function buildEvents(caffeineDelay, trainingMode) {
+            const trainingLabel = {
+                hybrid: 'Hybrid training (strength + zone-2)',
+                strength: 'Strength training session',
+                endurance: 'Zone-2 / interval cardio session'
+            }[trainingMode];
+
+            return [
+                { offset: 0, tag: 'Anchor', title: 'Wake + Sunlight', desc: 'Go outside within 60 minutes. 10-20 minutes of light exposure.' },
+                { offset: 15, tag: 'Activation', title: 'Hydrate + light movement', desc: 'Water, light mobility, short walk to raise body temperature.' },
+                { offset: caffeineDelay, tag: 'Stimulant', title: 'First caffeine', desc: 'Delayed intake to avoid masking residual adenosine.' },
+                { offset: 150, tag: 'Focus', title: 'Deep Work Block 1 (90m)', desc: 'Hardest cognitive task of the day. No context switching.' },
+                { offset: 245, tag: 'Recovery', title: 'Deliberate defocus (15m)', desc: 'Panoramic vision break. No phone scrolling.' },
+                { offset: 270, tag: 'Focus', title: 'Deep Work Block 2 (90m)', desc: 'Active recall, problem sets, or technical writing.' },
+                { offset: 390, tag: 'Nutrition', title: 'Low-carb lunch + walk', desc: 'Support stable afternoon alertness.' },
+                { offset: 450, tag: 'Recovery', title: 'NSDR / Yoga Nidra (20m)', desc: 'Downshift stress, restore focus signal.' },
+                { offset: 500, tag: 'Focus', title: 'Deep Work Block 3 (Optional)', desc: 'Use if high readiness remains; otherwise shallow work.' },
+                { offset: 650, tag: 'Training', title: trainingLabel, desc: 'Physical load after major cognitive work is complete.' },
+                { offset: 760, tag: 'Transition', title: 'Sunset walk + light review', desc: 'Lower cognitive intensity and begin evening taper.' },
+                { offset: 840, tag: 'Nutrition', title: 'Dinner', desc: 'Carb timing can support evening downshift and sleep onset.' },
+                { offset: 930, tag: 'Sleep Prep', title: 'Dim lights + no heavy cognition', desc: 'Protect melatonin and reduce stimulation.' },
+                { offset: 960, tag: 'Sleep', title: 'Sleep window begins', desc: 'Target 7-9 hours and stable wake anchor.' }
+            ];
+        }
+
+        function renderSchedule() {
+            const wake = toMinutes(wakeInput.value);
+            const caffeine = Number(caffeineInput.value);
+            const training = trainingInput.value;
+            const events = buildEvents(caffeine, training);
+
+            scheduleHeader.textContent = `This should be your daily schedule (wake ${wakeInput.value})`;
+            scheduleTimeline.innerHTML = events.map((item) => {
+                return `
+                    <article class="timeline-item">
+                        <div class="timeline-time">${formatTime(wake + item.offset)}</div>
+                        <div>
+                            <span class="timeline-tag">${item.tag}</span>
+                            <h4 class="timeline-title">${item.title}</h4>
+                            <p class="timeline-desc">${item.desc}</p>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+
+            updateChart(wake);
+        }
+
+        function focusCurveAtHour(hour, wakeHour) {
+            const delta = (hour - wakeHour + 24) % 24;
+            const morningPeak = 38 * Math.exp(-Math.pow(delta - 3.5, 2) / 5.2);
+            const midPeak = 20 * Math.exp(-Math.pow(delta - 8.5, 2) / 8.5);
+            const postLunchDip = 18 * Math.exp(-Math.pow(delta - 7, 2) / 2.2);
+            const lateDip = 25 * Math.exp(-Math.pow(delta - 15.5, 2) / 3.8);
+            const baseline = 35;
+            return Math.max(8, Math.min(95, baseline + morningPeak + midPeak - postLunchDip - lateDip));
+        }
+
+        function updateChart(wakeMinutes) {
+            const wakeHour = wakeMinutes / 60;
+            const labels = Array.from({ length: 24 }, (_, i) => `${String(i).padStart(2, '0')}:00`);
+            const values = labels.map((_, i) => Math.round(focusCurveAtHour(i, wakeHour)));
+
+            if (circadianChart) {
+                circadianChart.data.labels = labels;
+                circadianChart.data.datasets[0].data = values;
+                circadianChart.update();
+                return;
+            }
+
+            const ctx = document.getElementById('circadianChart');
+            circadianChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Estimated Focus Readiness',
+                        data: values,
+                        borderColor: '#0b5cad',
+                        backgroundColor: 'rgba(11, 92, 173, 0.16)',
+                        tension: 0.32,
+                        fill: true,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            min: 0,
+                            max: 100,
+                            title: { display: true, text: 'Readiness' }
+                        }
+                    }
+                }
+            });
+        }
+
+        buildBtn.addEventListener('click', renderSchedule);
+        renderSchedule();
+    </script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -28,73 +29,122 @@
         <section class="hero">
             <div class="shell">
                 <div class="hero-block">
-                    <div class="eyebrow">Comprehensive synthesis</div>
-                    <h1>Neurocognitive optimization of study, sleep, and training.</h1>
+                    <div class="eyebrow">Custom exam planner</div>
+                    <h1>Build a personalized schedule based on how many weeks away from final you are.</h1>
                     <p>
-                        This page converts your full report into a practical execution model for students balancing
-                        intense training and high cognitive demands.
+                        This brings back your interactive workflow: enter timeline + constraints, then generate a
+                        tailored daily schedule and phase strategy.
                     </p>
                     <div class="actions">
-                        <a class="btn btn-primary" href="Optimizing%20Study,%20Sleep,%20and%20Exercise.pdf" target="_blank" rel="noopener noreferrer">Read PDF</a>
-                        <a class="btn btn-secondary" href="Optimizing%20Study,%20Sleep,%20and%20Exercise.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        <a class="btn btn-primary" href="Optimizing%20Study,%20Sleep,%20and%20Exercise.pdf" target="_blank"
+                            rel="noopener noreferrer">Open Full PDF</a>
+                        <a class="btn btn-secondary" href="Optimizing%20Study,%20Sleep,%20and%20Exercise.md" target="_blank"
+                            rel="noopener noreferrer">Open Full Markdown</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <div class="shell">
-                <h2>High-value execution model</h2>
-                <div class="grid">
-                    <article class="card">
-                        <div class="card-meta">Learning mechanics</div>
-                        <h3>Active recall + spacing + interleaving</h3>
-                        <p>Prioritize retrieval and spaced review over re-reading to maximize retention per hour.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-meta">Volume constraint</div>
-                        <h3>4 hours of real deep work per day</h3>
-                        <p>Treat this as the quality ceiling; add shallow/admin work separately without confusing the two.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-meta">Training integration</div>
-                        <h3>Lift hard, schedule smart</h3>
-                        <p>Do not place hardest study blocks immediately after intense lifting due to transient cognitive fatigue.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-meta">Cardio requirement</div>
-                        <h3>2-3 weekly sessions</h3>
-                        <p>Zone-2 or short intervals to support BDNF, mood stability, and memory function.</p>
-                    </article>
+            <div class="shell two-col">
+                <div class="panel">
+                    <h3>Planner inputs</h3>
+                    <p class="section-note">Fill in the blank: how many weeks away from final are you?</p>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="weeksAway">Weeks Away From Final</label>
+                            <input id="weeksAway" type="number" min="0" max="24" value="8">
+                        </div>
+                        <div class="field">
+                            <label for="wakeTime">Wake Time</label>
+                            <input id="wakeTime" type="time" value="06:30">
+                        </div>
+                        <div class="field">
+                            <label for="workoutDays">Workout Days / Week</label>
+                            <select id="workoutDays">
+                                <option value="3">3 days</option>
+                                <option value="4">4 days</option>
+                                <option value="5" selected>5 days</option>
+                                <option value="6">6 days</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="courseLoad">Course Load</label>
+                            <select id="courseLoad">
+                                <option value="heavy" selected>Heavy</option>
+                                <option value="medium">Medium</option>
+                                <option value="light">Light</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button id="generatePlan" type="button" class="btn btn-primary">Generate My Plan</button>
+                    </div>
+                    <p class="small-note">Your output updates live and gives both phase strategy and daily execution blocks.</p>
+                </div>
+
+                <div class="panel">
+                    <h3>Current phase output</h3>
+                    <div class="phase-line" id="phaseLine">You are 8 weeks away from final.</div>
+                    <span class="phase-badge" id="phaseBadge">Build Phase</span>
+                    <div class="metric-grid" id="metricGrid"></div>
+                    <p class="small-note" id="phaseNote"></p>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="shell">
-                <h2>Practical weekly blueprint</h2>
-                <p class="section-note">Use this as a base template and adjust by academic load.</p>
-                <div class="grid">
-                    <article class="card">
-                        <div class="card-meta">Daily study</div>
-                        <h3>2-3 deep blocks</h3>
-                        <p>Run 90-minute blocks with strict breaks and one retrieval-heavy review window.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-meta">Weekly totals</div>
-                        <h3>~24h deep + ~12h shallow</h3>
-                        <p>Track quality metrics, not just time logged.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-meta">Sleep</div>
-                        <h3>Consistent 7-9h window</h3>
-                        <p>Anchor wake time and protect pre-sleep environment for memory consolidation.</p>
-                    </article>
-                    <article class="card">
-                        <div class="card-meta">Exam prep</div>
-                        <h3>Taper before performance</h3>
-                        <p>Reduce volume 24-48h pre-exam; prioritize retrieval and calm-state execution.</p>
-                    </article>
+                <h2>Your personalized daily schedule</h2>
+                <p class="section-note">The table below is generated from your timeline and workload inputs.</p>
+                <div class="schedule-table-wrap">
+                    <table class="schedule-table" aria-label="Generated daily schedule">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Block</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dailyPlanBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="shell two-col">
+                <div class="chart-panel">
+                    <h3>6-week workload projection</h3>
+                    <p class="section-note">Deep work and recovery volume taper as finals approach.</p>
+                    <div class="chart-wrap">
+                        <canvas id="weeklyChart" aria-label="Weekly workload chart"></canvas>
+                    </div>
+                </div>
+                <div class="panel">
+                    <h3>Phase playbook</h3>
+                    <div class="context-list">
+                        <details class="context-item" open>
+                            <summary>Foundation (12+ weeks)</summary>
+                            <p>Build consistency first: active recall system, sleep anchor, and stable training rhythm.</p>
+                        </details>
+                        <details class="context-item" open>
+                            <summary>Build (8-11 weeks)</summary>
+                            <p>Increase deep-work density and tighten weekly review loops while preserving recovery.</p>
+                        </details>
+                        <details class="context-item">
+                            <summary>Intensification (4-7 weeks)</summary>
+                            <p>Add higher exam simulation frequency and increase retrieval pressure.</p>
+                        </details>
+                        <details class="context-item">
+                            <summary>Simulation (2-3 weeks)</summary>
+                            <p>Practice timed mock exams under realistic conditions; reduce random low-value tasks.</p>
+                        </details>
+                        <details class="context-item">
+                            <summary>Taper (0-1 week)</summary>
+                            <p>Reduce volume, protect sleep, keep recall sharp, and prioritize execution calm.</p>
+                        </details>
+                    </div>
                 </div>
             </div>
         </section>
@@ -102,9 +152,219 @@
 
     <footer class="footer">
         <div class="shell">
-            <p>Summary page for execution. Open the full report for detailed evidence and reference context.</p>
+            <p>The planner is designed to be practical and editable rather than generic. Tune inputs before each study phase.</p>
         </div>
     </footer>
+
+    <script>
+        const weeksInput = document.getElementById('weeksAway');
+        const wakeInput = document.getElementById('wakeTime');
+        const workoutInput = document.getElementById('workoutDays');
+        const loadInput = document.getElementById('courseLoad');
+        const generateBtn = document.getElementById('generatePlan');
+
+        const phaseLine = document.getElementById('phaseLine');
+        const phaseBadge = document.getElementById('phaseBadge');
+        const phaseNote = document.getElementById('phaseNote');
+        const metricGrid = document.getElementById('metricGrid');
+        const dailyPlanBody = document.getElementById('dailyPlanBody');
+
+        let weeklyChart = null;
+
+        const phaseConfig = {
+            foundation: {
+                label: 'Foundation Phase',
+                deepHours: 3.0,
+                recallCycles: 4,
+                mockExams: 1,
+                recoveryPriority: 'High',
+                note: 'Prioritize consistency, systems setup, and stable sleep before volume expansion.'
+            },
+            build: {
+                label: 'Build Phase',
+                deepHours: 3.8,
+                recallCycles: 5,
+                mockExams: 1,
+                recoveryPriority: 'High',
+                note: 'Increase retrieval load and tighten weekly planning cadence.'
+            },
+            intensification: {
+                label: 'Intensification Phase',
+                deepHours: 4.2,
+                recallCycles: 6,
+                mockExams: 2,
+                recoveryPriority: 'Medium',
+                note: 'Higher pressure phase. Keep deep blocks clean and reduce distractions aggressively.'
+            },
+            simulation: {
+                label: 'Simulation Phase',
+                deepHours: 3.6,
+                recallCycles: 5,
+                mockExams: 3,
+                recoveryPriority: 'Medium',
+                note: 'Shift from pure learning to timed exam execution and error correction.'
+            },
+            taper: {
+                label: 'Taper Phase',
+                deepHours: 2.2,
+                recallCycles: 3,
+                mockExams: 1,
+                recoveryPriority: 'Very High',
+                note: 'Reduce cognitive load while preserving sharpness. Sleep quality becomes the edge.'
+            }
+        };
+
+        function toMinutes(timeString) {
+            const [h, m] = timeString.split(':').map(Number);
+            return (h * 60) + m;
+        }
+
+        function formatTime(minutes) {
+            const m = ((minutes % 1440) + 1440) % 1440;
+            const h = Math.floor(m / 60);
+            const mm = m % 60;
+            return `${String(h).padStart(2, '0')}:${String(mm).padStart(2, '0')}`;
+        }
+
+        function phaseFromWeeks(weeks) {
+            if (weeks >= 12) return 'foundation';
+            if (weeks >= 8) return 'build';
+            if (weeks >= 4) return 'intensification';
+            if (weeks >= 2) return 'simulation';
+            return 'taper';
+        }
+
+        function buildDailyRows(wakeMinutes, phaseKey, workoutDays, load) {
+            const classDuration = load === 'heavy' ? 180 : load === 'medium' ? 130 : 90;
+            const deepBlocks = phaseKey === 'taper' ? 1 : phaseKey === 'simulation' ? 2 : 3;
+            const workoutBlock = workoutDays >= 5 ? 'Strength / conditioning session' : 'Zone-2 cardio or mobility';
+
+            const rows = [
+                { start: wakeMinutes + 0, end: wakeMinutes + 25, block: 'Wake + sunlight + hydration', purpose: 'Circadian anchor and alertness setup.' },
+                { start: wakeMinutes + 30, end: wakeMinutes + 55, block: 'Planning + first review pass', purpose: 'Prime context before deep work.' }
+            ];
+
+            rows.push({ start: wakeMinutes + 60, end: wakeMinutes + 150, block: 'Deep Work Block 1', purpose: 'Highest difficulty study target.' });
+            if (deepBlocks >= 2) {
+                rows.push({ start: wakeMinutes + 165, end: wakeMinutes + 255, block: 'Deep Work Block 2', purpose: 'Retrieval practice / problem-solving.' });
+            }
+            if (deepBlocks >= 3) {
+                rows.push({ start: wakeMinutes + 270, end: wakeMinutes + 360, block: 'Deep Work Block 3', purpose: 'Optional advanced block if readiness is high.' });
+            }
+
+            rows.push({ start: wakeMinutes + 375, end: wakeMinutes + 430, block: 'Lunch + walk', purpose: 'Fuel without heavy afternoon crash.' });
+            rows.push({ start: wakeMinutes + 450, end: wakeMinutes + 450 + classDuration, block: 'Class / shallow work / admin', purpose: 'Operational tasks and logistics.' });
+            rows.push({ start: wakeMinutes + 680, end: wakeMinutes + 740, block: workoutBlock, purpose: 'Maintain physiology and stress resilience.' });
+            rows.push({ start: wakeMinutes + 760, end: wakeMinutes + 820, block: 'Recall consolidation + flash review', purpose: 'Reinforce long-term memory.' });
+            rows.push({ start: wakeMinutes + 860, end: wakeMinutes + 930, block: 'Dinner + downshift', purpose: 'Transition to low stimulation.' });
+            rows.push({ start: wakeMinutes + 960, end: wakeMinutes + 1440, block: 'Sleep window', purpose: 'Memory consolidation and recovery.' });
+
+            return rows;
+        }
+
+        function renderMetrics(config) {
+            const metrics = [
+                { label: 'Deep Work / Day', value: `${config.deepHours}h` },
+                { label: 'Recall Cycles / Week', value: String(config.recallCycles) },
+                { label: 'Mock Exams / Week', value: String(config.mockExams) },
+                { label: 'Recovery Priority', value: config.recoveryPriority }
+            ];
+
+            metricGrid.innerHTML = metrics.map((metric) => `
+                <article class="metric">
+                    <h4>${metric.label}</h4>
+                    <p>${metric.value}</p>
+                </article>
+            `).join('');
+        }
+
+        function renderDailyTable(rows) {
+            dailyPlanBody.innerHTML = rows.map((row) => `
+                <tr>
+                    <td>${formatTime(row.start)}-${formatTime(row.end)}</td>
+                    <td>${row.block}</td>
+                    <td>${row.purpose}</td>
+                </tr>
+            `).join('');
+        }
+
+        function weekConfigForDistance(distance) {
+            return phaseConfig[phaseFromWeeks(distance)];
+        }
+
+        function renderChart(weeksAway) {
+            const horizon = Math.min(6, Math.max(1, weeksAway + 1));
+            const labels = [];
+            const deepData = [];
+            const recoveryData = [];
+
+            for (let i = horizon - 1; i >= 0; i--) {
+                const distance = Math.max(0, weeksAway - i);
+                const cfg = weekConfigForDistance(distance);
+                labels.push(distance === 0 ? 'Final Week' : `${distance}w out`);
+                deepData.push(Math.round(cfg.deepHours * 6));
+                recoveryData.push(cfg.recoveryPriority === 'Very High' ? 18 : cfg.recoveryPriority === 'High' ? 14 : 11);
+            }
+
+            const ctx = document.getElementById('weeklyChart');
+            if (weeklyChart) {
+                weeklyChart.data.labels = labels;
+                weeklyChart.data.datasets[0].data = deepData;
+                weeklyChart.data.datasets[1].data = recoveryData;
+                weeklyChart.update();
+                return;
+            }
+
+            weeklyChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels,
+                    datasets: [
+                        {
+                            label: 'Deep Work Hours / Week',
+                            data: deepData,
+                            backgroundColor: 'rgba(11, 92, 173, 0.72)'
+                        },
+                        {
+                            label: 'Recovery Blocks / Week',
+                            data: recoveryData,
+                            backgroundColor: 'rgba(15, 118, 110, 0.6)'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderPlan() {
+            const weeksAway = Math.max(0, Number(weeksInput.value));
+            const wakeMinutes = toMinutes(wakeInput.value);
+            const workoutDays = Number(workoutInput.value);
+            const load = loadInput.value;
+
+            const phaseKey = phaseFromWeeks(weeksAway);
+            const config = phaseConfig[phaseKey];
+
+            phaseLine.textContent = `You are ${weeksAway} week${weeksAway === 1 ? '' : 's'} away from final.`;
+            phaseBadge.textContent = config.label;
+            phaseNote.textContent = config.note;
+
+            renderMetrics(config);
+            renderDailyTable(buildDailyRows(wakeMinutes, phaseKey, workoutDays, load));
+            renderChart(weeksAway);
+        }
+
+        generateBtn.addEventListener('click', renderPlan);
+        renderPlan();
+    </script>
 </body>
 
 </html>
