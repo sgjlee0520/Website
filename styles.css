@@ -2182,3 +2182,67 @@ body.has-sidebar .hero {
         gap: 1.5rem;
     }
 }
+
+/* ── Site-wide Language Toggle ────────────────────────────── */
+.lang-switcher {
+    display: flex;
+    border: 1.5px solid rgba(0,74,153,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem 0 0.5rem;
+    width: 100%;
+}
+.lang-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.03em;
+}
+.lang-btn:first-child {
+    border-right: 1.5px solid rgba(0,74,153,0.2);
+}
+.lang-btn.active {
+    background: #004A99;
+    color: #fff;
+}
+.lang-btn:hover:not(.active) {
+    background: rgba(0,74,153,0.06);
+    color: #004A99;
+}
+
+/* Nav link bilingual text */
+.nav-kr { display: none; }
+body.lang-kr .nav-en { display: none; }
+body.lang-kr .nav-kr { display: inline; }
+
+/* Generic section-level bilingual content */
+[data-lang="kr"] { display: none; }
+body.lang-kr [data-lang="en"] { display: none; }
+body.lang-kr [data-lang="kr"] { display: block; }
+
+/* Inline spans should use inline not block */
+span[data-lang="kr"] { display: none; }
+body.lang-kr span[data-lang="en"] { display: none; }
+body.lang-kr span[data-lang="kr"] { display: inline; }
+
+/* Headings */
+h1[data-lang="kr"], h2[data-lang="kr"], h3[data-lang="kr"],
+h4[data-lang="kr"], h5[data-lang="kr"] { display: none; }
+body.lang-kr h1[data-lang="en"], body.lang-kr h2[data-lang="en"],
+body.lang-kr h3[data-lang="en"], body.lang-kr h4[data-lang="en"],
+body.lang-kr h5[data-lang="en"] { display: none; }
+body.lang-kr h1[data-lang="kr"], body.lang-kr h2[data-lang="kr"],
+body.lang-kr h3[data-lang="kr"], body.lang-kr h4[data-lang="kr"],
+body.lang-kr h5[data-lang="kr"] { display: block; }
+
+/* Paragraphs */
+p[data-lang="kr"] { display: none; }
+body.lang-kr p[data-lang="en"] { display: none; }
+body.lang-kr p[data-lang="kr"] { display: block; }

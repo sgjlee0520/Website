@@ -34,27 +34,35 @@
         <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
+                    <a href="about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="projects.html" class="nav-link active">Projects</a>
+                    <a href="projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="writing-interests.html" class="nav-link">Writing & Interests</a>
+                    <a href="writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="resume.html" class="nav-link">Resume</a>
+                    <a href="resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="portfolio.html" class="nav-link">Financial Portfolio</a>
+                    <a href="portfolio.html" class="nav-link"><span class="nav-en">Financial Portfolio</span><span class="nav-kr">금융 포트폴리오</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="household-budget.html" class="nav-link"><span class="nav-en">Household Budget</span><span class="nav-kr">가계부</span></a>
                 </li>
             </ul>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+        </div>
         </nav>
 
         <div class="sidebar-footer">
@@ -77,7 +85,7 @@
                     </svg>
                 </a>
             </div>
-            <p class="copyright">&copy; 2024 Songgun Lee.</p>
+            <p class="copyright">&copy; 2025 Songgun Lee.</p>
         </div>
     </aside>
 
@@ -93,7 +101,7 @@
         <!-- Hero Section -->
         <section class="page-hero">
             <div class="container">
-                <h1 class="page-title">Projects</h1>
+                <h1 class="page-title"><span data-lang="en">Projects</span><span data-lang="kr">프로젝트</span></h1>
                 <p class="page-subtitle">Exploring the intersection of physics, computation, and quantitative finance
                     through hands-on projects.</p>
             </div>
@@ -404,7 +412,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a>
@@ -415,6 +423,22 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
 </body>
 
 </html>

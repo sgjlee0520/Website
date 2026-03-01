@@ -4,108 +4,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study, Sleep, and Exercise Optimization | Songgun Lee</title>
+    <title>Study, Sleep & Exercise Optimization - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .health-hero { background: linear-gradient(135deg, #004A99 0%, #003366 100%); color: #fff; padding: 60px 0 50px; }
+        .health-hero .section-title { color: #fff; margin-bottom: 0.5rem; }
+        .health-hero .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.78); margin-bottom: 1.5rem; font-weight: 400; }
+        .health-hero .hero-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+        .health-crumb { background: #f7f9fc; border-bottom: 1px solid #e4eaf3; padding: 10px 0; font-size: 0.82rem; color: #777; }
+        .health-crumb .container { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+        .health-crumb a { color: #004A99; text-decoration: none; }
+        .health-crumb a:hover { text-decoration: underline; }
+        .health-crumb span { color: #bbb; }
+
+        .health-section { padding: 50px 0; background: #fff; }
+        .health-section.alt { background: #F9F9F9; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+        @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+        .panel h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #222; }
+        .section-note { font-size: 0.88rem; color: #777; margin-bottom: 1.25rem; }
+        .form-grid { display: grid; gap: 0.85rem; margin-bottom: 1.25rem; }
+        .field label { display: block; font-size: 0.82rem; font-weight: 600; color: #555; margin-bottom: 4px; }
+        .field input, .field select { width: 100%; padding: 8px 10px; border: 1px solid #d0dae8; border-radius: 7px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #333; background: #fff; }
+        .field input:focus, .field select:focus { outline: none; border-color: #004A99; }
+        .small-note { font-size: 0.78rem; color: #aaa; margin-top: 0.75rem; }
+
+        /* Phase output */
+        .phase-line { font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 0.75rem; }
+        .phase-badge { display: inline-block; background: #004A99; color: #fff; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 1rem; }
+
+        .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1rem 0; }
+        .metric { background: #f7f9fc; border: 1px solid #e4eaf3; border-radius: 8px; padding: 0.85rem; }
+        .metric h4 { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #777; margin-bottom: 0.3rem; }
+        .metric p { font-size: 1.2rem; font-weight: 700; color: #004A99; margin: 0; }
+
+        /* Schedule table */
+        .schedule-table-wrap { overflow-x: auto; margin-top: 1rem; border-radius: 10px; border: 1px solid #e4eaf3; }
+        .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+        .schedule-table thead { background: #004A99; color: #fff; }
+        .schedule-table th { padding: 10px 14px; text-align: left; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.04em; }
+        .schedule-table tbody tr:nth-child(even) { background: #f7f9fc; }
+        .schedule-table td { padding: 9px 14px; border-bottom: 1px solid #f0f2f5; color: #444; vertical-align: top; }
+        .schedule-table tbody tr:last-child td { border-bottom: none; }
+        .schedule-table td:first-child { font-weight: 600; color: #004A99; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+        /* Chart */
+        .chart-panel h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #222; }
+        .chart-wrap { height: 260px; position: relative; margin-top: 0.75rem; }
+
+        /* Accordion */
+        .context-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
+        .context-item { border: 1px solid #e4eaf3; border-radius: 8px; overflow: hidden; }
+        .context-item summary { padding: 10px 14px; font-size: 0.88rem; font-weight: 600; cursor: pointer; color: #333; list-style: none; }
+        .context-item summary::-webkit-details-marker { display: none; }
+        .context-item p { padding: 0 14px 12px; font-size: 0.85rem; color: #666; margin: 0; line-height: 1.55; }
+        .context-item[open] summary { color: #004A99; }
+    </style>
 </head>
 
 <body>
-    <header class="topbar">
-        <div class="shell">
-            <div class="crumb">Songgun Lee / Explorations</div>
-            <nav class="nav-links" aria-label="Health section pages">
-                <a class="nav-link" href="../index.html">Main Site</a>
-                <a class="nav-link" href="index.html">Health</a>
-                <a class="nav-link" href="papers.html">Papers</a>
-                <a class="nav-link" href="optimize.html" aria-current="page">Study Optimization</a>
-            </nav>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
+            </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Physics Student &<br>Aspiring Quantitative Analyst</p>
         </div>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="shell">
-                <div class="hero-block">
-                    <div class="eyebrow">Custom exam planner</div>
-                    <h1>Build a personalized schedule based on how many weeks away from final you are.</h1>
-                    <p>
-                        This brings back your interactive workflow: enter timeline + constraints, then generate a
-                        tailored daily schedule and phase strategy.
-                    </p>
-                    <div class="actions">
-                        <a class="btn btn-primary" href="optimizing_study_sleep_and_exercise.pdf" target="_blank"
-                            rel="noopener noreferrer">Open Full PDF</a>
-                        <a class="btn btn-secondary" href="optimizing_study_sleep_and_exercise.md" target="_blank"
-                            rel="noopener noreferrer">Open Full Markdown</a>
-                    </div>
+        <nav class="sidebar-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+                <li class="nav-item"><a href="../portfolio.html" class="nav-link"><span class="nav-en">Financial Portfolio</span><span class="nav-kr">금융 포트폴리오</span></a></li>
+                <li class="nav-item"><a href="../household-budget.html" class="nav-link"><span class="nav-en">Household Budget</span><span class="nav-kr">가계부</span></a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19"></path></svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content">
+
+        <!-- Breadcrumb -->
+        <div class="health-crumb">
+            <div class="container">
+                <a href="../index.html">Home</a>
+                <span>›</span>
+                <a href="index.html">Health &amp; Human Performance</a>
+                <span>›</span>
+                <span>Study Optimization</span>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <section class="health-hero">
+            <div class="container">
+                <h2 class="section-title">Study, Sleep &amp; Exercise Optimization</h2>
+                <p class="hero-sub">Custom exam planner — enter timeline and constraints, then generate a tailored daily schedule and phase strategy.</p>
+                <div class="hero-buttons">
+                    <a class="btn btn-secondary" href="optimizing_study_sleep_and_exercise.pdf" target="_blank" rel="noopener noreferrer">Open Full PDF</a>
+                    <a class="btn btn-secondary" href="optimizing_study_sleep_and_exercise.md" target="_blank" rel="noopener noreferrer">Open Markdown</a>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="shell two-col">
-                <div class="panel">
-                    <h3>Planner inputs</h3>
-                    <p class="section-note">Fill in the blank: how many weeks away from final are you?</p>
-                    <div class="form-grid">
-                        <div class="field">
-                            <label for="weeksAway">Weeks Away From Final</label>
-                            <input id="weeksAway" type="number" min="0" max="24" value="8">
+        <!-- Planner Inputs + Phase Output -->
+        <section class="health-section alt">
+            <div class="container">
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Planner Inputs</h3>
+                        <p class="section-note">How many weeks away from final are you?</p>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="weeksAway">Weeks Away From Final</label>
+                                <input id="weeksAway" type="number" min="0" max="24" value="8">
+                            </div>
+                            <div class="field">
+                                <label for="wakeTime">Wake Time</label>
+                                <input id="wakeTime" type="time" value="06:30">
+                            </div>
+                            <div class="field">
+                                <label for="workoutDays">Workout Days / Week</label>
+                                <select id="workoutDays">
+                                    <option value="3">3 days</option>
+                                    <option value="4">4 days</option>
+                                    <option value="5" selected>5 days</option>
+                                    <option value="6">6 days</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="courseLoad">Course Load</label>
+                                <select id="courseLoad">
+                                    <option value="heavy" selected>Heavy</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="light">Light</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="field">
-                            <label for="wakeTime">Wake Time</label>
-                            <input id="wakeTime" type="time" value="06:30">
-                        </div>
-                        <div class="field">
-                            <label for="workoutDays">Workout Days / Week</label>
-                            <select id="workoutDays">
-                                <option value="3">3 days</option>
-                                <option value="4">4 days</option>
-                                <option value="5" selected>5 days</option>
-                                <option value="6">6 days</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label for="courseLoad">Course Load</label>
-                            <select id="courseLoad">
-                                <option value="heavy" selected>Heavy</option>
-                                <option value="medium">Medium</option>
-                                <option value="light">Light</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="actions">
                         <button id="generatePlan" type="button" class="btn btn-primary">Generate My Plan</button>
+                        <p class="small-note">Your output updates live and gives both phase strategy and daily execution blocks.</p>
                     </div>
-                    <p class="small-note">Your output updates live and gives both phase strategy and daily execution
-                        blocks.</p>
-                </div>
-
-                <div class="panel">
-                    <h3>Current phase output</h3>
-                    <div class="phase-line" id="phaseLine">You are 8 weeks away from final.</div>
-                    <span class="phase-badge" id="phaseBadge">Build Phase</span>
-                    <div class="metric-grid" id="metricGrid"></div>
-                    <p class="small-note" id="phaseNote"></p>
+                    <div class="panel">
+                        <h3>Current Phase Output</h3>
+                        <div class="phase-line" id="phaseLine">You are 8 weeks away from final.</div>
+                        <span class="phase-badge" id="phaseBadge">Build Phase</span>
+                        <div class="metric-grid" id="metricGrid"></div>
+                        <p class="small-note" id="phaseNote"></p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="shell">
-                <h2>Your personalized daily schedule</h2>
-                <p class="section-note">The table below is generated from your timeline and workload inputs.</p>
+        <!-- Daily Schedule Table -->
+        <section class="health-section">
+            <div class="container">
+                <h2 class="section-title">Your Personalized Daily Schedule</h2>
+                <p class="section-note">Generated from your timeline and workload inputs.</p>
                 <div class="schedule-table-wrap">
                     <table class="schedule-table" aria-label="Generated daily schedule">
                         <thead>
-                            <tr>
-                                <th>Time</th>
-                                <th>Block</th>
-                                <th>Purpose</th>
-                            </tr>
+                            <tr><th>Time</th><th>Block</th><th>Purpose</th></tr>
                         </thead>
                         <tbody id="dailyPlanBody"></tbody>
                     </table>
@@ -113,261 +206,167 @@
             </div>
         </section>
 
-        <section class="section">
-            <div class="shell two-col">
-                <div class="chart-panel">
-                    <h3>6-week workload projection</h3>
-                    <p class="section-note">Deep work and recovery volume taper as finals approach.</p>
-                    <div class="chart-wrap">
-                        <canvas id="weeklyChart" aria-label="Weekly workload chart"></canvas>
+        <!-- Chart + Phase Playbook -->
+        <section class="health-section alt">
+            <div class="container">
+                <div class="two-col">
+                    <div class="chart-panel">
+                        <h3>6-Week Workload Projection</h3>
+                        <p class="section-note">Deep work and recovery volume taper as finals approach.</p>
+                        <div class="chart-wrap">
+                            <canvas id="weeklyChart" aria-label="Weekly workload chart"></canvas>
+                        </div>
                     </div>
-                </div>
-                <div class="panel">
-                    <h3>Phase playbook</h3>
-                    <div class="context-list">
-                        <details class="context-item" open>
-                            <summary>Foundation (12+ weeks)</summary>
-                            <p>Build consistency first: active recall system, sleep anchor, and stable training rhythm.
-                            </p>
-                        </details>
-                        <details class="context-item" open>
-                            <summary>Build (8-11 weeks)</summary>
-                            <p>Increase deep-work density and tighten weekly review loops while preserving recovery.</p>
-                        </details>
-                        <details class="context-item">
-                            <summary>Intensification (4-7 weeks)</summary>
-                            <p>Add higher exam simulation frequency and increase retrieval pressure.</p>
-                        </details>
-                        <details class="context-item">
-                            <summary>Simulation (2-3 weeks)</summary>
-                            <p>Practice timed mock exams under realistic conditions; reduce random low-value tasks.</p>
-                        </details>
-                        <details class="context-item">
-                            <summary>Taper (0-1 week)</summary>
-                            <p>Reduce volume, protect sleep, keep recall sharp, and prioritize execution calm.</p>
-                        </details>
+                    <div class="panel">
+                        <h3>Phase Playbook</h3>
+                        <div class="context-list">
+                            <details class="context-item" open>
+                                <summary>Foundation (12+ weeks)</summary>
+                                <p>Build consistency first: active recall system, sleep anchor, and stable training rhythm.</p>
+                            </details>
+                            <details class="context-item" open>
+                                <summary>Build (8-11 weeks)</summary>
+                                <p>Increase deep-work density and tighten weekly review loops while preserving recovery.</p>
+                            </details>
+                            <details class="context-item">
+                                <summary>Intensification (4-7 weeks)</summary>
+                                <p>Add higher exam simulation frequency and increase retrieval pressure.</p>
+                            </details>
+                            <details class="context-item">
+                                <summary>Simulation (2-3 weeks)</summary>
+                                <p>Practice timed mock exams under realistic conditions; reduce random low-value tasks.</p>
+                            </details>
+                            <details class="context-item">
+                                <summary>Taper (0-1 week)</summary>
+                                <p>Reduce volume, protect sleep, keep recall sharp, and prioritize execution calm.</p>
+                            </details>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </main>
 
-    <footer class="footer">
-        <div class="shell">
-            <p>The planner is designed to be practical and editable rather than generic. Tune inputs before each study
-                phase.</p>
-        </div>
-    </footer>
-
+    <script src="../script.js"></script>
     <script>
         const weeksInput = document.getElementById('weeksAway');
         const wakeInput = document.getElementById('wakeTime');
         const workoutInput = document.getElementById('workoutDays');
         const loadInput = document.getElementById('courseLoad');
         const generateBtn = document.getElementById('generatePlan');
-
         const phaseLine = document.getElementById('phaseLine');
         const phaseBadge = document.getElementById('phaseBadge');
         const phaseNote = document.getElementById('phaseNote');
         const metricGrid = document.getElementById('metricGrid');
         const dailyPlanBody = document.getElementById('dailyPlanBody');
-
         let weeklyChart = null;
 
         const phaseConfig = {
-            foundation: {
-                label: 'Foundation Phase',
-                deepHours: 3.0,
-                recallCycles: 4,
-                mockExams: 1,
-                recoveryPriority: 'High',
-                note: 'Prioritize consistency, systems setup, and stable sleep before volume expansion.'
-            },
-            build: {
-                label: 'Build Phase',
-                deepHours: 3.8,
-                recallCycles: 5,
-                mockExams: 1,
-                recoveryPriority: 'High',
-                note: 'Increase retrieval load and tighten weekly planning cadence.'
-            },
-            intensification: {
-                label: 'Intensification Phase',
-                deepHours: 4.2,
-                recallCycles: 6,
-                mockExams: 2,
-                recoveryPriority: 'Medium',
-                note: 'Higher pressure phase. Keep deep blocks clean and reduce distractions aggressively.'
-            },
-            simulation: {
-                label: 'Simulation Phase',
-                deepHours: 3.6,
-                recallCycles: 5,
-                mockExams: 3,
-                recoveryPriority: 'Medium',
-                note: 'Shift from pure learning to timed exam execution and error correction.'
-            },
-            taper: {
-                label: 'Taper Phase',
-                deepHours: 2.2,
-                recallCycles: 3,
-                mockExams: 1,
-                recoveryPriority: 'Very High',
-                note: 'Reduce cognitive load while preserving sharpness. Sleep quality becomes the edge.'
-            }
+            foundation: { label:'Foundation Phase', deepHours:3.0, recallCycles:4, mockExams:1, recoveryPriority:'High', note:'Prioritize consistency, systems setup, and stable sleep before volume expansion.' },
+            build:       { label:'Build Phase',        deepHours:3.8, recallCycles:5, mockExams:1, recoveryPriority:'High', note:'Increase retrieval load and tighten weekly planning cadence.' },
+            intensification:{ label:'Intensification Phase', deepHours:4.2, recallCycles:6, mockExams:2, recoveryPriority:'Medium', note:'Higher pressure phase. Keep deep blocks clean and reduce distractions aggressively.' },
+            simulation:  { label:'Simulation Phase',   deepHours:3.6, recallCycles:5, mockExams:3, recoveryPriority:'Medium', note:'Shift from pure learning to timed exam execution and error correction.' },
+            taper:       { label:'Taper Phase',         deepHours:2.2, recallCycles:3, mockExams:1, recoveryPriority:'Very High', note:'Reduce cognitive load while preserving sharpness. Sleep quality becomes the edge.' }
         };
 
-        function toMinutes(timeString) {
-            const [h, m] = timeString.split(':').map(Number);
-            return (h * 60) + m;
-        }
-
-        function formatTime(minutes) {
-            const m = ((minutes % 1440) + 1440) % 1440;
-            const h = Math.floor(m / 60);
-            const mm = m % 60;
-            return `${String(h).padStart(2, '0')}:${String(mm).padStart(2, '0')}`;
-        }
-
-        function phaseFromWeeks(weeks) {
-            if (weeks >= 12) return 'foundation';
-            if (weeks >= 8) return 'build';
-            if (weeks >= 4) return 'intensification';
-            if (weeks >= 2) return 'simulation';
-            return 'taper';
-        }
+        function toMinutes(t) { const [h,m] = t.split(':').map(Number); return h*60+m; }
+        function formatTime(minutes) { const m=((minutes%1440)+1440)%1440; return `${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`; }
+        function phaseFromWeeks(w) { if(w>=12) return 'foundation'; if(w>=8) return 'build'; if(w>=4) return 'intensification'; if(w>=2) return 'simulation'; return 'taper'; }
 
         function buildDailyRows(wakeMinutes, phaseKey, workoutDays, load) {
-            const classDuration = load === 'heavy' ? 180 : load === 'medium' ? 130 : 90;
-            const deepBlocks = phaseKey === 'taper' ? 1 : phaseKey === 'simulation' ? 2 : 3;
-            const workoutBlock = workoutDays >= 5 ? 'Strength / conditioning session' : 'Zone-2 cardio or mobility';
-
+            const classDuration = load==='heavy'?180:load==='medium'?130:90;
+            const deepBlocks = phaseKey==='taper'?1:phaseKey==='simulation'?2:3;
+            const workoutBlock = workoutDays>=5?'Strength / conditioning session':'Zone-2 cardio or mobility';
             const rows = [
-                { start: wakeMinutes + 0, end: wakeMinutes + 25, block: 'Wake + sunlight + hydration', purpose: 'Circadian anchor and alertness setup.' },
-                { start: wakeMinutes + 30, end: wakeMinutes + 55, block: 'Planning + first review pass', purpose: 'Prime context before deep work.' }
+                {start:wakeMinutes+0,  end:wakeMinutes+25,  block:'Wake + sunlight + hydration',   purpose:'Circadian anchor and alertness setup.'},
+                {start:wakeMinutes+30, end:wakeMinutes+55,  block:'Planning + first review pass',   purpose:'Prime context before deep work.'},
+                {start:wakeMinutes+60, end:wakeMinutes+150, block:'Deep Work Block 1',              purpose:'Highest difficulty study target.'}
             ];
-
-            rows.push({ start: wakeMinutes + 60, end: wakeMinutes + 150, block: 'Deep Work Block 1', purpose: 'Highest difficulty study target.' });
-            if (deepBlocks >= 2) {
-                rows.push({ start: wakeMinutes + 165, end: wakeMinutes + 255, block: 'Deep Work Block 2', purpose: 'Retrieval practice / problem-solving.' });
-            }
-            if (deepBlocks >= 3) {
-                rows.push({ start: wakeMinutes + 270, end: wakeMinutes + 360, block: 'Deep Work Block 3', purpose: 'Optional advanced block if readiness is high.' });
-            }
-
-            rows.push({ start: wakeMinutes + 375, end: wakeMinutes + 430, block: 'Lunch + walk', purpose: 'Fuel without heavy afternoon crash.' });
-            rows.push({ start: wakeMinutes + 450, end: wakeMinutes + 450 + classDuration, block: 'Class / shallow work / admin', purpose: 'Operational tasks and logistics.' });
-            rows.push({ start: wakeMinutes + 680, end: wakeMinutes + 740, block: workoutBlock, purpose: 'Maintain physiology and stress resilience.' });
-            rows.push({ start: wakeMinutes + 760, end: wakeMinutes + 820, block: 'Recall consolidation + flash review', purpose: 'Reinforce long-term memory.' });
-            rows.push({ start: wakeMinutes + 860, end: wakeMinutes + 930, block: 'Dinner + downshift', purpose: 'Transition to low stimulation.' });
-            rows.push({ start: wakeMinutes + 960, end: wakeMinutes + 1440, block: 'Sleep window', purpose: 'Memory consolidation and recovery.' });
-
+            if(deepBlocks>=2) rows.push({start:wakeMinutes+165,end:wakeMinutes+255,block:'Deep Work Block 2',purpose:'Retrieval practice / problem-solving.'});
+            if(deepBlocks>=3) rows.push({start:wakeMinutes+270,end:wakeMinutes+360,block:'Deep Work Block 3',purpose:'Optional advanced block if readiness is high.'});
+            rows.push({start:wakeMinutes+375,end:wakeMinutes+430,block:'Lunch + walk',purpose:'Fuel without heavy afternoon crash.'});
+            rows.push({start:wakeMinutes+450,end:wakeMinutes+450+classDuration,block:'Class / shallow work / admin',purpose:'Operational tasks and logistics.'});
+            rows.push({start:wakeMinutes+680,end:wakeMinutes+740,block:workoutBlock,purpose:'Maintain physiology and stress resilience.'});
+            rows.push({start:wakeMinutes+760,end:wakeMinutes+820,block:'Recall consolidation + flash review',purpose:'Reinforce long-term memory.'});
+            rows.push({start:wakeMinutes+860,end:wakeMinutes+930,block:'Dinner + downshift',purpose:'Transition to low stimulation.'});
+            rows.push({start:wakeMinutes+960,end:wakeMinutes+1440,block:'Sleep window',purpose:'Memory consolidation and recovery.'});
             return rows;
         }
 
         function renderMetrics(config) {
-            const metrics = [
-                { label: 'Deep Work / Day', value: `${config.deepHours}h` },
-                { label: 'Recall Cycles / Week', value: String(config.recallCycles) },
-                { label: 'Mock Exams / Week', value: String(config.mockExams) },
-                { label: 'Recovery Priority', value: config.recoveryPriority }
-            ];
-
-            metricGrid.innerHTML = metrics.map((metric) => `
-                <article class="metric">
-                    <h4>${metric.label}</h4>
-                    <p>${metric.value}</p>
-                </article>
-            `).join('');
+            metricGrid.innerHTML = [
+                {label:'Deep Work / Day', value:`${config.deepHours}h`},
+                {label:'Recall Cycles / Week', value:String(config.recallCycles)},
+                {label:'Mock Exams / Week', value:String(config.mockExams)},
+                {label:'Recovery Priority', value:config.recoveryPriority}
+            ].map(m=>`<article class="metric"><h4>${m.label}</h4><p>${m.value}</p></article>`).join('');
         }
 
         function renderDailyTable(rows) {
-            dailyPlanBody.innerHTML = rows.map((row) => `
-                <tr>
-                    <td>${formatTime(row.start)}-${formatTime(row.end)}</td>
-                    <td>${row.block}</td>
-                    <td>${row.purpose}</td>
-                </tr>
-            `).join('');
-        }
-
-        function weekConfigForDistance(distance) {
-            return phaseConfig[phaseFromWeeks(distance)];
+            dailyPlanBody.innerHTML = rows.map(r=>`<tr><td>${formatTime(r.start)}-${formatTime(r.end)}</td><td>${r.block}</td><td>${r.purpose}</td></tr>`).join('');
         }
 
         function renderChart(weeksAway) {
-            const horizon = Math.min(6, Math.max(1, weeksAway + 1));
-            const labels = [];
-            const deepData = [];
-            const recoveryData = [];
-
-            for (let i = horizon - 1; i >= 0; i--) {
-                const distance = Math.max(0, weeksAway - i);
-                const cfg = weekConfigForDistance(distance);
-                labels.push(distance === 0 ? 'Final Week' : `${distance}w out`);
-                deepData.push(Math.round(cfg.deepHours * 6));
-                recoveryData.push(cfg.recoveryPriority === 'Very High' ? 18 : cfg.recoveryPriority === 'High' ? 14 : 11);
+            const horizon = Math.min(6, Math.max(1, weeksAway+1));
+            const labels=[], deepData=[], recoveryData=[];
+            for(let i=horizon-1;i>=0;i--) {
+                const d = Math.max(0, weeksAway-i);
+                const cfg = phaseConfig[phaseFromWeeks(d)];
+                labels.push(d===0?'Final Week':`${d}w out`);
+                deepData.push(Math.round(cfg.deepHours*6));
+                recoveryData.push(cfg.recoveryPriority==='Very High'?18:cfg.recoveryPriority==='High'?14:11);
             }
-
             const ctx = document.getElementById('weeklyChart');
-            if (weeklyChart) {
-                weeklyChart.data.labels = labels;
-                weeklyChart.data.datasets[0].data = deepData;
-                weeklyChart.data.datasets[1].data = recoveryData;
-                weeklyChart.update();
-                return;
-            }
-
+            if(weeklyChart) { weeklyChart.data.labels=labels; weeklyChart.data.datasets[0].data=deepData; weeklyChart.data.datasets[1].data=recoveryData; weeklyChart.update(); return; }
             weeklyChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels,
-                    datasets: [
-                        {
-                            label: 'Deep Work Hours / Week',
-                            data: deepData,
-                            backgroundColor: 'rgba(11, 92, 173, 0.72)'
-                        },
-                        {
-                            label: 'Recovery Blocks / Week',
-                            data: recoveryData,
-                            backgroundColor: 'rgba(15, 118, 110, 0.6)'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
+                type:'bar',
+                data:{ labels, datasets:[
+                    {label:'Deep Work Hours / Week', data:deepData, backgroundColor:'rgba(0,74,153,0.72)'},
+                    {label:'Recovery Blocks / Week', data:recoveryData, backgroundColor:'rgba(15,118,110,0.6)'}
+                ]},
+                options:{ responsive:true, maintainAspectRatio:false, scales:{y:{beginAtZero:true}} }
             });
         }
 
         function renderPlan() {
             const weeksAway = Math.max(0, Number(weeksInput.value));
             const wakeMinutes = toMinutes(wakeInput.value);
-            const workoutDays = Number(workoutInput.value);
-            const load = loadInput.value;
-
             const phaseKey = phaseFromWeeks(weeksAway);
             const config = phaseConfig[phaseKey];
-
-            phaseLine.textContent = `You are ${weeksAway} week${weeksAway === 1 ? '' : 's'} away from final.`;
+            phaseLine.textContent = `You are ${weeksAway} week${weeksAway===1?'':'s'} away from final.`;
             phaseBadge.textContent = config.label;
             phaseNote.textContent = config.note;
-
             renderMetrics(config);
-            renderDailyTable(buildDailyRows(wakeMinutes, phaseKey, workoutDays, load));
+            renderDailyTable(buildDailyRows(wakeMinutes, phaseKey, Number(workoutInput.value), loadInput.value));
             renderChart(weeksAway);
         }
 
         generateBtn.addEventListener('click', renderPlan);
         renderPlan();
     </script>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
 </body>
-
 </html>

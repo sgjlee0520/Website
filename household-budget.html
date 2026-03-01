@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Budget (가계부) - Songgun Lee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Page-specific styles ── */
+        .budget-hero {
+            background: linear-gradient(135deg, #004A99 0%, #003366 100%);
+            color: #fff;
+            padding: 60px 0 50px;
+        }
+        .budget-hero .section-title {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .budget-hero .hero-sub {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        /* Language toggle */
+        .lang-toggle {
+            display: inline-flex;
+            border: 1.5px solid rgba(255,255,255,0.4);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+        .lang-toggle button {
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 6px 18px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-toggle button.active {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+        .lang-toggle button:first-child {
+            border-right: 1.5px solid rgba(255,255,255,0.4);
+        }
+
+        /* Download banner */
+        .download-banner {
+            background: #f0f4f8;
+            border-bottom: 1px solid #dde4ed;
+            padding: 18px 0;
+        }
+        .download-banner .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .download-banner p {
+            margin: 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .download-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #004A99;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .btn-download:hover { background: #003366; }
+        .btn-download svg { flex-shrink: 0; }
+
+        /* Summary stats strip */
+        .budget-stats-section {
+            padding: 50px 0 40px;
+            background: #fff;
+        }
+        .budget-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.25rem;
+        }
+        .budget-stat-card {
+            background: #f7f9fc;
+            border: 1px solid #e4eaf3;
+            border-radius: 10px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+        .budget-stat-value {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #004A99;
+            line-height: 1.2;
+        }
+        .budget-stat-label {
+            display: block;
+            font-size: 0.78rem;
+            color: #777;
+            margin-top: 0.3rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* Monthly breakdown section */
+        .monthly-section {
+            padding: 50px 0;
+            background: #F9F9F9;
+        }
+        .monthly-section .section-title { margin-bottom: 2rem; }
+
+        /* Month cards grid */
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .month-card {
+            background: #fff;
+            border: 1px solid #e4eaf3;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.25s, transform 0.2s;
+        }
+        .month-card:hover {
+            box-shadow: 0 6px 24px rgba(0,74,153,0.1);
+            transform: translateY(-2px);
+        }
+        .month-card-header {
+            background: linear-gradient(135deg, #004A99, #0062cc);
+            color: #fff;
+            padding: 1rem 1.25rem 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .month-card-header h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 0;
+            color: #fff;
+        }
+        .month-card-header .month-total {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+        }
+        .month-card-body {
+            padding: 1rem 1.25rem;
+        }
+        .category-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f2f5;
+            font-size: 0.875rem;
+        }
+        .category-row:last-child { border-bottom: none; }
+        .category-name { color: #555; font-weight: 400; }
+        .category-amount { color: #333; font-weight: 600; font-variant-numeric: tabular-nums; }
+        .category-amount.zero { color: #bbb; font-weight: 400; }
+
+        /* Balance row at bottom of card */
+        .month-card-footer {
+            background: #f7f9fc;
+            border-top: 1px solid #e4eaf3;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        .balance-label { color: #777; font-weight: 500; }
+        .balance-value { color: #004A99; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+        /* System section */
+        .system-section {
+            padding: 50px 0;
+            background: #fff;
+        }
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        .system-card {
+            border: 1px solid #e4eaf3;
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+        .system-card .pill {
+            display: inline-block;
+            background: #eef3fb;
+            color: #004A99;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+        .system-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+        .system-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* Footer */
+        .budget-footer {
+            background: #F9F9F9;
+            border-top: 1px solid #e4eaf3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .budget-hero { padding: 40px 0 35px; }
+            .months-grid { grid-template-columns: 1fr; }
+            .download-banner .container { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* Language content toggle */
+        [data-lang="kr"] { display: none; }
+        body.lang-kr [data-lang="en"] { display: none; }
+        body.lang-kr [data-lang="kr"] { display: unset; }
+        body.lang-kr .month-card-body [data-lang="kr"],
+        body.lang-kr .months-grid [data-lang="kr"] { display: flex; }
+        body.lang-kr .month-card-body [data-lang="en"],
+        body.lang-kr .months-grid [data-lang="en"] { display: none; }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
+            </div>
+            <h1 class="brand-name"><a href="index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Physics Student &<br>Aspiring Quantitative Analyst</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link"><span class="nav-en">Financial Portfolio</span><span class="nav-kr">금융 포트폴리오</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="household-budget.html" class="nav-link active"><span class="nav-en">Household Budget</span><span class="nav-kr">가계부</span></a>
+                </li>
+            </ul>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+        </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Hero -->
+        <section class="budget-hero">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="en">Household Budget</span>
+                    <span data-lang="kr">가계부</span>
+                </h2>
+                <p class="hero-sub">
+                    <span data-lang="en">Monthly expense tracking — Sep 2025 through Mar 2026</span>
+                    <span data-lang="kr">2025년 9월 ~ 2026년 3월 월별 지출 기록</span>
+                </p>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download banner -->
+        <div class="download-banner">
+            <div class="container">
+                <p>
+                    <span data-lang="en">Download the full workbook with formulas, rolling balances, and per-month pie charts.</span>
+                    <span data-lang="kr">수식, 롤링 잔액, 월별 파이 차트가 포함된 전체 통합 문서를 다운로드하세요.</span>
+                </p>
+                <div class="download-links">
+                    <a href="가계부_한국어.xlsx" class="btn-download" download>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        가계부 (한국어)
+                    </a>
+                    <a href="Household_Budget_English.xlsx" class="btn-download" download>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Budget (English)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Stats -->
+        <section class="budget-stats-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="en">At a Glance</span>
+                    <span data-lang="kr">요약</span>
+                </h2>
+                <div class="budget-stats-grid">
+                    <div class="budget-stat-card">
+                        <span class="budget-stat-value">7</span>
+                        <span class="budget-stat-label">
+                            <span data-lang="en">Months Tracked</span>
+                            <span data-lang="kr">추적 월 수</span>
+                        </span>
+                    </div>
+                    <div class="budget-stat-card">
+                        <span class="budget-stat-value">$7,397</span>
+                        <span class="budget-stat-label">
+                            <span data-lang="en">Total Spent</span>
+                            <span data-lang="kr">총 지출</span>
+                        </span>
+                    </div>
+                    <div class="budget-stat-card">
+                        <span class="budget-stat-value">$1,057</span>
+                        <span class="budget-stat-label">
+                            <span data-lang="en">Avg / Month</span>
+                            <span data-lang="kr">월 평균</span>
+                        </span>
+                    </div>
+                    <div class="budget-stat-card">
+                        <span class="budget-stat-value">$15,300</span>
+                        <span class="budget-stat-label">
+                            <span data-lang="en">Opening Balance</span>
+                            <span data-lang="kr">시작 잔액</span>
+                        </span>
+                    </div>
+                    <div class="budget-stat-card">
+                        <span class="budget-stat-value">10</span>
+                        <span class="budget-stat-label">
+                            <span data-lang="en">Categories</span>
+                            <span data-lang="kr">지출 항목</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monthly Breakdown -->
+        <section class="monthly-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="en">Monthly Breakdown</span>
+                    <span data-lang="kr">월별 내역</span>
+                </h2>
+
+                <div class="months-grid">
+
+                    <!-- ── Sep 2025 ── -->
+                    <div class="month-card">
+                        <div class="month-card-header">
+                            <h3>
+                                <span data-lang="en">September 2025</span>
+                                <span data-lang="kr">2025년 9월</span>
+                            </h3>
+                            <span class="month-total">$984.15</span>
+                        </div>
+                        <div class="month-card-body">
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Groceries</span><span data-lang="kr">식재료</span></span>
+                                <span class="category-amount">$112.60</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Dining Out</span><span data-lang="kr">외식</span></span>
+                                <span class="category-amount">$143.25</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Supplements</span><span data-lang="kr">보조제</span></span>
+                                <span class="category-amount">$89.40</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Transportation</span><span data-lang="kr">교통비</span></span>
+                                <span class="category-amount">$52.00</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Essentials</span><span data-lang="kr">생필품</span></span>
+                                <span class="category-amount">$201.50</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Luxury</span><span data-lang="kr">사치품</span></span>
+                                <span class="category-amount">$215.40</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Other</span><span data-lang="kr">기타</span></span>
+                                <span class="category-amount">$170.00</span>
+                            </div>
+                        </div>
+                        <div class="month-card-footer">
+                            <span class="balance-label"><span data-lang="en">Remaining Balance</span><span data-lang="kr">남은 잔액</span></span>
+                            <span class="balance-value">$14,315.85</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Oct 2025 ── -->
+                    <div class="month-card">
+                        <div class="month-card-header">
+                            <h3>
+                                <span data-lang="en">October 2025</span>
+                                <span data-lang="kr">2025년 10월</span>
+                            </h3>
+                            <span class="month-total">$1,124.70</span>
+                        </div>
+                        <div class="month-card-body">
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Groceries</span><span data-lang="kr">식재료</span></span>
+                                <span class="category-amount">$134.20</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Dining Out</span><span data-lang="kr">외식</span></span>
+                                <span class="category-amount">$168.90</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Supplements</span><span data-lang="kr">보조제</span></span>
+                                <span class="category-amount">$76.30</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Transportation</span><span data-lang="kr">교통비</span></span>
+                                <span class="category-amount">$61.50</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Essentials</span><span data-lang="kr">생필품</span></span>
+                                <span class="category-amount">$243.80</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Luxury</span><span data-lang="kr">사치품</span></span>
+                                <span class="category-amount">$280.00</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Other</span><span data-lang="kr">기타</span></span>
+                                <span class="category-amount">$160.00</span>
+                            </div>
+                        </div>
+                        <div class="month-card-footer">
+                            <span class="balance-label"><span data-lang="en">Remaining Balance</span><span data-lang="kr">남은 잔액</span></span>
+                            <span class="balance-value">$13,191.15</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Nov 2025 ── -->
+                    <div class="month-card">
+                        <div class="month-card-header">
+                            <h3>
+                                <span data-lang="en">November 2025</span>
+                                <span data-lang="kr">2025년 11월</span>
+                            </h3>
+                            <span class="month-total">$1,053.40</span>
+                        </div>
+                        <div class="month-card-body">
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Groceries</span><span data-lang="kr">식재료</span></span>
+                                <span class="category-amount">$128.50</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Dining Out</span><span data-lang="kr">외식</span></span>
+                                <span class="category-amount">$152.40</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Supplements</span><span data-lang="kr">보조제</span></span>
+                                <span class="category-amount">$83.20</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Transportation</span><span data-lang="kr">교통비</span></span>
+                                <span class="category-amount">$47.30</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Essentials</span><span data-lang="kr">생필품</span></span>
+                                <span class="category-amount">$218.60</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Luxury</span><span data-lang="kr">사치품</span></span>
+                                <span class="category-amount">$198.40</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Travel</span><span data-lang="kr">여행</span></span>
+                                <span class="category-amount">$225.00</span>
+                            </div>
+                        </div>
+                        <div class="month-card-footer">
+                            <span class="balance-label"><span data-lang="en">Remaining Balance</span><span data-lang="kr">남은 잔액</span></span>
+                            <span class="balance-value">$12,137.75</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Dec 2025 ── -->
+                    <div class="month-card">
+                        <div class="month-card-header">
+                            <h3>
+                                <span data-lang="en">December 2025</span>
+                                <span data-lang="kr">2025년 12월</span>
+                            </h3>
+                            <span class="month-total">$1,187.30</span>
+                        </div>
+                        <div class="month-card-body">
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Groceries</span><span data-lang="kr">식재료</span></span>
+                                <span class="category-amount">$145.80</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Dining Out</span><span data-lang="kr">외식</span></span>
+                                <span class="category-amount">$189.50</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Supplements</span><span data-lang="kr">보조제</span></span>
+                                <span class="category-amount">$92.40</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Transportation</span><span data-lang="kr">교통비</span></span>
+                                <span class="category-amount">$58.60</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Essentials</span><span data-lang="kr">생필품</span></span>
+                                <span class="category-amount">$267.00</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Luxury</span><span data-lang="kr">사치품</span></span>
+                                <span class="category-amount">$312.00</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Self-Development</span><span data-lang="kr">자기개발비</span></span>
+                                <span class="category-amount">$122.00</span>
+                            </div>
+                        </div>
+                        <div class="month-card-footer">
+                            <span class="balance-label"><span data-lang="en">Remaining Balance</span><span data-lang="kr">남은 잔액</span></span>
+                            <span class="balance-value">$10,950.45</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Jan 2026 ── -->
+                    <div class="month-card">
+                        <div class="month-card-header">
+                            <h3>
+                                <span data-lang="en">January 2026</span>
+                                <span data-lang="kr">2026년 1월</span>
+                            </h3>
+                            <span class="month-total">$1,098.55</span>
+                        </div>
+                        <div class="month-card-body">
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Groceries</span><span data-lang="kr">식재료</span></span>
+                                <span class="category-amount">$138.90</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Dining Out</span><span data-lang="kr">외식</span></span>
+                                <span class="category-amount">$163.20</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Supplements</span><span data-lang="kr">보조제</span></span>
+                                <span class="category-amount">$78.50</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Transportation</span><span data-lang="kr">교통비</span></span>
+                                <span class="category-amount">$53.80</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Essentials</span><span data-lang="kr">생필품</span></span>
+                                <span class="category-amount">$229.15</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Luxury</span><span data-lang="kr">사치품</span></span>
+                                <span class="category-amount">$248.00</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Self-Development</span><span data-lang="kr">자기개발비</span></span>
+                                <span class="category-amount">$187.00</span>
+                            </div>
+                        </div>
+                        <div class="month-card-footer">
+                            <span class="balance-label"><span data-lang="en">Remaining Balance</span><span data-lang="kr">남은 잔액</span></span>
+                            <span class="balance-value">$9,851.90</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Feb 2026 ── -->
+                    <div class="month-card">
+                        <div class="month-card-header">
+                            <h3>
+                                <span data-lang="en">February 2026</span>
+                                <span data-lang="kr">2026년 2월</span>
+                            </h3>
+                            <span class="month-total">$912.30</span>
+                        </div>
+                        <div class="month-card-body">
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Groceries</span><span data-lang="kr">식재료</span></span>
+                                <span class="category-amount">$98.40</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Dining Out</span><span data-lang="kr">외식</span></span>
+                                <span class="category-amount">$121.60</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Supplements</span><span data-lang="kr">보조제</span></span>
+                                <span class="category-amount">$67.30</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Transportation</span><span data-lang="kr">교통비</span></span>
+                                <span class="category-amount">$42.50</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Essentials</span><span data-lang="kr">생필품</span></span>
+                                <span class="category-amount">$178.20</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Luxury Food</span><span data-lang="kr">사치 음식</span></span>
+                                <span class="category-amount">$88.30</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Luxury</span><span data-lang="kr">사치품</span></span>
+                                <span class="category-amount">$196.00</span>
+                            </div>
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Travel</span><span data-lang="kr">여행</span></span>
+                                <span class="category-amount">$120.00</span>
+                            </div>
+                        </div>
+                        <div class="month-card-footer">
+                            <span class="balance-label"><span data-lang="en">Remaining Balance</span><span data-lang="kr">남은 잔액</span></span>
+                            <span class="balance-value">$8,939.60</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Mar 2026 ── -->
+                    <div class="month-card">
+                        <div class="month-card-header">
+                            <h3>
+                                <span data-lang="en">March 2026</span>
+                                <span data-lang="kr">2026년 3월</span>
+                            </h3>
+                            <span class="month-total">$37.00</span>
+                        </div>
+                        <div class="month-card-body">
+                            <div class="category-row">
+                                <span class="category-name"><span data-lang="en">Travel</span><span data-lang="kr">여행</span></span>
+                                <span class="category-amount">$37.00</span>
+                            </div>
+                        </div>
+                        <div class="month-card-footer">
+                            <span class="balance-label"><span data-lang="en">Remaining Balance</span><span data-lang="kr">남은 잔액</span></span>
+                            <span class="balance-value">$8,902.60</span>
+                        </div>
+                    </div>
+
+                </div><!-- /months-grid -->
+            </div>
+        </section>
+
+        <!-- System & Methodology -->
+        <section class="system-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="en">How the System Works</span>
+                    <span data-lang="kr">시스템 구조</span>
+                </h2>
+                <div class="system-grid">
+                    <div class="system-card">
+                        <span class="pill">Excel / openpyxl</span>
+                        <h4><span data-lang="en">Built with Python</span><span data-lang="kr">Python으로 제작</span></h4>
+                        <p>
+                            <span data-lang="en">The workbook is programmatically generated using openpyxl — formulas, formatting, and per-month pie charts are all written in code, not manually.</span>
+                            <span data-lang="kr">통합 문서는 openpyxl을 사용해 프로그래밍 방식으로 생성됩니다. 수식, 서식, 월별 파이 차트 모두 코드로 작성되었습니다.</span>
+                        </p>
+                    </div>
+                    <div class="system-card">
+                        <span class="pill">Rolling Balance</span>
+                        <h4><span data-lang="en">Cumulative Tracking</span><span data-lang="kr">누적 잔액 추적</span></h4>
+                        <p>
+                            <span data-lang="en">Each month's remaining balance automatically carries forward to the next sheet using a dynamic cross-sheet formula — no manual entry required.</span>
+                            <span data-lang="kr">각 월의 남은 잔액은 동적 교차 시트 수식을 사용해 다음 시트로 자동으로 이월됩니다.</span>
+                        </p>
+                    </div>
+                    <div class="system-card">
+                        <span class="pill">SUMIF</span>
+                        <h4><span data-lang="en">Category Totals</span><span data-lang="kr">항목별 합계</span></h4>
+                        <p>
+                            <span data-lang="en">Per-category totals are driven by SUMIF formulas across 200 transaction rows — add an entry with a category tag and the totals update instantly.</span>
+                            <span data-lang="kr">항목별 합계는 200개의 거래 행에 걸친 SUMIF 수식으로 계산됩니다. 항목 태그로 항목을 추가하면 합계가 즉시 업데이트됩니다.</span>
+                        </p>
+                    </div>
+                    <div class="system-card">
+                        <span class="pill">Pie Charts</span>
+                        <h4><span data-lang="en">Visual Breakdown</span><span data-lang="kr">시각적 분석</span></h4>
+                        <p>
+                            <span data-lang="en">Each month sheet includes an auto-generated pie chart showing only the categories with actual spending — zero-value categories are excluded automatically.</span>
+                            <span data-lang="kr">각 월별 시트에는 실제 지출이 있는 항목만 표시하는 자동 생성 파이 차트가 포함됩니다.</span>
+                        </p>
+                    </div>
+                    <div class="system-card">
+                        <span class="pill">Bilingual</span>
+                        <h4><span data-lang="en">KR / EN Versions</span><span data-lang="kr">한국어 / 영어 버전</span></h4>
+                        <p>
+                            <span data-lang="en">Two separate workbooks — one in Korean (가계부_한국어.xlsx) and one in English — with identical structure but localized labels and category names.</span>
+                            <span data-lang="kr">한국어와 영어 두 가지 별도 통합 문서로, 동일한 구조이지만 현지화된 레이블과 항목명을 사용합니다.</span>
+                        </p>
+                    </div>
+                    <div class="system-card">
+                        <span class="pill">New Month Template</span>
+                        <h4><span data-lang="en">One-Click Expansion</span><span data-lang="kr">원클릭 확장</span></h4>
+                        <p>
+                            <span data-lang="en">A pre-built template sheet is included so adding a new month takes seconds — copy, rename, and the formulas self-configure for the new period.</span>
+                            <span data-lang="kr">미리 만들어진 템플릿 시트가 포함되어 있어 새 달 추가가 몇 초면 됩니다. 복사하고 이름을 바꾸면 수식이 새 기간에 맞게 자동 구성됩니다.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer budget-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
+</body>
+
+</html>

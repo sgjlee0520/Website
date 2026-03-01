@@ -4,50 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huberman Protocol Blueprint | Songgun Lee</title>
+    <title>Huberman Protocol Blueprint - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .health-hero {
+            background: linear-gradient(135deg, #004A99 0%, #003366 100%);
+            color: #fff;
+            padding: 60px 0 50px;
+        }
+        .health-hero .section-title { color: #fff; margin-bottom: 0.5rem; }
+        .health-hero .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.78); margin-bottom: 1.5rem; font-weight: 400; }
+        .health-hero .hero-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+        .health-crumb { background: #f7f9fc; border-bottom: 1px solid #e4eaf3; padding: 10px 0; font-size: 0.82rem; color: #777; }
+        .health-crumb .container { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+        .health-crumb a { color: #004A99; text-decoration: none; }
+        .health-crumb a:hover { text-decoration: underline; }
+        .health-crumb span { color: #bbb; }
+
+        .health-section { padding: 50px 0; background: #fff; }
+        .health-section.alt { background: #F9F9F9; }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+        .kpi-card { background: #f7f9fc; border: 1px solid #e4eaf3; border-radius: 10px; padding: 1.25rem; transition: box-shadow 0.2s; }
+        .kpi-card:hover { box-shadow: 0 4px 16px rgba(0,74,153,0.1); }
+        .kpi-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #777; margin-bottom: 0.5rem; }
+        .kpi-value { font-size: 1.8rem; font-weight: 700; color: #004A99; line-height: 1.1; margin-bottom: 0.4rem; }
+        .kpi-note { font-size: 0.83rem; color: #666; margin: 0; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+        @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+        .panel h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #222; }
+        .section-note { font-size: 0.88rem; color: #777; margin-bottom: 1.25rem; }
+        .form-grid { display: grid; gap: 0.85rem; margin-bottom: 1.25rem; }
+        .field label { display: block; font-size: 0.82rem; font-weight: 600; color: #555; margin-bottom: 4px; }
+        .field input, .field select { width: 100%; padding: 8px 10px; border: 1px solid #d0dae8; border-radius: 7px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #333; background: #fff; }
+        .field input:focus, .field select:focus { outline: none; border-color: #004A99; }
+        .small-note { font-size: 0.78rem; color: #aaa; margin-top: 0.75rem; }
+
+        .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 0.5rem; }
+        .timeline-item { display: grid; grid-template-columns: 72px 1fr; gap: 0 0.85rem; padding: 10px 0; border-bottom: 1px solid #f0f2f5; }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-time { font-size: 0.8rem; font-weight: 700; color: #004A99; font-variant-numeric: tabular-nums; padding-top: 3px; }
+        .timeline-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 7px; border-radius: 20px; background: #eef3fb; color: #004A99; margin-bottom: 3px; }
+        .timeline-title { font-size: 0.9rem; font-weight: 600; color: #222; margin: 0 0 2px; }
+        .timeline-desc { font-size: 0.8rem; color: #666; margin: 0; line-height: 1.45; }
+
+        .chart-panel h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #222; }
+        .chart-wrap { height: 260px; position: relative; margin-top: 0.75rem; }
+
+        .context-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
+        .context-item { border: 1px solid #e4eaf3; border-radius: 8px; overflow: hidden; }
+        .context-item summary { padding: 10px 14px; font-size: 0.88rem; font-weight: 600; cursor: pointer; color: #333; list-style: none; }
+        .context-item summary::-webkit-details-marker { display: none; }
+        .context-item p { padding: 0 14px 12px; font-size: 0.85rem; color: #666; margin: 0; line-height: 1.55; }
+        .context-item[open] summary { color: #004A99; }
+    </style>
 </head>
 
 <body>
-    <header class="topbar">
-        <div class="shell">
-            <div class="crumb">Songgun Lee / Explorations</div>
-            <nav class="nav-links" aria-label="Health section pages">
-                <a class="nav-link" href="../index.html">Main Site</a>
-                <a class="nav-link" href="index.html">Health</a>
-                <a class="nav-link" href="papers.html">Papers</a>
-                <a class="nav-link" href="huberman.html" aria-current="page">Huberman Guide</a>
-            </nav>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
+            </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Physics Student &<br>Aspiring Quantitative Analyst</p>
         </div>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="shell">
-                <div class="hero-block">
-                    <div class="eyebrow">Chronobiology dashboard</div>
-                    <h1>This should be your daily schedule if focus is the mission.</h1>
-                    <p>
-                        Rich protocol view built from your long-form Huberman synthesis. Tune wake time, caffeine delay,
-                        and training type, then read the exact day structure.
-                    </p>
-                    <div class="actions">
-                        <a class="btn btn-primary" href="hubermans_optimal_daily_schedule.pdf" target="_blank"
-                            rel="noopener noreferrer">Open Full PDF</a>
-                        <a class="btn btn-secondary" href="hubermans_optimal_daily_schedule.md" target="_blank"
-                            rel="noopener noreferrer">Open Full Markdown</a>
-                    </div>
+        <nav class="sidebar-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+                <li class="nav-item"><a href="../portfolio.html" class="nav-link"><span class="nav-en">Financial Portfolio</span><span class="nav-kr">금융 포트폴리오</span></a></li>
+                <li class="nav-item"><a href="../household-budget.html" class="nav-link"><span class="nav-en">Household Budget</span><span class="nav-kr">가계부</span></a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19"></path></svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content">
+
+        <!-- Breadcrumb -->
+        <div class="health-crumb">
+            <div class="container">
+                <a href="../index.html">Home</a>
+                <span>›</span>
+                <a href="index.html">Health &amp; Human Performance</a>
+                <span>›</span>
+                <span>Huberman Protocol</span>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <section class="health-hero">
+            <div class="container">
+                <h2 class="section-title">Huberman Protocol Blueprint</h2>
+                <p class="hero-sub">Chronobiology dashboard — tune wake time, caffeine delay, and training type, then read the exact day structure.</p>
+                <div class="hero-buttons">
+                    <a class="btn btn-secondary" href="hubermans_optimal_daily_schedule.pdf" target="_blank" rel="noopener noreferrer">Open Full PDF</a>
+                    <a class="btn btn-secondary" href="hubermans_optimal_daily_schedule.md" target="_blank" rel="noopener noreferrer">Open Markdown</a>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="shell">
-                <h2>Protocol scoreboard</h2>
+        <!-- KPI Scoreboard -->
+        <section class="health-section">
+            <div class="container">
+                <h2 class="section-title">Protocol Scoreboard</h2>
                 <div class="kpi-grid">
                     <article class="kpi-card">
                         <div class="kpi-label">Morning Anchor</div>
@@ -73,93 +169,92 @@
             </div>
         </section>
 
-        <section class="section">
-            <div class="shell two-col">
-                <div class="panel">
-                    <h3>Schedule controls</h3>
-                    <p class="section-note">Adjust variables and regenerate the timeline.</p>
-                    <div class="form-grid">
-                        <div class="field">
-                            <label for="wakeTime">Wake Time</label>
-                            <input id="wakeTime" type="time" value="06:30">
+        <!-- Schedule Builder -->
+        <section class="health-section alt">
+            <div class="container">
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Schedule Controls</h3>
+                        <p class="section-note">Adjust variables and regenerate the timeline.</p>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="wakeTime">Wake Time</label>
+                                <input id="wakeTime" type="time" value="06:30">
+                            </div>
+                            <div class="field">
+                                <label for="caffeineDelay">Caffeine Delay</label>
+                                <select id="caffeineDelay">
+                                    <option value="60">60 minutes</option>
+                                    <option value="90" selected>90 minutes</option>
+                                    <option value="120">120 minutes</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="trainingMode">Training Focus</label>
+                                <select id="trainingMode">
+                                    <option value="hybrid" selected>Hybrid (Strength + Cardio)</option>
+                                    <option value="strength">Strength Priority</option>
+                                    <option value="endurance">Endurance Priority</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="field">
-                            <label for="caffeineDelay">Caffeine Delay</label>
-                            <select id="caffeineDelay">
-                                <option value="60">60 minutes</option>
-                                <option value="90" selected>90 minutes</option>
-                                <option value="120">120 minutes</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label for="trainingMode">Training Focus</label>
-                            <select id="trainingMode">
-                                <option value="hybrid" selected>Hybrid (Strength + Cardio)</option>
-                                <option value="strength">Strength Priority</option>
-                                <option value="endurance">Endurance Priority</option>
-                            </select>
-                        </div>
+                        <button id="buildSchedule" class="btn btn-primary" type="button">Generate Daily Schedule</button>
+                        <p class="small-note">The schedule below is the primary execution target.</p>
                     </div>
-                    <div class="actions">
-                        <button id="buildSchedule" class="btn btn-primary" type="button">Generate Daily
-                            Schedule</button>
+                    <div class="panel">
+                        <h3 id="scheduleHeader">Your daily schedule</h3>
+                        <div id="scheduleTimeline" class="timeline"></div>
                     </div>
-                    <p class="small-note">The schedule below is the primary execution target.</p>
-                </div>
-
-                <div class="panel">
-                    <h3 id="scheduleHeader">Your daily schedule</h3>
-                    <div id="scheduleTimeline" class="timeline"></div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="shell two-col">
-                <div class="chart-panel">
-                    <h3>24-hour focus readiness map</h3>
-                    <p class="section-note">Visual estimate of cognitive readiness over the day based on your wake
-                        anchor.</p>
-                    <div class="chart-wrap">
-                        <canvas id="circadianChart" aria-label="Circadian focus chart"></canvas>
+        <!-- Chart + Why It Works -->
+        <section class="health-section">
+            <div class="container">
+                <div class="two-col">
+                    <div class="chart-panel">
+                        <h3>24-Hour Focus Readiness Map</h3>
+                        <p class="section-note">Visual estimate of cognitive readiness over the day based on your wake anchor.</p>
+                        <div class="chart-wrap">
+                            <canvas id="circadianChart" aria-label="Circadian focus chart"></canvas>
+                        </div>
                     </div>
-                </div>
-                <div class="panel">
-                    <h3>Why this works</h3>
-                    <div class="context-list">
-                        <details class="context-item" open>
-                            <summary>Cortisol pulse alignment</summary>
-                            <p>Morning light sets circadian timing and supports alertness without artificial
-                                stimulation.
-                                This is the anchor for the entire schedule quality.</p>
-                        </details>
-                        <details class="context-item" open>
-                            <summary>Ultradian deep work cycles</summary>
-                            <p>90-minute focused cycles map better to real neurobiology than all-day grind sessions. It
-                                protects output quality and reduces burnout probability.</p>
-                        </details>
-                        <details class="context-item">
-                            <summary>NSDR and recovery windows</summary>
-                            <p>Memory consolidation is recovery-dependent. Midday NSDR and evening downshift are part of
-                                performance, not separate from it.</p>
-                        </details>
-                        <details class="context-item">
-                            <summary>Exercise timing and cognition</summary>
-                            <p>Placing training after major deep-work blocks helps preserve cognitive sharpness while
-                                still extracting physiological benefits.</p>
-                        </details>
+                    <div class="panel">
+                        <h3>Why This Works</h3>
+                        <div class="context-list">
+                            <details class="context-item" open>
+                                <summary>Cortisol pulse alignment</summary>
+                                <p>Morning light sets circadian timing and supports alertness without artificial stimulation. This is the anchor for the entire schedule quality.</p>
+                            </details>
+                            <details class="context-item" open>
+                                <summary>Ultradian deep work cycles</summary>
+                                <p>90-minute focused cycles map better to real neurobiology than all-day grind sessions. It protects output quality and reduces burnout probability.</p>
+                            </details>
+                            <details class="context-item">
+                                <summary>NSDR and recovery windows</summary>
+                                <p>Memory consolidation is recovery-dependent. Midday NSDR and evening downshift are part of performance, not separate from it.</p>
+                            </details>
+                            <details class="context-item">
+                                <summary>Exercise timing and cognition</summary>
+                                <p>Placing training after major deep-work blocks helps preserve cognitive sharpness while still extracting physiological benefits.</p>
+                            </details>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </main>
 
-    <footer class="footer">
-        <div class="shell">
-            <p>This dashboard is derived from your full report and built to be practical, visual, and editable.</p>
-        </div>
-    </footer>
-
+    <script src="../script.js"></script>
     <script>
         const wakeInput = document.getElementById('wakeTime');
         const caffeineInput = document.getElementById('caffeineDelay');
@@ -167,126 +262,80 @@
         const buildBtn = document.getElementById('buildSchedule');
         const scheduleTimeline = document.getElementById('scheduleTimeline');
         const scheduleHeader = document.getElementById('scheduleHeader');
-
         let circadianChart = null;
 
-        function toMinutes(timeString) {
-            const [h, m] = timeString.split(':').map(Number);
-            return (h * 60) + m;
-        }
-
-        function formatTime(minutes) {
-            const m = ((minutes % 1440) + 1440) % 1440;
-            const hours = Math.floor(m / 60);
-            const mins = m % 60;
-            return `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}`;
-        }
+        function toMinutes(t) { const [h,m] = t.split(':').map(Number); return h*60+m; }
+        function formatTime(minutes) { const m=((minutes%1440)+1440)%1440; return `${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`; }
 
         function buildEvents(caffeineDelay, trainingMode) {
-            const trainingLabel = {
-                hybrid: 'Hybrid training (strength + zone-2)',
-                strength: 'Strength training session',
-                endurance: 'Zone-2 / interval cardio session'
-            }[trainingMode];
-
+            const trainingLabel = { hybrid:'Hybrid training (strength + zone-2)', strength:'Strength training session', endurance:'Zone-2 / interval cardio session' }[trainingMode];
             return [
-                { offset: 0, tag: 'Anchor', title: 'Wake + Sunlight', desc: 'Go outside within 60 minutes. 10-20 minutes of light exposure.' },
-                { offset: 15, tag: 'Activation', title: 'Hydrate + light movement', desc: 'Water, light mobility, short walk to raise body temperature.' },
-                { offset: caffeineDelay, tag: 'Stimulant', title: 'First caffeine', desc: 'Delayed intake to avoid masking residual adenosine.' },
-                { offset: 150, tag: 'Focus', title: 'Deep Work Block 1 (90m)', desc: 'Hardest cognitive task of the day. No context switching.' },
-                { offset: 245, tag: 'Recovery', title: 'Deliberate defocus (15m)', desc: 'Panoramic vision break. No phone scrolling.' },
-                { offset: 270, tag: 'Focus', title: 'Deep Work Block 2 (90m)', desc: 'Active recall, problem sets, or technical writing.' },
-                { offset: 390, tag: 'Nutrition', title: 'Low-carb lunch + walk', desc: 'Support stable afternoon alertness.' },
-                { offset: 450, tag: 'Recovery', title: 'NSDR / Yoga Nidra (20m)', desc: 'Downshift stress, restore focus signal.' },
-                { offset: 500, tag: 'Focus', title: 'Deep Work Block 3 (Optional)', desc: 'Use if high readiness remains; otherwise shallow work.' },
-                { offset: 650, tag: 'Training', title: trainingLabel, desc: 'Physical load after major cognitive work is complete.' },
-                { offset: 760, tag: 'Transition', title: 'Sunset walk + light review', desc: 'Lower cognitive intensity and begin evening taper.' },
-                { offset: 840, tag: 'Nutrition', title: 'Dinner', desc: 'Carb timing can support evening downshift and sleep onset.' },
-                { offset: 930, tag: 'Sleep Prep', title: 'Dim lights + no heavy cognition', desc: 'Protect melatonin and reduce stimulation.' },
-                { offset: 960, tag: 'Sleep', title: 'Sleep window begins', desc: 'Target 7-9 hours and stable wake anchor.' }
+                {offset:0,   tag:'Anchor',    title:'Wake + Sunlight',              desc:'Go outside within 60 minutes. 10-20 minutes of light exposure.'},
+                {offset:15,  tag:'Activation',title:'Hydrate + light movement',     desc:'Water, light mobility, short walk to raise body temperature.'},
+                {offset:caffeineDelay, tag:'Stimulant', title:'First caffeine',     desc:'Delayed intake to avoid masking residual adenosine.'},
+                {offset:150, tag:'Focus',     title:'Deep Work Block 1 (90m)',       desc:'Hardest cognitive task of the day. No context switching.'},
+                {offset:245, tag:'Recovery',  title:'Deliberate defocus (15m)',     desc:'Panoramic vision break. No phone scrolling.'},
+                {offset:270, tag:'Focus',     title:'Deep Work Block 2 (90m)',       desc:'Active recall, problem sets, or technical writing.'},
+                {offset:390, tag:'Nutrition', title:'Low-carb lunch + walk',        desc:'Support stable afternoon alertness.'},
+                {offset:450, tag:'Recovery',  title:'NSDR / Yoga Nidra (20m)',      desc:'Downshift stress, restore focus signal.'},
+                {offset:500, tag:'Focus',     title:'Deep Work Block 3 (Optional)', desc:'Use if high readiness remains; otherwise shallow work.'},
+                {offset:650, tag:'Training',  title:trainingLabel,                  desc:'Physical load after major cognitive work is complete.'},
+                {offset:760, tag:'Transition',title:'Sunset walk + light review',   desc:'Lower cognitive intensity and begin evening taper.'},
+                {offset:840, tag:'Nutrition', title:'Dinner',                       desc:'Carb timing can support evening downshift and sleep onset.'},
+                {offset:930, tag:'Sleep Prep',title:'Dim lights + no heavy cognition', desc:'Protect melatonin and reduce stimulation.'},
+                {offset:960, tag:'Sleep',     title:'Sleep window begins',          desc:'Target 7-9 hours and stable wake anchor.'}
             ];
         }
 
         function renderSchedule() {
             const wake = toMinutes(wakeInput.value);
-            const caffeine = Number(caffeineInput.value);
-            const training = trainingInput.value;
-            const events = buildEvents(caffeine, training);
-
-            scheduleHeader.textContent = `This should be your daily schedule (wake ${wakeInput.value})`;
-            scheduleTimeline.innerHTML = events.map((item) => {
-                return `
-                    <article class="timeline-item">
-                        <div class="timeline-time">${formatTime(wake + item.offset)}</div>
-                        <div>
-                            <span class="timeline-tag">${item.tag}</span>
-                            <h4 class="timeline-title">${item.title}</h4>
-                            <p class="timeline-desc">${item.desc}</p>
-                        </div>
-                    </article>
-                `;
-            }).join('');
-
+            const events = buildEvents(Number(caffeineInput.value), trainingInput.value);
+            scheduleHeader.textContent = `Your daily schedule (wake ${wakeInput.value})`;
+            scheduleTimeline.innerHTML = events.map(item => `
+                <article class="timeline-item">
+                    <div class="timeline-time">${formatTime(wake + item.offset)}</div>
+                    <div><span class="timeline-tag">${item.tag}</span>
+                    <h4 class="timeline-title">${item.title}</h4>
+                    <p class="timeline-desc">${item.desc}</p></div>
+                </article>`).join('');
             updateChart(wake);
         }
 
         function focusCurveAtHour(hour, wakeHour) {
             const delta = (hour - wakeHour + 24) % 24;
-            const morningPeak = 38 * Math.exp(-Math.pow(delta - 3.5, 2) / 5.2);
-            const midPeak = 20 * Math.exp(-Math.pow(delta - 8.5, 2) / 8.5);
-            const postLunchDip = 18 * Math.exp(-Math.pow(delta - 7, 2) / 2.2);
-            const lateDip = 25 * Math.exp(-Math.pow(delta - 15.5, 2) / 3.8);
-            const baseline = 35;
-            return Math.max(8, Math.min(95, baseline + morningPeak + midPeak - postLunchDip - lateDip));
+            return Math.max(8, Math.min(95, 35 + 38*Math.exp(-Math.pow(delta-3.5,2)/5.2) + 20*Math.exp(-Math.pow(delta-8.5,2)/8.5) - 18*Math.exp(-Math.pow(delta-7,2)/2.2) - 25*Math.exp(-Math.pow(delta-15.5,2)/3.8)));
         }
 
         function updateChart(wakeMinutes) {
             const wakeHour = wakeMinutes / 60;
-            const labels = Array.from({ length: 24 }, (_, i) => `${String(i).padStart(2, '0')}:00`);
-            const values = labels.map((_, i) => Math.round(focusCurveAtHour(i, wakeHour)));
-
-            if (circadianChart) {
-                circadianChart.data.labels = labels;
-                circadianChart.data.datasets[0].data = values;
-                circadianChart.update();
-                return;
-            }
-
-            const ctx = document.getElementById('circadianChart');
-            circadianChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels,
-                    datasets: [{
-                        label: 'Estimated Focus Readiness',
-                        data: values,
-                        borderColor: '#0b5cad',
-                        backgroundColor: 'rgba(11, 92, 173, 0.16)',
-                        tension: 0.32,
-                        fill: true,
-                        pointRadius: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: {
-                            min: 0,
-                            max: 100,
-                            title: { display: true, text: 'Readiness' }
-                        }
-                    }
-                }
+            const labels = Array.from({length:24}, (_,i) => `${String(i).padStart(2,'0')}:00`);
+            const values = labels.map((_,i) => Math.round(focusCurveAtHour(i, wakeHour)));
+            if (circadianChart) { circadianChart.data.labels=labels; circadianChart.data.datasets[0].data=values; circadianChart.update(); return; }
+            circadianChart = new Chart(document.getElementById('circadianChart'), {
+                type:'line',
+                data:{ labels, datasets:[{label:'Estimated Focus Readiness', data:values, borderColor:'#004A99', backgroundColor:'rgba(0,74,153,0.12)', tension:0.32, fill:true, pointRadius:0}] },
+                options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{y:{min:0,max:100,title:{display:true,text:'Readiness'}}} }
             });
         }
 
         buildBtn.addEventListener('click', renderSchedule);
         renderSchedule();
     </script>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
 </body>
-
 </html>

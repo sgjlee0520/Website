@@ -25,27 +25,35 @@
         <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="index.html" class="nav-link active"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
+                    <a href="about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="projects.html" class="nav-link"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="writing-interests.html" class="nav-link">Writing & Interests</a>
+                    <a href="writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="resume.html" class="nav-link">Resume</a>
+                    <a href="resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="portfolio.html" class="nav-link">Financial Portfolio</a>
+                    <a href="portfolio.html" class="nav-link"><span class="nav-en">Financial Portfolio</span><span class="nav-kr">금융 포트폴리오</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="household-budget.html" class="nav-link"><span class="nav-en">Household Budget</span><span class="nav-kr">가계부</span></a>
                 </li>
             </ul>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+        </div>
         </nav>
 
         <div class="sidebar-footer">
@@ -68,7 +76,7 @@
                     </svg>
                 </a>
             </div>
-            <p class="copyright">&copy; 2024 Songgun Lee.</p>
+            <p class="copyright">&copy; 2025 Songgun Lee.</p>
         </div>
     </aside>
 
@@ -87,12 +95,10 @@
                 <div class="hero-content">
                     <h1 class="hero-title">Songgun Lee</h1>
                     <p class="hero-tagline">Physics Student & Aspiring Quantitative Analyst</p>
-                    <p class="hero-summary">Junior at UC Santa Barbara bridging Physics and Quantitative Finance. Driven
-                        by a "Us vs. Problem" leadership philosophy and resilience forged in the field, I build
-                        data-driven solutions for complex markets.</p>
+                    <p class="hero-summary"><span data-lang="en">Junior at UC Santa Barbara bridging Physics and Quantitative Finance. Driven by a "Us vs. Problem" leadership philosophy and resilience forged in the field, I build data-driven solutions for complex markets.</span><span data-lang="kr">UC 산타바바라 3학년으로, 물리학과 퀀트 파이낸스를 연결하는 연구를 하고 있습니다. "우리 대 문제"라는 리더십 철학과 현장에서 단련된 회복력을 바탕으로 복잡한 시장을 위한 데이터 기반 솔루션을 만들고 있습니다.</span></p>
                     <div class="hero-buttons">
-                        <a href="projects.html" class="btn btn-primary">View My Projects</a>
-                        <a href="resume.html" class="btn btn-secondary">Read My Resume</a>
+                        <a href="projects.html" class="btn btn-primary"><span data-lang="en">View My Projects</span><span data-lang="kr">프로젝트 보기</span></a>
+                        <a href="resume.html" class="btn btn-secondary"><span data-lang="en">Read My Resume</span><span data-lang="kr">이력서 보기</span></a>
                     </div>
                 </div>
             </div>
@@ -101,7 +107,7 @@
         <!-- Featured Projects Section -->
         <section class="featured-projects">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title"><span data-lang="en">Featured Projects</span><span data-lang="kr">주요 프로젝트</span></h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
@@ -162,29 +168,28 @@
         <!-- Financial Portfolio Preview Section -->
         <section class="portfolio-preview-section" style="background-color: #f0f4f8; padding: 80px 0;">
             <div class="container">
-                <h2 class="section-title">Financial Portfolio</h2>
+                <h2 class="section-title"><span data-lang="en">Financial Portfolio</span><span data-lang="kr">금융 포트폴리오</span></h2>
                 <div class="portfolio-preview">
                     <div class="portfolio-preview-stats">
                         <div class="preview-stat">
                             <span class="preview-stat-value">16</span>
-                            <span class="preview-stat-label">Holdings</span>
+                            <span class="preview-stat-label"><span data-lang="en">Holdings</span><span data-lang="kr">보유 종목</span></span>
                         </div>
                         <div class="preview-stat">
                             <span class="preview-stat-value">3</span>
-                            <span class="preview-stat-label">Asset Classes</span>
+                            <span class="preview-stat-label"><span data-lang="en">Asset Classes</span><span data-lang="kr">자산 유형</span></span>
                         </div>
                         <div class="preview-stat">
                             <span class="preview-stat-value">2021</span>
-                            <span class="preview-stat-label">Since</span>
+                            <span class="preview-stat-label"><span data-lang="en">Since</span><span data-lang="kr">시작</span></span>
                         </div>
                     </div>
                     <p
                         style="text-align: center; color: #666; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        Long-term investment allocation across US stocks, gold, and cryptocurrency with a buy-and-hold
-                        strategy.
+                        <span data-lang="en">Long-term investment allocation across US stocks, gold, and cryptocurrency with a buy-and-hold strategy.</span><span data-lang="kr">미국 주식, 금, 암호화폐에 걸친 장기 매수-보유 전략의 투자 배분입니다.</span>
                     </p>
                     <div class="text-center">
-                        <a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+                        <a href="portfolio.html" class="btn btn-primary"><span data-lang="en">View Full Portfolio</span><span data-lang="kr">전체 포트폴리오 보기</span></a>
                     </div>
                 </div>
             </div>
@@ -193,7 +198,7 @@
         <!-- Writing & Interests Section -->
         <section class="personal-writing" style="background-color: #F9F9F9;">
             <div class="container">
-                <h2 class="section-title">Writing & Interests</h2>
+                <h2 class="section-title"><span data-lang="en">Writing & Interests</span><span data-lang="kr">글과 관심사</span></h2>
                 <div class="articles-grid">
                     <article class="article-card">
                         <div class="article-image">
@@ -238,7 +243,7 @@
                     </article>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="writing-interests.html" class="btn btn-primary">View All Writing</a>
+                    <a href="writing-interests.html" class="btn btn-primary"><span data-lang="en">View All Writing</span><span data-lang="kr">전체 글 보기</span></a>
                 </div>
             </div>
         </section>
@@ -247,9 +252,8 @@
         <section class="explorations-section">
             <div class="container">
                 <div class="explorations-header">
-                    <h2 class="section-title">Explorations</h2>
-                    <p class="explorations-subtitle">A secondary lane for hobby research, health systems thinking, and
-                        applied AI work.</p>
+                    <h2 class="section-title"><span data-lang="en">Explorations</span><span data-lang="kr">탐구</span></h2>
+                    <p class="explorations-subtitle"><span data-lang="en">A secondary lane for hobby research, health systems thinking, and applied AI work.</span><span data-lang="kr">취미 연구, 건강 시스템 사고, 응용 AI 작업을 위한 공간입니다.</span></p>
                 </div>
                 <div class="explorations-grid">
                     <article class="exploration-card">
@@ -277,279 +281,10 @@
             </div>
         </section>
 
-        <!-- Books Read Section -->
-        <section class="books-section" style="background-color: #FFFFFF;">
-            <div class="container">
-                <h2 class="section-title">Books Read</h2>
-
-                <!-- Category: Sales, Negotiation & Human Nature -->
-                <div class="book-category mb-4">
-                    <h3 class="subsection-title"
-                        style="color: #004A99; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">
-                        Sales, Negotiation & Human Nature</h3>
-                    <div class="books-grid">
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">How to Win Friends and Influence People</h3>
-                                <p class="book-author">Dale Carnegie</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The 48 Laws of Power</h3>
-                                <p class="book-author">Robert Greene</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Who Moved My Cheese?</h3>
-                                <p class="book-author">Spencer Johnson</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The Bowl of Words (Mal-Geureut)</h3>
-                                <p class="book-author">Kim Yoon-na</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category: Business, Wealth & Mindset -->
-                <div class="book-category mb-4">
-                    <h3 class="subsection-title"
-                        style="color: #004A99; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-top: 2rem;">
-                        Business, Wealth & Mindset</h3>
-                    <div class="books-grid">
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The Psychology of Money</h3>
-                                <p class="book-author">Morgan Housel</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The Millionaire Fastlane</h3>
-                                <p class="book-author">MJ DeMarco</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Sayno's Teachings</h3>
-                                <p class="book-author">Sayno (Pen name)</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">One Life to Lead</h3>
-                                <p class="book-author">Russell Benaroya</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">12 Rules for Life</h3>
-                                <p class="book-author">Jordan B. Peterson</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Beyond Order</h3>
-                                <p class="book-author">Jordan B. Peterson</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The Golden Rule</h3>
-                                <p class="book-author">Joseph Murphy / Koichi Shimazu</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Kluge: The Haphazard Construction of the Human Mind</h3>
-                                <p class="book-author">Gary Marcus</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category: History, Philosophy & Humanities -->
-                <div class="book-category mb-4">
-                    <h3 class="subsection-title"
-                        style="color: #004A99; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-top: 2rem;">
-                        History, Philosophy & Humanities</h3>
-                    <div class="books-grid">
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Sapiens: A Brief History of Humankind</h3>
-                                <p class="book-author">Yuval Noah Harari</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Homo Deus: A Brief History of Tomorrow</h3>
-                                <p class="book-author">Yuval Noah Harari</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">21 Lessons for the 21st Century</h3>
-                                <p class="book-author">Yuval Noah Harari</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Siddhartha</h3>
-                                <p class="book-author">Hermann Hesse</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Demian</h3>
-                                <p class="book-author">Hermann Hesse</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Thus Spoke Zarathustra</h3>
-                                <p class="book-author">Friedrich Nietzsche</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The Words of Nietzsche</h3>
-                                <p class="book-author">Haruhiko Shiratori</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Crime and Punishment</h3>
-                                <p class="book-author">Fyodor Dostoevsky</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category: General Interests -->
-                <div class="book-category mb-4">
-                    <h3 class="subsection-title"
-                        style="color: #004A99; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-top: 2rem;">
-                        General Interests</h3>
-                    <div class="books-grid">
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Broad and Shallow Knowledge for Intellectual Dialogue</h3>
-                                <p class="book-author">Chae Sajang</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">DSLR Start (Nikon School)</h3>
-                                <p class="book-author">Kim Joo-hyun</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Enjoy Wine</h3>
-                                <p class="book-author">Lee Jung-yoon</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Latin Lessons</h3>
-                                <p class="book-author">Han Dong-il</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Engineering Student's Late Night Comics</h3>
-                                <p class="book-author">Maeng Ki-wan</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Even If This Love Disappears Tonight</h3>
-                                <p class="book-author">Misaki Ichijo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Upcoming Reading List Section -->
-        <section class="books-section" style="background-color: #F9F9F9;">
-            <div class="container">
-                <h2 class="section-title">Upcoming Reading List</h2>
-
-                <!-- Category: Sales & Strategy -->
-                <div class="book-category mb-4">
-                    <h3 class="subsection-title"
-                        style="color: #004A99; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">
-                        Sales, Negotiation & Strategy</h3>
-                    <div class="books-grid">
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Never Split the Difference</h3>
-                                <p class="book-author">Chris Voss</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The Art of Seduction</h3>
-                                <p class="book-author">Robert Greene</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The Game</h3>
-                                <p class="book-author">Neil Strauss</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category: Business & Wealth -->
-                <div class="book-category mb-4">
-                    <h3 class="subsection-title"
-                        style="color: #004A99; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-top: 2rem;">
-                        Business & Wealth</h3>
-                    <div class="books-grid">
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">The Attributes of Money</h3>
-                                <p class="book-author">Kim Seung-ho</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category: Psychology & Philosophy -->
-                <div class="book-category mb-4">
-                    <h3 class="subsection-title"
-                        style="color: #004A99; margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-top: 2rem;">
-                        Psychology & Philosophy</h3>
-                    <div class="books-grid">
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Nudge</h3>
-                                <p class="book-author">Richard Thaler & Cass Sunstein</p>
-                            </div>
-                        </div>
-                        <div class="book-card">
-                            <div class="book-info">
-                                <h3 class="book-title">Meditations</h3>
-                                <p class="book-author">Marcus Aurelius</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Photography Section -->
         <section class="photography-section" style="background-color: #FFFFFF;">
             <div class="container">
-                <h2 class="section-title">Photography</h2>
+                <h2 class="section-title"><span data-lang="en">Photography</span><span data-lang="kr">사진</span></h2>
                 <div class="instagram-container" style="text-align: center; padding: 2rem 0;">
                     <a href="https://www.instagram.com/songgunlee/" target="_blank" rel="noopener noreferrer"
                         style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
@@ -566,17 +301,33 @@
                 </div>
             </div>
 
-            <!-- Footer (Simplified for main content area) -->
+            <!-- Footer -->
             <footer class="footer">
                 <div class="container">
                     <div class="footer-content">
-                        <p>&copy; 2024 Songgun Lee. All rights reserved.</p>
+                        <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
     </main>
 
     <script src="script.js"></script>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
 </body>
 
 </html>
