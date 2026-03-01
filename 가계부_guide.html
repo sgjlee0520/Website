@@ -534,5 +534,21 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+    // This is the Korean page — always mark lang as KR and highlight the correct button
+    localStorage.setItem('siteLang', 'kr');
+    document.body.classList.add('lang-kr');
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.toggle('active', btn.dataset.lang === 'kr');
+    });
+
+    // Override setLang: switching to EN sends the user to the English page
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        if (lang === 'en') {
+            window.location.replace('household-budget.html');
+        }
+    }
+    </script>
 </body>
 </html>

@@ -633,20 +633,19 @@
 
     <script src="script.js"></script>
     <script>
+    // If Korean is active, send the user to the dedicated Korean page
     (function () {
         var saved = localStorage.getItem('siteLang') || 'en';
-        document.body.classList.toggle('lang-kr', saved === 'kr');
-        document.querySelectorAll('.lang-btn').forEach(function (btn) {
-            btn.classList.toggle('active', btn.dataset.lang === saved);
-        });
+        if (saved === 'kr') {
+            window.location.replace('가계부_guide.html');
+        }
     })();
 
     function setLang(lang) {
         localStorage.setItem('siteLang', lang);
-        document.body.classList.toggle('lang-kr', lang === 'kr');
-        document.querySelectorAll('.lang-btn').forEach(function (btn) {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
+        if (lang === 'kr') {
+            window.location.replace('가계부_guide.html');
+        }
     }
     </script>
 </body>
