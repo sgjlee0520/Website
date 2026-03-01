@@ -2238,10 +2238,10 @@ body.lang-kr .lang-switcher::after {
 body.lang-kr .nav-en { display: none; }
 body.lang-kr .nav-kr { display: inline; }
 
-/* Generic section-level bilingual content */
-[data-lang="kr"] { display: none; }
-body.lang-kr [data-lang="en"] { display: none; }
-body.lang-kr [data-lang="kr"] { display: block; }
+/* Generic section-level bilingual content (exclude language toggle buttons) */
+[data-lang="kr"]:not(.lang-btn) { display: none; }
+body.lang-kr [data-lang="en"]:not(.lang-btn) { display: none; }
+body.lang-kr [data-lang="kr"]:not(.lang-btn) { display: block; }
 
 /* Inline spans should use inline not block */
 span[data-lang="kr"] { display: none; }
