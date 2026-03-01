@@ -2183,38 +2183,54 @@ body.has-sidebar .hero {
     }
 }
 
-/* ── Site-wide Language Toggle ────────────────────────────── */
+/* ── Site-wide Language Toggle — sliding pill ──────────────── */
 .lang-switcher {
+    position: relative;
     display: flex;
-    border: 1.5px solid rgba(0,74,153,0.2);
-    border-radius: 8px;
-    overflow: hidden;
+    background: rgba(0, 74, 153, 0.1);
+    border-radius: 24px;
+    padding: 3px;
     margin: 1rem 0 0.5rem;
     width: 100%;
+}
+/* Sliding thumb — sits behind the active label */
+.lang-switcher::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    width: calc(50% - 3px);
+    background: #004A99;
+    border-radius: 20px;
+    transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+/* Slide thumb to the right when Korean is active */
+body.lang-kr .lang-switcher::after {
+    left: 50%;
 }
 .lang-btn {
     flex: 1;
     background: transparent;
     border: none;
-    color: #aaa;
+    color: #888;
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    padding: 6px 0;
+    padding: 7px 0;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    letter-spacing: 0.03em;
-}
-.lang-btn:first-child {
-    border-right: 1.5px solid rgba(0,74,153,0.2);
+    border-radius: 20px;
+    transition: color 0.2s;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.04em;
 }
 .lang-btn.active {
-    background: #004A99;
     color: #fff;
 }
-.lang-btn:hover:not(.active) {
-    background: rgba(0,74,153,0.06);
-    color: #004A99;
+.lang-btn:first-child {
+    border-right: none;
 }
 
 /* Nav link bilingual text */

@@ -56,6 +56,23 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// ── Language toggle (runs on every page) ──
+(function () {
+    var saved = localStorage.getItem('siteLang') || 'en';
+    if (saved === 'kr') document.body.classList.add('lang-kr');
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.toggle('active', btn.dataset.lang === saved);
+    });
+})();
+
+function setLang(lang) {
+    localStorage.setItem('siteLang', lang);
+    document.body.classList.toggle('lang-kr', lang === 'kr');
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+}
+
 
 
 
