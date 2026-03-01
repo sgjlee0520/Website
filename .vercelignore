@@ -1,0 +1,13 @@
+# Next.js sub-app — Vercel must not try to build this
+Divine_Guidance
+
+# Source data / analysis directories — not web content
+ai_trade_strats
+finance_quant_analysis
+physics_experimental_modeling
+software_engineering_data_science
+stock_trade_data
+
+# Backup files
+styles_backup.css
+README.md

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가계부 가이드 - Songgun Lee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .budget-hero {
+            background: linear-gradient(135deg, #004A99 0%, #003366 100%);
+            color: #fff;
+            padding: 64px 0 52px;
+        }
+        .budget-hero .section-title { color: #fff; margin-bottom: 0.4rem; }
+        .budget-hero .hero-sub {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .download-strip {
+            background: #f0f4f8;
+            border-bottom: 1px solid #dde4ed;
+            padding: 16px 0;
+        }
+        .download-strip .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .download-strip p { margin: 0; color: #555; font-size: 0.9rem; }
+        .download-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .btn-dl {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #004A99;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .btn-dl:hover { background: #003366; }
+
+        .guide-section { padding: 56px 0; }
+        .guide-section:nth-child(even) { background: #f7f9fc; }
+        .guide-section .section-title { margin-bottom: 0.5rem; }
+        .guide-section .section-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+        .feature-card {
+            background: #fff;
+            border: 1px solid #e4eaf3;
+            border-radius: 12px;
+            padding: 1.5rem 1.25rem;
+        }
+        .feature-card .icon {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            background: #e8f0fb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .feature-card .icon svg { color: #004A99; }
+        .feature-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin: 0 0 0.4rem;
+        }
+        .feature-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        .sheet-map {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .sheet-tab {
+            border: 1.5px solid #e4eaf3;
+            border-radius: 10px;
+            padding: 1.25rem 1rem;
+            position: relative;
+        }
+        .sheet-tab::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            border-radius: 10px 10px 0 0;
+            background: #004A99;
+        }
+        .sheet-tab.accent::before { background: #28a745; }
+        .sheet-tab.accent2::before { background: #e67e22; }
+        .sheet-tab h4 {
+            font-size: 0.9rem; font-weight: 600;
+            color: #1a1a2e; margin: 0 0 0.5rem;
+        }
+        .sheet-tab p {
+            font-size: 0.82rem; color: #666;
+            margin: 0; line-height: 1.5;
+        }
+
+        .steps-list { list-style: none; padding: 0; margin: 0; }
+        .steps-list li {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #eef0f4;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .step-num {
+            flex-shrink: 0;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: #004A99;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step-body h4 {
+            font-size: 0.95rem; font-weight: 600;
+            color: #1a1a2e; margin: 0 0 0.3rem;
+        }
+        .step-body p {
+            font-size: 0.875rem; color: #555;
+            margin: 0; line-height: 1.55;
+        }
+
+        .formula-block {
+            background: #1e2a3a;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .formula-block code {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #7ec8e3;
+            white-space: pre;
+        }
+        .formula-block .comment { color: #7a8a9a; }
+
+        .category-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+        .cat-pill {
+            background: #e8f0fb;
+            color: #004A99;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 20px;
+        }
+
+        .sheet-preview {
+            border: 1px solid #dde4ed;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+        }
+        .sheet-preview-header {
+            background: #004A99;
+            color: #fff;
+            padding: 8px 14px;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+        .sheet-preview table { width: 100%; border-collapse: collapse; }
+        .sheet-preview th {
+            background: #f0f4f8;
+            color: #444;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 7px 12px;
+            text-align: left;
+            border-bottom: 1px solid #dde4ed;
+        }
+        .sheet-preview td {
+            padding: 7px 12px;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .sheet-preview tr:last-child td { border-bottom: none; }
+        .sheet-preview .col-formula { color: #004A99; font-style: italic; }
+        .sheet-preview .col-num { color: #28a745; font-weight: 500; }
+        .sheet-preview .col-placeholder { color: #aaa; }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="brand-name"><a href="index.html">Songgun Lee</a></h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link"><span class="nav-en">Financial Portfolio</span><span class="nav-kr">금융 포트폴리오</span></a></li>
+                <li class="nav-item">
+                    <a href="household-budget.html" class="nav-link nav-en-item">Household Budget</a>
+                    <a href="가계부_guide.html" class="nav-link nav-kr-item active">가계부</a>
+                </li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 15.82V19"></path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer" aria-label="Online Magazine">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" aria-label="Korean Writing Blog" class="kr-only">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 20h9"></path>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content">
+
+        <!-- 히어로 -->
+        <section class="budget-hero">
+            <div class="container">
+                <h1 class="section-title">가계부</h1>
+                <p class="hero-sub">롤링 잔액, 카테고리별 지출 분류, 월별 파이 차트를 갖춘 엑셀 가계부 템플릿입니다.</p>
+            </div>
+        </section>
+
+        <!-- 다운로드 -->
+        <div class="download-strip">
+            <div class="container">
+                <p>무료로 다운로드하세요. 수식 전체 지원은 Microsoft Excel에서 여세요.</p>
+                <div class="download-links">
+                    <a href="가계부_한국어.xlsx" download class="btn-dl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        가계부 다운로드 (한국어)
+                    </a>
+                    <a href="Household_Budget_English.xlsx" download class="btn-dl" style="background:#1a6b3a;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        영어 버전 다운로드
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 소개 -->
+        <section class="guide-section">
+            <div class="container">
+                <h2 class="section-title">이 파일은 무엇인가요?</h2>
+                <p class="section-subtitle">월별 가계 지출을 기록하기 위해 엑셀로 직접 만든 개인 재무 관리 도구입니다.</p>
+                <p style="color:#444; line-height:1.75; max-width:720px;">
+                    대부분의 가계부 앱은 너무 복잡하거나 구독 서비스 뒤에 데이터를 가둬놓습니다. 내가 완전히 소유하고 이해할 수 있는 도구를
+                    원해서 직접 엑셀로 만들었습니다. 이 통합 문서는 중앙 월별 장부, 자동으로 이월되는 롤링 잔액, 그리고 매달 어디에 돈이
+                    쓰이는지 바로 알 수 있는 자동 생성 파이 차트로 구성되어 있습니다. 한국어 버전과 영어 버전 모두 제공됩니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 주요 기능 -->
+        <section class="guide-section">
+            <div class="container">
+                <h2 class="section-title">주요 기능</h2>
+                <p class="section-subtitle">필요한 것만, 군더더기 없이.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3>롤링 잔액</h3>
+                        <p>H31 셀이 마감 잔액을 다음 달로 자동 이월합니다. 수동으로 복사할 필요가 없습니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                        </div>
+                        <h3>월별 파이 차트</h3>
+                        <p>각 월별 시트에는 숨겨진 보조 테이블로 자동 생성된 파이 차트가 포함되어 있어 지출 내역을 한눈에 확인할 수 있습니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        </div>
+                        <h3>10가지 지출 항목</h3>
+                        <p>주거, 식비, 교통, 건강, 구독료 등 — 각 항목은 SUMIF 자동 집계를 위해 카테고리 태그가 붙어 있습니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6 6-6"/></svg>
+                        </div>
+                        <h3>SUMIF 자동 합계</h3>
+                        <p>카테고리 합계는 SUMIF로 자동 계산됩니다. 수식을 건드리지 않고 행을 자유롭게 추가할 수 있습니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h3>이중 언어 (한/영)</h3>
+                        <p>한국어 버전과 영어 버전 두 가지를 제공합니다. 동일한 수식과 구조입니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <h3>깔끔하고 단순한 구조</h3>
+                        <p>매크로, VBA, 플러그인 불필요. 순수 엑셀 수식만 사용 — .xlsx 파일을 열 수 있는 모든 기기에서 작동합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 통합 문서 구조 -->
+        <section class="guide-section">
+            <div class="container">
+                <h2 class="section-title">통합 문서 구조</h2>
+                <p class="section-subtitle">각 달은 자체 시트를 가집니다. 모든 달의 레이아웃은 동일합니다.</p>
+                <div class="sheet-map">
+                    <div class="sheet-tab">
+                        <h4>월별 시트 (×12)</h4>
+                        <p>월마다 시트 하나. 날짜 / 내용 / 카테고리 / 금액 열로 구성된 지출 행.</p>
+                    </div>
+                    <div class="sheet-tab accent">
+                        <h4>카테고리 합계 (H31 영역)</h4>
+                        <p>카테고리별 SUMIF 합계, 마감 잔액, 다음 시트로의 시작 잔액 전달.</p>
+                    </div>
+                    <div class="sheet-tab accent2">
+                        <h4>숨겨진 보조 테이블</h4>
+                        <p>숨겨진 범위가 파이 차트에 데이터를 공급하여 수동 업데이트 없이 항상 해당 월의 실제 지출을 반영합니다.</p>
+                    </div>
+                </div>
+
+                <div class="sheet-preview" style="margin-top:2rem;">
+                    <div class="sheet-preview-header">샘플 — 월별 시트 레이아웃</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>날짜</th>
+                                <th>내용</th>
+                                <th>카테고리</th>
+                                <th>금액</th>
+                                <th>잔액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-placeholder">MM/DD</td>
+                                <td class="col-placeholder">월세</td>
+                                <td class="col-placeholder">주거</td>
+                                <td class="col-placeholder">–</td>
+                                <td class="col-formula">=이전 − 금액</td>
+                            </tr>
+                            <tr>
+                                <td class="col-placeholder">MM/DD</td>
+                                <td class="col-placeholder">식료품</td>
+                                <td class="col-placeholder">식비</td>
+                                <td class="col-placeholder">–</td>
+                                <td class="col-formula">=이전 − 금액</td>
+                            </tr>
+                            <tr>
+                                <td class="col-placeholder">…</td>
+                                <td class="col-placeholder">…</td>
+                                <td class="col-placeholder">…</td>
+                                <td class="col-placeholder">…</td>
+                                <td class="col-placeholder">…</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><strong>마감 잔액 (H31)</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td class="col-num col-formula">=시작 잔액 − 총 지출</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 지출 카테고리 -->
+        <section class="guide-section">
+            <div class="container">
+                <h2 class="section-title">지출 카테고리</h2>
+                <p style="color:#555; line-height:1.7; max-width:680px;">
+                    각 거래는 10가지 카테고리 중 하나로 태그됩니다. SUMIF 수식이 자동으로 합산합니다. C열에 카테고리 이름만 입력하면 계산이 자동으로 됩니다.
+                </p>
+                <div class="category-grid">
+                    <span class="cat-pill">주거</span>
+                    <span class="cat-pill">식비</span>
+                    <span class="cat-pill">교통</span>
+                    <span class="cat-pill">건강</span>
+                    <span class="cat-pill">구독</span>
+                    <span class="cat-pill">의류</span>
+                    <span class="cat-pill">여가</span>
+                    <span class="cat-pill">교육</span>
+                    <span class="cat-pill">저축 / 이체</span>
+                    <span class="cat-pill">기타</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 핵심 수식 -->
+        <section class="guide-section">
+            <div class="container">
+                <h2 class="section-title">롤링 잔액 수식</h2>
+                <p style="color:#555; line-height:1.7; max-width:680px; margin-bottom:0.5rem;">
+                    각 월별 시트의 H31 셀에 마감 잔액이 저장되며, 이 값이 다음 달 시트의 H2(시작 잔액)로 자동으로 전달됩니다.
+                    복사-붙여넣기가 필요 없습니다. 지출만 계속 기록하면 잔액이 자동으로 이월됩니다.
+                </p>
+                <div class="formula-block">
+                    <code><span class="comment"># 다음 달 시작 잔액 (예: 2월 H2)</span>
+=1월!H31
+
+<span class="comment"># 각 시트의 마감 잔액</span>
+=H2 - SUMIF(C5:C30,"&lt;&gt;",E5:E30)
+
+<span class="comment"># 카테고리 합계 (예: 식비)</span>
+=SUMIF(C5:C30,"식비",E5:E30)</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- 사용 방법 -->
+        <section class="guide-section">
+            <div class="container">
+                <h2 class="section-title">사용 방법</h2>
+                <p class="section-subtitle">다섯 단계만 따라하면 바로 시작할 수 있습니다.</p>
+                <ul class="steps-list">
+                    <li>
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>파일 다운로드</h4>
+                            <p>위의 다운로드 버튼을 클릭하세요. Microsoft Excel에서 여세요. Google Sheets도 가능하지만 차트 렌더링이 다를 수 있습니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>시작 잔액 입력</h4>
+                            <p>첫 달 시트의 H2 셀에 시작 잔액을 입력하세요. 추적을 시작할 금액입니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>지출 기록</h4>
+                            <p>A~E 열을 채우세요: 날짜, 내용, 카테고리(10가지 중 선택), 수입 여부, 금액. 잔액 열은 자동으로 업데이트됩니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h4>파이 차트 확인</h4>
+                            <p>각 시트의 파이 차트는 지출을 기록할 때마다 자동으로 갱신됩니다. 숨겨진 보조 테이블(35행 이후)에서 데이터를 읽으므로 해당 행을 삭제하지 마세요.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h4>다음 달로 넘어가기</h4>
+                            <p>H31(마감 잔액)은 시트 참조를 통해 다음 시트의 H2로 자동 전달됩니다. 탭을 이동하고 바로 기록을 시작하면 됩니다.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
