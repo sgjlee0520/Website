@@ -2246,3 +2246,7 @@ body.lang-kr h5[data-lang="kr"] { display: block; }
 p[data-lang="kr"] { display: none; }
 body.lang-kr p[data-lang="en"] { display: none; }
 body.lang-kr p[data-lang="kr"] { display: block; }
+
+/* Korean-only elements (e.g. Naver blog link) */
+.kr-only { display: none !important; }
+body.lang-kr .kr-only { display: inline-flex !important; }
