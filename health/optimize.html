@@ -137,22 +137,22 @@
         <!-- Breadcrumb -->
         <div class="health-crumb">
             <div class="container">
-                <a href="../index.html">Home</a>
+                <a href="../index.html"><span data-lang="en">Home</span><span data-lang="kr">홈</span></a>
                 <span>›</span>
-                <a href="index.html">Health &amp; Human Performance</a>
+                <a href="index.html"><span data-lang="en">Health &amp; Human Performance</span><span data-lang="kr">건강 · 퍼포먼스</span></a>
                 <span>›</span>
-                <span>Study Optimization</span>
+                <span><span data-lang="en">Study Optimization</span><span data-lang="kr">학습 최적화</span></span>
             </div>
         </div>
 
         <!-- Hero -->
         <section class="health-hero">
             <div class="container">
-                <h2 class="section-title">Study, Sleep &amp; Exercise Optimization</h2>
-                <p class="hero-sub">Custom exam planner — enter timeline and constraints, then generate a tailored daily schedule and phase strategy.</p>
+                <h2 class="section-title"><span data-lang="en">Study, Sleep &amp; Exercise Optimization</span><span data-lang="kr">학습·수면·운동 최적화</span></h2>
+                <p class="hero-sub"><span data-lang="en">Custom exam planner — enter timeline and constraints, then generate a tailored daily schedule and phase strategy.</span><span data-lang="kr">시험 맞춤 플래너 - 일정과 제약 조건을 입력하면 단계별 전략과 일일 스케줄을 자동으로 생성합니다.</span></p>
                 <div class="hero-buttons">
-                    <a class="btn btn-secondary" href="optimizing_study_sleep_and_exercise.pdf" target="_blank" rel="noopener noreferrer">Open Full PDF</a>
-                    <a class="btn btn-secondary" href="optimizing_study_sleep_and_exercise.md" target="_blank" rel="noopener noreferrer">Open Markdown</a>
+                    <a class="btn btn-secondary" href="optimizing_study_sleep_and_exercise.pdf" target="_blank" rel="noopener noreferrer"><span data-lang="en">Open Full PDF</span><span data-lang="kr">전체 PDF 열기</span></a>
+                    <a class="btn btn-secondary" href="optimizing_study_sleep_and_exercise.md" target="_blank" rel="noopener noreferrer"><span data-lang="en">Open Markdown</span><span data-lang="kr">Markdown 열기</span></a>
                 </div>
             </div>
         </section>
@@ -162,40 +162,40 @@
             <div class="container">
                 <div class="two-col">
                     <div class="panel">
-                        <h3>Planner Inputs</h3>
-                        <p class="section-note">How many weeks away from final are you?</p>
+                        <h3><span data-lang="en">Planner Inputs</span><span data-lang="kr">플래너 입력값</span></h3>
+                        <p class="section-note"><span data-lang="en">How many weeks away from final are you?</span><span data-lang="kr">기말고사까지 몇 주 남았나요?</span></p>
                         <div class="form-grid">
                             <div class="field">
-                                <label for="weeksAway">Weeks Away From Final</label>
+                                <label for="weeksAway"><span data-lang="en">Weeks Away From Final</span><span data-lang="kr">기말고사까지 남은 주</span></label>
                                 <input id="weeksAway" type="number" min="0" max="24" value="8">
                             </div>
                             <div class="field">
-                                <label for="wakeTime">Wake Time</label>
+                                <label for="wakeTime"><span data-lang="en">Wake Time</span><span data-lang="kr">기상 시간</span></label>
                                 <input id="wakeTime" type="time" value="06:30">
                             </div>
                             <div class="field">
-                                <label for="workoutDays">Workout Days / Week</label>
+                                <label for="workoutDays"><span data-lang="en">Workout Days / Week</span><span data-lang="kr">주당 운동 일수</span></label>
                                 <select id="workoutDays">
-                                    <option value="3">3 days</option>
-                                    <option value="4">4 days</option>
-                                    <option value="5" selected>5 days</option>
-                                    <option value="6">6 days</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5" selected>5</option>
+                                    <option value="6">6</option>
                                 </select>
                             </div>
                             <div class="field">
-                                <label for="courseLoad">Course Load</label>
+                                <label for="courseLoad"><span data-lang="en">Course Load</span><span data-lang="kr">수업 강도</span></label>
                                 <select id="courseLoad">
-                                    <option value="heavy" selected>Heavy</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="light">Light</option>
+                                    <option value="heavy" selected>Heavy / 높음</option>
+                                    <option value="medium">Medium / 보통</option>
+                                    <option value="light">Light / 낮음</option>
                                 </select>
                             </div>
                         </div>
-                        <button id="generatePlan" type="button" class="btn btn-primary">Generate My Plan</button>
-                        <p class="small-note">Your output updates live and gives both phase strategy and daily execution blocks.</p>
+                        <button id="generatePlan" type="button" class="btn btn-primary"><span data-lang="en">Generate My Plan</span><span data-lang="kr">내 계획 생성하기</span></button>
+                        <p class="small-note"><span data-lang="en">Your output updates live and gives both phase strategy and daily execution blocks.</span><span data-lang="kr">입력값에 따라 단계 전략과 일일 실행 블록이 즉시 업데이트됩니다.</span></p>
                     </div>
                     <div class="panel">
-                        <h3>Current Phase Output</h3>
+                        <h3><span data-lang="en">Current Phase Output</span><span data-lang="kr">현재 단계 결과</span></h3>
                         <div class="phase-line" id="phaseLine">You are 8 weeks away from final.</div>
                         <span class="phase-badge" id="phaseBadge">Build Phase</span>
                         <div class="metric-grid" id="metricGrid"></div>
@@ -208,12 +208,12 @@
         <!-- Daily Schedule Table -->
         <section class="health-section">
             <div class="container">
-                <h2 class="section-title">Your Personalized Daily Schedule</h2>
-                <p class="section-note">Generated from your timeline and workload inputs.</p>
+                <h2 class="section-title"><span data-lang="en">Your Personalized Daily Schedule</span><span data-lang="kr">맞춤형 일일 스케줄</span></h2>
+                <p class="section-note"><span data-lang="en">Generated from your timeline and workload inputs.</span><span data-lang="kr">입력한 일정과 학습 강도를 기반으로 생성됩니다.</span></p>
                 <div class="schedule-table-wrap">
                     <table class="schedule-table" aria-label="Generated daily schedule">
                         <thead>
-                            <tr><th>Time</th><th>Block</th><th>Purpose</th></tr>
+                            <tr><th><span data-lang="en">Time</span><span data-lang="kr">시간</span></th><th><span data-lang="en">Block</span><span data-lang="kr">블록</span></th><th><span data-lang="en">Purpose</span><span data-lang="kr">목적</span></th></tr>
                         </thead>
                         <tbody id="dailyPlanBody"></tbody>
                     </table>
@@ -226,34 +226,34 @@
             <div class="container">
                 <div class="two-col">
                     <div class="chart-panel">
-                        <h3>6-Week Workload Projection</h3>
-                        <p class="section-note">Deep work and recovery volume taper as finals approach.</p>
+                        <h3><span data-lang="en">6-Week Workload Projection</span><span data-lang="kr">6주 학습량 예측</span></h3>
+                        <p class="section-note"><span data-lang="en">Deep work and recovery volume taper as finals approach.</span><span data-lang="kr">기말고사가 가까워질수록 딥워크와 회복 볼륨을 단계적으로 조정합니다.</span></p>
                         <div class="chart-wrap">
                             <canvas id="weeklyChart" aria-label="Weekly workload chart"></canvas>
                         </div>
                     </div>
                     <div class="panel">
-                        <h3>Phase Playbook</h3>
+                        <h3><span data-lang="en">Phase Playbook</span><span data-lang="kr">단계별 실행 가이드</span></h3>
                         <div class="context-list">
                             <details class="context-item" open>
-                                <summary>Foundation (12+ weeks)</summary>
-                                <p>Build consistency first: active recall system, sleep anchor, and stable training rhythm.</p>
+                                <summary><span data-lang="en">Foundation (12+ weeks)</span><span data-lang="kr">기초 단계 (12주 이상)</span></summary>
+                                <p><span data-lang="en">Build consistency first: active recall system, sleep anchor, and stable training rhythm.</span><span data-lang="kr">먼저 일관성을 만드세요: 능동 회상 시스템, 수면 고정점, 안정적인 운동 리듬을 구축합니다.</span></p>
                             </details>
                             <details class="context-item" open>
-                                <summary>Build (8-11 weeks)</summary>
-                                <p>Increase deep-work density and tighten weekly review loops while preserving recovery.</p>
+                                <summary><span data-lang="en">Build (8-11 weeks)</span><span data-lang="kr">강화 단계 (8-11주)</span></summary>
+                                <p><span data-lang="en">Increase deep-work density and tighten weekly review loops while preserving recovery.</span><span data-lang="kr">회복을 유지하면서 딥워크 밀도를 높이고 주간 복습 루프를 촘촘하게 만듭니다.</span></p>
                             </details>
                             <details class="context-item">
-                                <summary>Intensification (4-7 weeks)</summary>
-                                <p>Add higher exam simulation frequency and increase retrieval pressure.</p>
+                                <summary><span data-lang="en">Intensification (4-7 weeks)</span><span data-lang="kr">집중 단계 (4-7주)</span></summary>
+                                <p><span data-lang="en">Add higher exam simulation frequency and increase retrieval pressure.</span><span data-lang="kr">모의시험 빈도를 올리고 회상 강도를 높입니다.</span></p>
                             </details>
                             <details class="context-item">
-                                <summary>Simulation (2-3 weeks)</summary>
-                                <p>Practice timed mock exams under realistic conditions; reduce random low-value tasks.</p>
+                                <summary><span data-lang="en">Simulation (2-3 weeks)</span><span data-lang="kr">실전 모의 단계 (2-3주)</span></summary>
+                                <p><span data-lang="en">Practice timed mock exams under realistic conditions; reduce random low-value tasks.</span><span data-lang="kr">실전과 같은 조건에서 시간 제한 모의시험을 연습하고, 저가치 작업은 줄입니다.</span></p>
                             </details>
                             <details class="context-item">
-                                <summary>Taper (0-1 week)</summary>
-                                <p>Reduce volume, protect sleep, keep recall sharp, and prioritize execution calm.</p>
+                                <summary><span data-lang="en">Taper (0-1 week)</span><span data-lang="kr">마무리 단계 (0-1주)</span></summary>
+                                <p><span data-lang="en">Reduce volume, protect sleep, keep recall sharp, and prioritize execution calm.</span><span data-lang="kr">학습량을 줄이고 수면을 보호하며 회상 감각을 유지하고, 침착한 실행을 우선합니다.</span></p>
                             </details>
                         </div>
                     </div>
@@ -316,17 +316,25 @@
             return rows;
         }
 
+        function isKr() { return document.body.classList.contains('lang-kr'); }
+
         function renderMetrics(config) {
+            const kr = isKr();
             metricGrid.innerHTML = [
-                {label:'Deep Work / Day', value:`${config.deepHours}h`},
-                {label:'Recall Cycles / Week', value:String(config.recallCycles)},
-                {label:'Mock Exams / Week', value:String(config.mockExams)},
-                {label:'Recovery Priority', value:config.recoveryPriority}
+                {label:kr?'일일 딥워크':'Deep Work / Day', value:`${config.deepHours}h`},
+                {label:kr?'주간 회상 사이클':'Recall Cycles / Week', value:String(config.recallCycles)},
+                {label:kr?'주간 모의시험':'Mock Exams / Week', value:String(config.mockExams)},
+                {label:kr?'회복 우선순위':'Recovery Priority', value:kr?({
+                    'Very High':'매우 높음',
+                    'High':'높음',
+                    'Medium':'보통'
+                }[config.recoveryPriority] || config.recoveryPriority):config.recoveryPriority}
             ].map(m=>`<article class="metric"><h4>${m.label}</h4><p>${m.value}</p></article>`).join('');
         }
 
         function renderDailyTable(rows) {
-            dailyPlanBody.innerHTML = rows.map(r=>`<tr><td>${formatTime(r.start)}-${formatTime(r.end)}</td><td>${r.block}</td><td>${r.purpose}</td></tr>`).join('');
+            const kr = isKr();
+            dailyPlanBody.innerHTML = rows.map(r=>`<tr><td>${formatTime(r.start)}-${formatTime(r.end)}</td><td>${kr && r.blockKr ? r.blockKr : r.block}</td><td>${kr && r.purposeKr ? r.purposeKr : r.purpose}</td></tr>`).join('');
         }
 
         function renderChart(weeksAway) {
@@ -335,7 +343,7 @@
             for(let i=horizon-1;i>=0;i--) {
                 const d = Math.max(0, weeksAway-i);
                 const cfg = phaseConfig[phaseFromWeeks(d)];
-                labels.push(d===0?'Final Week':`${d}w out`);
+                labels.push(d===0?(isKr()?'기말 주간':'Final Week'):(isKr()?`${d}주 전`:`${d}w out`));
                 deepData.push(Math.round(cfg.deepHours*6));
                 recoveryData.push(cfg.recoveryPriority==='Very High'?18:cfg.recoveryPriority==='High'?14:11);
             }
@@ -344,8 +352,8 @@
             weeklyChart = new Chart(ctx, {
                 type:'bar',
                 data:{ labels, datasets:[
-                    {label:'Deep Work Hours / Week', data:deepData, backgroundColor:'rgba(0,74,153,0.72)'},
-                    {label:'Recovery Blocks / Week', data:recoveryData, backgroundColor:'rgba(15,118,110,0.6)'}
+                    {label:isKr()?'주간 딥워크 시간':'Deep Work Hours / Week', data:deepData, backgroundColor:'rgba(0,74,153,0.72)'},
+                    {label:isKr()?'주간 회복 블록':'Recovery Blocks / Week', data:recoveryData, backgroundColor:'rgba(15,118,110,0.6)'}
                 ]},
                 options:{ responsive:true, maintainAspectRatio:false, scales:{y:{beginAtZero:true}} }
             });
@@ -356,9 +364,21 @@
             const wakeMinutes = toMinutes(wakeInput.value);
             const phaseKey = phaseFromWeeks(weeksAway);
             const config = phaseConfig[phaseKey];
-            phaseLine.textContent = `You are ${weeksAway} week${weeksAway===1?'':'s'} away from final.`;
-            phaseBadge.textContent = config.label;
-            phaseNote.textContent = config.note;
+            phaseLine.textContent = isKr() ? `기말고사까지 ${weeksAway}주 남았습니다.` : `You are ${weeksAway} week${weeksAway===1?'':'s'} away from final.`;
+            phaseBadge.textContent = isKr() ? ({
+                'Foundation Phase':'기초 단계',
+                'Build Phase':'강화 단계',
+                'Intensification Phase':'집중 단계',
+                'Simulation Phase':'실전 모의 단계',
+                'Taper Phase':'마무리 단계'
+            }[config.label] || config.label) : config.label;
+            phaseNote.textContent = isKr() ? ({
+                'Prioritize consistency, systems setup, and stable sleep before volume expansion.':'볼륨을 늘리기 전에 일관성, 시스템 구축, 안정적인 수면을 우선하세요.',
+                'Increase retrieval load and tighten weekly planning cadence.':'회상 학습량을 늘리고 주간 계획 루틴을 촘촘하게 만드세요.',
+                'Higher pressure phase. Keep deep blocks clean and reduce distractions aggressively.':'압박이 높은 구간입니다. 딥워크 블록의 집중도를 높이고 방해 요소를 줄이세요.',
+                'Shift from pure learning to timed exam execution and error correction.':'순수 학습에서 시간 제한 실전 연습과 오답 교정 중심으로 전환하세요.',
+                'Reduce cognitive load while preserving sharpness. Sleep quality becomes the edge.':'인지 부하를 낮추되 감각은 유지하세요. 수면의 질이 경쟁력이 됩니다.'
+            }[config.note] || config.note) : config.note;
             renderMetrics(config);
             renderDailyTable(buildDailyRows(wakeMinutes, phaseKey, Number(workoutInput.value), loadInput.value));
             renderChart(weeksAway);

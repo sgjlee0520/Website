@@ -26,6 +26,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -33,8 +37,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Data Engineering & Web Scraping</h1>
-                <p class="page-subtitle">A comparative implementation of the entire data acquisition stack: from Bash
-                    scripting to Raw Sockets and High-Level APIs.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">A comparative implementation of the entire data acquisition stack: from Bash scripting to Raw Sockets and High-Level APIs.</span>
+                    <span data-lang="kr">데이터 수집 스택 전체를 비교 구현했습니다: Bash 스크립팅부터 Raw 소켓, 고수준 API까지.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Bash Scripting</span>
                     <span class="tech-tag">TCP Sockets</span>
@@ -47,39 +53,31 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>In data engineering, understanding the layers of abstraction is crucial for optimization and
-                        debugging. This project demonstrates the full stack of data acquisition by implementing the
-                        exact same web scraper in three distinct layers.</p>
-                    <p>By extracting a specific data point ("Latest Update Date") from a university endpoint, I
-                        benchmarked the complexity and control offered by <strong>Shell Scripting</strong> (fastest
-                        prototyping), <strong>Raw TCP Sockets</strong> (maximum control), and <strong>High-Level
-                            APIs</strong> (production standard).</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p><span data-lang="en">In data engineering, understanding the layers of abstraction is crucial for optimization and debugging. This project demonstrates the full stack of data acquisition by implementing the exact same web scraper in three distinct layers.</span><span data-lang="kr">데이터 엔지니어링에서 추상화 계층을 이해하는 것은 최적화와 디버깅의 핵심입니다. 동일한 웹 스크래퍼를 세 가지 레이어로 구현해 데이터 수집 스택 전체를 비교했습니다.</span></p>
+                    <p><span data-lang="en">By extracting a specific data point ("Latest Update Date") from a university endpoint, I benchmarked the complexity and control offered by <strong>Shell Scripting</strong> (fastest prototyping), <strong>Raw TCP Sockets</strong> (maximum control), and <strong>High-Level APIs</strong> (production standard).</span><span data-lang="kr">대학 웹 엔드포인트에서 특정 데이터(“Latest Update Date”)를 추출하며, <strong>Shell 스크립팅</strong>(빠른 프로토타입), <strong>Raw TCP 소켓</strong>(최대 제어), <strong>고수준 API</strong>(실무 표준)의 복잡도와 제어 범위를 비교했습니다.</span></p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Concepts Implemented</h2>
+                    <h2><span data-lang="en">Key Concepts Implemented</span><span data-lang="kr">구현한 핵심 개념</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Shell Scripting (Layer 1)</h3>
-                            <p>Used `wget`, `grep`, and `sed` to pipe HTTP streams directly into text processors,
-                                demonstrating Unix philosophy for rapid data extraction.</p>
+                            <h3><span data-lang="en">Shell Scripting (Layer 1)</span><span data-lang="kr">쉘 스크립팅 (1계층)</span></h3>
+                            <p><span data-lang="en">Used `wget`, `grep`, and `sed` to pipe HTTP streams directly into text processors, demonstrating Unix philosophy for rapid data extraction.</span><span data-lang="kr">`wget`, `grep`, `sed`로 HTTP 스트림을 텍스트 처리 파이프라인에 직접 연결해, 유닉스 철학 기반의 빠른 데이터 추출을 구현했습니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>Raw Sockets (Layer 2)</h3>
-                            <p>Manually constructed HTTP GET requests and parsed raw byte streams over TCP, handling
-                                connection handshakes and buffering without external libraries.</p>
+                            <h3><span data-lang="en">Raw Sockets (Layer 2)</span><span data-lang="kr">Raw 소켓 (2계층)</span></h3>
+                            <p><span data-lang="en">Manually constructed HTTP GET requests and parsed raw byte streams over TCP, handling connection handshakes and buffering without external libraries.</span><span data-lang="kr">HTTP GET 요청을 수동 구성하고 TCP 바이트 스트림을 직접 파싱하여, 외부 라이브러리 없이 핸드셰이크/버퍼링을 처리했습니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>High-Level APIs (Layer 3)</h3>
-                            <p>Utilized the `requests` library to abstract connection pooling and encoding handling,
-                                representing the industry standard for maintainable scrapers.</p>
+                            <h3><span data-lang="en">High-Level APIs (Layer 3)</span><span data-lang="kr">고수준 API (3계층)</span></h3>
+                            <p><span data-lang="en">Utilized the `requests` library to abstract connection pooling and encoding handling, representing the industry standard for maintainable scrapers.</span><span data-lang="kr">`requests` 라이브러리로 연결 풀링/인코딩 처리를 추상화해, 유지보수 가능한 스크래퍼의 실무 표준 방식을 구현했습니다.</span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="content-block">
-                    <h2>Source Code Comparison</h2>
+                    <h2><span data-lang="en">Source Code Comparison</span><span data-lang="kr">소스 코드 비교</span></h2>
 
                     <h3>1. Shell Script (`p4_hw6.sh`)</h3>
                     <p>concise, effectively using regex for extraction.</p>
@@ -199,7 +197,7 @@ for line in response.text.split('\n'):
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

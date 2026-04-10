@@ -14,13 +14,17 @@
 <body>
     <header class="topbar">
         <div class="shell">
-            <div class="crumb">Songgun Lee / Explorations</div>
+            <div class="crumb"><span data-lang="en">Songgun Lee / Explorations</span><span data-lang="kr">송건 리 / 탐구</span></div>
             <nav class="nav-links" aria-label="Health section pages">
-                <a class="nav-link" href="../index.html">Main Site</a>
-                <a class="nav-link" href="index.html">Health</a>
-                <a class="nav-link" href="papers.html">Papers</a>
-                <a class="nav-link" href="ai-projects.html" aria-current="page">AI Projects</a>
+                <a class="nav-link" href="../index.html"><span data-lang="en">Main Site</span><span data-lang="kr">메인</span></a>
+                <a class="nav-link" href="index.html"><span data-lang="en">Health</span><span data-lang="kr">건강</span></a>
+                <a class="nav-link" href="papers.html"><span data-lang="en">Papers</span><span data-lang="kr">문서</span></a>
+                <a class="nav-link" href="ai-projects.html" aria-current="page"><span data-lang="en">AI Projects</span><span data-lang="kr">AI</span></a>
             </nav>
+            <div class="lang-switcher" aria-label="Language toggle">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </header>
 
@@ -28,15 +32,15 @@
         <section class="hero">
             <div class="shell">
                 <div class="hero-block">
-                    <div class="eyebrow">Applied AI Experiments</div>
-                    <h1>AI projects connected to decisions, tools, and behavior.</h1>
+                    <div class="eyebrow"><span data-lang="en">Applied AI Experiments</span><span data-lang="kr">응용 AI 실험</span></div>
+                    <h1><span data-lang="en">AI projects connected to decisions, tools, and behavior.</span><span data-lang="kr">의사결정, 도구, 행동과 연결되는 AI 프로젝트.</span></h1>
                     <p>
-                        Yes, an AI section belongs on your website. The key is framing: present it as applied work with
-                        clear scope, measurable intent, and technical execution, not generic AI branding.
+                        <span data-lang="en">Yes, an AI section belongs on your website. The key is framing: present it as applied work with clear scope, measurable intent, and technical execution, not generic AI branding.</span>
+                        <span data-lang="kr">AI 섹션은 웹사이트에 있어도 됩니다. 핵심은 ‘포장’이 아니라 ‘프레이밍’입니다. 범위가 명확하고 측정 가능한 의도와 구현이 있는 응용 작업으로 보여주세요.</span>
                     </p>
                     <div class="actions">
-                        <a class="btn btn-primary" href="../projects/divine-guidance.html">View flagship AI project</a>
-                        <a class="btn btn-secondary" href="../projects.html">Back to all projects</a>
+                        <a class="btn btn-primary" href="../projects/divine-guidance.html"><span data-lang="en">View flagship AI project</span><span data-lang="kr">대표 AI 프로젝트 보기</span></a>
+                        <a class="btn btn-secondary" href="../projects.html"><span data-lang="en">Back to all projects</span><span data-lang="kr">프로젝트 전체</span></a>
                     </div>
                 </div>
             </div>
@@ -44,26 +48,26 @@
 
         <section class="section">
             <div class="shell">
-                <h2>Current AI-focused builds</h2>
-                <p class="section-note">Small set, high signal. Each entry has a practical objective.</p>
+                <h2><span data-lang="en">Current AI-focused builds</span><span data-lang="kr">현재 AI 작업</span></h2>
+                <p class="section-note"><span data-lang="en">Small set, high signal. Each entry has a practical objective.</span><span data-lang="kr">적은 수, 높은 밀도. 각 항목은 실용 목적이 있습니다.</span></p>
                 <div class="grid">
                     <article class="card">
-                        <div class="card-meta">Production-style app</div>
+                        <div class="card-meta"><span data-lang="en">Production-style app</span><span data-lang="kr">프로덕션 스타일</span></div>
                         <h3>Divine Guidance (PWA)</h3>
-                        <p>AI-assisted spiritual guidance experience built with Next.js and PWA patterns.</p>
-                        <a class="card-link" href="../projects/divine-guidance.html">Open case study</a>
+                        <p><span data-lang="en">AI-assisted spiritual guidance experience built with Next.js and PWA patterns.</span><span data-lang="kr">Next.js + PWA 패턴으로 만든 AI 기반 영적/정서적 가이드 앱.</span></p>
+                        <a class="card-link" href="../projects/divine-guidance.html"><span data-lang="en">Open case study</span><span data-lang="kr">케이스 스터디</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Quant experiment</div>
-                        <h3>Heikin-Ashi strategy notebooks</h3>
-                        <p>Exploratory strategy development pipeline using notebook-based research and evaluation.</p>
-                        <a class="card-link" href="../ai_trade_strats/heikin_ashi1.ipynb">Open notebook</a>
+                        <div class="card-meta"><span data-lang="en">Quant experiment</span><span data-lang="kr">퀀트 실험</span></div>
+                        <h3><span data-lang="en">Heikin-Ashi strategy notebooks</span><span data-lang="kr">하이킨아시 전략 노트북</span></h3>
+                        <p><span data-lang="en">Exploratory strategy development pipeline using notebook-based research and evaluation.</span><span data-lang="kr">노트북 기반 리서치/평가로 전략을 탐색하는 파이프라인.</span></p>
+                        <a class="card-link" href="../ai_trade_strats/heikin_ashi1.ipynb"><span data-lang="en">Open notebook</span><span data-lang="kr">노트북 열기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Crypto modeling</div>
-                        <h3>BTC strategy prototyping</h3>
-                        <p>Notebook-driven hypothesis testing for market structure and signal behavior.</p>
-                        <a class="card-link" href="../ai_trade_strats/Bit_strategy1_heikish.ipynb">Open notebook</a>
+                        <div class="card-meta"><span data-lang="en">Crypto modeling</span><span data-lang="kr">크립토 모델링</span></div>
+                        <h3><span data-lang="en">BTC strategy prototyping</span><span data-lang="kr">BTC 전략 프로토타이핑</span></h3>
+                        <p><span data-lang="en">Notebook-driven hypothesis testing for market structure and signal behavior.</span><span data-lang="kr">시장 구조/시그널 특성에 대한 가설을 노트북으로 검증합니다.</span></p>
+                        <a class="card-link" href="../ai_trade_strats/Bit_strategy1_heikish.ipynb"><span data-lang="en">Open notebook</span><span data-lang="kr">노트북 열기</span></a>
                     </article>
                 </div>
             </div>
@@ -71,17 +75,17 @@
 
         <section class="section">
             <div class="shell">
-                <h2>Positioning rule for this section</h2>
+                <h2><span data-lang="en">Positioning rule for this section</span><span data-lang="kr">이 섹션의 포지셔닝 규칙</span></h2>
                 <div class="grid">
                     <article class="card">
-                        <div class="card-meta">How to present</div>
-                        <h3>Applied AI experiments</h3>
-                        <p>Keep it as a secondary stream under projects/explorations so your core identity stays clear and credible.</p>
+                        <div class="card-meta"><span data-lang="en">How to present</span><span data-lang="kr">표현 방식</span></div>
+                        <h3><span data-lang="en">Applied AI experiments</span><span data-lang="kr">응용 AI 실험</span></h3>
+                        <p><span data-lang="en">Keep it as a secondary stream under projects/explorations so your core identity stays clear and credible.</span><span data-lang="kr">프로젝트/탐구 아래 ‘보조 스트림’으로 두어 핵심 정체성이 흔들리지 않게 합니다.</span></p>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Quality bar</div>
-                        <h3>Show objective + implementation + result</h3>
-                        <p>Every AI project should state the problem, architecture, and measurable outcome in one concise arc.</p>
+                        <div class="card-meta"><span data-lang="en">Quality bar</span><span data-lang="kr">품질 기준</span></div>
+                        <h3><span data-lang="en">Show objective + implementation + result</span><span data-lang="kr">목표 + 구현 + 결과</span></h3>
+                        <p><span data-lang="en">Every AI project should state the problem, architecture, and measurable outcome in one concise arc.</span><span data-lang="kr">모든 AI 프로젝트는 문제/아키텍처/측정 가능한 결과를 한 흐름으로 보여줘야 합니다.</span></p>
                     </article>
                 </div>
             </div>
@@ -90,9 +94,25 @@
 
     <footer class="footer">
         <div class="shell">
-            <p>AI section strategy: keep it focused, evidence-based, and directly tied to your broader quantitative profile.</p>
+            <p><span data-lang="en">AI section strategy: keep it focused, evidence-based, and directly tied to your broader quantitative profile.</span><span data-lang="kr">AI 섹션 전략: 집중도 높게, 근거 기반으로, 전체 정량 프로필과 직접 연결하세요.</span></p>
         </div>
     </footer>
+    <script>
+        (function () {
+            var saved = localStorage.getItem('siteLang') || 'en';
+            if (saved === 'kr') document.body.classList.add('lang-kr');
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.classList.toggle('active', btn.dataset.lang === saved);
+            });
+        })();
+        function setLang(lang) {
+            localStorage.setItem('siteLang', lang);
+            document.body.classList.toggle('lang-kr', lang === 'kr');
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+    </script>
 </body>
 
 </html>

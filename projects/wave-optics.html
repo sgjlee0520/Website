@@ -35,6 +35,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -42,8 +46,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Diffraction & Interference</h1>
-                <p class="page-subtitle">Investigation of wave-particle duality through single-slit diffraction and
-                    double-slit interference patterns.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">Investigation of wave-particle duality through single-slit diffraction and double-slit interference patterns.</span>
+                    <span data-lang="kr">단일 슬릿 회절과 이중 슬릿 간섭 패턴을 통해 파동-입자 이중성을 탐구합니다.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Wave Optics</span>
                     <span class="tech-tag">Laser Physics</span>
@@ -56,30 +62,26 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>This project explores physical optics, focusing on the wave nature of light. By passing coherent
-                        laser light ($\lambda = 650$ nm) through various microscopic apertures, I generated and analyzed
-                        interference patterns that classic ray optics cannot explain.</p>
-                    <p>I precisely measured the intensity maxima and minima positions to verify the theoretical
-                        relationships for Single-Slit Diffraction ($a\sin\theta = m\lambda$) and Double-Slit
-                        Interference ($d\sin\theta = m\lambda$).</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p><span data-lang="en">This project explores physical optics, focusing on the wave nature of light. By passing coherent laser light ($\\lambda = 650$ nm) through various microscopic apertures, I generated and analyzed interference patterns that classic ray optics cannot explain.</span><span data-lang="kr">이 프로젝트는 빛의 파동성을 중심으로 물리광학을 탐구합니다. 결맞은 레이저(\(\\lambda=650\)nm)를 미세 개구에 통과시켜, 기하광학으로 설명되지 않는 간섭 패턴을 생성/분석했습니다.</span></p>
+                    <p><span data-lang="en">I precisely measured the intensity maxima and minima positions to verify the theoretical relationships for Single-Slit Diffraction ($a\\sin\\theta = m\\lambda$) and Double-Slit Interference ($d\\sin\\theta = m\\lambda$).</span><span data-lang="kr">강도 최대/최소 위치를 정밀 측정해 단일슬릿 회절(\(a\\sin\\theta=m\\lambda\))과 이중슬릿 간섭(\(d\\sin\\theta=m\\lambda\))의 이론식을 검증했습니다.</span></p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Concepts Investigated</h2>
+                    <h2><span data-lang="en">Key Concepts Investigated</span><span data-lang="kr">탐구한 핵심 개념</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Single-Slit Diffraction</h3>
+                            <h3><span data-lang="en">Single-Slit Diffraction</span><span data-lang="kr">단일 슬릿 회절</span></h3>
                             <p>Analyzed how a wavefront bends around a barrier, creating a central maximum and fading
                                 side fringes. Calculated the slit width $a$ from the fringe spacing.</p>
                         </div>
                         <div class="concept-card">
-                            <h3>Double-Slit Interference</h3>
+                            <h3><span data-lang="en">Double-Slit Interference</span><span data-lang="kr">이중 슬릿 간섭</span></h3>
                             <p>Demonstrated the principle of superposition, where two coherent wavefronts constructively
                                 and destructively interfere. Measured the slit separation $d$ with high precision.</p>
                         </div>
                         <div class="concept-card">
-                            <h3>Babinet's Principle</h3>
+                            <h3><span data-lang="en">Babinet's Principle</span><span data-lang="kr">바비네 원리</span></h3>
                             <p>Explored the complementary nature of diffraction patterns, showing that a thin wire
                                 produces the same diffraction pattern as a slit of the same width.</p>
                         </div>
@@ -87,7 +89,7 @@
                 </div>
 
                 <div class="content-block">
-                    <h2>Full Documentation</h2>
+                    <h2><span data-lang="en">Full Documentation</span><span data-lang="kr">전체 문서</span></h2>
                     <p>The PDF below contains the experimental setup, interference pattern analysis, and calculations.
                     </p>
                     <div class="pdf-container">
@@ -101,7 +103,7 @@
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

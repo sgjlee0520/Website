@@ -542,3 +542,61 @@ h1 {
         gap: 0.4rem;
     }
 }
+
+/* ── Language Toggle (shared behavior with main site) ──────────────── */
+.lang-switcher {
+    position: relative;
+    display: flex;
+    background: rgba(11, 92, 173, 0.12);
+    border-radius: 24px;
+    padding: 3px;
+    gap: 0;
+    align-items: center;
+}
+
+.lang-switcher::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    width: calc(50% - 3px);
+    background: var(--brand);
+    border-radius: 20px;
+    transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+body.lang-kr .lang-switcher::after {
+    left: 50%;
+}
+
+.lang-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--ink-500);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: color 0.2s;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.04em;
+    min-width: 84px;
+}
+
+.lang-btn.active {
+    color: #fff;
+}
+
+[data-lang="kr"]:not(.lang-btn) { display: none; }
+body.lang-kr [data-lang="en"]:not(.lang-btn) { display: none; }
+body.lang-kr [data-lang="kr"]:not(.lang-btn) { display: block; }
+
+span[data-lang="kr"] { display: none; }
+body.lang-kr span[data-lang="en"] { display: none; }
+body.lang-kr span[data-lang="kr"] { display: inline; }

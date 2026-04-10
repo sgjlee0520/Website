@@ -1,3 +1,5 @@
 .DS_Store
 PHYS 129L/
-Divine Guidance/node_modules
+Divine_Guidance/
+.vercel
+.env*.local

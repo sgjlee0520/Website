@@ -14,13 +14,17 @@
 <body>
     <header class="topbar">
         <div class="shell">
-            <div class="crumb">Songgun Lee / Explorations</div>
+            <div class="crumb"><span data-lang="en">Songgun Lee / Explorations</span><span data-lang="kr">송건 리 / 탐구</span></div>
             <nav class="nav-links" aria-label="Health section pages">
-                <a class="nav-link" href="../index.html">Main Site</a>
-                <a class="nav-link" href="index.html" aria-current="page">Health</a>
-                <a class="nav-link" href="papers.html">Papers</a>
-                <a class="nav-link" href="ai-projects.html">AI Projects</a>
+                <a class="nav-link" href="../index.html"><span data-lang="en">Main Site</span><span data-lang="kr">메인</span></a>
+                <a class="nav-link" href="index.html" aria-current="page"><span data-lang="en">Health</span><span data-lang="kr">건강</span></a>
+                <a class="nav-link" href="papers.html"><span data-lang="en">Papers</span><span data-lang="kr">문서</span></a>
+                <a class="nav-link" href="ai-projects.html"><span data-lang="en">AI Projects</span><span data-lang="kr">AI</span></a>
             </nav>
+            <div class="lang-switcher" aria-label="Language toggle">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </header>
 
@@ -28,74 +32,48 @@
         <section class="hero">
             <div class="shell">
                 <div class="hero-block">
-                    <div class="eyebrow">Health Research Notes</div>
-                    <h1>Health, performance, and systems thinking.</h1>
+                    <div class="eyebrow"><span data-lang="en">Health Research Notes</span><span data-lang="kr">건강 연구 노트</span></div>
+                    <h1><span data-lang="en">Health, performance, and systems thinking.</span><span data-lang="kr">건강, 퍼포먼스, 시스템 사고.</span></h1>
                     <p>
-                        This is a personal R&amp;D track where I apply the same quantitative mindset from physics and finance
-                        to health questions. It is intentionally a minor section: practical experiments, structured notes,
-                        interactive schedules, and long-term curiosity.
+                        <span data-lang="en">This is a personal R&amp;D track where I apply the same quantitative mindset from physics and finance to health questions. It is intentionally a minor section: practical experiments, structured notes, interactive schedules, and long-term curiosity.</span>
+                        <span data-lang="kr">이 섹션은 물리학과 금융에서 쓰는 정량적 사고를 건강 문제에 적용하는 개인 R&amp;D 트랙입니다. 의도적으로 ‘서브 섹션’으로 유지하며, 실험/구조화된 노트/인터랙티브 스케줄/장기적 호기심에 초점을 둡니다.</span>
                     </p>
                     <div class="actions">
-                        <a class="btn btn-primary" href="huberman.html">Build My Daily Schedule</a>
-                        <a class="btn btn-secondary" href="optimize.html">Plan by Weeks to Final</a>
+                        <a class="btn btn-primary" href="huberman.html"><span data-lang="en">Build My Daily Schedule</span><span data-lang="kr">일일 스케줄 만들기</span></a>
+                        <a class="btn btn-secondary" href="optimize.html"><span data-lang="en">Plan by Weeks to Final</span><span data-lang="kr">기말까지 주간 계획</span></a>
                     </div>
-                    <a class="cta-inline" href="papers.html">Need full context? Read papers and writeups</a>
+                    <a class="cta-inline" href="papers.html"><span data-lang="en">Need full context? Read papers and writeups</span><span data-lang="kr">전체 맥락이 필요하신가요? 문서/리포트 보기</span></a>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="shell">
-                <h2>Current focus areas</h2>
+                <h2><span data-lang="en">Current focus areas</span><span data-lang="kr">현재 집중 분야</span></h2>
                 <p class="section-note">
-                    Topics are selected for decision quality, recovery, and repeatable behavior change.
+                    <span data-lang="en">Topics are selected for decision quality, recovery, and repeatable behavior change.</span>
+                    <span data-lang="kr">의사결정의 질, 회복, 반복 가능한 행동 변화에 도움이 되는 주제만 선택합니다.</span>
                 </p>
                 <div class="grid">
                     <article class="card">
-                        <div class="card-meta">Sleep & Recovery</div>
-                        <h3>Protocols and quality scoring</h3>
-                        <p>Frameworks for bedtime consistency, morning energy checks, and cycle-aware routines.</p>
+                        <div class="card-meta"><span data-lang="en">Sleep & Recovery</span><span data-lang="kr">수면 · 회복</span></div>
+                        <h3><span data-lang="en">Protocols and quality scoring</span><span data-lang="kr">프로토콜과 품질 점수화</span></h3>
+                        <p><span data-lang="en">Frameworks for bedtime consistency, morning energy checks, and cycle-aware routines.</span><span data-lang="kr">취침 일관성, 아침 에너지 체크, 생체리듬 기반 루틴 프레임워크.</span></p>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Nutrition</div>
-                        <h3>Fueling for sustained cognition</h3>
-                        <p>Simple meal architecture and constraints that make adherence easier under workload stress.</p>
+                        <div class="card-meta"><span data-lang="en">Nutrition</span><span data-lang="kr">영양</span></div>
+                        <h3><span data-lang="en">Fueling for sustained cognition</span><span data-lang="kr">지속 가능한 인지를 위한 연료</span></h3>
+                        <p><span data-lang="en">Simple meal architecture and constraints that make adherence easier under workload stress.</span><span data-lang="kr">업무/학업 스트레스 상황에서도 지키기 쉬운 식사 구조와 제약 조건.</span></p>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Training</div>
-                        <h3>Strength and durability</h3>
-                        <p>Progressive loading principles, risk management, and minimum viable weekly volume.</p>
+                        <div class="card-meta"><span data-lang="en">Training</span><span data-lang="kr">운동</span></div>
+                        <h3><span data-lang="en">Strength and durability</span><span data-lang="kr">근력과 내구성</span></h3>
+                        <p><span data-lang="en">Progressive loading principles, risk management, and minimum viable weekly volume.</span><span data-lang="kr">점진적 과부하 원칙, 부상 리스크 관리, 최소 주간 운동량.</span></p>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Cognitive Stack</div>
-                        <h3>Focus and emotional regulation</h3>
-                        <p>Protocols for deep work, stress downshifting, and long-horizon motivation stability.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="shell">
-                <h2>Where this connects to the main site</h2>
-                <div class="grid">
-                    <article class="card">
-                        <div class="card-meta">Papers</div>
-                        <h3>Technical reports and references</h3>
-                        <p>Curated links to your existing quantitative and physics writeups as supporting material.</p>
-                        <a class="card-link" href="papers.html">Open papers</a>
-                    </article>
-                    <article class="card">
-                        <div class="card-meta">AI Projects</div>
-                        <h3>Applied AI, not trend-chasing</h3>
-                        <p>A focused shelf for AI work that is relevant to decision support and practical tools.</p>
-                        <a class="card-link" href="ai-projects.html">Open AI projects</a>
-                    </article>
-                    <article class="card">
-                        <div class="card-meta">Core portfolio</div>
-                        <h3>Back to your main profile</h3>
-                        <p>Your primary brand remains physics, quant finance, and software engineering execution.</p>
-                        <a class="card-link" href="../projects.html">Back to core projects</a>
+                        <div class="card-meta"><span data-lang="en">Cognitive Stack</span><span data-lang="kr">인지 스택</span></div>
+                        <h3><span data-lang="en">Focus and emotional regulation</span><span data-lang="kr">집중과 감정 조절</span></h3>
+                        <p><span data-lang="en">Protocols for deep work, stress downshifting, and long-horizon motivation stability.</span><span data-lang="kr">딥워크, 스트레스 다운시프트, 장기 동기 안정화를 위한 프로토콜.</span></p>
                     </article>
                 </div>
             </div>
@@ -103,26 +81,52 @@
 
         <section class="section">
             <div class="shell">
-                <h2>Interactive protocol tools</h2>
-                <p class="section-note">Start with the schedule dashboard, then use the weeks-to-final planner for execution.</p>
+                <h2><span data-lang="en">Where this connects to the main site</span><span data-lang="kr">메인 사이트와의 연결</span></h2>
                 <div class="grid">
                     <article class="card">
-                        <div class="card-meta">Daily Schedule Engine</div>
-                        <h3>Huberman Daily Schedule Dashboard</h3>
-                        <p>Adjust wake time, caffeine delay, and training focus to generate a full day timeline and focus-readiness map.</p>
-                        <a class="card-link" href="huberman.html">Open daily schedule dashboard</a>
+                        <div class="card-meta"><span data-lang="en">Papers</span><span data-lang="kr">문서</span></div>
+                        <h3><span data-lang="en">Technical reports and references</span><span data-lang="kr">기술 리포트 및 레퍼런스</span></h3>
+                        <p><span data-lang="en">Curated links to your existing quantitative and physics writeups as supporting material.</span><span data-lang="kr">정량/물리 관련 기존 글과 자료를 연결해 둔 링크 모음입니다.</span></p>
+                        <a class="card-link" href="papers.html"><span data-lang="en">Open papers</span><span data-lang="kr">문서 보기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Exam Timeline Engine</div>
-                        <h3>Weeks-Away Final Planner</h3>
-                        <p>Fill in how many weeks away your final is, then generate phase strategy, workload projection, and personalized daily schedule.</p>
-                        <a class="card-link" href="optimize.html">Open final planner</a>
+                        <div class="card-meta"><span data-lang="en">AI Projects</span><span data-lang="kr">AI 프로젝트</span></div>
+                        <h3><span data-lang="en">Applied AI, not trend-chasing</span><span data-lang="kr">유행이 아닌 ‘적용’ 중심</span></h3>
+                        <p><span data-lang="en">A focused shelf for AI work that is relevant to decision support and practical tools.</span><span data-lang="kr">의사결정 지원과 실용 도구에 연결되는 AI 작업만 모았습니다.</span></p>
+                        <a class="card-link" href="ai-projects.html"><span data-lang="en">Open AI projects</span><span data-lang="kr">AI 보기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Long-Form Sources</div>
-                        <h3>Full reports and references</h3>
-                        <p>Use source PDFs/Markdown for deep context, assumptions, and broader methodological reasoning.</p>
-                        <a class="card-link" href="papers.html">Open papers and reports</a>
+                        <div class="card-meta"><span data-lang="en">Core portfolio</span><span data-lang="kr">핵심 포트폴리오</span></div>
+                        <h3><span data-lang="en">Back to your main profile</span><span data-lang="kr">메인 프로필로</span></h3>
+                        <p><span data-lang="en">Your primary brand remains physics, quant finance, and software engineering execution.</span><span data-lang="kr">핵심 브랜딩은 물리/퀀트 금융/소프트웨어 구현 역량입니다.</span></p>
+                        <a class="card-link" href="../projects.html"><span data-lang="en">Back to core projects</span><span data-lang="kr">핵심 프로젝트</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="shell">
+                <h2><span data-lang="en">Interactive protocol tools</span><span data-lang="kr">인터랙티브 도구</span></h2>
+                <p class="section-note"><span data-lang="en">Start with the schedule dashboard, then use the weeks-to-final planner for execution.</span><span data-lang="kr">스케줄 대시보드로 시작한 뒤, 기말 플래너로 실행 계획을 만듭니다.</span></p>
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-meta"><span data-lang="en">Daily Schedule Engine</span><span data-lang="kr">일일 스케줄 엔진</span></div>
+                        <h3><span data-lang="en">Huberman Daily Schedule Dashboard</span><span data-lang="kr">Huberman 일일 스케줄 대시보드</span></h3>
+                        <p><span data-lang="en">Adjust wake time, caffeine delay, and training focus to generate a full day timeline and focus-readiness map.</span><span data-lang="kr">기상 시간/카페인 딜레이/운동 포커스를 조정해 하루 타임라인과 집중 준비도 맵을 생성합니다.</span></p>
+                        <a class="card-link" href="huberman.html"><span data-lang="en">Open daily schedule dashboard</span><span data-lang="kr">대시보드 열기</span></a>
+                    </article>
+                    <article class="card">
+                        <div class="card-meta"><span data-lang="en">Exam Timeline Engine</span><span data-lang="kr">시험 타임라인 엔진</span></div>
+                        <h3><span data-lang="en">Weeks-Away Final Planner</span><span data-lang="kr">기말까지 주간 플래너</span></h3>
+                        <p><span data-lang="en">Fill in how many weeks away your final is, then generate phase strategy, workload projection, and personalized daily schedule.</span><span data-lang="kr">기말까지 남은 주 수를 입력하면, 단계별 전략/업무량 예측/맞춤 일일 스케줄을 생성합니다.</span></p>
+                        <a class="card-link" href="optimize.html"><span data-lang="en">Open final planner</span><span data-lang="kr">플래너 열기</span></a>
+                    </article>
+                    <article class="card">
+                        <div class="card-meta"><span data-lang="en">Long-Form Sources</span><span data-lang="kr">원문 자료</span></div>
+                        <h3><span data-lang="en">Full reports and references</span><span data-lang="kr">전체 리포트/레퍼런스</span></h3>
+                        <p><span data-lang="en">Use source PDFs/Markdown for deep context, assumptions, and broader methodological reasoning.</span><span data-lang="kr">가정과 방법론을 포함한 깊은 맥락은 PDF/Markdown 원문에서 확인합니다.</span></p>
+                        <a class="card-link" href="papers.html"><span data-lang="en">Open papers and reports</span><span data-lang="kr">문서/리포트 열기</span></a>
                     </article>
                 </div>
             </div>
@@ -131,9 +135,25 @@
 
     <footer class="footer">
         <div class="shell">
-            <p>Personal exploration section by Songgun Lee. For professional portfolio content, use the main site pages.</p>
+            <p><span data-lang="en">Personal exploration section by Songgun Lee. For professional portfolio content, use the main site pages.</span><span data-lang="kr">송건 리의 개인 탐구 섹션입니다. 공식 포트폴리오 내용은 메인 사이트를 이용해 주세요.</span></p>
         </div>
     </footer>
+    <script>
+        (function () {
+            var saved = localStorage.getItem('siteLang') || 'en';
+            if (saved === 'kr') document.body.classList.add('lang-kr');
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.classList.toggle('active', btn.dataset.lang === saved);
+            });
+        })();
+        function setLang(lang) {
+            localStorage.setItem('siteLang', lang);
+            document.body.classList.toggle('lang-kr', lang === 'kr');
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+    </script>
 </body>
 
 </html>

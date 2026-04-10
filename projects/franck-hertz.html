@@ -35,6 +35,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -42,8 +46,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Franck-Hertz Experiment</h1>
-                <p class="page-subtitle">Experimental verification of the Bohr model and quantum energy states through
-                    inelastic electron collisions.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">Experimental verification of the Bohr model and quantum energy states through inelastic electron collisions.</span>
+                    <span data-lang="kr">비탄성 전자 충돌을 통해 보어 모형과 양자 에너지 준위를 실험적으로 검증합니다.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Quantum Physics</span>
                     <span class="tech-tag">Experimental Modeling</span>
@@ -56,41 +62,31 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>The Franck-Hertz experiment is a cornerstone of quantum mechanics, providing the first direct
-                        experimental proof of the Bohr model of the atom. In this project, I measured the quantized
-                        energy loss of electrons colliding with Mercury (Hg) and Neon (Ne) atoms.</p>
-                    <p>By analyzing the current-voltage ($I-V$) characteristics, I observed distinct periodic drops in
-                        current, corresponding to the electrons transferring exactly enough kinetic energy to excite the
-                        atoms to their next energy state. This verified the discrete nature of atomic energy levels,
-                        governed by the relation $E = h\nu$.</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p><span data-lang="en">The Franck-Hertz experiment is a cornerstone of quantum mechanics, providing the first direct experimental proof of the Bohr model of the atom. In this project, I measured the quantized energy loss of electrons colliding with Mercury (Hg) and Neon (Ne) atoms.</span><span data-lang="kr">프랑크-헤르츠 실험은 원자의 보어 모형을 직접 검증한 양자역학의 핵심 실험입니다. 이 프로젝트에서는 수은(Hg)과 네온(Ne) 원자에 전자가 충돌할 때의 양자화된 에너지 손실을 측정했습니다.</span></p>
+                    <p><span data-lang="en">By analyzing the current-voltage ($I-V$) characteristics, I observed distinct periodic drops in current, corresponding to the electrons transferring exactly enough kinetic energy to excite the atoms to their next energy state. This verified the discrete nature of atomic energy levels, governed by the relation $E = h\\nu$.</span><span data-lang="kr">전류-전압(\(I\)-\(V\)) 특성을 분석한 결과, 전류가 주기적으로 감소하는 구간을 관측했습니다. 이는 전자가 원자를 다음 에너지 준위로 여기시키는 데 필요한 정확한 운동에너지를 전달할 때 발생하며, \(E=h\\nu\) 관계로 설명되는 에너지 준위의 불연속성을 확인합니다.</span></p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Concepts Investigated</h2>
+                    <h2><span data-lang="en">Key Concepts Investigated</span><span data-lang="kr">탐구한 핵심 개념</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Quantum Quantization</h3>
-                            <p>Observed that energy transfer is not continuous but discrete. Electrons only lose energy
-                                when their kinetic energy measured experimentally ($K = eV$) matches the excitation
-                                energy of the atom.</p>
+                            <h3><span data-lang="en">Quantum Quantization</span><span data-lang="kr">양자화</span></h3>
+                            <p><span data-lang="en">Observed that energy transfer is not continuous but discrete. Electrons only lose energy when their kinetic energy measured experimentally ($K = eV$) matches the excitation energy of the atom.</span><span data-lang="kr">에너지 전달이 연속이 아닌 불연속(양자화)임을 관측했습니다. 실험적으로 측정된 전자 운동에너지(\(K=eV\))가 원자 여기 에너지와 일치할 때만 에너지 손실이 발생합니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>Inelastic Collisions</h3>
-                            <p>Analyzed the mechanics of electron-atom scattering. Below the critical threshold,
-                                collisions are elastic; at the threshold, they become inelastic, causing the electron to
-                                lose almost all momentum.</p>
+                            <h3><span data-lang="en">Inelastic Collisions</span><span data-lang="kr">비탄성 충돌</span></h3>
+                            <p><span data-lang="en">Analyzed the mechanics of electron-atom scattering. Below the critical threshold, collisions are elastic; at the threshold, they become inelastic, causing the electron to lose almost all momentum.</span><span data-lang="kr">전자-원자 산란 메커니즘을 분석했습니다. 임계치 아래에서는 탄성 충돌이 우세하고, 임계치에서 비탄성 충돌로 전이되며 전자가 대부분의 운동량을 잃습니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>Mean Free Path</h3>
-                            <p>Investigated how factors like temperature and gas pressure affect the mean free path of
-                                electrons, influencing the sharpness and spacing of the interference peaks.</p>
+                            <h3><span data-lang="en">Mean Free Path</span><span data-lang="kr">평균자유행로</span></h3>
+                            <p><span data-lang="en">Investigated how factors like temperature and gas pressure affect the mean free path of electrons, influencing the sharpness and spacing of the interference peaks.</span><span data-lang="kr">온도와 기체 압력이 전자의 평균자유행로에 미치는 영향을 살펴보고, 그 결과가 피크의 선명도와 간격에 어떻게 반영되는지 분석했습니다.</span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="content-block">
-                    <h2>Full Documentation</h2>
+                    <h2><span data-lang="en">Full Documentation</span><span data-lang="kr">전체 문서</span></h2>
                     <p>This report contains detailed data tables, error analysis, and theoretical derivations linking
                         the observed voltage drops to the fundamental Planck constant.</p>
                     <div class="pdf-container">
@@ -104,7 +100,7 @@
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

@@ -34,6 +34,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -41,8 +45,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Stochastic Process Modeling</h1>
-                <p class="page-subtitle">Modeling rare-event probabilities and performing hypothesis testing using
-                    Binomial, Poisson, and Gaussian distributions.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">Modeling rare-event probabilities and performing hypothesis testing using Binomial, Poisson, and Gaussian distributions.</span>
+                    <span data-lang="kr">이항/포아송/가우시안 분포로 희귀 사건 확률을 모델링하고 가설검정을 수행합니다.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">SciPy</span>
@@ -55,30 +61,26 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>In quantitative risk management, correctly modeling the probability of rare events (tail risk) is
-                        crucial. This project investigates the transition from Binomial distributions to Poisson and
-                        Gaussian limits, effectively modeling scenarios like default events or insurance claims.</p>
-                    <p>The project also applies rigorous statistical hypothesis testing to determine if subpopulations
-                        deviate significantly from expected probability distributions, similar to detecting anomalies in
-                        market activity.</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p><span data-lang="en">In quantitative risk management, correctly modeling the probability of rare events (tail risk) is crucial. This project investigates the transition from Binomial distributions to Poisson and Gaussian limits, effectively modeling scenarios like default events or insurance claims.</span><span data-lang="kr">정량 리스크 관리에서는 희귀 사건(테일 리스크) 확률을 정확히 모델링하는 것이 핵심입니다. 이 프로젝트는 이항분포에서 포아송/가우시안 극한으로의 전이를 분석해, 부도 이벤트나 보험 청구 같은 시나리오를 모델링합니다.</span></p>
+                    <p><span data-lang="en">The project also applies rigorous statistical hypothesis testing to determine if subpopulations deviate significantly from expected probability distributions, similar to detecting anomalies in market activity.</span><span data-lang="kr">또한 엄밀한 가설검정을 적용해 하위 집단이 기대 분포에서 유의하게 이탈하는지 판단하며, 시장 이상치 탐지와 유사한 문제를 다룹니다.</span></p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Concepts Implemented</h2>
+                    <h2><span data-lang="en">Key Concepts Implemented</span><span data-lang="kr">구현한 핵심 개념</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Poisson Limit Theorem</h3>
+                            <h3><span data-lang="en">Poisson Limit Theorem</span><span data-lang="kr">포아송 극한 정리</span></h3>
                             <p>Modeled low-probability events in large populations, demonstrating how Binomial variances
                                 converge to Poisson intensity rates.</p>
                         </div>
                         <div class="concept-card">
-                            <h3>Gaussian Approximation</h3>
+                            <h3><span data-lang="en">Gaussian Approximation</span><span data-lang="kr">가우시안 근사</span></h3>
                             <p>Applied the Central Limit Theorem to approximate discrete distributions, enabling rapid
                                 analytically tractable risk bounds (VaR).</p>
                         </div>
                         <div class="concept-card">
-                            <h3>Statistical Hypothesis Testing</h3>
+                            <h3><span data-lang="en">Statistical Hypothesis Testing</span><span data-lang="kr">통계적 가설검정</span></h3>
                             <p>Calculated Z-scores and p-values to reject null hypotheses, a fundamental skill for
                                 backtesting trading strategies against random market noise.</p>
                         </div>
@@ -86,7 +88,7 @@
                 </div>
 
                 <div class="content-block">
-                    <h2>Visual Analysis</h2>
+                    <h2><span data-lang="en">Visual Analysis</span><span data-lang="kr">시각화 분석</span></h2>
                     <div class="visual-showcase">
                         <img src="../Finance & Quantitative Analysis/images/hypothesis_testing.png"
                             alt="Gaussian Approximation Graph">
@@ -97,7 +99,7 @@
                 </div>
 
                 <div class="content-block">
-                    <h2>Source Code</h2>
+                    <h2><span data-lang="en">Source Code</span><span data-lang="kr">소스 코드</span></h2>
 
                     <h3>1. Hypothesis Testing (`p3_hw9.py`)</h3>
                     <div class="code-snippet">
@@ -197,7 +199,7 @@ plt.savefig('p2_hw9.eps')</code></pre>
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

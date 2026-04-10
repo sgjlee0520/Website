@@ -35,6 +35,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -42,8 +46,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Speed of Sound Measurement</h1>
-                <p class="page-subtitle">Determination of the speed of sound in air using acoustic resonance in a
-                    variable-length column.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">Determination of the speed of sound in air using acoustic resonance in a variable-length column.</span>
+                    <span data-lang="kr">가변 길이 공기 기둥의 음향 공명으로 공기 중 음속을 측정합니다.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Acoustics</span>
                     <span class="tech-tag">Resonance</span>
@@ -56,29 +62,26 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>This experiment utilizes the phenomenon of acoustic resonance to measure the speed of sound $v$
-                        in air. By adjusting the length of an air column driven by a tuning fork of known frequency $f$,
-                        standing waves are generated at specific harmonic lengths.</p>
-                    <p>The relationship $v = f\lambda$ allows for the calculation of wave speed by identifying the nodes
-                        and antinodes of the standing wave pressure distribution.</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p><span data-lang="en">This experiment utilizes the phenomenon of acoustic resonance to measure the speed of sound $v$ in air. By adjusting the length of an air column driven by a tuning fork of known frequency $f$, standing waves are generated at specific harmonic lengths.</span><span data-lang="kr">이 실험은 음향 공명 현상을 이용해 공기 중 음속 \(v\)를 측정합니다. 알려진 주파수 \(f\)의 소리굽쇠로 공기 기둥 길이를 조절하면 특정 고조파 길이에서 정상파가 형성됩니다.</span></p>
+                    <p><span data-lang="en">The relationship $v = f\\lambda$ allows for the calculation of wave speed by identifying the nodes and antinodes of the standing wave pressure distribution.</span><span data-lang="kr">\(v=f\\lambda\) 관계를 이용해 정상파의 마디/배를 식별하고 파동 속도를 계산합니다.</span></p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Concepts Investigated</h2>
+                    <h2><span data-lang="en">Key Concepts Investigated</span><span data-lang="kr">탐구한 핵심 개념</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Standing Wave Resonance</h3>
+                            <h3><span data-lang="en">Standing Wave Resonance</span><span data-lang="kr">정상파 공명</span></h3>
                             <p>Identified the fundamental frequency and higher harmonics in an open-closed pipe system,
                                 satisfying the boundary condition $L = \frac{n\lambda}{4}$ (for odd $n$).</p>
                         </div>
                         <div class="concept-card">
-                            <h3>End Correction</h3>
+                            <h3><span data-lang="en">End Correction</span><span data-lang="kr">끝단 보정</span></h3>
                             <p>Accounted for the "end correction" factor—the fact that the pressure antinode forms
                                 slightly outside the open end of the tube—to improve measurement accuracy.</p>
                         </div>
                         <div class="concept-card">
-                            <h3>Temperature Dependence</h3>
+                            <h3><span data-lang="en">Temperature Dependence</span><span data-lang="kr">온도 의존성</span></h3>
                             <p>Compared experimental results with the theoretical speed of sound, which varies with
                                 temperature as $v \approx 331 + 0.6T$ m/s.</p>
                         </div>
@@ -86,7 +89,7 @@
                 </div>
 
                 <div class="content-block">
-                    <h2>Full Documentation</h2>
+                    <h2><span data-lang="en">Full Documentation</span><span data-lang="kr">전체 문서</span></h2>
                     <p>The report includes data on harmonic lengths, resonance calculations, and temperature
                         adjustments.</p>
                     <div class="pdf-container">
@@ -100,7 +103,7 @@
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

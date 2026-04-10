@@ -35,6 +35,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -42,8 +46,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Divine Guidance</h1>
-                <p class="page-subtitle">A spiritual support application delivering personalized Bible verses and
-                    AI-generated homilies for tailored guidance.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">A spiritual support application delivering personalized Bible verses and AI-generated homilies for tailored guidance.</span>
+                    <span data-lang="kr">개인의 고민을 입력하면 관련 성경 구절과 AI 생성 묵상을 제공하는 영적/정서적 지원 앱입니다.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">PWA</span>
                     <span class="tech-tag">AI Integration</span>
@@ -53,7 +59,7 @@
                 <!-- Launch App Button -->
                 <div style="margin-top: 2rem;">
                     <a href="https://divine-guidance-hazel.vercel.app" target="_blank" rel="noopener noreferrer"
-                        class="btn btn-primary">Launch Live App</a>
+                        class="btn btn-primary"><span data-lang="en">Launch Live App</span><span data-lang="kr">라이브 앱 열기</span></a>
                 </div>
             </div>
         </section>
@@ -61,53 +67,49 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p><strong>Divine Guidance</strong> is a Progressive Web Application (PWA) designed to offer
-                        accessible, personalized spiritual support. In a world where mental well-being and spiritual
-                        connection are increasingly sought after, this application bridges the gap between traditional
-                        scripture and modern personalized assistance.</p>
-                    <p>Users can input their current life worries or questions, and the system intelligently analyzes
-                        their sentiment to provide targeted Biblical verses and compassionate, AI-generated homilies.
-                        This offers users immediate comfort and actionable spiritual direction tailored specifically to
-                        their situation.</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p>
+                        <span data-lang="en"><strong>Divine Guidance</strong> is a Progressive Web Application (PWA) designed to offer accessible, personalized spiritual support. In a world where mental well-being and spiritual connection are increasingly sought after, this application bridges the gap between traditional scripture and modern personalized assistance.</span>
+                        <span data-lang="kr"><strong>Divine Guidance</strong>는 접근성과 개인화를 중시한 PWA(Progressive Web App)입니다. 정신적 웰빙과 영적 연결에 대한 수요가 커지는 환경에서, 전통적 성경 텍스트와 현대적 개인 맞춤 지원 사이의 간극을 메우는 것을 목표로 했습니다.</span>
+                    </p>
+                    <p>
+                        <span data-lang="en">Users can input their current life worries or questions, and the system intelligently analyzes their sentiment to provide targeted Biblical verses and compassionate, AI-generated homilies. This offers users immediate comfort and actionable spiritual direction tailored specifically to their situation.</span>
+                        <span data-lang="kr">사용자는 현재 고민이나 질문을 입력하고, 시스템은 문맥/감정을 분석해 관련 성경 구절과 공감 기반의 AI 생성 묵상을 제공합니다. 이를 통해 즉각적인 위로와 상황에 맞는 실행 가능한 방향성을 전달합니다.</span>
+                    </p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Features</h2>
+                    <h2><span data-lang="en">Key Features</span><span data-lang="kr">핵심 기능</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Personalized Scripture</h3>
-                            <p>Leverages natural language processing to understand the nuance of user queries and
-                                retrieve the most relevant Bible verses for their specific context.</p>
+                            <h3><span data-lang="en">Personalized Scripture</span><span data-lang="kr">개인 맞춤 구절 추천</span></h3>
+                            <p><span data-lang="en">Leverages natural language processing to understand the nuance of user queries and retrieve the most relevant Bible verses for their specific context.</span><span data-lang="kr">자연어 처리로 질문의 뉘앙스를 파악하고, 맥락에 가장 적합한 성경 구절을 찾아 제공합니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>AI-Generated Homilies</h3>
-                            <p>Generates short, compassionate sermons (homilies) on-demand, explaining how the selected
-                                scripture applies to the user's current life challenges.</p>
+                            <h3><span data-lang="en">AI-Generated Homilies</span><span data-lang="kr">AI 생성 묵상</span></h3>
+                            <p><span data-lang="en">Generates short, compassionate sermons (homilies) on-demand, explaining how the selected scripture applies to the user's current life challenges.</span><span data-lang="kr">선택된 구절이 현재의 고민에 어떻게 적용되는지 짧고 공감적인 메시지로 설명합니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>Progressive Web App (PWA)</h3>
-                            <p>Built as a PWA to ensure offline capability, fast load times, and an "installable"
-                                app-like experience on mobile devices without needing an app store.</p>
+                            <h3><span data-lang="en">Progressive Web App (PWA)</span><span data-lang="kr">PWA</span></h3>
+                            <p><span data-lang="en">Built as a PWA to ensure offline capability, fast load times, and an "installable" app-like experience on mobile devices without needing an app store.</span><span data-lang="kr">오프라인 대응/빠른 로딩/앱 설치 느낌을 위해 PWA로 구현했습니다(스토어 없이 설치 가능).</span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="content-block">
-                    <h2>Live Demo</h2>
-                    <p>Experience the application directly in your browser.</p>
+                    <h2><span data-lang="en">Live Demo</span><span data-lang="kr">라이브 데모</span></h2>
+                    <p><span data-lang="en">Experience the application directly in your browser.</span><span data-lang="kr">브라우저에서 바로 실행해 보세요.</span></p>
                     <div
                         style="margin-top: 1rem; padding: 2rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
-                        <h3 style="margin-bottom: 1rem;">Divine Guidance is Live</h3>
-                        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Access the full application
-                            hosted on Vercel.</p>
+                        <h3 style="margin-bottom: 1rem;"><span data-lang="en">Divine Guidance is Live</span><span data-lang="kr">Divine Guidance 라이브</span></h3>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);"><span data-lang="en">Access the full application hosted on Vercel.</span><span data-lang="kr">Vercel에 호스팅된 전체 앱에 접속합니다.</span></p>
                         <a href="https://divine-guidance-hazel.vercel.app" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-primary">Visit Website</a>
+                            class="btn btn-primary"><span data-lang="en">Visit Website</span><span data-lang="kr">웹사이트 방문</span></a>
                     </div>
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

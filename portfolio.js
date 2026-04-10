@@ -1,14 +1,42 @@
 // Portfolio Data and Visualization
-// Static data approach for historical performance
+// The charts can be driven by a generated JSON file at data/portfolio.json.
+// If the JSON file is missing/unavailable, we fall back to the static defaults below.
 
 document.addEventListener('DOMContentLoaded', function () {
-    initCategoryChart();
-    initHoldingsChart();
-    initPerformanceChart();
+    loadPortfolioData()
+        .then(function (data) {
+            initCategoryChart(data);
+            initHoldingsChart(data);
+            hydrateHoldingReturns(data);
+        })
+        .catch(function () {
+            initCategoryChart(defaultPortfolioData);
+            initHoldingsChart(defaultPortfolioData);
+        })
+        .finally(function () {
+            initPerformanceChart();
+        });
 });
 
-// Portfolio allocation data (based on current values in USD)
-const portfolioData = {
+function loadPortfolioData() {
+    // Cache-bust so deployed static hosts pick up new JSON after an update.
+    return fetch('data/portfolio.json?v=' + Date.now(), { cache: 'no-store' })
+        .then(function (res) {
+            if (!res.ok) throw new Error('Failed to load portfolio.json');
+            return res.json();
+        })
+        .then(function (payload) {
+            // Normalize shape so the rest of the file can use .categories / .holdings.
+            return {
+                categories: payload.categories || {},
+                holdings: payload.holdings || {},
+                positions: payload.positions || []
+            };
+        });
+}
+
+// Default portfolio allocation data (fallback)
+const defaultPortfolioData = {
     categories: {
         'US Stocks': 85.5,
         'Gold': 7.1,
@@ -21,27 +49,9 @@ const portfolioData = {
         'IVV': 9.0,
         'AMZN': 6.2,
         'MSFT': 2.8,
-        'Others': 0.2  // CMG, KO, XOM, LDOS, CVS, PFE, VOO combined small positions
+        'Others': 0.2 // CMG, KO, XOM, LDOS, CVS, PFE, VOO combined small positions
     },
-    // Detailed holdings for reference
-    allHoldings: [
-        { symbol: 'GOOG', shares: 20, avgPrice: 200.51, category: 'stocks' },
-        { symbol: 'AMZN', shares: 4, avgPrice: 224.90, category: 'stocks' },
-        { symbol: 'BRK.B', shares: 6, avgPrice: 400.23, category: 'stocks' },  // Combined
-        { symbol: 'META', shares: 5, avgPrice: 687.92, category: 'stocks' },   // Combined
-        { symbol: 'CVS', shares: 3, avgPrice: 81.03, category: 'stocks' },
-        { symbol: 'IVV', shares: 2, avgPrice: 523.17, category: 'stocks' },
-        { symbol: 'CMG', shares: 1, avgPrice: 61.33, category: 'stocks' },
-        { symbol: 'KO', shares: 1, avgPrice: 63.39, category: 'stocks' },
-        { symbol: 'XOM', shares: 1, avgPrice: 118.60, category: 'stocks' },
-        { symbol: 'LDOS', shares: 1, avgPrice: 168.80, category: 'stocks' },
-        { symbol: 'MSFT', shares: 1, avgPrice: 454.17, category: 'stocks' },
-        { symbol: 'PFE', shares: 7, avgPrice: 27.62, category: 'stocks' },
-        { symbol: 'VOO', shares: 0.13, avgPrice: 528.01, category: 'stocks' },
-        { symbol: 'GOLD', shares: 107, avgPrice: 9.33, category: 'gold' },  // ~$1000 in gold ETF
-        { symbol: 'BTC', shares: 0.00168, avgPrice: 102000, category: 'crypto' },
-        { symbol: 'ETH', shares: 0.336, avgPrice: 3365, category: 'crypto' }
-    ]
+    positions: []
 };
 
 // Color schemes
@@ -58,7 +68,7 @@ const colors = {
 };
 
 // Category Pie Chart
-function initCategoryChart() {
+function initCategoryChart(portfolioData) {
     const ctx = document.getElementById('categoryChart');
     if (!ctx) return;
 
@@ -115,7 +125,7 @@ function initCategoryChart() {
 }
 
 // Holdings Pie Chart
-function initHoldingsChart() {
+function initHoldingsChart(portfolioData) {
     const ctx = document.getElementById('holdingsChart');
     if (!ctx) return;
 
@@ -167,6 +177,27 @@ function initHoldingsChart() {
                 }
             }
         }
+    });
+}
+
+function hydrateHoldingReturns(portfolioData) {
+    if (!portfolioData || !Array.isArray(portfolioData.positions)) return;
+
+    const bySymbol = {};
+    portfolioData.positions.forEach(function (p) {
+        if (p && p.symbol) bySymbol[String(p.symbol)] = p;
+    });
+
+    document.querySelectorAll('[data-holding-symbol]').forEach(function (el) {
+        const sym = el.getAttribute('data-holding-symbol');
+        const p = bySymbol[sym];
+        if (!p || typeof p.totalReturnPct !== 'number') return;
+
+        const pct = p.totalReturnPct;
+        const sign = pct >= 0 ? '+' : '';
+        el.textContent = sign + pct.toFixed(1) + '%';
+        el.classList.toggle('positive', pct >= 0);
+        el.classList.toggle('negative', pct < 0);
     });
 }
 

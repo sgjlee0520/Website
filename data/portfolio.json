@@ -1,0 +1,204 @@
+{
+  "asOf": "2026-04-10T07:29:46.023753+00:00",
+  "currency": "USD",
+  "totals": {
+    "knownMarketValueUsd": 16840.915518168335
+  },
+  "categories": {
+    "US Stocks": 94.92145852119907,
+    "Crypto": 5.078541478800922
+  },
+  "holdings": {
+    "GOOG": 37.5715910190133,
+    "META": 18.65664648606892,
+    "BRK.B": 17.286471570393687,
+    "IVV": 8.111316858383137,
+    "AMZN": 5.5495793834822775,
+    "ETH": 4.3630939137916736,
+    "MSFT": 2.215259656885892,
+    "CVS": 1.4044366457305075,
+    "PFE": 1.1314111455990792,
+    "Others": 3.7101933206515407
+  },
+  "positions": [
+    {
+      "symbol": "GOOG",
+      "kind": "stock",
+      "shares": 20.0,
+      "avgPriceUsd": 200.51,
+      "currentPriceUsd": 316.3699951171875,
+      "marketValueUsd": 6327.39990234375,
+      "costBasisUsd": 4010.2,
+      "totalReturnPct": 57.78265179651265,
+      "weightPct": 37.5715910190133
+    },
+    {
+      "symbol": "AMZN",
+      "kind": "stock",
+      "shares": 4.0,
+      "avgPriceUsd": 224.9,
+      "currentPriceUsd": 233.64999389648438,
+      "marketValueUsd": 934.5999755859375,
+      "costBasisUsd": 899.6,
+      "totalReturnPct": 3.8906153385879882,
+      "weightPct": 5.5495793834822775
+    },
+    {
+      "symbol": "BRK.B",
+      "kind": "stock",
+      "shares": 6.0,
+      "avgPriceUsd": 400.23,
+      "currentPriceUsd": 485.20001220703125,
+      "marketValueUsd": 2911.2000732421875,
+      "costBasisUsd": 2401.38,
+      "totalReturnPct": 21.230295631769547,
+      "weightPct": 17.286471570393687
+    },
+    {
+      "symbol": "META",
+      "kind": "stock",
+      "shares": 5.0,
+      "avgPriceUsd": 687.92,
+      "currentPriceUsd": 628.3900146484375,
+      "marketValueUsd": 3141.9500732421875,
+      "costBasisUsd": 3439.6,
+      "totalReturnPct": -8.65362038486488,
+      "weightPct": 18.65664648606892
+    },
+    {
+      "symbol": "CVS",
+      "kind": "stock",
+      "shares": 3.0,
+      "avgPriceUsd": 81.03,
+      "currentPriceUsd": 78.83999633789062,
+      "marketValueUsd": 236.51998901367188,
+      "costBasisUsd": 243.09,
+      "totalReturnPct": -2.7027072221515236,
+      "weightPct": 1.4044366457305075
+    },
+    {
+      "symbol": "IVV",
+      "kind": "stock",
+      "shares": 2.0,
+      "avgPriceUsd": 523.17,
+      "currentPriceUsd": 683.010009765625,
+      "marketValueUsd": 1366.02001953125,
+      "costBasisUsd": 1046.34,
+      "totalReturnPct": 30.552212429157844,
+      "weightPct": 8.111316858383137
+    },
+    {
+      "symbol": "CMG",
+      "kind": "stock",
+      "shares": 1.0,
+      "avgPriceUsd": 61.33,
+      "currentPriceUsd": 34.2400016784668,
+      "marketValueUsd": 34.2400016784668,
+      "costBasisUsd": 61.33,
+      "totalReturnPct": -44.170876115332135,
+      "weightPct": 0.20331437231858304
+    },
+    {
+      "symbol": "KO",
+      "kind": "stock",
+      "shares": 1.0,
+      "avgPriceUsd": 63.39,
+      "currentPriceUsd": 78.18000030517578,
+      "marketValueUsd": 78.18000030517578,
+      "costBasisUsd": 63.39,
+      "totalReturnPct": 23.33175627887014,
+      "weightPct": 0.464226545289854
+    },
+    {
+      "symbol": "XOM",
+      "kind": "stock",
+      "shares": 1.0,
+      "avgPriceUsd": 118.6,
+      "currentPriceUsd": 155.0399932861328,
+      "marketValueUsd": 155.0399932861328,
+      "costBasisUsd": 118.6,
+      "totalReturnPct": 30.725120814614513,
+      "weightPct": 0.9206149934002839
+    },
+    {
+      "symbol": "LDOS",
+      "kind": "stock",
+      "shares": 1.0,
+      "avgPriceUsd": 168.8,
+      "currentPriceUsd": 155.6300048828125,
+      "marketValueUsd": 155.6300048828125,
+      "costBasisUsd": 168.8,
+      "totalReturnPct": -7.802129808760371,
+      "weightPct": 0.9241184347425504
+    },
+    {
+      "symbol": "MSFT",
+      "kind": "stock",
+      "shares": 1.0,
+      "avgPriceUsd": 454.17,
+      "currentPriceUsd": 373.07000732421875,
+      "marketValueUsd": 373.07000732421875,
+      "costBasisUsd": 454.17,
+      "totalReturnPct": -17.856748062571558,
+      "weightPct": 2.215259656885892
+    },
+    {
+      "symbol": "PFE",
+      "kind": "stock",
+      "shares": 7.0,
+      "avgPriceUsd": 27.62,
+      "currentPriceUsd": 27.219999313354492,
+      "marketValueUsd": 190.53999519348145,
+      "costBasisUsd": 193.34,
+      "totalReturnPct": -1.4482284092885878,
+      "weightPct": 1.1314111455990792
+    },
+    {
+      "symbol": "VOO",
+      "kind": "stock",
+      "shares": 0.13,
+      "avgPriceUsd": 528.01,
+      "currentPriceUsd": 625.02001953125,
+      "marketValueUsd": 81.25260253906251,
+      "costBasisUsd": 68.6413,
+      "totalReturnPct": 18.37276179073313,
+      "weightPct": 0.482471409891021
+    },
+    {
+      "symbol": "TIGER KRX",
+      "kind": "gold",
+      "shares": 107.0,
+      "avgPriceUsd": 9.33,
+      "currentPriceUsd": null,
+      "marketValueUsd": null,
+      "costBasisUsd": 998.3100000000001,
+      "totalReturnPct": null,
+      "weightPct": null
+    },
+    {
+      "symbol": "BTC",
+      "kind": "crypto",
+      "shares": 0.00168,
+      "avgPriceUsd": 102000.0,
+      "currentPriceUsd": 71719.0,
+      "marketValueUsd": 120.48792,
+      "costBasisUsd": 171.36,
+      "totalReturnPct": -29.68725490196078,
+      "weightPct": 0.7154475650092484
+    },
+    {
+      "symbol": "ETH",
+      "kind": "crypto",
+      "shares": 0.336,
+      "avgPriceUsd": 3365.0,
+      "currentPriceUsd": 2186.86,
+      "marketValueUsd": 734.7849600000001,
+      "costBasisUsd": 1130.64,
+      "totalReturnPct": -35.0115898959881,
+      "weightPct": 4.3630939137916736
+    }
+  ],
+  "notes": {
+    "goldPricing": "Gold position is not priced automatically yet; currentPriceUsd may be null."
+  }
+}

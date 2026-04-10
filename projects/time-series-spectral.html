@@ -34,6 +34,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -42,8 +46,10 @@
             <div class="container">
                 <h1 class="page-title">Signal Processing & Time-Series Analysis: From Transient Decay to Spectral
                     Density</h1>
-                <p class="page-subtitle">A dual approach to analyzing experimental time-series data: modeling transient
-                    decays in the time domain and extracting periodic components in the frequency domain.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">A dual approach to analyzing experimental time-series data: modeling transient decays in the time domain and extracting periodic components in the frequency domain.</span>
+                    <span data-lang="kr">실험 시계열 데이터를 이중 관점으로 분석합니다: 시간영역의 과도 감쇠 모델링과 주파수영역의 주기 성분 추출.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">FFT</span>
@@ -56,18 +62,15 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>This project demonstrates a dual approach to analyzing experimental time-series data. I
-                        investigated the properties of dynamic systems using both <strong>Time-Domain modeling</strong>
-                        (fitting differential equations to transient signals) and <strong>Frequency-Domain
-                            analysis</strong> (extracting periodic components from noisy datasets).</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p><span data-lang="en">This project demonstrates a dual approach to analyzing experimental time-series data. I investigated the properties of dynamic systems using both <strong>Time-Domain modeling</strong> (fitting differential equations to transient signals) and <strong>Frequency-Domain analysis</strong> (extracting periodic components from noisy datasets).</span><span data-lang="kr">이 프로젝트는 실험 시계열 데이터를 이중 관점으로 분석합니다. <strong>시간영역 모델링</strong>(과도 신호에 미분방정식 피팅)과 <strong>주파수영역 분석</strong>(노이즈 데이터에서 주기 성분 추출)을 함께 사용해 동적 시스템 특성을 조사했습니다.</span></p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Components</h2>
+                    <h2><span data-lang="en">Key Components</span><span data-lang="kr">핵심 구성</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Part 1: Time-Domain Analysis (RLC Circuit)</h3>
+                            <h3><span data-lang="en">Part 1: Time-Domain Analysis (RLC Circuit)</span><span data-lang="kr">파트 1: 시간영역 분석 (RLC 회로)</span></h3>
                             <p><strong>Objective:</strong> Modeled the transient response of a Damped Harmonic
                                 Oscillator (RLC circuit).</p>
                             <p><strong>Method:</strong> Applied non-linear curve fitting (<code>scipy.optimize</code>)
@@ -78,7 +81,7 @@
                                 mean-reverting stochastic processes used in financial volatility modeling.</p>
                         </div>
                         <div class="concept-card">
-                            <h3>Source Code: Solar Cell FFT Analysis (`p5_hw7.py`)</h3>
+                            <h3><span data-lang="en">Source Code: Solar Cell FFT Analysis (`p5_hw7.py`)</span><span data-lang="kr">소스 코드: 태양전지 FFT 분석 (`p5_hw7.py`)</span></h3>
                             <div class="code-snippet">
                                 <pre><code>#!/usr/bin/env python3
 #
@@ -140,7 +143,7 @@ print()
 
 input("Press <Enter> to exit...\n")</code></pre>
                             </div>
-                            <h3>Part 2: Frequency-Domain Analysis (Solar FFT)</h3>
+                            <h3><span data-lang="en">Part 2: Frequency-Domain Analysis (Solar FFT)</span><span data-lang="kr">파트 2: 주파수영역 분석 (태양전지 FFT)</span></h3>
                             <p><strong>Objective:</strong> Identified dominant frequency components in high-speed
                                 voltage sensor data.</p>
                             <p><strong>Method:</strong> Implemented a Fast Fourier Transform (FFT) algorithm in Python
@@ -153,7 +156,7 @@ input("Press <Enter> to exit...\n")</code></pre>
                 </div>
 
                 <div class="content-block">
-                    <h2>Detailed Analysis (PDF)</h2>
+                    <h2><span data-lang="en">Detailed Analysis (PDF)</span><span data-lang="kr">상세 분석 (PDF)</span></h2>
                     <p>The full technical report, including mathematical derivations and detailed plots, is available
                         below.</p>
                     <div class="pdf-container">
@@ -168,7 +171,7 @@ input("Press <Enter> to exit...\n")</code></pre>
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

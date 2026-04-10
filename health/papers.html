@@ -14,13 +14,17 @@
 <body>
     <header class="topbar">
         <div class="shell">
-            <div class="crumb">Songgun Lee / Explorations</div>
+            <div class="crumb"><span data-lang="en">Songgun Lee / Explorations</span><span data-lang="kr">송건 리 / 탐구</span></div>
             <nav class="nav-links" aria-label="Health section pages">
-                <a class="nav-link" href="../index.html">Main Site</a>
-                <a class="nav-link" href="index.html">Health</a>
-                <a class="nav-link" href="papers.html" aria-current="page">Papers</a>
-                <a class="nav-link" href="ai-projects.html">AI Projects</a>
+                <a class="nav-link" href="../index.html"><span data-lang="en">Main Site</span><span data-lang="kr">메인</span></a>
+                <a class="nav-link" href="index.html"><span data-lang="en">Health</span><span data-lang="kr">건강</span></a>
+                <a class="nav-link" href="papers.html" aria-current="page"><span data-lang="en">Papers</span><span data-lang="kr">문서</span></a>
+                <a class="nav-link" href="ai-projects.html"><span data-lang="en">AI Projects</span><span data-lang="kr">AI</span></a>
             </nav>
+            <div class="lang-switcher" aria-label="Language toggle">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </header>
 
@@ -28,11 +32,11 @@
         <section class="hero">
             <div class="shell">
                 <div class="hero-block">
-                    <div class="eyebrow">Papers & Reports</div>
-                    <h1>Technical writeups that inform my health experiments.</h1>
+                    <div class="eyebrow"><span data-lang="en">Papers & Reports</span><span data-lang="kr">문서 · 리포트</span></div>
+                    <h1><span data-lang="en">Technical writeups that inform my health experiments.</span><span data-lang="kr">건강 실험에 영향을 주는 기술적 글.</span></h1>
                     <p>
-                        These documents are mostly from physics and quantitative coursework, but they reflect the
-                        analytical framework used in this health-focused lab section.
+                        <span data-lang="en">These documents are mostly from physics and quantitative coursework, but they reflect the analytical framework used in this health-focused lab section.</span>
+                        <span data-lang="kr">이 문서들은 대부분 물리/정량 과목에서 나온 자료지만, 이 건강 연구 섹션에서 사용하는 분석 프레임워크를 보여줍니다.</span>
                     </p>
                 </div>
             </div>
@@ -40,56 +44,56 @@
 
         <section class="section">
             <div class="shell">
-                <h2>Selected papers</h2>
-                <p class="section-note">A compact reading shelf connected to modeling, measurement, and inference.</p>
+                <h2><span data-lang="en">Selected papers</span><span data-lang="kr">선정 자료</span></h2>
+                <p class="section-note"><span data-lang="en">A compact reading shelf connected to modeling, measurement, and inference.</span><span data-lang="kr">모델링/측정/추론과 연결되는 핵심 자료만 모았습니다.</span></p>
                 <div class="grid">
                     <article class="card">
-                        <div class="card-meta">Health Report</div>
+                        <div class="card-meta"><span data-lang="en">Health Report</span><span data-lang="kr">건강 리포트</span></div>
                         <h3>Huberman Daily Schedule Synthesis</h3>
                         <p>Comprehensive chronobiology-based protocol for focus, training, and recovery timing.</p>
-                        <a class="card-link" href="huberman.html">Open summary page</a>
+                        <a class="card-link" href="huberman.html"><span data-lang="en">Open summary page</span><span data-lang="kr">요약 보기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Health Report</div>
+                        <div class="card-meta"><span data-lang="en">Health Report</span><span data-lang="kr">건강 리포트</span></div>
                         <h3>Optimizing Study, Sleep, and Exercise</h3>
                         <p>Integrated framework for balancing deep study, resistance training, and sleep quality.</p>
-                        <a class="card-link" href="optimize.html">Open summary page</a>
+                        <a class="card-link" href="optimize.html"><span data-lang="en">Open summary page</span><span data-lang="kr">요약 보기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Physics Modeling</div>
+                        <div class="card-meta"><span data-lang="en">Physics Modeling</span><span data-lang="kr">물리 모델링</span></div>
                         <h3>Diffraction & Interference</h3>
                         <p>Experimental report on wave behavior, measurement precision, and model interpretation.</p>
-                        <a class="card-link" href="../Physics%20&%20Experimental%20Modeling/Diffraction%20&%20Interference.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                        <a class="card-link" href="../Physics%20&%20Experimental%20Modeling/Diffraction%20&%20Interference.pdf" target="_blank" rel="noopener noreferrer"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Signal Analysis</div>
+                        <div class="card-meta"><span data-lang="en">Signal Analysis</span><span data-lang="kr">신호 분석</span></div>
                         <h3>Time-Series & Spectral Analysis</h3>
                         <p>Frequency-domain thinking for noisy systems and transient dynamics.</p>
-                        <a class="card-link" href="../Finance%20&%20Quantitative%20Analysis/Time-Series%20&%20Spectral%20Analysis/20bloolw78sl.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                        <a class="card-link" href="../Finance%20&%20Quantitative%20Analysis/Time-Series%20&%20Spectral%20Analysis/20bloolw78sl.pdf" target="_blank" rel="noopener noreferrer"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Experimental Physics</div>
+                        <div class="card-meta"><span data-lang="en">Experimental Physics</span><span data-lang="kr">실험 물리</span></div>
                         <h3>Franck-Hertz Lab</h3>
                         <p>Methodical experimental procedure and uncertainty-aware interpretation.</p>
-                        <a class="card-link" href="../Physics%20&%20Experimental%20Modeling/20CL_FH-1.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                        <a class="card-link" href="../Physics%20&%20Experimental%20Modeling/20CL_FH-1.pdf" target="_blank" rel="noopener noreferrer"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Applied Modeling</div>
+                        <div class="card-meta"><span data-lang="en">Applied Modeling</span><span data-lang="kr">응용 모델링</span></div>
                         <h3>Speed of Sound Experiment</h3>
                         <p>Data fitting and practical instrumentation constraints in a physical measurement setup.</p>
-                        <a class="card-link" href="../Physics%20&%20Experimental%20Modeling/Outoflab_speed_of_sound.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                        <a class="card-link" href="../Physics%20&%20Experimental%20Modeling/Outoflab_speed_of_sound.pdf" target="_blank" rel="noopener noreferrer"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Numerical Work</div>
+                        <div class="card-meta"><span data-lang="en">Numerical Work</span><span data-lang="kr">수치 해석</span></div>
                         <h3>PDE / Stochastic Project Pages</h3>
                         <p>Interactive summaries of numerical methods and probabilistic modeling outcomes.</p>
-                        <a class="card-link" href="../projects.html">Open project index</a>
+                        <a class="card-link" href="../projects.html"><span data-lang="en">Open project index</span><span data-lang="kr">프로젝트 목록</span></a>
                     </article>
                     <article class="card">
-                        <div class="card-meta">Writing Layer</div>
+                        <div class="card-meta"><span data-lang="en">Writing Layer</span><span data-lang="kr">글</span></div>
                         <h3>Personal essays and philosophy</h3>
                         <p>Context for behavior design, value frameworks, and long-term decision making.</p>
-                        <a class="card-link" href="../writing-interests.html">Open writing page</a>
+                        <a class="card-link" href="../writing-interests.html"><span data-lang="en">Open writing page</span><span data-lang="kr">글 보기</span></a>
                     </article>
                 </div>
             </div>
@@ -98,9 +102,25 @@
 
     <footer class="footer">
         <div class="shell">
-            <p>This shelf is intentionally selective. It points to materials most relevant to systems-level health thinking.</p>
+            <p><span data-lang="en">This shelf is intentionally selective. It points to materials most relevant to systems-level health thinking.</span><span data-lang="kr">이 목록은 의도적으로 선별되어 있습니다. 시스템 수준의 건강 사고에 가장 관련 있는 자료만 연결합니다.</span></p>
         </div>
     </footer>
+    <script>
+        (function () {
+            var saved = localStorage.getItem('siteLang') || 'en';
+            if (saved === 'kr') document.body.classList.add('lang-kr');
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.classList.toggle('active', btn.dataset.lang === saved);
+            });
+        })();
+        function setLang(lang) {
+            localStorage.setItem('siteLang', lang);
+            document.body.classList.toggle('lang-kr', lang === 'kr');
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+    </script>
 </body>
 
 </html>

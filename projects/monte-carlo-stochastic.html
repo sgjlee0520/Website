@@ -35,6 +35,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -42,8 +46,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Monte Carlo Methods & Stochastic Calculus</h1>
-                <p class="page-subtitle">Solving deterministic problems through random sampling, with applications in
-                    options pricing and risk assessment.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">Solving deterministic problems through random sampling, with applications in options pricing and risk assessment.</span>
+                    <span data-lang="kr">무작위 샘플링으로 결정론적 문제를 푸는 방법을 다루며, 옵션 가격결정과 리스크 평가에 적용합니다.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">NumPy</span>
@@ -56,51 +62,49 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>This project explores the power of Monte Carlo simulations to solve complex deterministic
-                        problems where analytical solutions are difficult or impossible. By leveraging the Law of Large
-                        Numbers, the simulation converges to the true value with an error rate scaling as $1/\sqrt{N}$.
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p>
+                        <span data-lang="en">This project explores the power of Monte Carlo simulations to solve complex deterministic problems where analytical solutions are difficult or impossible. By leveraging the Law of Large Numbers, the simulation converges to the true value with an error rate scaling as $1/\\sqrt{N}$.</span>
+                        <span data-lang="kr">이 프로젝트는 해석적 해가 어렵거나 불가능한 결정론적 문제를 몬테카를로 시뮬레이션으로 푸는 방법을 탐구합니다. 대수의 법칙에 의해 추정값은 참값으로 수렴하며, 오차는 \(1/\\sqrt{N}\) 스케일로 감소합니다.</span>
                     </p>
-                    <p>In quantitative finance, these methods are the standard for pricing complex derivatives (like
-                        Asian or Lookback options) where the path-dependency makes standard Black-Scholes formulas
-                        inapplicable.</p>
+                    <p>
+                        <span data-lang="en">In quantitative finance, these methods are the standard for pricing complex derivatives (like Asian or Lookback options) where the path-dependency makes standard Black-Scholes formulas inapplicable.</span>
+                        <span data-lang="kr">퀀트 파이낸스에서는 경로 의존성 때문에 블랙-숄즈 공식이 적용되지 않는 복잡한 파생상품(아시안/룩백 옵션 등)의 가격결정에 표준적으로 사용됩니다.</span>
+                    </p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Concepts Implemented</h2>
+                    <h2><span data-lang="en">Key Concepts Implemented</span><span data-lang="kr">구현한 핵심 개념</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Convergence Analysis</h3>
-                            <p>Verified the $O(N^{-1/2})$ convergence rate of Monte Carlo integration. This theoretical
-                                foundation is critical for estimating computation costs in high-frequency trading
-                                simulations.</p>
+                            <h3><span data-lang="en">Convergence Analysis</span><span data-lang="kr">수렴 분석</span></h3>
+                            <p><span data-lang="en">Verified the $O(N^{-1/2})$ convergence rate of Monte Carlo integration. This theoretical foundation is critical for estimating computation costs in high-frequency trading simulations.</span><span data-lang="kr">몬테카를로 적분의 \(O(N^{-1/2})\) 수렴률을 검증했습니다. 이는 대규모 시뮬레이션에서 필요한 계산 비용을 추정하는 데 중요합니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>Stochastic Integration</h3>
-                            <p>Implemented numerical integration techniques utilizing random sampling to approximate
-                                high-dimensional integrals, a common problem in risk model calibration.</p>
+                            <h3><span data-lang="en">Stochastic Integration</span><span data-lang="kr">확률적 적분</span></h3>
+                            <p><span data-lang="en">Implemented numerical integration techniques utilizing random sampling to approximate high-dimensional integrals, a common problem in risk model calibration.</span><span data-lang="kr">무작위 샘플링으로 고차원 적분을 근사하는 수치 적분 기법을 구현했습니다(리스크 모델 캘리브레이션에서 자주 등장).</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>Variance Reduction</h3>
-                            <p>Analyzed error metrics to understand stability and precision of the estimates, precursors
-                                to implementing variance reduction techniques like Antithetic Variates.</p>
+                            <h3><span data-lang="en">Variance Reduction</span><span data-lang="kr">분산 감소</span></h3>
+                            <p><span data-lang="en">Analyzed error metrics to understand stability and precision of the estimates, precursors to implementing variance reduction techniques like Antithetic Variates.</span><span data-lang="kr">추정치의 안정성과 정밀도를 이해하기 위해 오차 지표를 분석했고, 이후 antithetic variates 같은 분산 감소 기법으로 확장할 수 있는 기반을 마련했습니다.</span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="content-block">
-                    <h2>Visual Analysis</h2>
+                    <h2><span data-lang="en">Visual Analysis</span><span data-lang="kr">시각화 분석</span></h2>
                     <div class="visual-showcase">
                         <img src="../Finance & Quantitative Analysis/images/monte_carlo_pi.png"
                             alt="Monte Carlo Convergence Graph">
-                        <p class="visual-caption">Log-log plot showing the fractional error in estimating $\pi$
-                            decreasing as the number of samples increases, confirming the $1/\sqrt{N}$ convergence rate.
+                        <p class="visual-caption">
+                            <span data-lang="en">Log-log plot showing the fractional error in estimating $\\pi$ decreasing as the number of samples increases, confirming the $1/\\sqrt{N}$ convergence rate.</span>
+                            <span data-lang="kr">샘플 수가 증가할수록 \(\pi\) 추정의 상대 오차가 감소함을 보이는 로그-로그 그래프이며, \(1/\\sqrt{N}\) 수렴률을 확인합니다.</span>
                         </p>
                     </div>
                 </div>
 
                 <div class="content-block">
-                    <h2>Source Code</h2>
+                    <h2><span data-lang="en">Source Code</span><span data-lang="kr">소스 코드</span></h2>
 
                     <h3>1. Monte Carlo Integration vs Riemann Sum (`p4_hw9.py`)</h3>
                     <div class="code-snippet">
@@ -197,7 +201,7 @@ plt.show()</code></pre>
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

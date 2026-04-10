@@ -35,6 +35,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -42,8 +46,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Radioactive Decay Analysis</h1>
-                <p class="page-subtitle">Statistical modeling of random nuclear events using Geiger-Muller counters to
-                    determine half-lives and verify Poisson distributions.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">Statistical modeling of random nuclear events using Geiger-Muller counters to determine half-lives and verify Poisson distributions.</span>
+                    <span data-lang="kr">가이거-뮐러 계수기로 무작위 핵 사건을 통계적으로 모델링해 반감기를 구하고 포아송 분포를 검증합니다.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Nuclear Physics</span>
                     <span class="tech-tag">Statistical Analysis</span>
@@ -56,32 +62,27 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>Radioactive decay is an inherently stochastic process, impossible to predict for a single atom
-                        but statistically deterministic for large populations. This project investigates the exponential
-                        decay law $N(t) = N_0 e^{-\lambda t}$ using a Geiger-Muller counter.</p>
-                    <p>I focused on verifying that the random arrival times of decay products followed a <strong>Poisson
-                            Distribution</strong> ($\sigma \approx \sqrt{N}$), distinguishing true signal from
-                        background radiation noise. The experiment also determined the half-life $t_{1/2} =
-                        \ln(2)/\lambda$ of a short-lived isotope.</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p><span data-lang="en">Radioactive decay is an inherently stochastic process, impossible to predict for a single atom but statistically deterministic for large populations. This project investigates the exponential decay law $N(t) = N_0 e^{-\\lambda t}$ using a Geiger-Muller counter.</span><span data-lang="kr">방사성 붕괴는 개별 원자 수준에서는 예측 불가능한 확률 과정이지만, 큰 집단에서는 통계적으로 결정적인 거동을 보입니다. 이 프로젝트는 가이거-뮐러 계수기로 지수 붕괴 법칙 \(N(t)=N_0 e^{-\\lambda t}\)을 검증합니다.</span></p>
+                    <p><span data-lang="en">I focused on verifying that the random arrival times of decay products followed a <strong>Poisson Distribution</strong> ($\\sigma \\approx \\sqrt{N}$), distinguishing true signal from background radiation noise. The experiment also determined the half-life $t_{1/2} = \\ln(2)/\\lambda$ of a short-lived isotope.</span><span data-lang="kr">붕괴 생성물의 도착 시간이 <strong>포아송 분포</strong>(\(\\sigma \\approx \\sqrt{N}\))를 따른다는 점을 확인해 신호와 배경 방사선을 구분했습니다. 또한 단수명 동위원소의 반감기 \(t_{1/2}=\\ln(2)/\\lambda\)를 계산했습니다.</span></p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Concepts Investigated</h2>
+                    <h2><span data-lang="en">Key Concepts Investigated</span><span data-lang="kr">탐구한 핵심 개념</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Poisson Statistics</h3>
+                            <h3><span data-lang="en">Poisson Statistics</span><span data-lang="kr">포아송 통계</span></h3>
                             <p>Proved that nuclear decay events are independent and random by fitting experimental
                                 histograms to Poisson and Gaussian curves, validating the $\sqrt{N}$ error
                                 approximation.</p>
                         </div>
                         <div class="concept-card">
-                            <h3>Half-Life Determination</h3>
+                            <h3><span data-lang="en">Half-Life Determination</span><span data-lang="kr">반감기 추정</span></h3>
                             <p>Used linear regression on semi-log plots ($\ln(Activity)$ vs. Time) to extract the decay
                                 constant $\lambda$ and calculate the precise half-life of the sample.</p>
                         </div>
                         <div class="concept-card">
-                            <h3>Background Subtraction</h3>
+                            <h3><span data-lang="en">Background Subtraction</span><span data-lang="kr">배경 신호 보정</span></h3>
                             <p>Implemented rigorous background radiation subtraction techniques to isolate the sample's
                                 activity, a critical step for low-activity signal processing.</p>
                         </div>
@@ -89,7 +90,7 @@
                 </div>
 
                 <div class="content-block">
-                    <h2>Full Documentation</h2>
+                    <h2><span data-lang="en">Full Documentation</span><span data-lang="kr">전체 문서</span></h2>
                     <p>This report details the statistical methods used to validate the stochastic nature of quantum
                         decay events.</p>
                     <div class="pdf-container">
@@ -103,7 +104,7 @@
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>

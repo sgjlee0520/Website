@@ -25,6 +25,10 @@
                 <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
         </div>
     </nav>
 
@@ -32,8 +36,10 @@
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Business Intelligence & Analytics</h1>
-                <p class="page-subtitle">Automated analytics module for parsing transaction logs, visualizing sales
-                    velocity, and optimizing inventory levels.</p>
+                <p class="page-subtitle">
+                    <span data-lang="en">Automated analytics module for parsing transaction logs, visualizing sales velocity, and optimizing inventory levels.</span>
+                    <span data-lang="kr">거래 로그를 파싱하고 판매 속도를 시각화하며 재고 수준을 최적화하는 자동 분석 모듈입니다.</span>
+                </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Data Visualization</span>
@@ -46,39 +52,38 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2>Project Overview</h2>
-                    <p>In modern finance and commerce, decision-making is driven by data. This project demonstrates the
-                        ability to build an end-to-end analytics pipeline: from parsing raw transaction logs to
-                        generating actionable business intelligence reports.</p>
-                    <p>The module automates the calculation of sales velocity, identifies top-performing products, and
-                        triggers inventory reorder alerts based on statistical thresholds.</p>
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p>
+                        <span data-lang="en">In modern finance and commerce, decision-making is driven by data. This project demonstrates the ability to build an end-to-end analytics pipeline: from parsing raw transaction logs to generating actionable business intelligence reports.</span>
+                        <span data-lang="kr">현대 금융/커머스의 의사결정은 데이터가 주도합니다. 이 프로젝트는 원시 거래 로그 파싱부터 실행 가능한 BI 리포트 생성까지, 엔드투엔드 분석 파이프라인 구축 능력을 보여줍니다.</span>
+                    </p>
+                    <p>
+                        <span data-lang="en">The module automates the calculation of sales velocity, identifies top-performing products, and triggers inventory reorder alerts based on statistical thresholds.</span>
+                        <span data-lang="kr">판매 속도(Sales Velocity) 계산을 자동화하고, 상위 성과 제품을 식별하며, 통계적 임계값 기반 재주문 알림을 트리거합니다.</span>
+                    </p>
                 </div>
 
                 <div class="content-block">
-                    <h2>Key Concepts Implemented</h2>
+                    <h2><span data-lang="en">Key Concepts Implemented</span><span data-lang="kr">구현한 핵심 개념</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3>Data Aggregation</h3>
-                            <p>Processed raw time-stamped transaction logs to aggregate sales data by product and time
-                                period, handling gaps and anomalies in data.</p>
+                            <h3><span data-lang="en">Data Aggregation</span><span data-lang="kr">데이터 집계</span></h3>
+                            <p><span data-lang="en">Processed raw time-stamped transaction logs to aggregate sales data by product and time period, handling gaps and anomalies in data.</span><span data-lang="kr">타임스탬프가 포함된 원시 거래 로그를 처리해 제품/기간별 판매 데이터를 집계하고, 데이터 결측 및 이상치를 처리했습니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>Sales Velocity & Reporting</h3>
-                            <p>Defined and calculated KPIs like "Sales Velocity" to measure product performance and
-                                generated automated visual reports for stakeholders.</p>
+                            <h3><span data-lang="en">Sales Velocity & Reporting</span><span data-lang="kr">판매 속도 및 리포팅</span></h3>
+                            <p><span data-lang="en">Defined and calculated KPIs like "Sales Velocity" to measure product performance and generated automated visual reports for stakeholders.</span><span data-lang="kr">제품 성과 측정을 위해 Sales Velocity 같은 KPI를 정의/계산하고, 이해관계자용 시각 리포트를 자동 생성했습니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3>Inventory Optimization</h3>
-                            <p>Implemented logic to categorize inventory needs (High/Medium/Low priority) based on
-                                historical sales trends and current stock levels.</p>
+                            <h3><span data-lang="en">Inventory Optimization</span><span data-lang="kr">재고 최적화</span></h3>
+                            <p><span data-lang="en">Implemented logic to categorize inventory needs (High/Medium/Low priority) based on historical sales trends and current stock levels.</span><span data-lang="kr">과거 판매 추세와 현재 재고 수준을 바탕으로 재고 우선순위(상/중/하)를 분류하는 로직을 구현했습니다.</span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="content-block">
-                    <h2>Technical Implementation</h2>
-                    <p>The implementation uses Matplotlib for visualization and standard libraries for efficient data
-                        parsing, prioritizing clean, modular code structure.</p>
+                    <h2><span data-lang="en">Technical Implementation</span><span data-lang="kr">기술 구현</span></h2>
+                    <p><span data-lang="en">The implementation uses Matplotlib for visualization and standard libraries for efficient data parsing, prioritizing clean, modular code structure.</span><span data-lang="kr">Matplotlib로 시각화하고 표준 라이브러리로 효율적인 파싱을 수행하며, 모듈형/가독성 높은 구조를 우선했습니다.</span></p>
                     <div class="code-snippet">
                         <pre><code>#!/usr/bin/python3
 
@@ -194,7 +199,7 @@ if __name__ == '__main__':
                 </div>
 
                 <div class="project-nav-footer">
-                    <a href="../projects.html" class="btn btn-primary">Back to Projects</a>
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
                 </div>
             </div>
         </section>
