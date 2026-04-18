@@ -1,0 +1,83 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{}%
+\contentsline {subsection}{\numberline {1.1}Motivation}{4}{}%
+\contentsline {subsection}{\numberline {1.2}Research Question}{4}{}%
+\contentsline {subsection}{\numberline {1.3}Contribution}{4}{}%
+\contentsline {subsection}{\numberline {1.4}Organization}{4}{}%
+\contentsline {section}{\numberline {2}Instrument and Data}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Sampling Construction}{5}{}%
+\contentsline {subsection}{\numberline {2.2}Field Definitions}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Timestamp and Alignment Assumptions}{5}{}%
+\contentsline {subsection}{\numberline {2.4}Data Quality Caveats}{6}{}%
+\contentsline {section}{\numberline {3}Mathematical Framework}{6}{}%
+\contentsline {subsection}{\numberline {3.1}Notation and State Variables}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Route Topology}{6}{}%
+\contentsline {subsection}{\numberline {3.3}Minute-Level Profit Mapping}{6}{}%
+\contentsline {subsection}{\numberline {3.4}Hierarchical Aggregation Operators}{7}{}%
+\contentsline {subsection}{\numberline {3.5}Execution Friction Model and Decision Barrier}{7}{}%
+\contentsline {subsection}{\numberline {3.6}Interpretation of the Section 3 Operators}{7}{}%
+\contentsline {section}{\numberline {4}Summary Statistics}{7}{}%
+\contentsline {subsection}{\numberline {4.1}Overview}{7}{}%
+\contentsline {subsection}{\numberline {4.2}Direction-Separated}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Best-Direction and Global Best}{8}{}%
+\contentsline {subsection}{\numberline {4.4}Takeaway}{8}{}%
+\contentsline {section}{\numberline {5}Distribution and Persistence}{9}{}%
+\contentsline {subsection}{\numberline {5.1}Purpose}{9}{}%
+\contentsline {subsection}{\numberline {5.2}Distributional Properties of $\Pi ^\star _t$}{9}{}%
+\contentsline {subsection}{\numberline {5.3}Short-Lag Dependence}{9}{}%
+\contentsline {subsection}{\numberline {5.4}Implications for Monitoring vs Execution}{9}{}%
+\contentsline {section}{\numberline {6}Regime-Style Breakdown}{10}{}%
+\contentsline {subsection}{\numberline {6.1}Purpose}{10}{}%
+\contentsline {subsection}{\numberline {6.2}Working Hypotheses}{10}{}%
+\contentsline {subsection}{\numberline {6.3}Direction Regime}{10}{}%
+\contentsline {subsection}{\numberline {6.4}Asset Regime}{10}{}%
+\contentsline {subsection}{\numberline {6.5}Kimchi-Premium Regime}{11}{}%
+\contentsline {subsection}{\numberline {6.6}Takeaway}{11}{}%
+\contentsline {section}{\numberline {7}Fee Sensitivity and Falsification Test}{12}{}%
+\contentsline {subsection}{\numberline {7.1}Purpose}{12}{}%
+\contentsline {subsection}{\numberline {7.2}Test Framing}{12}{}%
+\contentsline {subsection}{\numberline {7.3}Tail Frequency at Barrier Levels}{12}{}%
+\contentsline {subsection}{\numberline {7.4}Interpretation}{13}{}%
+\contentsline {subsection}{\numberline {7.5}Claim Status}{13}{}%
+\contentsline {section}{\numberline {8}Visualization}{13}{}%
+\contentsline {subsection}{\numberline {8.1}Purpose}{13}{}%
+\contentsline {subsection}{\numberline {8.2}Compressed-History Diagnostic}{13}{}%
+\contentsline {subsection}{\numberline {8.3}Full-Timeline Diagnostic}{14}{}%
+\contentsline {subsection}{\numberline {8.4}Takeaway}{15}{}%
+\contentsline {section}{\numberline {9}Interpretation}{15}{}%
+\contentsline {subsection}{\numberline {9.1}Purpose}{15}{}%
+\contentsline {subsection}{\numberline {9.2}Primary Interpretation}{15}{}%
+\contentsline {subsection}{\numberline {9.3}Mechanism-Level Reading}{16}{}%
+\contentsline {subsection}{\numberline {9.4}What the Results Do \emph {Not} Claim}{16}{}%
+\contentsline {subsection}{\numberline {9.5}Practical Implication}{16}{}%
+\contentsline {subsection}{\numberline {9.6}Takeaway}{16}{}%
+\contentsline {section}{\numberline {10}Infrastructure Summary}{16}{}%
+\contentsline {subsection}{\numberline {10.1}Purpose}{16}{}%
+\contentsline {subsection}{\numberline {10.2}Pipeline Architecture}{16}{}%
+\contentsline {subsection}{\numberline {10.3}Reproducibility and Auditability}{17}{}%
+\contentsline {subsection}{\numberline {10.4}Operational Reliability Notes}{17}{}%
+\contentsline {subsection}{\numberline {10.5}Takeaway}{17}{}%
+\contentsline {section}{\numberline {11}Limitations}{17}{}%
+\contentsline {subsection}{\numberline {11.1}Purpose}{17}{}%
+\contentsline {subsection}{\numberline {11.2}Sample-Horizon Constraint}{17}{}%
+\contentsline {subsection}{\numberline {11.3}Execution-Model Abstraction}{18}{}%
+\contentsline {subsection}{\numberline {11.4}Latency and Synchronization Risk}{18}{}%
+\contentsline {subsection}{\numberline {11.5}Data Integrity and Transport Effects}{18}{}%
+\contentsline {subsection}{\numberline {11.6}External Validity}{18}{}%
+\contentsline {subsection}{\numberline {11.7}Takeaway}{18}{}%
+\contentsline {section}{\numberline {12}Open Questions and v3 Roadmap}{18}{}%
+\contentsline {subsection}{\numberline {12.1}Purpose}{18}{}%
+\contentsline {subsection}{\numberline {12.2}Priority 1: Horizon Extension and Regime Stability}{19}{}%
+\contentsline {subsection}{\numberline {12.3}Priority 2: Conditional Exceedance Modeling}{19}{}%
+\contentsline {subsection}{\numberline {12.4}Priority 3: Latency-Aware Microstructure Tests}{19}{}%
+\contentsline {subsection}{\numberline {12.5}Priority 4: Macro-Event Coupling}{19}{}%
+\contentsline {subsection}{\numberline {12.6}Priority 5: Executable Size and Depth Depletion}{19}{}%
+\contentsline {subsection}{\numberline {12.7}Milestone Plan for v3}{20}{}%
+\contentsline {subsection}{\numberline {12.8}Takeaway}{20}{}%
+\contentsline {section}{\numberline {A}Appendix A: Reproducibility Protocol}{20}{}%
+\contentsline {subsection}{\numberline {A.1}Purpose and Scope}{20}{}%
+\contentsline {subsection}{\numberline {A.2}Input Lineage}{20}{}%
+\contentsline {subsection}{\numberline {A.3}Environment Assumptions}{21}{}%
+\contentsline {subsection}{\numberline {A.4}Deterministic Build Steps}{21}{}%
+\contentsline {subsection}{\numberline {A.5}Verification Checklist}{21}{}%
+\contentsline {subsection}{\numberline {A.6}Known Reproducibility Risks}{21}{}%
+\contentsline {subsection}{\numberline {A.7}Appendix A Conclusion}{21}{}%

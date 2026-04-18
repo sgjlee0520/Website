@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Modeling Paper - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+            </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Financial Modeling Paper</h1>
+                <p class="page-subtitle">
+                    <span data-lang="en">SP500 uncertainty modeling work with paper draft and full LaTeX source.</span>
+                    <span data-lang="kr">S&P500 불확실성 모델링 프로젝트의 논문 초안과 LaTeX 원문입니다.</span>
+                </p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Stochastic Modeling</span>
+                    <span class="tech-tag">Time-Series</span>
+                    <span class="tech-tag">LaTeX</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p>
+                        <span data-lang="en">This project documents a financial modeling workflow focused on uncertainty in S&P500 dynamics. It includes two clean PDF reading versions and the raw LaTeX source for reproducibility and future edits.</span>
+                        <span data-lang="kr">이 프로젝트는 S&P500 동학의 불확실성에 초점을 둔 금융 모델링 워크플로를 정리합니다. 읽기용 PDF 2종과 재현성/수정을 위한 원본 LaTeX 소스를 함께 제공합니다.</span>
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Documents</span><span data-lang="kr">문서</span></h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Paper Draft (PDF)</span><span data-lang="kr">논문 초안 (PDF)</span></h3>
+                            <p><span data-lang="en">Readable manuscript version for quick review.</span><span data-lang="kr">빠르게 검토할 수 있는 가독성 높은 원고 버전입니다.</span></p>
+                            <a href="../finance_quant_analysis/financial_modeling/sp500_uncertainty_draft_v1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Compiled Dynamic Paper (PDF)</span><span data-lang="kr">동적 논문 컴파일본 (PDF)</span></h3>
+                            <p><span data-lang="en">Compiled from LaTeX for clean browser-friendly reading.</span><span data-lang="kr">LaTeX에서 컴파일한 브라우저 친화적 읽기 버전입니다.</span></p>
+                            <a href="../finance_quant_analysis/financial_modeling/dynamic_paper.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open Compiled PDF</span><span data-lang="kr">컴파일 PDF 열기</span></a>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">LaTeX Source</span><span data-lang="kr">LaTeX 원문</span></h3>
+                            <p><span data-lang="en">Full source file for methods, equations, and edits.</span><span data-lang="kr">방법론, 수식, 개정 작업을 위한 전체 원문 파일입니다.</span></p>
+                            <a href="../finance_quant_analysis/financial_modeling/dynamic_paper.tex" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open .tex</span><span data-lang="kr">.tex 열기</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
+</body>
+
+</html>

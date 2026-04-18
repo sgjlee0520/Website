@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Arbitrage & Kimchi Premium - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">Songgun Lee</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+            </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Crypto Arbitrage & Kimchi Premium Model</h1>
+                <p class="page-subtitle">
+                    <span data-lang="en">A paper-style project on market friction, dislocation windows, and triangular arbitrage opportunity in KRW/USDT crypto flows.</span>
+                    <span data-lang="kr">KRW/USDT 시장의 마찰, 디슬로케이션 구간, 삼각 차익거래 기회를 분석한 논문형 프로젝트입니다.</span>
+                </p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Crypto Microstructure</span>
+                    <span class="tech-tag">Arbitrage Modeling</span>
+                    <span class="tech-tag">LaTeX Paper</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p>
+                        <span data-lang="en">This project analyzes kimchi premium dynamics against triangular net profit to identify transient arbitrage windows. It includes reproducible plotting scripts, an auto-generated LaTeX paper pipeline, and compiled PDF outputs for clean reading.</span>
+                        <span data-lang="kr">이 프로젝트는 김치 프리미엄과 삼각 순이익의 관계를 분석해 일시적 차익거래 구간을 식별합니다. 재현 가능한 플로팅 스크립트, 자동 LaTeX 논문 생성 파이프라인, 그리고 읽기용 PDF 결과물을 포함합니다.</span>
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Visual Outputs</span><span data-lang="kr">시각화 결과</span></h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Compressed History View</span><span data-lang="kr">압축 히스토리 뷰</span></h3>
+                            <img src="../finance_quant_analysis/crypto_arbitrage_kimchi/ada_analysis.png" alt="ADA compressed analysis" style="width: 100%; border-radius: 8px; margin: 0.75rem 0;">
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Full Timeline View</span><span data-lang="kr">전체 타임라인 뷰</span></h3>
+                            <img src="../finance_quant_analysis/crypto_arbitrage_kimchi/ada_full_analysis.png" alt="ADA full timeline analysis" style="width: 100%; border-radius: 8px; margin: 0.75rem 0;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Paper & Reproducibility</span><span data-lang="kr">논문 및 재현성 자료</span></h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3><span data-lang="en">White Paper Draft v1 (PDF)</span><span data-lang="kr">화이트페이퍼 초안 v1 (PDF)</span></h3>
+                            <a href="../finance_quant_analysis/crypto_arbitrage_kimchi/crypto_kimchi_draft_v1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open Draft v1</span><span data-lang="kr">초안 v1 열기</span></a>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">White Paper Source (LaTeX)</span><span data-lang="kr">화이트페이퍼 원문 (LaTeX)</span></h3>
+                            <a href="../finance_quant_analysis/crypto_arbitrage_kimchi/crypto_kimchi_draft_v1.tex" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open Draft .tex</span><span data-lang="kr">초안 .tex 열기</span></a>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Compiled Paper (PDF)</span><span data-lang="kr">컴파일 논문 (PDF)</span></h3>
+                            <a href="../finance_quant_analysis/crypto_arbitrage_kimchi/dynamic_paper.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">LaTeX Source</span><span data-lang="kr">LaTeX 원문</span></h3>
+                            <a href="../finance_quant_analysis/crypto_arbitrage_kimchi/dynamic_paper.tex" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open .tex</span><span data-lang="kr">.tex 열기</span></a>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Paper Generator (Python)</span><span data-lang="kr">논문 생성기 (Python)</span></h3>
+                            <a href="../finance_quant_analysis/crypto_arbitrage_kimchi/generate_paper.py" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open script</span><span data-lang="kr">스크립트 열기</span></a>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Plot Generator (Python)</span><span data-lang="kr">플롯 생성기 (Python)</span></h3>
+                            <a href="../finance_quant_analysis/crypto_arbitrage_kimchi/generate_plot.py" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open script</span><span data-lang="kr">스크립트 열기</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
+</body>
+
+</html>

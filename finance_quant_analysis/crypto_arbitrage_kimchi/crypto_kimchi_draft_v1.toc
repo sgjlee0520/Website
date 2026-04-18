@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Research Question}{3}{}%
+\contentsline {section}{\numberline {2}Executive Summary}{3}{}%
+\contentsline {section}{\numberline {3}Contributions}{3}{}%
+\contentsline {section}{\numberline {4}Instrument and Data}{3}{}%
+\contentsline {section}{\numberline {5}Definitions}{4}{}%
+\contentsline {section}{\numberline {6}Execution Friction Assumption}{4}{}%
+\contentsline {section}{\numberline {7}Methodology}{5}{}%
+\contentsline {section}{\numberline {8}Hypotheses and Test Outcomes}{5}{}%
+\contentsline {section}{\numberline {9}Summary Statistics}{6}{}%
+\contentsline {subsection}{\numberline {9.1}By Asset and Direction}{6}{}%
+\contentsline {subsection}{\numberline {9.2}Best-of-Both Aggregates}{6}{}%
+\contentsline {section}{\numberline {10}Distributional Properties of Global Best-Minute Profit}{6}{}%
+\contentsline {section}{\numberline {11}Persistence and Short-Lag Dependence}{6}{}%
+\contentsline {section}{\numberline {12}Direction and Asset-Level Regime Breakdown}{7}{}%
+\contentsline {subsection}{\numberline {12.1}Direction-Level}{7}{}%
+\contentsline {subsection}{\numberline {12.2}Asset-Level}{7}{}%
+\contentsline {section}{\numberline {13}Kimchi Premium Bin Sensitivity}{7}{}%
+\contentsline {section}{\numberline {14}Visualization}{8}{}%
+\contentsline {section}{\numberline {15}Empirical Finding: High Market Efficiency}{8}{}%
+\contentsline {section}{\numberline {16}Interpretation}{9}{}%
+\contentsline {section}{\numberline {17}Fee Scenario Sensitivity}{9}{}%
+\contentsline {section}{\numberline {18}Limitations}{9}{}%
+\contentsline {section}{\numberline {19}Next Steps}{9}{}%
+\contentsline {section}{\numberline {A}Reproducibility Appendix}{10}{}%
+\contentsline {subsection}{\numberline {A.1}File Lineage}{10}{}%
+\contentsline {subsection}{\numberline {A.2}Suggested Regeneration Workflow}{10}{}%
+\contentsline {subsection}{\numberline {A.3}Interpretation Guardrails}{10}{}%

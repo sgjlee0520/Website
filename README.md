@@ -1,6 +1,6 @@
 # Songgun Lee - Personal Portfolio Website
 
-A sophisticated, minimalist portfolio website for a Physics student at UC Santa Barbara with interests in computational physics, machine learning, and quantitative finance.
+A sophisticated, minimalist portfolio website for a Physics student at UC Santa Barbara with interests in computational physics, machine learning, and physics research.
 
 ## 🎯 Purpose
 
@@ -59,7 +59,7 @@ Personal Website - Cursor/
 - Personal interests and learning goals
 
 ### Projects Page
-- Filterable project grid (All, Quantitative Finance, Computational Physics, Machine Learning)
+- Filterable project grid (All, Physics Research, Computational Physics, Machine Learning)
 - Project cards with descriptions and technology tags
 - Links to detailed case studies
 
