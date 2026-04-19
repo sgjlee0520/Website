@@ -111,13 +111,7 @@ These operators produce increasingly optimistic feasibility envelopes. If thresh
 \subsection{Execution Friction Model and Decision Barrier}
 Let $\tau_\ell$ denote the fee on leg $\ell$ of a three-leg route. Under the baseline mixed-leg taker schedule used in this draft, the route barrier is
 \begin{equation}
-V_0
-=
-\tau_1+\tau_2+\tau_3
-=
-0.05\% + 0.25\% + 0.05\%
-=
-0.35\%.
+V_{0} = \tau_{1} + \tau_{2} + \tau_{3} = 0.05\% + 0.25\% + 0.05\% = 0.35\%.
 \end{equation}
 This $V_0$ value is the primary executable-edge criterion in all tail-frequency tests. A minute is classified as fee-cleared only if
 \begin{equation}
@@ -296,9 +290,9 @@ Taken together, regime conditioning does not overturn the baseline no-edge findi
 Sections 4--6 show that the opportunity field is mostly negative and remains non-executable under multiple partitions. This section converts that descriptive pattern into a direct falsification-style test. The central idea is simple: if actionable arbitrage exists in this sample, it should appear as non-zero exceedance frequency above a realistic execution barrier. If exceedance remains absent across a threshold ladder, the ``persistent exploitable edge'' claim is not supported.
 
 \subsection{Test Framing}
-Let $\Pi^\star_t$ denote the global best-minute operator, which is already an optimistic upper envelope over assets and directions. For each threshold $\tau$, define
+Let $\Pi^{\star}_{t}$ denote the global best-minute operator, which is already an optimistic upper envelope over assets and directions. For each threshold $\tau$, define
 \begin{equation}
-\phi(\tau) = P(\Pi^\star_t > \tau).
+\phi(\tau) = P\!\left(\Pi^{\star}_{t} > \tau\right).
 \end{equation}
 The empirical null of practical no-edge at threshold $\tau$ is
 \begin{equation}
@@ -322,11 +316,11 @@ Because $\Pi^\star_t$ is an upper envelope, rejection at this level is a strong 
 
 \noindent Empirical exceedance frequencies for the global best-minute series are:
 \begin{itemize}
-    \item $\phi(0.15\%) = P(\Pi^\star_t > 0.15\%) = 0.000141$
-    \item $\phi(0.35\%) = P(\Pi^\star_t > 0.35\%) = 0$
-    \item $\phi(0.40\%) = P(\Pi^\star_t > 0.40\%) = 0$
-    \item $\phi(0.417\%) = P(\Pi^\star_t > 0.417\%) = 0$
-    \item $\phi(0.75\%) = P(\Pi^\star_t > 0.75\%) = 0$
+    \item $\phi(0.15\%) = P\!\left(\Pi^{\star}_{t} > 0.15\%\right) = 0.000141$
+    \item $\phi(0.35\%) = P\!\left(\Pi^{\star}_{t} > 0.35\%\right) = 0$
+    \item $\phi(0.40\%) = P\!\left(\Pi^{\star}_{t} > 0.40\%\right) = 0$
+    \item $\phi(0.417\%) = P\!\left(\Pi^{\star}_{t} > 0.417\%\right) = 0$
+    \item $\phi(0.75\%) = P\!\left(\Pi^{\star}_{t} > 0.75\%\right) = 0$
 \end{itemize}
 Even under the optimistic envelope, the baseline executable threshold and all stricter thresholds show zero observed exceedance.
 
@@ -529,6 +523,7 @@ python3 generate_paper.py
 python3 generate_plot.py
 
 # 3) compile manuscript (run twice for table of contents and references)
+#    (both lines use the same flags: -interaction=nonstopmode -halt-on-error)
 pdflatex -interaction=nonstopmode -halt-on-error crypto_kimchi_draft_v2.tex
 pdflatex -interaction=nonstopmode -halt-on-error crypto_kimchi_draft_v2.tex
 \end{verbatim}
