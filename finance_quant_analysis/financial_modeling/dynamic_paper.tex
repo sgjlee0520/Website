@@ -1,8 +1,10 @@
-\documentclass[preprint,12pt]{elsarticle}
+\documentclass[11pt]{article}
 
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{hyperref}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{caption}
@@ -10,9 +12,10 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{microtype}
-\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{authblk}
 
-\journal{Physica A: Statistical Mechanics and its Applications}
+\geometry{margin=1in}
 
 \lstset{
     basicstyle=\ttfamily\small,
@@ -25,28 +28,24 @@
     language=Python
 }
 
+\title{\textbf{A Volume-Weighted Uncertainty Principle for Equity Microstructure:\\
+Definitions, Empirical Properties, Regime Analysis, and Theoretical Extensions}}
+
+\author[1]{Songgun Lee}
+\affil[1]{Department of Physics, University of California, Santa Barbara}
+\date{April 2026 \quad (Preprint)}
+
 \begin{document}
 
-\begin{frontmatter}
-
-\title{A Volume-Weighted Uncertainty Principle for Equity Microstructure:
-Definitions, Empirical Properties, Regime Analysis, and Theoretical Extensions}
-
-\author[ucsb]{Songgun Lee}
-\address[ucsb]{Department of Physics, University of California, Santa Barbara,
-Santa Barbara, CA 93106, USA}
+\maketitle
 
 \begin{abstract}
-We introduce a volume-weighted uncertainty product $U = \sigma_P \cdot \sigma_t$ for equity microstructure, constructed in direct analogy with the Heisenberg uncertainty principle of quantum mechanics. The price spread $\sigma_P$ and time spread $\sigma_t$ are computed as volume-weighted standard deviations of the intraday 1-minute price and time series, centered on the volume-weighted median price $M$ --- a quantity we term the Volume-Weighted Median Price (VWMP), which we argue is theoretically preferable to the widely-used Volume-Weighted Average Price (VWAP) as a reference price for microstructure analysis. Applying this framework to SPY (S\&P 500 ETF) over 2020--2026 ($N = 1{,}575$ trading days, approximately 614{,}000 intraday 1-minute observations), we find that $U_\mathrm{norm} = (\sigma_P/M)\cdot\sigma_t$ follows a log-normal marginal distribution (KS $p = 0.155$), exhibits strong long memory ($H \approx 0.90$ via R/S analysis), and is significantly correlated with the CBOE VIX ($r = 0.73$) while retaining 54\% independent variance. Granger causality tests confirm that the VIX-orthogonal component of $U_\mathrm{norm}$ linearly precedes daily returns at all lags 1--5 ($p < 0.03$). A market regime analysis reveals a striking monotone relationship: the correlation between $U_\mathrm{norm}$ and forward 5-day rolling volatility rises from effectively zero ($r = 0.002$) in low-VIX environments (VIX $< 15$) to $r = 0.427$ during high-stress regimes (VIX $> 25$), and to $r = 0.610$ during risk-off (flight-to-safety) periods. We further propose the Robertson uncertainty relation as a framework for five candidate conjugate variable pairs in financial markets, and outline theoretical extensions drawing on time-dependent perturbation theory, Clebsch-Gordan decomposition of composite uncertainty states, and a path-integral interpretation of $U_\mathrm{norm}$ as a field amplitude.
+\noindent
+  We introduce a volume-weighted uncertainty product $U = \sigma_P \cdot \sigma_t$ for equity microstructure, constructed in direct analogy with the Heisenberg uncertainty principle of quantum mechanics. The price spread $\sigma_P$ and time spread $\sigma_t$ are computed as volume-weighted standard deviations of the intraday 1-minute price and time series, centered on the volume-weighted median price $M$ --- a quantity we term the Volume-Weighted Median Price (VWMP), which we argue is theoretically preferable to the widely-used Volume-Weighted Average Price (VWAP) as a reference price for microstructure analysis. Applying this framework to SPY (S\&P 500 ETF) over 2020--2026 ($N = 1{,}575$ trading days, approximately 614{,}000 intraday 1-minute observations), we find that $U_\mathrm{norm} = (\sigma_P/M)\cdot\sigma_t$ follows a log-normal marginal distribution (KS $p = 0.155$), exhibits strong long memory ($H \approx 0.90$ via R/S analysis), and is significantly correlated with the CBOE VIX ($r = 0.73$) while retaining 54\% independent variance. Granger causality tests confirm that the VIX-orthogonal component of $U_\mathrm{norm}$ linearly precedes daily returns at all lags 1--5 ($p < 0.03$). A market regime analysis reveals a striking monotone relationship: the correlation between $U_\mathrm{norm}$ and forward 5-day rolling volatility rises from effectively zero ($r = 0.002$) in low-VIX environments (VIX $< 15$) to $r = 0.427$ during high-stress regimes (VIX $> 25$), and to $r = 0.610$ during risk-off (flight-to-safety) periods. We further propose the Robertson uncertainty relation as a framework for five candidate conjugate variable pairs in financial markets, and outline theoretical extensions drawing on time-dependent perturbation theory, Clebsch-Gordan decomposition of composite uncertainty states, and a path-integral interpretation of $U_\mathrm{norm}$ as a field amplitude.
 \end{abstract}
 
-\begin{keyword}
-econophysics \sep uncertainty principle \sep market microstructure \sep
-volume-weighted median price \sep intraday volatility \sep long memory \sep
-market regimes \sep Robertson uncertainty relation
-\end{keyword}
-
-\end{frontmatter}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{1em}
 
 % ============================================================
 \section{Introduction}
@@ -194,7 +193,7 @@ Units: dimensionless (pure number).
 
 Each trading day $d$ is represented by the tuple:
 \begin{align}
-    \mathbf{x}_d = \left(M_d,\; \sigma_{P,d},\; \sigma_{t,d},\; U_d,\; U_{\mathrm{norm},d},\; \langle t \rangle_d \right)
+    X_d = \left(M_d,\; \sigma_{P,d},\; \sigma_{t,d},\; U_d,\; U_{\mathrm{norm},d},\; \langle t \rangle_d \right)
 \end{align}
 
 % ============================================================
@@ -204,6 +203,7 @@ Each trading day $d$ is represented by the tuple:
 \begin{table}[htbp]
 \centering
 \caption{Summary statistics of the daily feature vector ($N = 1571$ trading days, 2020--2026)}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrrrrr}
 \toprule
 Variable & Mean & Std & Min & 25\% & Median & 75\% & Max \\
@@ -216,7 +216,7 @@ $U_\mathrm{norm}$          & 0.1120 & 0.1016 & 0.0111 & 0.0535 & 0.0887 & 0.1330
 $U_\mathrm{dimless}$       & 0.000287 & 0.000261 & 0.000028 & 0.000137 & 0.000228 & 0.000341 & 0.002841 \\
 $\langle t \rangle$ (min)  & --- & --- & 270 & --- & --- & --- & 345 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \begin{figure}[htbp]
@@ -298,15 +298,16 @@ The KS test assumes i.i.d.\ observations. $U_\mathrm{norm}$ exhibits strong auto
 \begin{table}[htbp]
 \centering
 \caption{Stationarity tests. ADF null: unit root present. KPSS null: series is stationary.}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llllll}
 \toprule
 Series & ADF stat & ADF $p$ & ADF verdict & KPSS stat & KPSS verdict \\
 \midrule
-$U_\mathrm{norm}$              & $-6.025$ & $0.000$ & stationary     & $0.512$, $p=0.039$ & non-stationary \\
-$\log(U_\mathrm{norm})$        & $-6.266$ & $0.000$ & stationary     & $0.457$, $p>0.05$  & stationary \\
-$\Delta\log(U_\mathrm{norm})$  & $-15.89$ & $0.000$ & stationary     & $0.027$, $p>0.10$  & stationary \\
+$U_\mathrm{norm}$              & $-6.025$ & $0.000$ & stationary     & $0.512$ & non-stationary ($p = 0.039$) \\
+$\log(U_\mathrm{norm})$        & $-6.266$ & $0.000$ & stationary     & $0.457$ & stationary ($p > 0.05$) \\
+$\Delta\log(U_\mathrm{norm})$  & $-15.89$ & $0.000$ & stationary     & $0.027$ & stationary ($p > 0.10$) \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \textbf{Conclusion:} $U_\mathrm{norm}$ gives conflicting test results (likely due to structural breaks / regime changes). $\log(U_\mathrm{norm})$ passes both tests and is the appropriate series for long-memory analysis. $\Delta\log(U_\mathrm{norm})$ is over-differenced for Hurst estimation purposes.
@@ -797,6 +798,7 @@ Each run of \texttt{predict.py} grades all pending (ungraded) entries by compari
 \begin{table}[htbp]
 \centering
 \caption{Full prediction log as of April 18, 2026}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llrrll}
 \toprule
 Date & Prediction & Prob UP & Last $M$ & Actual & Result \\
@@ -814,7 +816,7 @@ Date & Prediction & Prob UP & Last $M$ & Actual & Result \\
 \midrule
 \multicolumn{6}{l}{\textbf{Win rate: 7/10 = 70.00\%}} \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \textbf{Notes:}
@@ -822,7 +824,7 @@ Date & Prediction & Prob UP & Last $M$ & Actual & Result \\
     \item April 3 prediction used stale data (Good Friday market closure; same $M = 653.49$ as prior day). Included in log but flagged.
     \item The April 3 entry was logged twice due to a manual run coinciding with the cron job; duplicate removed in log cleanup.
     \item Predictions prior to April 10 lack \texttt{prob\_up} values (logged before probability tracking was added).
-    \item \textbf{Sample size caveat:} $n = 10$ predictions is far too small for statistical inference. A binomial test of $H_0: p = 0.5$ against $H_1: p > 0.5$ gives $p$-value $= \binom{10}{7+8+9+10} \cdot 0.5^{10} \approx 0.172$ — not significant at any conventional level. A minimum of $\sim$30--50 graded predictions is needed before drawing conclusions.
+    \item \textbf{Sample size caveat:} $n = 10$ predictions is far too small for statistical inference. A binomial test of $H_0: p = 0.5$ against $H_1: p > 0.5$ gives $p\text{-value} = \sum_{k=7}^{10} \binom{10}{k} \cdot 0.5^{10} \approx 0.172$, not significant at any conventional level. A minimum of $\sim$30--50 graded predictions is needed before drawing conclusions.
 \end{itemize}
 
 % ============================================================
@@ -889,6 +891,7 @@ Five observable pairs are proposed for investigation. Each defines a distinct un
 \begin{table}[htbp]
 \centering
 \caption{Candidate Robertson pairs, their market interpretation, and data requirements}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{clllll}
 \toprule
 \# & Pair $(\hat{A}, \hat{B})$ & Market analog & Lower bound & Data needed & Status \\
@@ -899,7 +902,7 @@ Five observable pairs are proposed for investigation. Each defines a distinct un
 4 & $(P,\; \mathrm{OIB})$    & Position vs.\ signed momentum & Empirical             & Level 2 / tick data   & Not yet     \\
 5 & $(P,\; H_V)$             & Price vs.\ volume entropy    & $\log(\pi e)$ (exact)  & Already have          & Not yet     \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \subsubsection{Pair 1: Price and Time --- $(P, t)$}
@@ -1227,37 +1230,34 @@ The following steps are required to implement and test this framework:
     \item \textbf{Win rate.} Live prediction tracking began April 2026. Statistically meaningful win rate ($\pm 2\%$ precision at 95\% confidence) requires $n \geq 2500$ observations (approximately 10 years). Interim checkpoints at $n = 100$, $250$, $500$.
 \end{enumerate}
 
-
-\bibliographystyle{elsarticle-num}
-
 \begin{thebibliography}{9}
 
 \bibitem{heisenberg1927}
-W.~Heisenberg, \"{U}ber den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik, Zeitschrift f\"{u}r Physik 43 (1927) 172--198.
+W.~Heisenberg, ``\"{U}ber den anschaulichen Inhalt der quantentheoretischen Kinematik und Mechanik,'' \textit{Zeitschrift f\"{u}r Physik}, vol.~43, pp.~172--198, 1927.
 
 \bibitem{robertson1929}
-H.~P. Robertson, The uncertainty principle, Phys.~Rev. 34 (1929) 163--164.
+H.~P. Robertson, ``The uncertainty principle,'' \textit{Physical Review}, vol.~34, no.~1, pp.~163--164, 1929.
 
 \bibitem{griffiths2018}
-D.~J. Griffiths, D.~F. Schroeter, Introduction to Quantum Mechanics, 3rd ed., Cambridge University Press, 2018.
+D.~J. Griffiths and D.~F. Schroeter, \textit{Introduction to Quantum Mechanics}, 3rd ed. Cambridge University Press, 2018.
 
 \bibitem{gabor1946}
-D.~Gabor, Theory of communication, J.~Inst.~Electr.~Eng. 93 (1946) 429--457.
+D.~Gabor, ``Theory of communication,'' \textit{Journal of the Institution of Electrical Engineers}, vol.~93, no.~26, pp.~429--457, 1946.
 
 \bibitem{mantegna1999introduction}
-R.~N. Mantegna, H.~E. Stanley, An Introduction to Econophysics, Cambridge University Press, 1999.
+R.~N. Mantegna and H.~E. Stanley, \textit{An Introduction to Econophysics: Correlations and Complexity in Finance}. Cambridge University Press, 1999.
 
 \bibitem{bouchaud2003theory}
-J.-P. Bouchaud, M.~Potters, Theory of Financial Risk and Derivative Pricing, 2nd ed., Cambridge University Press, 2003.
+J.-P. Bouchaud and M.~Potters, \textit{Theory of Financial Risk and Derivative Pricing: From Statistical Physics to Risk Management}, 2nd ed. Cambridge University Press, 2003.
 
 \bibitem{andersen1998}
-T.~G. Andersen, T.~Bollerslev, Answering the skeptics, Int.~Econ.~Rev. 39 (1998) 885--905.
+T.~G. Andersen and T.~Bollerslev, ``Answering the skeptics: Yes, standard volatility models do provide accurate forecasts,'' \textit{International Economic Review}, vol.~39, no.~4, pp.~885--905, 1998.
 
 \bibitem{kyle1985}
-A.~S. Kyle, Continuous auctions and insider trading, Econometrica 53 (1985) 1315--1335.
+A.~S. Kyle, ``Continuous auctions and insider trading,'' \textit{Econometrica}, vol.~53, no.~6, pp.~1315--1335, 1985.
 
 \bibitem{hurst1951}
-H.~E. Hurst, Long-term storage capacity of reservoirs, Trans.~Am.~Soc.~Civ.~Eng. 116 (1951) 770--799.
+H.~E. Hurst, ``Long-term storage capacity of reservoirs,'' \textit{Transactions of the American Society of Civil Engineers}, vol.~116, pp.~770--799, 1951.
 
 \end{thebibliography}
 
