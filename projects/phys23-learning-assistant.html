@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYS 23 Learning Assistant Project - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">Songgun Lee</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+            </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">PHYS 23 Learning Assistant Project</h1>
+                <p class="page-subtitle">
+                    <span data-lang="en">A physics-education umbrella project with two tracks: lecture-note production and a survey-gated practice-midterm workflow for retrieval and confidence research.</span>
+                    <span data-lang="kr">강의 노트 제작과 설문-게이트형 모의중간고사 워크플로를 결합한 물리학 교육 프로젝트입니다. 회상 학습과 시험 자신감 연구를 함께 다룹니다.</span>
+                </p>
+                <div class="detail-meta">
+                    <span class="tech-tag">PHYS 23</span>
+                    <span class="tech-tag">PHYS 180</span>
+                    <span class="tech-tag">Learning Research</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p>
+                        <span data-lang="en">I serve as a learning assistant for PHYS 23 while concurrently studying physics pedagogy in PHYS 180. This project is designed as an educational intervention and measurement framework: students receive high-quality lecture notes and a gated practice-midterm workflow that introduces controlled friction before access. The goal is to study retrieval effort, confidence calibration, and perceived exam readiness without using private grade records.</span>
+                        <span data-lang="kr">저는 PHYS 23 러닝 어시스턴트로 활동하며, 동시에 PHYS 180에서 물리학 교수학습을 연구하고 있습니다. 이 프로젝트는 교육 개입과 측정 프레임워크를 결합한 형태로, 학생들에게 강의 노트를 제공하고 설문 완료 후에 모의중간고사에 접근하도록 설계했습니다. 목표는 개인 성적 데이터를 사용하지 않고 회상 학습 노력, 자신감 보정, 시험 준비 인식을 분석하는 것입니다.</span>
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Subprojects</span><span data-lang="kr">하위 프로젝트</span></h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3><span data-lang="en">1) PHYS 23 Lecture Notes</span><span data-lang="kr">1) PHYS 23 강의 노트</span></h3>
+                            <p>
+                                <span data-lang="en">Cleaned, course-specific repository containing lecture notes and review materials for PHYS 23 only.</span>
+                                <span data-lang="kr">PHYS 23 전용으로 정리한 강의 노트 및 복습 자료 저장소입니다.</span>
+                            </p>
+                            <a href="https://github.com/sgjlee0520/lecture-notes-template" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open Lecture Notes Repo</span><span data-lang="kr">강의 노트 저장소 열기</span></a>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">2) Gateway Survey Workflow</span><span data-lang="kr">2) 게이트웨이 설문 워크플로</span></h3>
+                            <p>
+                                <span data-lang="en">Survey-first access pipeline where students complete a six-question survey before seeing the practice-midterm PDF button, with timed release constraints to encourage effortful completion.</span>
+                                <span data-lang="kr">학생이 6문항 설문을 완료한 뒤 모의중간고사 PDF 버튼을 볼 수 있도록 설계된 설문-우선 접근 파이프라인입니다. 시간 제약을 추가해 성실한 응답을 유도합니다.</span>
+                            </p>
+                            <a href="https://github.com/sgjlee0520/survey-gate" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open Gateway Survey Repo</span><span data-lang="kr">게이트웨이 설문 저장소 열기</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Research Note</span><span data-lang="kr">연구 메모</span></h2>
+                    <p>
+                        <span data-lang="en">This work focuses on behavioral and self-reported learning signals (retrieval effort, confidence, and readiness), and intentionally avoids using students' private grade data in the analysis pipeline.</span>
+                        <span data-lang="kr">이 작업은 회상 학습 노력, 자신감, 준비도와 같은 행동/자가보고 지표에 초점을 맞추며, 분석 과정에서 학생의 비공개 성적 데이터는 사용하지 않습니다.</span>
+                    </p>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
+</body>
+
+</html>
