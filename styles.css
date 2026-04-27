@@ -1593,12 +1593,109 @@ p {
     margin: 20px 0;
 }
 
+.pdf-viewer-shell {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.pdf-toolbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+    background: linear-gradient(135deg, rgba(0, 74, 153, 0.05), rgba(0, 74, 153, 0.01));
+}
+
+.pdf-toolbar p {
+    margin: 0;
+    max-width: 44rem;
+    color: var(--light-text);
+}
+
+.pdf-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
 .pdf-container {
     width: 100%;
-    height: 800px;
+    min-height: 360px;
+    padding: 24px;
+    background: #f5f7fa;
+}
+
+.pdf-viewer-root {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pdf-status {
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+    color: var(--light-text);
+    background: #fff;
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+}
+
+.pdf-status-error {
+    color: #b42318;
+    border-color: rgba(180, 35, 24, 0.2);
+    background: rgba(180, 35, 24, 0.04);
+}
+
+.pdf-page {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.pdf-page-label {
+    margin-bottom: 12px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.pdf-page canvas {
+    display: block;
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .pdf-toolbar {
+        padding: 18px;
+    }
+
+    .pdf-actions {
+        width: 100%;
+    }
+
+    .pdf-actions .btn {
+        flex: 1 1 220px;
+        text-align: center;
+    }
+
+    .pdf-container {
+        padding: 16px;
+    }
+
+    .pdf-page {
+        padding: 12px;
+    }
 }
 
 .project-nav-footer {

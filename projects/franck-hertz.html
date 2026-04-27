@@ -89,13 +89,17 @@
                     <h2><span data-lang="en">Full Documentation</span><span data-lang="kr">전체 문서</span></h2>
                     <p>This report contains detailed data tables, error analysis, and theoretical derivations linking
                         the observed voltage drops to the fundamental Planck constant.</p>
-                    <div class="pdf-container">
-                        <iframe src="../physics_experimental_modeling/20CL_FH-1.pdf" width="100%" height="800px"
-                            frameborder="0">
-                            <p>Your browser does not support PDFs. <a
-                                    href="../physics_experimental_modeling/20CL_FH-1.pdf">Download
-                                    the PDF</a> instead.</p>
-                        </iframe>
+                    <div class="pdf-viewer-shell">
+                        <div class="pdf-toolbar">
+                            <p><span data-lang="en">This inline viewer renders every page directly on the site, which avoids the clipped first-page issue and the browser PDF table-of-contents UI.</span><span data-lang="kr">이 인라인 뷰어는 모든 페이지를 사이트 안에서 직접 렌더링해 첫 페이지만 보이는 문제와 브라우저 PDF 목차 UI 문제를 피합니다.</span></p>
+                            <div class="pdf-actions">
+                                <a href="../physics_experimental_modeling/20CL_FH-1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
+                                <a href="../physics_experimental_modeling/20CL_FH-1.pdf" download class="btn btn-primary"><span data-lang="en">Download PDF</span><span data-lang="kr">PDF 다운로드</span></a>
+                            </div>
+                        </div>
+                        <div class="pdf-container">
+                            <div class="pdf-viewer-root" data-pdf-src="../physics_experimental_modeling/20CL_FH-1.pdf"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -120,6 +124,7 @@
             </div>
         </div>
     </footer>
+    <script src="../pdf-viewer.js"></script>
     <script>
     (function() {
         var saved = localStorage.getItem('siteLang') || 'en';
