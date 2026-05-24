@@ -51,9 +51,27 @@
                 <div class="content-block">
                     <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
                     <p>
-                        <span data-lang="en">This project analyzes kimchi premium dynamics against triangular net profit to identify transient arbitrage windows. It includes reproducible plotting scripts, an auto-generated LaTeX paper pipeline, and compiled PDF outputs for clean reading.</span>
-                        <span data-lang="kr">이 프로젝트는 김치 프리미엄과 삼각 순이익의 관계를 분석해 일시적 차익거래 구간을 식별합니다. 재현 가능한 플로팅 스크립트, 자동 LaTeX 논문 생성 파이프라인, 그리고 읽기용 PDF 결과물을 포함합니다.</span>
+                        <span data-lang="en">The "Kimchi Premium" refers to the persistent price premium that Korean crypto exchanges (e.g., Upbit) display over global venues (e.g., Binance) for the same asset, driven by KRW capital controls that prevent instantaneous arbitrage. This project models when the premium is large enough to survive round-trip transaction costs — exchange fees, FX conversion spread, and withdrawal delays — and identifies the transient windows where a net profit is theoretically available. It includes reproducible plotting scripts, an auto-generated LaTeX paper pipeline, and compiled PDF outputs for clean reading.</span>
+                        <span data-lang="kr">"김치 프리미엄"은 자본 이동 규제로 인해 국내 거래소(업비트 등)의 암호화폐 가격이 글로벌 거래소(바이낸스 등)보다 지속적으로 높게 형성되는 현상입니다. 이 프로젝트는 거래소 수수료, 환전 스프레드, 출금 지연 등 왕복 거래 비용을 고려했을 때 순이익이 발생하는 구간을 모델링하고, 실제로 차익 기회가 존재하는 일시적 시간대를 식별합니다. 재현 가능한 플로팅 스크립트, 자동 LaTeX 논문 생성 파이프라인, 그리고 읽기용 PDF 결과물을 포함합니다.</span>
                     </p>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Key Concepts Investigated</span><span data-lang="kr">탐구한 핵심 개념</span></h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Fee Threshold Model</span><span data-lang="kr">수수료 임계 모델</span></h3>
+                            <p><span data-lang="en">Derived the minimum premium P* such that net profit = premium − (maker fee + taker fee + FX spread + slippage) &gt; 0. Mapped empirical premium data against P* to identify dislocation windows.</span><span data-lang="kr">순이익 = 프리미엄 − (메이커/테이커 수수료 + 환전 스프레드 + 슬리피지) &gt; 0이 되는 최소 프리미엄 P*를 도출하고, 실제 데이터를 P*와 비교해 디슬로케이션 구간을 파악했습니다.</span></p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Triangular Net-Profit Structure</span><span data-lang="kr">삼각 순이익 구조</span></h3>
+                            <p><span data-lang="en">Modeled the three-leg flow: USD → BTC on Binance → KRW on Upbit → USD via FX, accounting for each conversion's cost and timing risk to compute the realized profit window.</span><span data-lang="kr">USD → BTC(바이낸스) → KRW(업비트) → USD(환전) 3단계 흐름을 모델링하고, 각 환전 비용과 타이밍 리스크를 반영해 실현 가능한 이익 구간을 계산했습니다.</span></p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Auto-Generated Paper Pipeline</span><span data-lang="kr">자동 논문 생성 파이프라인</span></h3>
+                            <p><span data-lang="en">Python scripts generate both the analysis plots and the LaTeX source, so the paper recompiles automatically when data or parameters change — a fully reproducible research workflow.</span><span data-lang="kr">Python 스크립트가 분석 도표와 LaTeX 소스를 모두 자동 생성합니다. 데이터나 파라미터가 바뀌면 논문이 자동으로 재컴파일되는 재현 가능 연구 워크플로입니다.</span></p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="content-block">
