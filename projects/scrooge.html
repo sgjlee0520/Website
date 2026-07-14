@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrooge - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+            </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Scrooge — PDF/Image → Text &amp; Plot → Data</h1>
+                <p class="page-subtitle">
+                    <span data-lang="en">Local OCR and plot digitization to cut token cost for AI agents — a lab-adjacent utility for turning pixels into structured data.</span>
+                    <span data-lang="kr">로컬 OCR과 플롯 디지털화로 AI 에이전트의 토큰 비용을 줄이는, 픽셀을 구조화된 데이터로 바꾸는 실험실 인접 유틸리티입니다.</span>
+                </p>
+                <div class="detail-meta">
+                    <span class="tech-tag">OCR</span>
+                    <span class="tech-tag">Plot Digitization</span>
+                    <span class="tech-tag">MCP Server</span>
+                    <span class="tech-tag">Other / Software</span>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="https://sgjlee0520-scrooge.hf.space/" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary"><span data-lang="en">Try Live Demo</span><span data-lang="kr">라이브 데모</span></a>
+                    <a href="https://github.com/sgjlee0520/scrooge" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary" style="margin-left: 0.75rem;"><span data-lang="en">View on GitHub</span><span data-lang="kr">GitHub</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p>
+                        <span data-lang="en"><strong>Scrooge</strong> runs OCR and plot-to-data conversion locally so AI agents work from compact text and numeric series instead of raw images. PDFs and figures become markdown-friendly text (Tesseract OCR) or digitized curve data, reducing token usage by up to ~35× compared with feeding pixels into a vision model.</span>
+                        <span data-lang="kr"><strong>Scrooge</strong>는 OCR과 플롯→데이터 변환을 로컬에서 수행해, AI 에이전트가 원시 이미지 대신 압축된 텍스트·수치 시계열로 작업하게 합니다. PDF와 그래프를 마크다운 친화적 텍스트(Tesseract OCR)나 디지털화된 곡선 데이터로 바꿔, 비전 모델에 픽셀을 넣는 것 대비 최대 약 35배 토큰을 절약합니다.</span>
+                    </p>
+                    <p>
+                        <span data-lang="en">Built as a lab-adjacent utility: digitize plots from papers or lab notebooks, extract tables from scanned handouts, and expose the pipeline through an MCP server so coding agents can call OCR and digitization as tools. Hosted demo on Hugging Face Spaces; full pipeline runs on your machine.</span>
+                        <span data-lang="kr">논문·실험 노트의 플롯을 디지털화하고, 스캔 자료에서 표를 추출하며, MCP 서버로 코딩 에이전트가 OCR·디지털화를 도구로 호출할 수 있게 한 실험실 인접 유틸리티입니다. Hugging Face Spaces 데모와 로컬 전체 파이프라인을 제공합니다.</span>
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Links</span><span data-lang="kr">링크</span></h2>
+                    <div
+                        style="margin-top: 1rem; padding: 2rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+                        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                            <span data-lang="en">Source code and interactive demo.</span>
+                            <span data-lang="kr">소스 코드와 인터랙티브 데모.</span>
+                        </p>
+                        <a href="https://github.com/sgjlee0520/scrooge" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary"><span data-lang="en">GitHub Repository</span><span data-lang="kr">GitHub 저장소</span></a>
+                        <a href="https://sgjlee0520-scrooge.hf.space/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary" style="margin-left: 0.75rem;"><span data-lang="en">Hugging Face Demo</span><span data-lang="kr">Hugging Face 데모</span></a>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
+                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
+</body>
+
+</html>
