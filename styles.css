@@ -2369,3 +2369,19 @@ body.lang-kr .kr-only { display: inline-flex !important; }
 .nav-kr-item { display: none; }
 body.lang-kr .nav-en-item { display: none; }
 body.lang-kr .nav-kr-item { display: block; }
+
+.sidebar-more {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}
+.sidebar-more-link {
+    color: inherit;
+    opacity: 0.75;
+    text-decoration: none;
+}
+.sidebar-more-link:hover {
+    opacity: 1;
+}
