@@ -240,7 +240,7 @@
       <div class="lang-badge">🇰🇷 한국어 버전</div>
       <p class="subtitle">Songgun's Personal Finance System</p>
       <h1>가계부</h1>
-      <p class="desc">대학생을 위한 실용적인 지출 추적 시스템 — 깔끔한 카테고리, 자동 계산, 그리고 매달 배우는 습관.</p>
+      <p class="desc">대학생을 위한 실용적인 지출 추적 시스템, 깔끔한 카테고리, 자동 계산, 그리고 매달 배우는 습관.</p>
       <div class="btn-group">
         <a class="gbtn gbtn-primary" href="가계부_한국어.xlsx" download>⬇️ 가계부 다운로드</a>
         <a class="gbtn gbtn-outline" href="#how-it-works">📖 사용법 보기</a>
@@ -294,7 +294,7 @@
               <span class="kr">📊 Summary 요약</span><br/>
               <span class="en">Overview dashboard</span>
             </div>
-            <div class="sheet-cell">모든 달의 지출을 한눈에 비교 — 카테고리별 월별 매트릭스</div>
+            <div class="sheet-cell">모든 달의 지출을 한눈에 비교, 카테고리별 월별 매트릭스</div>
           </div>
           <div class="sheet-row">
             <div class="sheet-cell highlight">
@@ -365,7 +365,7 @@
 <span class="cmt">// 기타 자동 계산: 총합 − 9개 카테고리</span>
 <span class="ref">H5</span> - <span class="fn">SUM</span>(<span class="ref">H6:H14</span>)
 
-<span class="cmt">// 전월 비교 % — INDIRECT로 어느 달에서든 작동</span>
+<span class="cmt">// 전월 비교 %, INDIRECT로 어느 달에서든 작동</span>
 <span class="fn">=IFERROR</span>((<span class="ref">H5</span> - <span class="fn">INDIRECT</span>(<span class="str">"'"</span>&amp;<span class="ref">$H$2</span>&amp;<span class="str">"'!H5"</span>))
          / <span class="fn">INDIRECT</span>(<span class="str">"'"</span>&amp;<span class="ref">$H$2</span>&amp;<span class="str">"'!H5"</span>), <span class="str">""</span>)
 
@@ -386,7 +386,7 @@
       <div class="guide-container">
         <p class="section-label">사용법</p>
         <h2>새 달 시작하기</h2>
-        <p class="h2-sub">3단계로 새 달 준비 완료 — 수식 재작성 없음.</p>
+        <p class="h2-sub">3단계로 새 달 준비 완료, 수식 재작성 없음.</p>
         <div class="steps">
           <div class="gstep">
             <div class="gstep-num">1</div>
@@ -401,9 +401,9 @@
               <h3>탭 이름 변경 및 노란 셀 3개 업데이트</h3>
               <p>새 탭 이름을 <code>Mar 2026</code>로 변경. 그 다음 노란 셀만 업데이트:</p>
               <ul style="margin-top:8px; margin-left:20px; font-size:0.9rem; color:var(--dgray);">
-                <li><strong>H2</strong> — 이전 달 시트명: <code>Feb 2026</code></li>
-                <li><strong>H23</strong> — 계산 기준 일수: <code>31</code></li>
-                <li><strong>H31</strong> — 현재 은행 잔고</li>
+                <li><strong>H2</strong>, 이전 달 시트명: <code>Feb 2026</code></li>
+                <li><strong>H23</strong>, 계산 기준 일수: <code>31</code></li>
+                <li><strong>H31</strong>, 현재 은행 잔고</li>
               </ul>
             </div>
           </div>
@@ -411,7 +411,7 @@
             <div class="gstep-num">3</div>
             <div class="gstep-body">
               <h3>기존 거래 내역 삭제 후 새 달 입력 시작</h3>
-              <p>A–D 열의 이전 달 데이터를 선택 후 삭제. E열(월 누적)은 수식이라 건드리지 않아도 됩니다. 새 거래를 입력하면 오른쪽 통계 패널이 즉시 업데이트됩니다.</p>
+              <p>A-D 열의 이전 달 데이터를 선택 후 삭제. E열(월 누적)은 수식이라 건드리지 않아도 됩니다. 새 거래를 입력하면 오른쪽 통계 패널이 즉시 업데이트됩니다.</p>
             </div>
           </div>
         </div>
