@@ -118,8 +118,8 @@
             <div class="container">
                 <h1 class="page-title"><span data-lang="en">Projects</span><span data-lang="kr">프로젝트</span></h1>
                 <p class="page-subtitle">
-                    <span data-lang="en">Exploring the intersection of physics, computation, and modeling through hands-on projects.</span>
-                    <span data-lang="kr">직접 만든 프로젝트를 통해 물리학, 계산, 모델링의 교차점을 탐구합니다.</span>
+                    <span data-lang="en">Experimental labs, computational coursework, and other software projects — with physics work first.</span>
+                    <span data-lang="kr">실험 연구, 계산 수업 프로젝트, 그리고 기타 소프트웨어 작업 — 물리학 관련 작업을 우선으로 정리했습니다.</span>
                 </p>
             </div>
         </section>
@@ -129,9 +129,9 @@
             <div class="container">
                 <div class="filter-buttons">
                     <button class="filter-btn active" onclick="filterProjects('all')"><span data-lang="en">All</span><span data-lang="kr">전체</span></button>
-                    <button class="filter-btn" onclick="filterProjects('quantitative-finance')"><span data-lang="en">Finance & Quantitative Analysis</span><span data-lang="kr">금융 · 정량 분석</span></button>
-                    <button class="filter-btn" onclick="filterProjects('software-engineering')"><span data-lang="en">Software Engineering & Data Science</span><span data-lang="kr">소프트웨어 · 데이터 사이언스</span></button>
-                    <button class="filter-btn" onclick="filterProjects('physics-experimental')"><span data-lang="en">Physics & Experimental Modeling</span><span data-lang="kr">물리 · 실험 모델링</span></button>
+                    <button class="filter-btn" onclick="filterProjects('experimental')"><span data-lang="en">Experimental</span><span data-lang="kr">실험</span></button>
+                    <button class="filter-btn" onclick="filterProjects('computational-coursework')"><span data-lang="en">Computational & Coursework</span><span data-lang="kr">계산 · 수업</span></button>
+                    <button class="filter-btn" onclick="filterProjects('other')"><span data-lang="en">Other / Software</span><span data-lang="kr">기타 · 소프트웨어</span></button>
                 </div>
             </div>
         </section>
@@ -140,258 +140,8 @@
         <section class="projects-showcase">
             <div class="container">
                 <div class="projects-grid">
-                    <!-- Physics Research Projects -->
-                    <div class="project-item" data-category="quantitative-finance">
-                        <div class="project-image">
-                            <img src="finance_quant_analysis/images/monte_carlo_pi.png" alt="Monte Carlo Simulation">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Monte Carlo Methods & Stochastic Calculus</h3>
-                            <p class="project-description">Implemented Monte Carlo simulations to solve deterministic
-                                problems, analyzing convergence rates ($1/\sqrt{N}$) against theoretical predictions.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">NumPy</span>
-                                <span class="tech-tag">Stochastic Calculus</span>
-                            </div>
-                            <a href="projects/monte-carlo-stochastic.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="quantitative-finance">
-                        <div class="project-image">
-                            <div class="thumb-fallback thumb-finance">
-                                <div class="project-initials">FM</div>
-                                <div class="project-category-label">Financial Modeling</div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">S&amp;P500 Uncertainty Modeling Paper</h3>
-                            <p class="project-description">Research writeup and reproducible LaTeX source for uncertainty-focused financial modeling on S&amp;P500 dynamics.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Stochastic Modeling</span>
-                                <span class="tech-tag">Time-Series</span>
-                                <span class="tech-tag">LaTeX</span>
-                            </div>
-                            <a href="projects/financial-modeling.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="quantitative-finance">
-                        <div class="project-image">
-                            <div class="thumb-fallback thumb-finance">
-                                <div class="project-initials">KA</div>
-                                <div class="project-category-label">Crypto Arbitrage</div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Kimchi Premium Arbitrage Paper</h3>
-                            <p class="project-description">Paper-style modeling project on transient dislocation windows, fee thresholds, and triangular net-profit structure in crypto markets.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Crypto Microstructure</span>
-                                <span class="tech-tag">Arbitrage Modeling</span>
-                                <span class="tech-tag">LaTeX</span>
-                            </div>
-                            <a href="projects/crypto-kimchi-arbitrage.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="quantitative-finance">
-                        <div class="project-image">
-                            <img src="finance_quant_analysis/images/hypothesis_testing.png" alt="Stochastic Modeling">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Stochastic Process Modeling</h3>
-                            <p class="project-description">Modeled rare-event probabilities using Binomial and Poisson
-                                distributions; performed statistical hypothesis testing using Gaussian approximations.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">SciPy</span>
-                                <span class="tech-tag">Risk Modeling</span>
-                            </div>
-                            <a href="projects/stochastic-poisson.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="quantitative-finance">
-                        <div class="project-image">
-                            <img src="finance_quant_analysis/images/pde_config_1.png" alt="PDE Solver">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Numerical PDE Solver</h3>
-                            <p class="project-description">Developed a numerical solver for Partial Differential
-                                Equations (PDEs) using the Relaxation Method on a 2D grid, applicable to option pricing
-                                models.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Finite Difference</span>
-                                <span class="tech-tag">Numerical Analysis</span>
-                            </div>
-                            <a href="projects/numerical-pde-solver.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="quantitative-finance">
-                        <div class="project-image">
-                            <div class="thumb-fallback thumb-finance">
-                                <div class="project-initials">TS</div>
-                                <div class="project-category-label">Time-Series Analysis</div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Time-Series & Spectral Analysis</h3>
-                            <p class="project-description">Applied Fast Fourier Transform (FFT) to extract frequency
-                                components from noisy time-series data and modeled transient decay signals.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">FFT</span>
-                                <span class="tech-tag">Signal Processing</span>
-                            </div>
-                            <a href="projects/time-series-spectral.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="quantitative-finance">
-                        <div class="project-image">
-                            <div class="thumb-fallback thumb-finance">
-                                <div class="project-initials">BI</div>
-                                <div class="project-category-label">Business Intelligence</div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Business Intelligence & Analytics</h3>
-                            <p class="project-description">Built an automated analytics module to parse transaction logs
-                                and visualize sales velocity for inventory optimization.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Analytics</span>
-                                <span class="tech-tag">Automation</span>
-                            </div>
-                            <a href="projects/business-intelligence.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <!-- Software Engineering & Data Science Projects -->
-                    <div class="project-item" data-category="software-engineering">
-                        <div class="project-image">
-                            <!-- Using a placeholder for now, or a screenshot if available -->
-                            <img src="software_engineering_data_science/images/divine_guidance.png"
-                                alt="Divine Guidance App">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Divine Guidance (PWA)</h3>
-                            <p class="project-description">A spiritual support application delivering personalized Bible
-                                verses and compassionate, AI-generated homilies to offer direction for specific life
-                                worries.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">PWA</span>
-                                <span class="tech-tag">AI Integration</span>
-                                <span class="tech-tag">React/Next.js</span>
-                            </div>
-                            <a href="projects/divine-guidance.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="software-engineering">
-                        <div class="project-image">
-                            <div class="thumb-fallback thumb-finance">
-                                <div class="project-initials">P23</div>
-                                <div class="project-category-label">Learning Research</div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">PHYS 23 Learning Assistant Project</h3>
-                            <p class="project-description">Umbrella project combining lecture-note production and a survey-gated practice-midterm workflow designed to study retrieval effort, confidence, and exam-readiness behavior.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Physics Education</span>
-                                <span class="tech-tag">Learning Science</span>
-                                <span class="tech-tag">Survey Workflow</span>
-                            </div>
-                            <a href="projects/phys23-learning-assistant.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="software-engineering">
-                        <div class="project-image">
-                            <img src="software_engineering_data_science/images/warehouse_system.png"
-                                alt="Warehouse System">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Automated Warehouse Inventory System (Capstone)</h3>
-                            <p class="project-description">Architected a full-stack inventory management system using
-                                Python/Tkinter. Features event-driven GUI, USB hardware integration (barcode scanners),
-                                and persistent JSON database state management.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python (Tkinter)</span>
-                                <span class="tech-tag">Full-Stack</span>
-                                <span class="tech-tag">Event-Driven Architecture</span>
-                            </div>
-                            <a href="projects/warehouse-inventory.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="software-engineering">
-                        <div class="project-image">
-                            <img src="software_engineering_data_science/images/systems_programming.png"
-                                alt="Systems Programming">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Systems Programming & Concurrency</h3>
-                            <p class="project-description">Built a raw TCP server handling socket lifecycles, managed
-                                OS-level process forking ('Zombie Processes'), and implemented multi-threaded data
-                                visualization to separate UI rendering from I/O.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python (Sockets)</span>
-                                <span class="tech-tag">Multithreading</span>
-                                <span class="tech-tag">Unix Processes</span>
-                            </div>
-                            <a href="projects/systems-programming.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="software-engineering">
-                        <div class="project-image">
-                            <img src="software_engineering_data_science/images/data_engineering.png"
-                                alt="Data Engineering">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Data Engineering & Web Scraping</h3>
-                            <p class="project-description">Demonstrated the full stack of data acquisition by
-                                implementing the same web scraper in three distinct layers: Bash Scripting (fast
-                                prototyping), Raw TCP Sockets (maximal control), and High-Level APIs (production
-                                standard).</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Bash</span>
-                                <span class="tech-tag">TCP/IP</span>
-                                <span class="tech-tag">API Design</span>
-                            </div>
-                            <a href="projects/data-engineering.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-item" data-category="software-engineering">
-                        <div class="project-image">
-                            <img src="software_engineering_data_science/images/computer_graphics.png"
-                                alt="Computer Graphics">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Computer Graphics & Algorithms</h3>
-                            <p class="project-description">Implemented low-level graphics algorithms (scan-line
-                                rasterization) and visualized complex mathematical systems (Mandelbrot Fractals) using
-                                optimized NumPy vectorization for high-performance computing.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Computer Graphics</span>
-                                <span class="tech-tag">Fractals</span>
-                                <span class="tech-tag">Optimization</span>
-                            </div>
-                            <a href="projects/computer-graphics.html" class="project-link">View Project</a>
-                        </div>
-                    </div>
-
-                    <!-- Physics & Experimental Modeling Projects -->
-                    <div class="project-item" data-category="physics-experimental">
+                    <!-- Experimental -->
+                    <div class="project-item" data-category="experimental">
                         <div class="project-image">
                             <div class="thumb-fallback thumb-physics">
                                 <div class="project-initials">FH</div>
@@ -412,7 +162,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item" data-category="physics-experimental">
+                    <div class="project-item" data-category="experimental">
                         <div class="project-image">
                             <div class="thumb-fallback thumb-physics">
                                 <div class="project-initials">RD</div>
@@ -433,7 +183,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item" data-category="physics-experimental">
+                    <div class="project-item" data-category="experimental">
                         <div class="project-image">
                             <div class="thumb-fallback thumb-physics">
                                 <div class="project-initials">WO</div>
@@ -454,7 +204,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item" data-category="physics-experimental">
+                    <div class="project-item" data-category="experimental">
                         <div class="project-image">
                             <div class="thumb-fallback thumb-physics">
                                 <div class="project-initials">SS</div>
@@ -472,6 +222,255 @@
                                 <span class="tech-tag">Wave Harmonics</span>
                             </div>
                             <a href="projects/speed-of-sound.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Computational & Coursework -->
+                    <div class="project-item" data-category="computational-coursework">
+                        <div class="project-image">
+                            <img src="finance_quant_analysis/images/monte_carlo_pi.png" alt="Monte Carlo Simulation">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Monte Carlo Methods & Stochastic Calculus</h3>
+                            <p class="project-description">Implemented Monte Carlo simulations to solve deterministic
+                                problems, analyzing convergence rates ($1/\sqrt{N}$) against theoretical predictions.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">Stochastic Calculus</span>
+                            </div>
+                            <a href="projects/monte-carlo-stochastic.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="computational-coursework">
+                        <div class="project-image">
+                            <img src="finance_quant_analysis/images/pde_config_1.png" alt="PDE Solver">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Numerical PDE Solver</h3>
+                            <p class="project-description">Developed a numerical solver for Partial Differential
+                                Equations (PDEs) using the Relaxation Method on a 2D grid, applicable to option pricing
+                                models.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Finite Difference</span>
+                                <span class="tech-tag">Numerical Analysis</span>
+                            </div>
+                            <a href="projects/numerical-pde-solver.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="computational-coursework">
+                        <div class="project-image">
+                            <img src="finance_quant_analysis/images/hypothesis_testing.png" alt="Stochastic Modeling">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Stochastic Process Modeling</h3>
+                            <p class="project-description">Modeled rare-event probabilities using Binomial and Poisson
+                                distributions; performed statistical hypothesis testing using Gaussian approximations.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">SciPy</span>
+                                <span class="tech-tag">Risk Modeling</span>
+                            </div>
+                            <a href="projects/stochastic-poisson.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="computational-coursework">
+                        <div class="project-image">
+                            <div class="thumb-fallback thumb-finance">
+                                <div class="project-initials">TS</div>
+                                <div class="project-category-label">Time-Series Analysis</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Time-Series & Spectral Analysis</h3>
+                            <p class="project-description">Applied Fast Fourier Transform (FFT) to extract frequency
+                                components from noisy time-series data and modeled transient decay signals.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FFT</span>
+                                <span class="tech-tag">Signal Processing</span>
+                            </div>
+                            <a href="projects/time-series-spectral.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="computational-coursework">
+                        <div class="project-image">
+                            <div class="thumb-fallback thumb-finance">
+                                <div class="project-initials">P23</div>
+                                <div class="project-category-label">Learning Research</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">PHYS 23 Learning Assistant Project</h3>
+                            <p class="project-description">Umbrella project combining lecture-note production and a survey-gated practice-midterm workflow designed to study retrieval effort, confidence, and exam-readiness behavior.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Physics Education</span>
+                                <span class="tech-tag">Learning Science</span>
+                                <span class="tech-tag">Survey Workflow</span>
+                            </div>
+                            <a href="projects/phys23-learning-assistant.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Other / Software -->
+                    <div class="project-item" data-category="other">
+                        <div class="project-image">
+                            <div class="thumb-fallback thumb-finance">
+                                <div class="project-initials">FM</div>
+                                <div class="project-category-label">Financial Modeling</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">S&amp;P500 Uncertainty Modeling Paper</h3>
+                            <p class="project-description">Research writeup and reproducible LaTeX source for uncertainty-focused financial modeling on S&amp;P500 dynamics.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Stochastic Modeling</span>
+                                <span class="tech-tag">Time-Series</span>
+                                <span class="tech-tag">LaTeX</span>
+                            </div>
+                            <a href="projects/financial-modeling.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="other">
+                        <div class="project-image">
+                            <div class="thumb-fallback thumb-finance">
+                                <div class="project-initials">KA</div>
+                                <div class="project-category-label">Crypto Arbitrage</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Kimchi Premium Arbitrage Paper</h3>
+                            <p class="project-description">Paper-style modeling project on transient dislocation windows, fee thresholds, and triangular net-profit structure in crypto markets.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Crypto Microstructure</span>
+                                <span class="tech-tag">Arbitrage Modeling</span>
+                                <span class="tech-tag">LaTeX</span>
+                            </div>
+                            <a href="projects/crypto-kimchi-arbitrage.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="other">
+                        <div class="project-image">
+                            <div class="thumb-fallback thumb-finance">
+                                <div class="project-initials">BI</div>
+                                <div class="project-category-label">Business Intelligence</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Business Intelligence & Analytics</h3>
+                            <p class="project-description">Built an automated analytics module to parse transaction logs
+                                and visualize sales velocity for inventory optimization.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Analytics</span>
+                                <span class="tech-tag">Automation</span>
+                            </div>
+                            <a href="projects/business-intelligence.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="other">
+                        <div class="project-image">
+                            <img src="software_engineering_data_science/images/warehouse_system.png"
+                                alt="Warehouse System">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Automated Warehouse Inventory System (Capstone)</h3>
+                            <p class="project-description">Architected a full-stack inventory management system using
+                                Python/Tkinter. Features event-driven GUI, USB hardware integration (barcode scanners),
+                                and persistent JSON database state management.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python (Tkinter)</span>
+                                <span class="tech-tag">Full-Stack</span>
+                                <span class="tech-tag">Event-Driven Architecture</span>
+                            </div>
+                            <a href="projects/warehouse-inventory.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="other">
+                        <div class="project-image">
+                            <img src="software_engineering_data_science/images/divine_guidance.png"
+                                alt="Divine Guidance App">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Divine Guidance (PWA)</h3>
+                            <p class="project-description">A spiritual support application delivering personalized Bible
+                                verses and compassionate, AI-generated homilies to offer direction for specific life
+                                worries.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">PWA</span>
+                                <span class="tech-tag">AI Integration</span>
+                                <span class="tech-tag">React/Next.js</span>
+                            </div>
+                            <a href="projects/divine-guidance.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="other">
+                        <div class="project-image">
+                            <img src="software_engineering_data_science/images/systems_programming.png"
+                                alt="Systems Programming">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Systems Programming & Concurrency</h3>
+                            <p class="project-description">Built a raw TCP server handling socket lifecycles, managed
+                                OS-level process forking ('Zombie Processes'), and implemented multi-threaded data
+                                visualization to separate UI rendering from I/O.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python (Sockets)</span>
+                                <span class="tech-tag">Multithreading</span>
+                                <span class="tech-tag">Unix Processes</span>
+                            </div>
+                            <a href="projects/systems-programming.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="other">
+                        <div class="project-image">
+                            <img src="software_engineering_data_science/images/data_engineering.png"
+                                alt="Data Engineering">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Data Engineering & Web Scraping</h3>
+                            <p class="project-description">Demonstrated the full stack of data acquisition by
+                                implementing the same web scraper in three distinct layers: Bash Scripting (fast
+                                prototyping), Raw TCP Sockets (maximal control), and High-Level APIs (production
+                                standard).</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Bash</span>
+                                <span class="tech-tag">TCP/IP</span>
+                                <span class="tech-tag">API Design</span>
+                            </div>
+                            <a href="projects/data-engineering.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-category="other">
+                        <div class="project-image">
+                            <img src="software_engineering_data_science/images/computer_graphics.png"
+                                alt="Computer Graphics">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Computer Graphics & Algorithms</h3>
+                            <p class="project-description">Implemented low-level graphics algorithms (scan-line
+                                rasterization) and visualized complex mathematical systems (Mandelbrot Fractals) using
+                                optimized NumPy vectorization for high-performance computing.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Computer Graphics</span>
+                                <span class="tech-tag">Fractals</span>
+                                <span class="tech-tag">Optimization</span>
+                            </div>
+                            <a href="projects/computer-graphics.html" class="project-link">View Project</a>
                         </div>
                     </div>
                 </div>
