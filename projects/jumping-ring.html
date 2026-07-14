@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Ring Experiment - Songgun Lee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- MathJax for rendering LaTeX equations -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Songgun Lee</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+            </ul>
+            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-detail-hero">
+            <div class="container">
+                <h1 class="page-title">Jumping Ring Experiment (PHYS 20CL Final)</h1>
+                <p class="page-subtitle">
+                    <span data-lang="en">Final experimental project on electromagnetic induction and Lenz’s law — measurement, analysis, and written report.</span>
+                    <span data-lang="kr">전자기 유도와 렌츠 법칙에 대한 PHYS 20CL 최종 실험 프로젝트 — 측정, 분석, 서면 보고서.</span>
+                </p>
+                <div class="detail-meta">
+                    <span class="tech-tag">Experimental Physics</span>
+                    <span class="tech-tag">Electromagnetism</span>
+                    <span class="tech-tag">PHYS 20CL</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-content">
+            <div class="container">
+                <div class="content-block">
+                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
+                    <p><span data-lang="en">The jumping ring experiment demonstrates electromagnetic induction and Lenz’s law in a dramatic, measurable setup. A conductive ring placed on an iron core jumps upward when the current through a surrounding coil changes rapidly, because the induced current creates a magnetic field that opposes the change in flux through the ring.</span><span data-lang="kr">점프 링 실험은 전자기 유도와 렌츠 법칙을 직관적으로 보여주는 실험입니다. 철심 위에 놓인 도전성 링은 주변 코일의 전류가 급변할 때 링을 통과하는 자속 변화에 반대하는 유도 전류가 생기며, 그 결과 링이 위로 튀어 오릅니다.</span></p>
+                    <p><span data-lang="en">For this PHYS 20CL final project, I measured launch height and timing under controlled coil current and ring geometry, then compared the results to predictions from Faraday’s law and energy balance in the induced current circuit.</span><span data-lang="kr">이 PHYS 20CL 최종 프로젝트에서는 코일 전류와 링 형상을 조절하며 도약 높이와 시간을 측정하고, 패러데이 법칙과 유도 전류 회로의 에너지 균형으로부터 얻은 예측값과 비교했습니다.</span></p>
+                    <p><span data-lang="en">The written report documents the apparatus, data reduction, uncertainty analysis, and discussion of systematic effects such as ring resistance, core saturation, and mechanical losses during launch.</span><span data-lang="kr">서면 보고서에는 실험 장치, 자료 처리, 불확도 분석, 그리고 링 저항·심 포화·기계적 손실과 같은 계통 오차에 대한 논의가 포함되어 있습니다.</span></p>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Key Concepts Investigated</span><span data-lang="kr">탐구한 핵심 개념</span></h2>
+                    <div class="key-concepts-grid">
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Faraday’s Law</span><span data-lang="kr">패러데이 법칙</span></h3>
+                            <p><span data-lang="en">Relating the time rate of change of magnetic flux through the ring to the magnitude of the induced emf, $\mathcal{E} = -d\Phi_B/dt$.</span><span data-lang="kr">링을 통과하는 자기 플럭스의 시간 변화율과 유도 기전력의 크기를 \(\mathcal{E} = -d\Phi_B/dt\)로 연결했습니다.</span></p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Lenz’s Law</span><span data-lang="kr">렌츠 법칙</span></h3>
+                            <p><span data-lang="en">The induced current direction opposes the flux change, producing a repulsive force that launches the ring when the primary field increases.</span><span data-lang="kr">유도 전류는 자속 변화에 반대하는 방향으로 흐르며, 1차 자장이 증가할 때 반발력이 생겨 링이 튀어 오릅니다.</span></p>
+                        </div>
+                        <div class="concept-card">
+                            <h3><span data-lang="en">Energy &amp; Launch Height</span><span data-lang="kr">에너지와 도약 높이</span></h3>
+                            <p><span data-lang="en">Connecting electrical energy deposited in the ring to gravitational potential energy at maximum height, accounting for Joule heating and eddy-current losses.</span><span data-lang="kr">링에 전달된 전기 에너지를 최대 높이에서의 중력 위치 에너지와 연결하고, 줄 heat와 와전류 손실을 고려했습니다.</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2><span data-lang="en">Full Documentation</span><span data-lang="kr">전체 문서</span></h2>
+                    <p><span data-lang="en">The final report includes apparatus diagrams, raw measurements, analysis, and comparison with theory.</span><span data-lang="kr">최종 보고서에는 실험 장치 도면, 원자료, 분석, 이론과의 비교가 포함되어 있습니다.</span></p>
+                    <p><a href="../physics_experimental_modeling/final_jumping_ring.pdf">Download final report (PDF)</a></p>
+                    <div class="pdf-viewer-shell">
+                        <div class="pdf-toolbar">
+                            <p><span data-lang="en">This inline viewer renders every page directly on the site, which avoids the clipped first-page issue and the browser PDF table-of-contents UI.</span><span data-lang="kr">이 인라인 뷰어는 모든 페이지를 사이트 안에서 직접 렌더링해 첫 페이지만 보이는 문제와 브라우저 PDF 목차 UI 문제를 피합니다.</span></p>
+                            <div class="pdf-actions">
+                                <a href="../physics_experimental_modeling/final_jumping_ring.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
+                                <a href="../physics_experimental_modeling/final_jumping_ring.pdf" download class="btn btn-primary"><span data-lang="en">Download PDF</span><span data-lang="kr">PDF 다운로드</span></a>
+                            </div>
+                        </div>
+                        <div class="pdf-container">
+                            <div class="pdf-viewer-root" data-pdf-src="../physics_experimental_modeling/final_jumping_ring.pdf"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-nav-footer">
+                    <a href="../projects.html" class="btn btn-primary"><span data-lang="en">Back to Projects</span><span data-lang="kr">프로젝트로</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
+                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../pdf-viewer.js"></script>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
+</body>
+
+</html>
