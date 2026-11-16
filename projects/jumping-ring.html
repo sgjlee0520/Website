@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jumping Ring Experiment - Songgun Lee</title>
+    <title>Jumping Ring - Songgun Lee</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,38 +22,76 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">Songgun Lee</a>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
-                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../research.html" class="nav-link"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="../teaching.html" class="nav-link"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
                 <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
-                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
-                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
-            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
-                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
-            </div>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
         </div>
-    </nav>
+        </nav>
 
-    <main class="project-detail">
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content project-detail">
         <section class="project-detail-hero">
             <div class="container">
-                <h1 class="page-title">Jumping Ring Experiment (PHYS 20CL Final)</h1>
+                <h1 class="page-title">Jumping Ring: Height Against Temperature</h1>
                 <p class="page-subtitle">
-                    <span data-lang="en">Final experimental project on electromagnetic induction and Lenz’s law: measurement, analysis, and written report.</span>
-                    <span data-lang="kr">전자기 유도와 렌츠 법칙에 대한 PHYS 20CL 최종 실험 프로젝트입니다. 측정, 분석, 서면 보고서.</span>
+                    <span data-lang="en">How the temperature of a ring changes its launch height on a Thomson coil.</span>
+                    <span data-lang="kr">링의 온도가 톰슨 코일 위에서의 도약 높이를 어떻게 바꾸는지 측정했습니다.</span>
                 </p>
                 <div class="detail-meta">
-                    <span class="tech-tag">Experimental Physics</span>
-                    <span class="tech-tag">Electromagnetism</span>
                     <span class="tech-tag">PHYS 20CL</span>
+                    <span class="tech-tag">Electromagnetic induction</span>
+                    <span class="tech-tag">Liquid nitrogen</span>
+                    <span class="tech-tag">Video analysis</span>
                 </div>
             </div>
         </section>
@@ -61,37 +99,17 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
-                    <p><span data-lang="en">The jumping ring experiment demonstrates electromagnetic induction and Lenz’s law in a dramatic, measurable setup. A conductive ring placed on an iron core jumps upward when the current through a surrounding coil changes rapidly, because the induced current creates a magnetic field that opposes the change in flux through the ring.</span><span data-lang="kr">점프 링 실험은 전자기 유도와 렌츠 법칙을 직관적으로 보여주는 실험입니다. 철심 위에 놓인 도전성 링은 주변 코일의 전류가 급변할 때 링을 통과하는 자속 변화에 반대하는 유도 전류가 생기며, 그 결과 링이 위로 튀어 오릅니다.</span></p>
-                    <p><span data-lang="en">For this PHYS 20CL final project, I measured launch height and timing under controlled coil current and ring geometry, then compared the results to predictions from Faraday’s law and energy balance in the induced current circuit.</span><span data-lang="kr">이 PHYS 20CL 최종 프로젝트에서는 코일 전류와 링 형상을 조절하며 도약 높이와 시간을 측정하고, 패러데이 법칙과 유도 전류 회로의 에너지 균형으로부터 얻은 예측값과 비교했습니다.</span></p>
-                    <p><span data-lang="en">The written report documents the apparatus, data reduction, uncertainty analysis, and discussion of systematic effects such as ring resistance, core saturation, and mechanical losses during launch.</span><span data-lang="kr">서면 보고서에는 실험 장치, 자료 처리, 불확도 분석, 그리고 링 저항·심 포화·기계적 손실과 같은 계통 오차에 대한 논의가 포함되어 있습니다.</span></p>
-                </div>
-
-                <div class="content-block">
-                    <h2><span data-lang="en">Key Concepts Investigated</span><span data-lang="kr">탐구한 핵심 개념</span></h2>
-                    <div class="key-concepts-grid">
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Faraday’s Law</span><span data-lang="kr">패러데이 법칙</span></h3>
-                            <p><span data-lang="en">Relating the time rate of change of magnetic flux through the ring to the magnitude of the induced emf, $\mathcal{E} = -d\Phi_B/dt$.</span><span data-lang="kr">링을 통과하는 자기 플럭스의 시간 변화율과 유도 기전력의 크기를 \(\mathcal{E} = -d\Phi_B/dt\)로 연결했습니다.</span></p>
-                        </div>
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Lenz’s Law</span><span data-lang="kr">렌츠 법칙</span></h3>
-                            <p><span data-lang="en">The induced current direction opposes the flux change, producing a repulsive force that launches the ring when the primary field increases.</span><span data-lang="kr">유도 전류는 자속 변화에 반대하는 방향으로 흐르며, 1차 자장이 증가할 때 반발력이 생겨 링이 튀어 오릅니다.</span></p>
-                        </div>
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Energy &amp; Launch Height</span><span data-lang="kr">에너지와 도약 높이</span></h3>
-                            <p><span data-lang="en">Connecting electrical energy deposited in the ring to gravitational potential energy at maximum height, accounting for Joule heating and eddy-current losses.</span><span data-lang="kr">링에 전달된 전기 에너지를 최대 높이에서의 중력 위치 에너지와 연결하고, 줄(Joule) 발열과 와전류 손실을 고려했습니다.</span></p>
-                        </div>
-                    </div>
+                    <h2><span data-lang="en">Overview</span><span data-lang="kr">개요</span></h2>
+                    <p>PHYS 20CL final project, Spring 2025. In the jumping-ring demonstration an AC solenoid induces a current in a metal ring, and the ring is thrown upward. I asked how the height of the jump depends on the temperature of the ring.</p>
+                    <p>I launched the ring at four temperatures: −196 °C (liquid nitrogen), −52 °C (freezer), 22 °C (room) and 148 °C (hot plate), with five trials at each. I filmed every jump at 60 frames per second and measured the peak height in Fiji.</p>
+                    <p>The colder the ring, the higher it jumped. A linear fit to the three temperatures I could read with the thermal camera gives −0.232 ± 0.011 cm per °C. The liquid-nitrogen jump was the highest, but it fell about 19 cm below that line, so the straight line holds only between −52 °C and 148 °C. A higher jump from a colder ring is the direction expected if the resistance of the ring falls as it cools, so the induced current grows.</p>
                 </div>
 
                 <div class="content-block">
                     <h2><span data-lang="en">Full Documentation</span><span data-lang="kr">전체 문서</span></h2>
-                    <p><span data-lang="en">The final report includes apparatus diagrams, raw measurements, analysis, and comparison with theory.</span><span data-lang="kr">최종 보고서에는 실험 장치 도면, 원자료, 분석, 이론과의 비교가 포함되어 있습니다.</span></p>
-                    <p><a href="../physics_experimental_modeling/final_jumping_ring.pdf">Download final report (PDF)</a></p>
+                    <p>The final report covers the apparatus, method, results, uncertainty analysis and discussion.</p>
                     <div class="pdf-viewer-shell">
                         <div class="pdf-toolbar">
-                            <p><span data-lang="en">This inline viewer renders every page directly on the site, which avoids the clipped first-page issue and the browser PDF table-of-contents UI.</span><span data-lang="kr">이 인라인 뷰어는 모든 페이지를 사이트 안에서 직접 렌더링해 첫 페이지만 보이는 문제와 브라우저 PDF 목차 UI 문제를 피합니다.</span></p>
                             <div class="pdf-actions">
                                 <a href="../physics_experimental_modeling/final_jumping_ring.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
                                 <a href="../physics_experimental_modeling/final_jumping_ring.pdf" download class="btn btn-primary"><span data-lang="en">Download PDF</span><span data-lang="kr">PDF 다운로드</span></a>
@@ -108,22 +126,20 @@
                 </div>
             </div>
         </section>
-    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
-                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
                 </div>
             </div>
         </div>
     </footer>
+    </main>
     <script src="../pdf-viewer.js"></script>
     <script>
     (function() {
@@ -141,6 +157,7 @@
         });
     }
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

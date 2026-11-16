@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speed of Sound Measurement - Songgun Lee</title>
+    <title>Speed of Sound - Songgun Lee</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,39 +22,75 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">Songgun Lee</a>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
-                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../research.html" class="nav-link"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="../teaching.html" class="nav-link"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
                 <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
-                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
-                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
-            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
-                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
-            </div>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
         </div>
-    </nav>
+        </nav>
 
-    <main class="project-detail">
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content project-detail">
         <section class="project-detail-hero">
             <div class="container">
-                <h1 class="page-title">Speed of Sound Measurement</h1>
+                <h1 class="page-title">Speed of Sound</h1>
                 <p class="page-subtitle">
-                    <span data-lang="en">Determination of the speed of sound in air using acoustic resonance in a variable-length column.</span>
-                    <span data-lang="kr">가변 길이 공기 기둥의 음향 공명으로 공기 중 음속을 측정합니다.</span>
+                    <span data-lang="en">The speed of sound in air from time of flight.</span>
+                    <span data-lang="kr">비행 시간으로 측정한 공기 중 음속.</span>
                 </p>
                 <div class="detail-meta">
-                    <span class="tech-tag">Acoustics</span>
-                    <span class="tech-tag">Resonance</span>
-                    <span class="tech-tag">Wave Harmonics</span>
-                    <span class="tech-tag">Experimental Physics</span>
+                    <span class="tech-tag">PHYS 20BL</span>
+                    <span class="tech-tag">Oscilloscope</span>
+                    <span class="tech-tag">Weighted fit</span>
                 </div>
             </div>
         </section>
@@ -62,39 +98,16 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
-                    <p><span data-lang="en">This experiment utilizes the phenomenon of acoustic resonance to measure the speed of sound $v$ in air. By adjusting the length of an air column driven by a tuning fork of known frequency $f$, standing waves are generated at specific harmonic lengths.</span><span data-lang="kr">이 실험은 음향 공명 현상을 이용해 공기 중 음속 \(v\)를 측정합니다. 알려진 주파수 \(f\)의 소리굽쇠로 공기 기둥 길이를 조절하면 특정 고조파 길이에서 정상파가 형성됩니다.</span></p>
-                    <p><span data-lang="en">The relationship $v = f\\lambda$ allows for the calculation of wave speed by identifying the nodes and antinodes of the standing wave pressure distribution.</span><span data-lang="kr">\(v=f\\lambda\) 관계를 이용해 정상파의 마디/배를 식별하고 파동 속도를 계산합니다.</span></p>
-                </div>
-
-                <div class="content-block">
-                    <h2><span data-lang="en">Key Concepts Investigated</span><span data-lang="kr">탐구한 핵심 개념</span></h2>
-                    <div class="key-concepts-grid">
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Standing Wave Resonance</span><span data-lang="kr">정상파 공명</span></h3>
-                            <p>Identified the fundamental frequency and higher harmonics in an open-closed pipe system,
-                                satisfying the boundary condition $L = \frac{n\lambda}{4}$ (for odd $n$).</p>
-                        </div>
-                        <div class="concept-card">
-                            <h3><span data-lang="en">End Correction</span><span data-lang="kr">끝단 보정</span></h3>
-                            <p>Accounted for the "end correction" factor, the fact that the pressure antinode forms
-                                slightly outside the open end of the tube, to improve measurement accuracy.</p>
-                        </div>
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Temperature Dependence</span><span data-lang="kr">온도 의존성</span></h3>
-                            <p>Compared experimental results with the theoretical speed of sound, which varies with
-                                temperature as $v \approx 331 + 0.6T$ m/s.</p>
-                        </div>
-                    </div>
+                    <h2><span data-lang="en">Overview</span><span data-lang="kr">개요</span></h2>
+                    <p>PHYS 20BL, Winter 2025. I measured how long sound takes to reach a microphone at five distances between 81 and 121 cm, reading the arrival time on an oscilloscope three times at each distance.</p>
+                    <p>A weighted linear fit of distance against time gives the speed from the slope: 341.0 ± 0.6 m/s. The notebook also works through the residuals, a chi-squared check and a t-test against the expected 343 m/s.</p>
                 </div>
 
                 <div class="content-block">
                     <h2><span data-lang="en">Full Documentation</span><span data-lang="kr">전체 문서</span></h2>
-                    <p>The report includes data on harmonic lengths, resonance calculations, and temperature
-                        adjustments.</p>
+                    <p>My analysis notebook for the lab, with the data, fit and error analysis.</p>
                     <div class="pdf-viewer-shell">
                         <div class="pdf-toolbar">
-                            <p><span data-lang="en">This inline viewer renders every page directly on the site, which avoids the clipped first-page issue and the browser PDF table-of-contents UI.</span><span data-lang="kr">이 인라인 뷰어는 모든 페이지를 사이트 안에서 직접 렌더링해 첫 페이지만 보이는 문제와 브라우저 PDF 목차 UI 문제를 피합니다.</span></p>
                             <div class="pdf-actions">
                                 <a href="../physics_experimental_modeling/Outoflab_speed_of_sound.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
                                 <a href="../physics_experimental_modeling/Outoflab_speed_of_sound.pdf" download class="btn btn-primary"><span data-lang="en">Download PDF</span><span data-lang="kr">PDF 다운로드</span></a>
@@ -111,22 +124,20 @@
                 </div>
             </div>
         </section>
-    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
-                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
                 </div>
             </div>
         </div>
     </footer>
+    </main>
     <script src="../pdf-viewer.js"></script>
     <script>
     (function() {
@@ -144,6 +155,7 @@
         });
     }
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

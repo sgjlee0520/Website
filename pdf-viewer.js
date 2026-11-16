@@ -56,7 +56,7 @@
 
         try {
             const pdfjsLib = await loadPdfJs();
-            const pdf = await pdfjsLib.getDocument(encodeURI(src)).promise;
+            const pdf = await pdfjsLib.getDocument(new URL(src, document.baseURI).href).promise;
             const fragment = document.createDocumentFragment();
 
             for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {

@@ -1,3 +1,0 @@
-yfinance>=0.2.65
-pycoingecko>=3.2.0
-pandas>=2.2.0

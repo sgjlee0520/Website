@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching - Songgun Lee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
+            </div>
+            <h1 class="brand-name"><a href="index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="research.html" class="nav-link"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="teaching.html" class="nav-link active"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+            </ul>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+        </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- About Page Content -->
+    <main class="main-content teaching-page">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title"><span data-lang="en">Teaching</span><span data-lang="kr">교육</span></h1>
+                <p class="page-subtitle"><span data-lang="en">Teaching, mentoring and outreach</span><span data-lang="kr">강의, 멘토링, 과학 대중화 활동</span></p>
+            </div>
+        </section>
+
+        <section class="professional-narrative">
+            <div class="container">
+                <div class="narrative-content">
+                    <div class="narrative-text">
+                        <h3 id="phys23">Undergraduate Learning Assistant, PHYS 23</h3>
+                        <p>Introduction to Electromagnetism with Prof. Ania Jayich, UC Santa Barbara, Spring 2026.</p>
+                        <ul>
+                            <li>Led three one-hour sections a week of 35 students each (105 students) and held office hours every week.</li>
+                            <li>Attended every lecture and organized the lecture notes in LaTeX.</li>
+                            <li>Wrote practice midterms and finals and led a three-hour review session before each exam.</li>
+                        </ul>
+
+                        <h3 id="phys180">A study of studying with AI (PHYS 180)</h3>
+                        <p>I took PHYS 180, Teaching Physics, the same quarter. For the course project I asked whether studying with AI pushes students toward the way novices organize physics knowledge, and whether they notice after the exam.</p>
+                        <p>I surveyed the PHYS 23 class three times, anonymously: 103 responses before the midterm, 63 after it and 102 before the final, out of about 105 students. I also ran a problem-sorting task adapted from Chi et al.</p>
+                        <ul>
+                            <li>88% used AI to study for the midterm.</li>
+                            <li>48% recognized the concept on a problem but could not start the setup, and 68% still felt ready.</li>
+                            <li>Frequent self-testing fell from 48% to 26% after the midterm.</li>
+                            <li>The sorting task was inconclusive, because it was confounded.</li>
+                        </ul>
+                        <p>I presented the study at the end of the quarter. The responses were collected with <a href="https://github.com/sgjlee0520/survey-gate" target="_blank" rel="noopener noreferrer">survey-gate</a>, a small page I wrote that asks the survey questions before it releases the practice exam.</p>
+
+                        <h3 id="mentoring">Mentoring and outreach</h3>
+                        <ul>
+                            <li>Society of Physics Students mentor: one student each year, in 2025-26 and 2026-27.</li>
+                            <li>Physics Circus: I visit elementary school science nights and run demonstrations such as the Meissner effect and the jumping ring.</li>
+                        </ul>
+
+                        <h3 id="instructor">Academic Instructor, Seoul Language Institute</h3>
+                        <p>Busan, South Korea, 2021 to 2022 and March to September 2024. I taught physics, linear algebra and calculus to high school students and was promoted to Head of Teaching Assistants.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
+</body>
+
+</html>

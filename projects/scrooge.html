@@ -12,39 +12,76 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">Songgun Lee</a>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
-                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../research.html" class="nav-link"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="../teaching.html" class="nav-link"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
                 <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
-                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
-                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
-            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
-                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
-            </div>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
         </div>
-    </nav>
+        </nav>
 
-    <main class="project-detail">
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content project-detail">
         <section class="project-detail-hero">
             <div class="container">
-                <h1 class="page-title">Scrooge: PDF/Image → Text &amp; Plot → Data</h1>
+                <h1 class="page-title">scrooge</h1>
                 <p class="page-subtitle">
-                    <span data-lang="en">Local OCR and plot digitization to cut token cost for AI agents, a lab-adjacent utility for turning pixels into structured data.</span>
-                    <span data-lang="kr">로컬 OCR과 플롯 디지털화로 AI 에이전트의 토큰 비용을 줄이는, 픽셀을 구조화된 데이터로 바꾸는 실험실 인접 유틸리티입니다.</span>
+                    <span data-lang="en">Local OCR and plot digitization that give AI agents text and numbers instead of images.</span>
+                    <span data-lang="kr">로컬 OCR과 플롯 디지털화로 AI 에이전트에게 이미지 대신 텍스트와 숫자를 넘겨줍니다.</span>
                 </p>
                 <div class="detail-meta">
                     <span class="tech-tag">OCR</span>
                     <span class="tech-tag">Plot Digitization</span>
                     <span class="tech-tag">MCP Server</span>
-                    <span class="tech-tag">Other / Software</span>
+                    <span class="tech-tag">Python</span>
                 </div>
                 <div style="margin-top: 2rem;">
                     <a href="https://sgjlee0520-scrooge.hf.space/" target="_blank" rel="noopener noreferrer"
@@ -60,12 +97,12 @@
                 <div class="content-block">
                     <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
                     <p>
-                        <span data-lang="en"><strong>Scrooge</strong> runs OCR and plot-to-data conversion locally so AI agents work from compact text and numeric series instead of raw images. PDFs and figures become markdown-friendly text (Tesseract OCR) or digitized curve data, reducing token usage by up to ~35× compared with feeding pixels into a vision model.</span>
-                        <span data-lang="kr"><strong>Scrooge</strong>는 OCR과 플롯→데이터 변환을 로컬에서 수행해, AI 에이전트가 원시 이미지 대신 압축된 텍스트·수치 시계열로 작업하게 합니다. PDF와 그래프를 마크다운 친화적 텍스트(Tesseract OCR)나 디지털화된 곡선 데이터로 바꿔, 비전 모델에 픽셀을 넣는 것 대비 최대 약 35배 토큰을 절약합니다.</span>
+                        <span data-lang="en"><strong>scrooge</strong> runs OCR and plot-to-data conversion on your own machine, so an AI agent works from compact text and numbers instead of raw images. PDFs become text through Tesseract OCR, and plots become digitized curve data. This uses up to about 35 times fewer tokens than sending the images to a vision model.</span>
+                        <span data-lang="kr"><strong>scrooge</strong>는 OCR과 플롯 데이터 변환을 내 컴퓨터에서 실행해, AI 에이전트가 원본 이미지 대신 짧은 텍스트와 숫자로 작업하게 합니다. PDF는 Tesseract OCR로 텍스트가 되고, 그래프는 디지털화된 곡선 데이터가 됩니다. 이미지를 비전 모델에 그대로 넣을 때보다 토큰을 최대 약 35배 적게 씁니다.</span>
                     </p>
                     <p>
-                        <span data-lang="en">Built as a lab-adjacent utility: digitize plots from papers or lab notebooks, extract tables from scanned handouts, and expose the pipeline through an MCP server so coding agents can call OCR and digitization as tools. Hosted demo on Hugging Face Spaces; full pipeline runs on your machine.</span>
-                        <span data-lang="kr">논문·실험 노트의 플롯을 디지털화하고, 스캔 자료에서 표를 추출하며, MCP 서버로 코딩 에이전트가 OCR·디지털화를 도구로 호출할 수 있게 한 실험실 인접 유틸리티입니다. Hugging Face Spaces 데모와 로컬 전체 파이프라인을 제공합니다.</span>
+                        <span data-lang="en">I built it as a utility for lab work. It digitizes plots from papers and lab notebooks, extracts tables from scanned handouts, and serves both through an MCP server so that coding agents can call them as tools. A demo runs on Hugging Face Spaces, and the full pipeline runs locally.</span>
+                        <span data-lang="kr">실험실 작업에 쓰려고 만든 도구입니다. 논문과 실험 노트의 그래프를 디지털화하고, 스캔한 자료에서 표를 추출하며, MCP 서버를 통해 코딩 에이전트가 이 기능을 도구로 호출할 수 있습니다. 데모는 Hugging Face Spaces에서 실행되고, 전체 파이프라인은 로컬에서 실행됩니다.</span>
                     </p>
                 </div>
 
@@ -89,22 +126,20 @@
                 </div>
             </div>
         </section>
-    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
-                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
                 </div>
             </div>
         </div>
     </footer>
+    </main>
     <script>
     (function() {
         var saved = localStorage.getItem('siteLang') || 'en';
@@ -121,6 +156,7 @@
         });
     }
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

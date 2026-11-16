@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stochastic Process Modeling - Songgun Lee</title>
+    <title>Counting Statistics and Hypothesis Testing - Songgun Lee</title>
     <!-- MathJax for rendering LaTeX equations -->
     <script>
         MathJax = {
@@ -21,39 +21,75 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">Songgun Lee</a>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
-                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../research.html" class="nav-link"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="../teaching.html" class="nav-link"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
                 <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
-                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
-                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
-            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
-                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
-            </div>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
         </div>
-    </nav>
+        </nav>
 
-    <main class="project-detail">
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content project-detail">
         <section class="project-detail-hero">
             <div class="container">
-                <h1 class="page-title">Stochastic Process Modeling</h1>
+                <h1 class="page-title">Counting Statistics and Hypothesis Testing</h1>
                 <p class="page-subtitle">
-                    <span data-lang="en">Modeling rare-event probabilities and performing hypothesis testing using Binomial, Poisson, and Gaussian distributions.</span>
-                    <span data-lang="kr">이항/포아송/가우시안 분포로 희귀 사건 확률을 모델링하고 가설검정을 수행합니다.</span>
+                    <span data-lang="en">Binomial, Poisson and Gaussian statistics in two short programs.</span>
+                    <span data-lang="kr">이항, 푸아송, 가우시안 통계를 다룬 두 개의 짧은 프로그램.</span>
                 </p>
                 <div class="detail-meta">
+                    <span class="tech-tag">PHYS 129L</span>
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">SciPy</span>
-                    <span class="tech-tag">Hypothesis Testing</span>
-                    <span class="tech-tag">Risk Analysis</span>
                 </div>
             </div>
         </section>
@@ -61,36 +97,14 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
-                    <p><span data-lang="en">In quantitative risk management, correctly modeling the probability of rare events (tail risk) is crucial. This project investigates the transition from Binomial distributions to Poisson and Gaussian limits, effectively modeling scenarios like default events or insurance claims.</span><span data-lang="kr">정량 리스크 관리에서는 희귀 사건(테일 리스크) 확률을 정확히 모델링하는 것이 핵심입니다. 이 프로젝트는 이항분포에서 포아송/가우시안 극한으로의 전이를 분석해, 부도 이벤트나 보험 청구 같은 시나리오를 모델링합니다.</span></p>
-                    <p><span data-lang="en">The project also applies rigorous statistical hypothesis testing to determine if subpopulations deviate significantly from expected probability distributions, similar to detecting anomalies in market activity.</span><span data-lang="kr">또한 엄밀한 가설검정을 적용해 하위 집단이 기대 분포에서 유의하게 이탈하는지 판단하며, 시장 이상치 탐지와 유사한 문제를 다룹니다.</span></p>
-                </div>
-
-                <div class="content-block">
-                    <h2><span data-lang="en">Key Concepts Implemented</span><span data-lang="kr">구현한 핵심 개념</span></h2>
-                    <div class="key-concepts-grid">
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Poisson Limit Theorem</span><span data-lang="kr">포아송 극한 정리</span></h3>
-                            <p>Modeled low-probability events in large populations, demonstrating how Binomial variances
-                                converge to Poisson intensity rates.</p>
-                        </div>
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Gaussian Approximation</span><span data-lang="kr">가우시안 근사</span></h3>
-                            <p>Applied the Central Limit Theorem to approximate discrete distributions, enabling rapid
-                                analytically tractable risk bounds (VaR).</p>
-                        </div>
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Statistical Hypothesis Testing</span><span data-lang="kr">통계적 가설검정</span></h3>
-                            <p>Calculated Z-scores and p-values to reject null hypotheses, a fundamental skill for
-                                backtesting trading strategies against random market noise.</p>
-                        </div>
-                    </div>
+                    <h2><span data-lang="en">Overview</span><span data-lang="kr">개요</span></h2>
+                    <p>PHYS 129L (scientific computing), Fall 2025. One program simulates a photon-counting experiment 1000 times and histograms the counts. The other works through a hypothesis test: the exact binomial probability of an outcome, the Gaussian approximation to it, and how far apart the two are in the tail.</p>
                 </div>
 
                 <div class="content-block">
                     <h2><span data-lang="en">Visual Analysis</span><span data-lang="kr">시각화 분석</span></h2>
                     <div class="visual-showcase">
-                        <img src="../Finance & Quantitative Analysis/images/hypothesis_testing.png"
+                        <img src="../finance_quant_analysis/images/hypothesis_testing.png"
                             alt="Gaussian Approximation Graph">
                         <p class="visual-caption">Comparison of probability densities for different population
                             subgroups, illustrating significant statistical deviations (anomalies) detected via Gaussian
@@ -101,7 +115,7 @@
                 <div class="content-block">
                     <h2><span data-lang="en">Source Code</span><span data-lang="kr">소스 코드</span></h2>
 
-                    <h3>1. Hypothesis Testing (`p3_hw9.py`)</h3>
+                    <h3>1. Hypothesis Testing (p3_hw9.py)</h3>
                     <div class="code-snippet">
                         <pre><code>#!/usr/bin/env python3
 import numpy as np
@@ -168,7 +182,7 @@ plt.legend()
 plt.savefig('p3_hw9.eps')</code></pre>
                     </div>
 
-                    <h3>2. Photon Counting Simulation (`p2_hw9.py`)</h3>
+                    <h3>2. Photon Counting Simulation (p2_hw9.py)</h3>
                     <div class="code-snippet">
                         <pre><code>#!/usr/bin/env python3
 import numpy as np
@@ -203,22 +217,20 @@ plt.savefig('p2_hw9.eps')</code></pre>
                 </div>
             </div>
         </section>
-    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
-                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
                 </div>
             </div>
         </div>
     </footer>
+    </main>
     <script>
     (function() {
         var saved = localStorage.getItem('siteLang') || 'en';
@@ -235,6 +247,7 @@ plt.savefig('p2_hw9.eps')</code></pre>
         });
     }
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

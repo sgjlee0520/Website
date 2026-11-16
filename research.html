@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Songgun Lee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
+            </div>
+            <h1 class="brand-name"><a href="index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
+                <li class="nav-item"><a href="research.html" class="nav-link active"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="teaching.html" class="nav-link"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
+            </ul>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
+        </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- About Page Content -->
+    <main class="main-content research-page">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title"><span data-lang="en">Research</span><span data-lang="kr">연구</span></h1>
+                <p class="page-subtitle">Undergraduate Researcher, Mazur Lab (Prof. Greg Mazur)<br>Materials Department, UC Santa Barbara, May 2026 to present</p>
+            </div>
+        </section>
+
+        <section class="professional-narrative">
+            <div class="container">
+                <div class="narrative-content">
+                    <div class="narrative-text">
+                        <h3 id="lab">The lab</h3>
+                        <p>Prof. Mazur’s group is a new condensed-matter lab at UCSB that works on superconductor and semiconductor quantum devices in germanium (Ge/SiGe) heterostructures. I joined in May 2026. Most of my work so far has been the practical side of getting a sample from a wafer to a measurement at low temperature: cleanroom processing, wiring and cooling the dilution refrigerator, and designing the hardware in between.</p>
+
+                        <h3 id="project">Current project</h3>
+                        <p>My own project is a thin-film study: testing whether amorphous vanadium silicide superconducts. It is just starting, and the first step is fabricating the films and devices.</p>
+
+                        <h3 id="fabrication">Fabrication</h3>
+                        <p>I process samples at the UCSB Nanofab and wire bond them for low-temperature measurement. I have done each step of the photolithography process: cleaning, cleaving, deposition, resist coating, exposure, development, wet etching (HF, HCl and BOE) and resist strip. I am authorized on the field-emission SEM, atomic layer deposition, e-beam evaporation, the maskless aligner and rapid thermal processing.</p>
+
+                        <h3 id="measurement">Low-temperature measurement</h3>
+                        <p>I assist with lock-in magnetotransport measurements of Ge/SiGe Hall bars in the dilution refrigerator. The experiments follow IBM’s study of interface traps in Ge/SiGe (Massai et al., Communications Materials, 2024), and I am learning to extract carrier density and mobility from Hall and gate-sweep data. On the fridge I wire the lock-in amplifiers and Fischer cables, run cooldowns, and fill the cold traps every week.</p>
+
+                        <h3 id="ground-loop">A ground loop</h3>
+                        <p>The lab’s dilution refrigerators had a heating problem. I traced it to a ground loop between the fridge and the instrument chassis and solved it.</p>
+
+                        <h3 id="hardware">Cryogenic hardware</h3>
+                        <p>I design sample hardware in Autodesk Fusion and make it in the machine shop (manual mill, lathe, drill, bandsaw and chop saw) or on a 3D printer.</p>
+                        <ul>
+                            <li>Copper cold fingers that hold a sample board inside the fridge’s bottom-loading puck.</li>
+                            <li>Sample-puck holders and cases.</li>
+                            <li>A T-slot aluminum trolley that holds the fridge’s bottom loader. The layout is adapted from a commercial probe trolley. I made the model, the drawings and the bill of materials, and the parts are being machined now.</li>
+                        </ul>
+                        <figure class="site-figure">
+                            <img src="images/research/bottom-loader-trolley.jpg" alt="CAD model of a T-slot aluminum trolley holding a tall cylindrical bottom loader" loading="lazy">
+                            <figcaption>The bottom-loader trolley, modeled in Autodesk Fusion. The dark cylinder is the bottom loader.</figcaption>
+                        </figure>
+
+                        <h3 id="other">Other lab work</h3>
+                        <ul>
+                            <li>Surveyed the lab’s RF environment from 600 MHz to 6 GHz to identify the emission frequencies of the nearby airport radar.</li>
+                            <li>Set up the lab’s NAS server for automatic fridge-data uploads and remote measurements.</li>
+                            <li>Gave group-meeting talks on quantum wells and on Schottky barriers at superconductor and germanium contacts.</li>
+                        </ul>
+
+                        <h3 id="coursework">Coursework</h3>
+                        <p>Quantum Mechanics, Electromagnetism, Intermediate and Advanced Mechanics, Methods of Theoretical Physics and Scientific Computing (Python). In Fall 2026: Condensed Matter Physics, Statistical Mechanics, and an independent study with Prof. Mazur.</p>
+                    </div>
+                    <div class="text-center">
+                        <a href="resume.html" class="btn btn-primary">CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title"><span data-lang="en">Skills</span><span data-lang="kr">기술</span></h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Laboratory</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Dilution refrigerator logistics</span>
+                            <span class="skill-tag">Wire bonding</span>
+                            <span class="skill-tag">Lock-in amplifiers</span>
+                            <span class="skill-tag">RF spectrum analysis</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Fabrication</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Photolithography</span>
+                            <span class="skill-tag">Wet etching (HF, HCl, BOE)</span>
+                            <span class="skill-tag">Field-emission SEM</span>
+                            <span class="skill-tag">Atomic layer deposition</span>
+                            <span class="skill-tag">E-beam evaporation</span>
+                            <span class="skill-tag">Maskless aligner</span>
+                            <span class="skill-tag">Rapid thermal processing</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Design</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Autodesk Fusion</span>
+                            <span class="skill-tag">Manual mill and lathe</span>
+                            <span class="skill-tag">3D printing</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python (NumPy, SciPy, Pandas, Matplotlib)</span>
+                            <span class="skill-tag">PyVISA</span>
+                            <span class="skill-tag">QCoDeS</span>
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">LaTeX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+    (function() {
+        var saved = localStorage.getItem('siteLang') || 'en';
+        if (saved === 'kr') document.body.classList.add('lang-kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === saved);
+        });
+    })();
+    function setLang(lang) {
+        localStorage.setItem('siteLang', lang);
+        document.body.classList.toggle('lang-kr', lang === 'kr');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    }
+    </script>
+</body>
+
+</html>

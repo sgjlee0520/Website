@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monte Carlo Methods & Stochastic Calculus - Songgun Lee</title>
+    <title>Monte Carlo Integration - Songgun Lee</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,39 +22,75 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">Songgun Lee</a>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
-                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../research.html" class="nav-link"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="../teaching.html" class="nav-link"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
                 <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
-                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
-                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
-            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
-                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
-            </div>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
         </div>
-    </nav>
+        </nav>
 
-    <main class="project-detail">
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content project-detail">
         <section class="project-detail-hero">
             <div class="container">
-                <h1 class="page-title">Monte Carlo Methods & Stochastic Calculus</h1>
+                <h1 class="page-title">Monte Carlo Integration</h1>
                 <p class="page-subtitle">
-                    <span data-lang="en">Solving deterministic problems through random sampling, with applications in options pricing and risk assessment.</span>
-                    <span data-lang="kr">무작위 샘플링으로 결정론적 문제를 푸는 방법을 다루며, 옵션 가격결정과 리스크 평가에 적용합니다.</span>
+                    <span data-lang="en">Random sampling against a Riemann sum, and how fast each converges.</span>
+                    <span data-lang="kr">무작위 표본 추출과 리만 합을 비교하고, 각각의 수렴 속도를 확인했습니다.</span>
                 </p>
                 <div class="detail-meta">
+                    <span class="tech-tag">PHYS 129L</span>
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">NumPy</span>
-                    <span class="tech-tag">Stochastic Calculus</span>
-                    <span class="tech-tag">Financial Modeling</span>
                 </div>
             </div>
         </section>
@@ -62,43 +98,18 @@
         <section class="detail-content">
             <div class="container">
                 <div class="content-block">
-                    <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
-                    <p>
-                        <span data-lang="en">This project explores the power of Monte Carlo simulations to solve complex deterministic problems where analytical solutions are difficult or impossible. By leveraging the Law of Large Numbers, the simulation converges to the true value with an error rate scaling as $1/\\sqrt{N}$.</span>
-                        <span data-lang="kr">이 프로젝트는 해석적 해가 어렵거나 불가능한 결정론적 문제를 몬테카를로 시뮬레이션으로 푸는 방법을 탐구합니다. 대수의 법칙에 의해 추정값은 참값으로 수렴하며, 오차는 \(1/\\sqrt{N}\) 스케일로 감소합니다.</span>
-                    </p>
-                    <p>
-                        <span data-lang="en">In computational modeling, these methods are standard for systems where path-dependency makes closed-form solutions inapplicable.</span>
-                        <span data-lang="kr">물리학 연구에서는 경로 의존성 때문에 블랙-숄즈 공식이 적용되지 않는 복잡한 파생상품(아시안/룩백 옵션 등)의 가격결정에 표준적으로 사용됩니다.</span>
-                    </p>
-                </div>
-
-                <div class="content-block">
-                    <h2><span data-lang="en">Key Concepts Implemented</span><span data-lang="kr">구현한 핵심 개념</span></h2>
-                    <div class="key-concepts-grid">
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Convergence Analysis</span><span data-lang="kr">수렴 분석</span></h3>
-                            <p><span data-lang="en">Verified the $O(N^{-1/2})$ convergence rate of Monte Carlo integration. This theoretical foundation is critical for estimating computation costs in high-frequency trading simulations.</span><span data-lang="kr">몬테카를로 적분의 \(O(N^{-1/2})\) 수렴률을 검증했습니다. 이는 대규모 시뮬레이션에서 필요한 계산 비용을 추정하는 데 중요합니다.</span></p>
-                        </div>
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Stochastic Integration</span><span data-lang="kr">확률적 적분</span></h3>
-                            <p><span data-lang="en">Implemented numerical integration techniques utilizing random sampling to approximate high-dimensional integrals, a common problem in risk model calibration.</span><span data-lang="kr">무작위 샘플링으로 고차원 적분을 근사하는 수치 적분 기법을 구현했습니다(리스크 모델 캘리브레이션에서 자주 등장).</span></p>
-                        </div>
-                        <div class="concept-card">
-                            <h3><span data-lang="en">Variance Reduction</span><span data-lang="kr">분산 감소</span></h3>
-                            <p><span data-lang="en">Analyzed error metrics to understand stability and precision of the estimates, precursors to implementing variance reduction techniques like Antithetic Variates.</span><span data-lang="kr">추정치의 안정성과 정밀도를 이해하기 위해 오차 지표를 분석했고, 이후 antithetic variates 같은 분산 감소 기법으로 확장할 수 있는 기반을 마련했습니다.</span></p>
-                        </div>
-                    </div>
+                    <h2><span data-lang="en">Overview</span><span data-lang="kr">개요</span></h2>
+                    <p>PHYS 129L (scientific computing), Fall 2025. Two short programs. The first integrates $e^{-x^2}$ with a Riemann sum and with Monte Carlo sampling, and plots the fractional error of each against $N$. The second estimates $\pi$ from random points and plots how the error falls as $N$ grows.</p>
                 </div>
 
                 <div class="content-block">
                     <h2><span data-lang="en">Visual Analysis</span><span data-lang="kr">시각화 분석</span></h2>
                     <div class="visual-showcase">
-                        <img src="../Finance & Quantitative Analysis/images/monte_carlo_pi.png"
+                        <img src="../finance_quant_analysis/images/monte_carlo_pi.png"
                             alt="Monte Carlo Convergence Graph">
                         <p class="visual-caption">
-                            <span data-lang="en">Log-log plot showing the fractional error in estimating $\\pi$ decreasing as the number of samples increases, confirming the $1/\\sqrt{N}$ convergence rate.</span>
-                            <span data-lang="kr">샘플 수가 증가할수록 \(\pi\) 추정의 상대 오차가 감소함을 보이는 로그-로그 그래프이며, \(1/\\sqrt{N}\) 수렴률을 확인합니다.</span>
+                            <span data-lang="en">Log-log plot showing the fractional error in estimating $\pi$ decreasing as the number of samples increases, confirming the $1/\sqrt{N}$ convergence rate.</span>
+                            <span data-lang="kr">샘플 수가 증가할수록 \(\pi\) 추정의 상대 오차가 감소함을 보이는 로그-로그 그래프이며, \(1/\sqrt{N}\) 수렴률을 확인합니다.</span>
                         </p>
                     </div>
                 </div>
@@ -106,7 +117,7 @@
                 <div class="content-block">
                     <h2><span data-lang="en">Source Code</span><span data-lang="kr">소스 코드</span></h2>
 
-                    <h3>1. Monte Carlo Integration vs Riemann Sum (`p4_hw9.py`)</h3>
+                    <h3>1. Monte Carlo Integration vs Riemann Sum (p4_hw9.py)</h3>
                     <div class="code-snippet">
                         <pre><code>#!/usr/bin/env python3
 import numpy as np
@@ -169,7 +180,7 @@ if __name__ == "__main__":
     main()</code></pre>
                     </div>
 
-                    <h3>2. Pi Estimation Convergence (`Monte_Carlo_Convergence_of_pi.py`)</h3>
+                    <h3>2. Pi Estimation Convergence (Monte_Carlo_Convergence_of_pi.py)</h3>
                     <div class="code-snippet">
                         <pre><code>#!/usr/bin/env python3
 import numpy as np
@@ -205,22 +216,20 @@ plt.show()</code></pre>
                 </div>
             </div>
         </section>
-    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
-                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
                 </div>
             </div>
         </div>
     </footer>
+    </main>
     <script>
     (function() {
         var saved = localStorage.getItem('siteLang') || 'en';
@@ -237,6 +246,7 @@ plt.show()</code></pre>
         });
     }
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

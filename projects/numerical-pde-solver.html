@@ -21,39 +21,75 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">Songgun Lee</a>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
-                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../research.html" class="nav-link"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="../teaching.html" class="nav-link"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
                 <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
-                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
-                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
-            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
-                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
-            </div>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
         </div>
-    </nav>
+        </nav>
 
-    <main class="project-detail">
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content project-detail">
         <section class="project-detail-hero">
             <div class="container">
                 <h1 class="page-title">Numerical PDE Solver (Finite Difference)</h1>
                 <p class="page-subtitle">
-                    <span data-lang="en">Solving Partial Differential Equations using the Relaxation Method on a discretised 2D grid, applied to electrostatic boundary-value problems and heat diffusion.</span>
+                    <span data-lang="en">Solving Partial Differential Equations using the Relaxation Method on a discretised 2D grid, applied to an electrostatic boundary-value problem.</span>
                     <span data-lang="kr">이산화된 2D 격자에서 이완법으로 편미분방정식을 풀며, 정전기 경계값 문제와 열확산에 적용합니다.</span>
                 </p>
                 <div class="detail-meta">
+                    <span class="tech-tag">PHYS 129L</span>
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Finite Difference Method</span>
-                    <span class="tech-tag">Numerical Analysis</span>
-                    <span class="tech-tag">PDEs</span>
+                    <span class="tech-tag">Finite differences</span>
                 </div>
             </div>
         </section>
@@ -62,7 +98,7 @@
             <div class="container">
                 <div class="content-block">
                     <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
-                    <p><span data-lang="en">Partial Differential Equations (PDEs) govern heat diffusion, fluid dynamics, and electrostatic potential fields. This project implements a numerical solver from scratch using the Finite Difference Method to solve Laplace's equation ($\\nabla^2 V = 0$) and other boundary value problems.</span><span data-lang="kr">편미분방정식(PDE)은 열확산, 유체역학, 정전기 전위장을 기술합니다. 이 프로젝트는 유한차분법으로 라플라스 방정식(\(\\nabla^2 V = 0\)) 및 경계값 문제를 푸는 수치해석 솔버를 처음부터 구현합니다.</span></p>
+                    <p><span data-lang="en">Partial Differential Equations (PDEs) govern heat diffusion, fluid dynamics, and electrostatic potential fields. This project implements a numerical solver from scratch using the Finite Difference Method to solve Laplace's equation ($\nabla^2 V = 0$) and other boundary value problems.</span><span data-lang="kr">편미분방정식(PDE)은 열확산, 유체역학, 정전기 전위장을 기술합니다. 이 프로젝트는 유한차분법으로 라플라스 방정식(\(\nabla^2 V = 0\)) 및 경계값 문제를 푸는 수치해석 솔버를 처음부터 구현합니다.</span></p>
                     <p><span data-lang="en">The implementation uses the "Relaxation Method," an iterative process that converges to the steady-state solution, demonstrating core concepts used in numerical PDE solvers for electrostatics and diffusion.</span><span data-lang="kr">구현은 반복적으로 정상상태 해에 수렴하는 “이완법”을 사용하며, 정전기학과 확산 문제에 쓰이는 수치 PDE 솔버의 핵심 개념을 보여줍니다.</span></p>
                 </div>
 
@@ -90,7 +126,7 @@
                 <div class="content-block">
                     <h2><span data-lang="en">Visual Analysis</span><span data-lang="kr">시각화 분석</span></h2>
                     <div class="visual-showcase">
-                        <img src="../Finance & Quantitative Analysis/images/pde_config_1.png"
+                        <img src="../finance_quant_analysis/images/pde_config_1.png"
                             alt="Potential Field Heatmap">
                         <p class="visual-caption">Heatmap visualization of the electric potential field relaxing to a
                             steady state between two capacitor plates. The color gradient represents the potential
@@ -99,7 +135,7 @@
                 </div>
 
                 <div class="content-block">
-                    <h2><span data-lang="en">Source Code: PDE Solver (`p1_hw10.py`)</span><span data-lang="kr">소스 코드: PDE 솔버 (`p1_hw10.py`)</span></h2>
+                    <h2><span data-lang="en">Source Code: PDE Solver (p1_hw10.py)</span><span data-lang="kr">소스 코드: PDE 솔버 (p1_hw10.py)</span></h2>
                     <div class="code-snippet">
                         <pre><code>#!/usr/bin/env python3
 #First eps file is 256 iterations, gridsize 60, plate thickness 0.05,plate
@@ -180,22 +216,20 @@ input("\nPress <Enter> to exit . . . \n")</code></pre>
                 </div>
             </div>
         </section>
-    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
-                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
                 </div>
             </div>
         </div>
     </footer>
+    </main>
     <script>
     (function() {
         var saved = localStorage.getItem('siteLang') || 'en';
@@ -212,6 +246,7 @@ input("\nPress <Enter> to exit . . . \n")</code></pre>
         });
     }
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

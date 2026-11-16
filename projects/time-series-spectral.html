@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time-Series & Spectral Analysis - Songgun Lee</title>
+    <title>Time Series and Spectral Analysis - Songgun Lee</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,40 +21,75 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">Songgun Lee</a>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-image-container">
+                <img src="../SonggunLee_.jpg" alt="Songgun Lee" class="profile-image">
             </div>
+            <h1 class="brand-name"><a href="../index.html">Songgun Lee</a></h1>
+            <p class="brand-tagline">Undergraduate Researcher<br>Mazur Lab, UC Santa Barbara</p>
+        </div>
+
+        <nav class="sidebar-nav">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link"><span class="nav-en">Home</span><span class="nav-kr">홈</span></a></li>
-                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
+                <li class="nav-item"><a href="../research.html" class="nav-link"><span class="nav-en">Research</span><span class="nav-kr">연구</span></a></li>
+                <li class="nav-item"><a href="../teaching.html" class="nav-link"><span class="nav-en">Teaching</span><span class="nav-kr">교육</span></a></li>
                 <li class="nav-item"><a href="../projects.html" class="nav-link active"><span class="nav-en">Projects</span><span class="nav-kr">프로젝트</span></a></li>
-                <li class="nav-item"><a href="../writing-interests.html" class="nav-link"><span class="nav-en">Writing & Interests</span><span class="nav-kr">글과 관심사</span></a></li>
-                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">Resume</span><span class="nav-kr">이력서</span></a></li>
+                <li class="nav-item"><a href="../resume.html" class="nav-link"><span class="nav-en">CV</span><span class="nav-kr">CV</span></a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><span class="nav-en">About</span><span class="nav-kr">소개</span></a></li>
                 <li class="nav-item"><a href="../contact.html" class="nav-link"><span class="nav-en">Contact</span><span class="nav-kr">연락처</span></a></li>
             </ul>
-            <div class="lang-switcher" style="max-width: 160px; margin-left: auto;">
-                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
-            </div>
+        <!-- Language Toggle -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="kr" onclick="setLang('kr')">한국어</button>
         </div>
-    </nav>
+        </nav>
 
-    <main class="project-detail">
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 1.19 6.44 1.54A3.37 3.37 0 0 0 9 15.82V19">
+                        </path>
+                    </svg>
+                </a>
+</div>
+            <p class="copyright">&copy; 2026 Songgun Lee.</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <main class="main-content project-detail">
         <section class="project-detail-hero">
             <div class="container">
-                <h1 class="page-title">Signal Processing & Time-Series Analysis: From Transient Decay to Spectral
-                    Density</h1>
+                <h1 class="page-title"><span data-lang="en">Time Series and Spectral Analysis</span><span data-lang="kr">시계열과 스펙트럼 분석</span></h1>
                 <p class="page-subtitle">
-                    <span data-lang="en">A dual approach to analyzing experimental time-series data: modeling transient decays in the time domain and extracting periodic components in the frequency domain.</span>
-                    <span data-lang="kr">실험 시계열 데이터를 이중 관점으로 분석합니다: 시간영역의 과도 감쇠 모델링과 주파수영역의 주기 성분 추출.</span>
+                    <span data-lang="en">Time constants of circuits from oscilloscope traces, and the power spectrum of a solar-cell signal.</span>
+                    <span data-lang="kr">오실로스코프 파형에서 회로의 시간 상수를 구하고, 태양전지 신호의 파워 스펙트럼을 계산했습니다.</span>
                 </p>
                 <div class="detail-meta">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">FFT</span>
-                    <span class="tech-tag">Signal Processing</span>
-                    <span class="tech-tag">Differential Equations</span>
+                    <span class="tech-tag">Curve fitting</span>
                 </div>
             </div>
         </section>
@@ -63,25 +98,20 @@
             <div class="container">
                 <div class="content-block">
                     <h2><span data-lang="en">Project Overview</span><span data-lang="kr">프로젝트 개요</span></h2>
-                    <p><span data-lang="en">This project demonstrates a dual approach to analyzing experimental time-series data. I investigated the properties of dynamic systems using both <strong>Time-Domain modeling</strong> (fitting differential equations to transient signals) and <strong>Frequency-Domain analysis</strong> (extracting periodic components from noisy datasets).</span><span data-lang="kr">이 프로젝트는 실험 시계열 데이터를 이중 관점으로 분석합니다. <strong>시간영역 모델링</strong>(과도 신호에 미분방정식 피팅)과 <strong>주파수영역 분석</strong>(노이즈 데이터에서 주기 성분 추출)을 함께 사용해 동적 시스템 특성을 조사했습니다.</span></p>
+                    <p><span data-lang="en">Two pieces of coursework on signals that change in time. In PHYS 20BL (Winter 2025) I recorded the step response and the ringing of circuits on an oscilloscope and found their time constants. In PHYS 129L (Fall 2025) I computed the power spectrum of a solar-cell voltage signal with the FFT.</span><span data-lang="kr">시간에 따라 변하는 신호를 다룬 두 가지 수업 과제입니다. PHYS 20BL(2025년 겨울 학기)에서는 회로의 계단 응답과 감쇠 진동을 오실로스코프로 기록해 시간 상수를 구했습니다. PHYS 129L(2025년 가을 학기)에서는 FFT로 태양전지 전압 신호의 파워 스펙트럼을 계산했습니다.</span></p>
                 </div>
 
                 <div class="content-block">
-                    <h2><span data-lang="en">Key Components</span><span data-lang="kr">핵심 구성</span></h2>
+                    <h2><span data-lang="en">The two parts</span><span data-lang="kr">두 부분</span></h2>
                     <div class="key-concepts-grid">
                         <div class="concept-card">
-                            <h3><span data-lang="en">Part 1: Time-Domain Analysis (RLC Circuit)</span><span data-lang="kr">파트 1: 시간영역 분석 (RLC 회로)</span></h3>
-                            <p><strong>Objective:</strong> Modeled the transient response of a Damped Harmonic
-                                Oscillator (RLC circuit).</p>
-                            <p><strong>Method:</strong> Applied non-linear curve fitting (<code>scipy.optimize</code>)
-                                to voltage data to extract decay constants ($\alpha$) and angular frequencies
-                                ($\omega$), verifying the solution to the differential equation $V(t) = V_0 e^{-\alpha
-                                t} \cos(\omega t)$.</p>
-                            <p><strong>Application:</strong> This mathematical framework is directly analogous to
-                                mean-reverting stochastic processes used in financial volatility modeling.</p>
+                            <h3><span data-lang="en">Circuit time constants (PHYS 20BL)</span><span data-lang="kr">회로의 시간 상수 (PHYS 20BL)</span></h3>
+                            <p><span data-lang="en">A square wave drives the circuit and the oscilloscope records the capacitor voltage. I fitted a straight line to the logarithm of the voltage difference against time, and the slope gives the time constant. For the week 8 circuit, where the inductor voltage rings, I estimated the decay envelope from successive peaks.</span><span data-lang="kr">사각파로 회로를 구동하고 오실로스코프로 축전기 전압을 기록했습니다. 전압 차이의 로그를 시간에 대해 직선으로 피팅했고, 그 기울기에서 시간 상수를 얻었습니다. 인덕터 전압이 진동하는 8주 차 회로에서는 연속한 봉우리로 감쇠 포락선을 추정했습니다.</span></p>
                         </div>
                         <div class="concept-card">
-                            <h3><span data-lang="en">Source Code: Solar Cell FFT Analysis (`p5_hw7.py`)</span><span data-lang="kr">소스 코드: 태양전지 FFT 분석 (`p5_hw7.py`)</span></h3>
+                            <h3><span data-lang="en">Power spectrum of a solar-cell signal (PHYS 129L)</span><span data-lang="kr">태양전지 신호의 파워 스펙트럼 (PHYS 129L)</span></h3>
+                            <p><span data-lang="en">The program reads a voltage signal sampled at 920 Hz, subtracts its mean, and takes a zero-padded FFT to get the power spectrum.</span><span data-lang="kr">920 Hz로 샘플링한 전압 신호를 읽어 평균을 빼고, 0을 채운 FFT로 파워 스펙트럼을 구합니다.</span></p>
+                            <h3><span data-lang="en">Source code (p5_hw7.py)</span><span data-lang="kr">소스 코드 (p5_hw7.py)</span></h3>
                             <div class="code-snippet">
                                 <pre><code>#!/usr/bin/env python3
 #
@@ -143,25 +173,15 @@ print()
 
 input("Press <Enter> to exit...\n")</code></pre>
                             </div>
-                            <h3><span data-lang="en">Part 2: Frequency-Domain Analysis (Solar FFT)</span><span data-lang="kr">파트 2: 주파수영역 분석 (태양전지 FFT)</span></h3>
-                            <p><strong>Objective:</strong> Identified dominant frequency components in high-speed
-                                voltage sensor data.</p>
-                            <p><strong>Method:</strong> Implemented a Fast Fourier Transform (FFT) algorithm in Python
-                                to convert raw time-series data into a Power Spectral Density (PSD) plot, isolating
-                                signal from noise.</p>
-                            <p><strong>Application:</strong> Spectral analysis is a fundamental technique for
-                                identifying cyclical trends and filtering noise in market data.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="content-block">
-                    <h2><span data-lang="en">Detailed Analysis (PDF)</span><span data-lang="kr">상세 분석 (PDF)</span></h2>
-                    <p>The full technical report, including mathematical derivations and detailed plots, is available
-                        below.</p>
+                    <h2><span data-lang="en">PHYS 20BL notebook (PDF)</span><span data-lang="kr">PHYS 20BL 노트북 (PDF)</span></h2>
+                    <p>The notebook with the fits and plots for the circuit measurements.</p>
                     <div class="pdf-viewer-shell">
                         <div class="pdf-toolbar">
-                            <p><span data-lang="en">This inline viewer renders every page directly on the site, which avoids the clipped first-page issue and the browser PDF table-of-contents UI.</span><span data-lang="kr">이 인라인 뷰어는 모든 페이지를 사이트 안에서 직접 렌더링해 첫 페이지만 보이는 문제와 브라우저 PDF 목차 UI 문제를 피합니다.</span></p>
                             <div class="pdf-actions">
                                 <a href="../finance_quant_analysis/Time-Series%20%26%20Spectral%20Analysis/20bloolw78sl.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-lang="en">Open PDF</span><span data-lang="kr">PDF 열기</span></a>
                                 <a href="../finance_quant_analysis/Time-Series%20%26%20Spectral%20Analysis/20bloolw78sl.pdf" download class="btn btn-primary"><span data-lang="en">Download PDF</span><span data-lang="kr">PDF 다운로드</span></a>
@@ -178,22 +198,20 @@ input("Press <Enter> to exit...\n")</code></pre>
                 </div>
             </div>
         </section>
-    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Songgun Lee. All rights reserved.</p>
+                <p>&copy; 2026 Songgun Lee. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/songgun-lee-562991227/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/sgjlee0520" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.instagram.com/spit.yourmind/" target="_blank" rel="noopener noreferrer">Magazine</a>
-                    <a href="https://blog.naver.com/llorrente" target="_blank" rel="noopener noreferrer" class="kr-only">블로그</a>
                 </div>
             </div>
         </div>
     </footer>
+    </main>
     <script src="../pdf-viewer.js"></script>
     <script>
     (function() {
@@ -211,6 +229,7 @@ input("Press <Enter> to exit...\n")</code></pre>
         });
     }
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

@@ -2385,3 +2385,13 @@ body.lang-kr .nav-kr-item { display: block; }
 .sidebar-more-link:hover {
     opacity: 1;
 }
+
+/* Research and Teaching pages */
+.narrative-text h3 { margin: 2.75rem 0 0.9rem; }
+.narrative-text h3:first-child { margin-top: 0; }
+.narrative-text ul { margin: 0 0 2rem 1.25rem; font-size: 1.1rem; line-height: 1.8; color: #444444; }
+.narrative-text li { margin-bottom: 0.5rem; }
+.narrative-text a, .page-subtitle a, .project-description a { color: var(--primary-color); }
+.site-figure { margin: 0 0 2rem; }
+.site-figure img { display: block; width: 100%; max-width: 440px; margin: 0 auto; border-radius: 12px; }
+.site-figure figcaption { margin-top: 0.75rem; text-align: center; font-size: 0.92rem; color: var(--light-text); }
